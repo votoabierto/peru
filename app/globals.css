@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+  --base: #0A0A0A;
+  --surface: #141414;
+  --text: #F5F5F5;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #F5F5F5;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-votoclaro-gold text-votoclaro-base font-semibold px-5 py-2.5 rounded-lg hover:bg-votoclaro-gold-light transition-colors;
+  }
+
+  .btn-outline {
+    @apply border border-votoclaro-border text-votoclaro-text px-5 py-2.5 rounded-lg hover:border-votoclaro-gold hover:text-votoclaro-gold transition-colors;
+  }
+
+  .card {
+    @apply bg-votoclaro-surface border border-votoclaro-border rounded-xl p-5 hover:border-votoclaro-gold/40 transition-colors;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-votoclaro-text;
+  }
+
+  .label {
+    @apply text-xs font-medium text-votoclaro-text-muted uppercase tracking-wider;
+  }
+}
