@@ -31,12 +31,12 @@ function calculateTimeLeft(): TimeLeft {
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="bg-votoclaro-surface-2 border border-votoclaro-border rounded-xl px-5 py-4 min-w-[80px] flex items-center justify-center">
-        <span className="text-3xl sm:text-4xl font-bold text-votoclaro-gold tabular-nums leading-none">
+      <div className="bg-white border border-[#E5E3DE] rounded-xl px-5 py-4 min-w-[80px] flex items-center justify-center">
+        <span className="text-3xl sm:text-4xl font-bold text-[#111111] font-mono tabular-nums leading-none">
           {String(value).padStart(2, '0')}
         </span>
       </div>
-      <span className="mt-2 text-xs font-medium text-votoclaro-text-muted uppercase tracking-wider">
+      <span className="mt-2 text-xs font-medium text-[#888888] uppercase tracking-widest">
         {label}
       </span>
     </div>
@@ -62,13 +62,13 @@ export default function CountdownTimer() {
     timeLeft.seconds === 0
 
   return (
-    <div className="text-center">
-      <p className="text-sm font-semibold text-votoclaro-gold uppercase tracking-widest mb-4">
+    <div className="text-center border-t-2 border-[#D91023] pt-6">
+      <p className="text-sm font-semibold text-[#1A56A0] uppercase tracking-widest mb-4">
         Elección general · 12 de abril de 2026
       </p>
 
       {isElectionDay ? (
-        <div className="text-2xl font-bold text-votoclaro-gold">
+        <div className="text-2xl font-bold text-[#1A56A0]">
           ¡Hoy es el día de las elecciones!
         </div>
       ) : (
@@ -76,24 +76,24 @@ export default function CountdownTimer() {
           {mounted ? (
             <>
               <TimeUnit value={timeLeft.days} label="Días" />
-              <div className="text-2xl font-bold text-votoclaro-text-muted mt-4">:</div>
+              <div className="text-2xl font-bold text-[#CBCAC5] mt-4">:</div>
               <TimeUnit value={timeLeft.hours} label="Horas" />
-              <div className="text-2xl font-bold text-votoclaro-text-muted mt-4">:</div>
+              <div className="text-2xl font-bold text-[#CBCAC5] mt-4">:</div>
               <TimeUnit value={timeLeft.minutes} label="Minutos" />
-              <div className="text-2xl font-bold text-votoclaro-text-muted mt-4">:</div>
+              <div className="text-2xl font-bold text-[#CBCAC5] mt-4">:</div>
               <TimeUnit value={timeLeft.seconds} label="Segundos" />
             </>
           ) : (
             // Skeleton while not mounted (SSR)
             <>
-              {['Días', 'Horas', 'Minutos', 'Segundos'].map((label, i) => (
+              {['Días', 'Horas', 'Minutos', 'Segundos'].map((label) => (
                 <div key={label} className="flex flex-col items-center">
-                  <div className="bg-votoclaro-surface-2 border border-votoclaro-border rounded-xl px-5 py-4 min-w-[80px] flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl font-bold text-votoclaro-gold tabular-nums leading-none">
+                  <div className="bg-white border border-[#E5E3DE] rounded-xl px-5 py-4 min-w-[80px] flex items-center justify-center">
+                    <span className="text-3xl sm:text-4xl font-bold text-[#111111] font-mono tabular-nums leading-none">
                       --
                     </span>
                   </div>
-                  <span className="mt-2 text-xs font-medium text-votoclaro-text-muted uppercase tracking-wider">
+                  <span className="mt-2 text-xs font-medium text-[#888888] uppercase tracking-widest">
                     {label}
                   </span>
                 </div>

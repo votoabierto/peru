@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const metadata: Metadata = {
-  title: 'Comparar Candidatos — VotoClaro',
+  title: 'Comparar Candidatos — VotoAbierto',
   description: 'Compara hasta 3 candidatos presidenciales peruanos lado a lado.',
 };
 
@@ -25,14 +25,14 @@ export default async function ComparePage({ searchParams }: Props) {
   ]);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white mb-2">Comparar Candidatos</h1>
-          <p className="text-gray-400">Selecciona hasta 3 candidatos para comparar sus propuestas, historial y posiciones.</p>
+          <h1 className="text-3xl font-bold text-[#111111] mb-2">Comparar Candidatos</h1>
+          <p className="text-[#777777]">Selecciona hasta 3 candidatos para comparar sus propuestas, historial y posiciones.</p>
         </div>
 
-        <Suspense fallback={<div className="text-gray-500">Cargando...</div>}>
+        <Suspense fallback={<div className="text-[#777777]">Cargando...</div>}>
           <ComparatorClient
             initialSelected={selectedCandidates}
             allCandidates={allCandidates}

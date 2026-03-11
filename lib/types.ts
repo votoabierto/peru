@@ -145,15 +145,15 @@ export const ISSUE_LABELS: Record<IssueArea, { label: string; icon: string }> = 
 }
 
 export const IDEOLOGY_COLORS: Record<string, string> = {
-  'far-left': 'bg-red-900 text-red-200',
-  left: 'bg-red-700 text-red-100',
-  'center-left': 'bg-orange-700 text-orange-100',
-  center: 'bg-gray-600 text-gray-100',
-  'center-right': 'bg-blue-700 text-blue-100',
-  right: 'bg-blue-800 text-blue-100',
-  'far-right': 'bg-blue-900 text-blue-200',
-  populist: 'bg-purple-700 text-purple-100',
-  nationalist: 'bg-yellow-700 text-yellow-100',
+  'far-left': 'bg-red-100 text-red-800 border border-red-300',
+  left: 'bg-red-50 text-red-700 border border-red-200',
+  'center-left': 'bg-orange-50 text-orange-700 border border-orange-200',
+  center: 'bg-gray-100 text-gray-700 border border-gray-300',
+  'center-right': 'bg-blue-50 text-blue-700 border border-blue-200',
+  right: 'bg-blue-100 text-blue-800 border border-blue-300',
+  'far-right': 'bg-blue-200 text-blue-900 border border-blue-400',
+  populist: 'bg-purple-50 text-purple-700 border border-purple-200',
+  nationalist: 'bg-amber-50 text-amber-700 border border-amber-200',
 }
 
 export const IDEOLOGY_LABELS: Record<string, string> = {

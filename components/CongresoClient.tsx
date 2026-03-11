@@ -72,8 +72,8 @@ export default function CongresoClient({ candidates, parties, regions }: Congres
           onClick={() => handleTabChange('partido')}
           className={`px-4 py-2 rounded-lg font-medium transition-colors ${
             activeTab === 'partido'
-              ? 'bg-votoclaro-gold text-votoclaro-base'
-              : 'bg-votoclaro-surface text-votoclaro-text-muted hover:bg-votoclaro-surface-2'
+              ? 'bg-[#1A56A0] text-white'
+              : 'bg-[#F7F6F3] text-[#777777] hover:bg-[#EEEDE9]'
           }`}
         >
           Por Partido
@@ -82,8 +82,8 @@ export default function CongresoClient({ candidates, parties, regions }: Congres
           onClick={() => handleTabChange('region')}
           className={`px-4 py-2 rounded-lg font-medium transition-colors ${
             activeTab === 'region'
-              ? 'bg-votoclaro-gold text-votoclaro-base'
-              : 'bg-votoclaro-surface text-votoclaro-text-muted hover:bg-votoclaro-surface-2'
+              ? 'bg-[#1A56A0] text-white'
+              : 'bg-[#F7F6F3] text-[#777777] hover:bg-[#EEEDE9]'
           }`}
         >
           Por Región
@@ -96,7 +96,7 @@ export default function CongresoClient({ candidates, parties, regions }: Congres
           <select
             value={selectedParty}
             onChange={(e) => setSelectedParty(e.target.value)}
-            className="border border-votoclaro-border bg-votoclaro-surface text-votoclaro-text rounded-lg px-3 py-2 text-sm w-full max-w-xs"
+            className="border border-[#E5E3DE] bg-[#F7F6F3] text-[#111111] rounded-lg px-3 py-2 text-sm w-full max-w-xs"
           >
             <option value="">Todos los partidos</option>
             {parties.map((p) => (
@@ -109,7 +109,7 @@ export default function CongresoClient({ candidates, parties, regions }: Congres
           <select
             value={selectedRegion}
             onChange={(e) => setSelectedRegion(e.target.value)}
-            className="border border-votoclaro-border bg-votoclaro-surface text-votoclaro-text rounded-lg px-3 py-2 text-sm w-full max-w-xs"
+            className="border border-[#E5E3DE] bg-[#F7F6F3] text-[#111111] rounded-lg px-3 py-2 text-sm w-full max-w-xs"
           >
             <option value="">Todas las regiones</option>
             {regions.map((r) => (
@@ -122,7 +122,7 @@ export default function CongresoClient({ candidates, parties, regions }: Congres
       </div>
 
       {/* Results count */}
-      <p className="text-sm text-votoclaro-text-muted mb-4">
+      <p className="text-sm text-[#777777] mb-4">
         {filtered.length} candidato{filtered.length !== 1 ? 's' : ''}
         {selectedParty ? ` de ${selectedParty}` : ''}
         {selectedRegion ? ` en ${REGION_NAMES[selectedRegion] ?? selectedRegion}` : ''}
@@ -134,9 +134,9 @@ export default function CongresoClient({ candidates, parties, regions }: Congres
           .sort(([a], [b]) => a.localeCompare(b))
           .map(([group, groupCandidates]) => (
             <div key={group}>
-              <h2 className="text-xl font-semibold mb-3 pb-2 border-b border-votoclaro-border text-votoclaro-text">
+              <h2 className="text-xl font-semibold mb-3 pb-2 border-b border-[#E5E3DE] text-[#111111]">
                 {group}
-                <span className="text-sm font-normal text-votoclaro-text-muted ml-2">
+                <span className="text-sm font-normal text-[#777777] ml-2">
                   ({groupCandidates.length} candidato{groupCandidates.length !== 1 ? 's' : ''})
                 </span>
               </h2>
@@ -144,10 +144,10 @@ export default function CongresoClient({ candidates, parties, regions }: Congres
                 {groupCandidates.map((c) => (
                   <div
                     key={c.id}
-                    className="border border-votoclaro-border rounded-lg p-4 bg-votoclaro-surface hover:bg-votoclaro-surface-2 transition-colors"
+                    className="border border-[#E5E3DE] rounded-lg p-4 bg-[#F7F6F3] hover:bg-[#EEEDE9] transition-colors"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-full bg-votoclaro-surface-2 flex items-center justify-center text-sm font-bold text-votoclaro-gold shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-[#EEEDE9] flex items-center justify-center text-sm font-bold text-[#1A56A0] shrink-0">
                         {c.full_name
                           .split(' ')
                           .slice(0, 2)
@@ -155,13 +155,13 @@ export default function CongresoClient({ candidates, parties, regions }: Congres
                           .join('')}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="font-medium text-votoclaro-text truncate">{c.full_name}</div>
-                        <div className="text-sm text-votoclaro-text-muted">
+                        <div className="font-medium text-[#111111] truncate">{c.full_name}</div>
+                        <div className="text-sm text-[#777777]">
                           {activeTab === 'partido'
                             ? `${REGION_NAMES[c.region] ?? c.region} · Posición ${c.list_position}`
                             : `${c.party_abbreviation} · Posición ${c.list_position}`}
                         </div>
-                        <p className="text-xs text-votoclaro-text-muted mt-1 line-clamp-2">{c.bio}</p>
+                        <p className="text-xs text-[#777777] mt-1 line-clamp-2">{c.bio}</p>
                       </div>
                     </div>
                   </div>
@@ -172,7 +172,7 @@ export default function CongresoClient({ candidates, parties, regions }: Congres
       </div>
 
       {Object.keys(grouped).length === 0 && (
-        <div className="text-center py-12 text-votoclaro-text-muted">
+        <div className="text-center py-12 text-[#777777]">
           No se encontraron candidatos con los filtros seleccionados.
         </div>
       )}

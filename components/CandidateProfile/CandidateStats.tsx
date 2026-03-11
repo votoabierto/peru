@@ -50,16 +50,16 @@ export function CandidateStats({ candidate }: Props) {
   ]
 
   return (
-    <div className="border-y border-gray-800 bg-gray-900/30">
+    <div className="border-y border-[#E5E3DE] bg-[#F7F6F3]">
       <div className="max-w-5xl mx-auto px-4 py-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-2xl mb-1">{s.icon}</div>
-              <div className={`font-semibold text-sm ${s.highlight ? 'text-orange-400' : 'text-white'}`}>
+              <div className={`font-semibold text-sm ${s.highlight ? 'text-[#92400E]' : 'text-[#111111]'}`}>
                 {s.value}
               </div>
-              <div className="text-gray-500 text-xs mt-0.5">{s.label}</div>
+              <div className="text-[#777777] text-xs mt-0.5">{s.label}</div>
             </div>
           ))}
         </div>

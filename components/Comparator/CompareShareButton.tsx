@@ -16,7 +16,7 @@ export function CompareShareButton({ candidates }: Props) {
   ).join('\n');
 
   const whatsappText = encodeURIComponent(
-    `Comparé candidatos en VotoClaro:\n\n${whatsappSummary}\n\nVer comparación completa: ${shareUrl}`
+    `Comparé candidatos en VotoAbierto:\n\n${whatsappSummary}\n\nVer comparación completa: ${shareUrl}`
   );
 
   const copyLink = async () => {
@@ -27,18 +27,18 @@ export function CompareShareButton({ candidates }: Props) {
 
   return (
     <div className="flex flex-col sm:flex-row items-center gap-3">
-      <span className="text-gray-500 text-sm">Compartir esta comparación:</span>
+      <span className="text-[#777777] text-sm">Compartir esta comparación:</span>
       <a
         href={`https://wa.me/?text=${whatsappText}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 bg-green-800/30 hover:bg-green-800/50 border border-green-800 rounded-lg text-green-300 text-sm font-medium transition-colors"
+        className="flex items-center gap-2 px-4 py-2 bg-[#F0FAF4] hover:bg-green-100 border border-[#2D7D46] rounded-lg text-[#1A6B35] text-sm font-medium transition-colors"
       >
         📱 WhatsApp
       </a>
       <button
         onClick={copyLink}
-        className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-gray-300 text-sm font-medium transition-colors"
+        className="flex items-center gap-2 px-4 py-2 bg-[#EEEDE9] hover:bg-[#E5E3DE] border border-[#E5E3DE] rounded-lg text-[#444444] text-sm font-medium transition-colors"
       >
         {copied ? '✅ Copiado' : '🔗 Copiar link'}
       </button>

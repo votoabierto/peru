@@ -8,7 +8,7 @@ interface Props {
 export function CandidatePositions({ positions }: Props) {
   if (positions.length === 0) {
     return (
-      <div className="text-gray-500 text-center py-8">
+      <div className="text-[#777777] text-center py-8">
         No hay posiciones registradas para este candidato.
       </div>
     )
@@ -27,7 +27,7 @@ export function CandidatePositions({ positions }: Props) {
         const issueInfo = ISSUE_LABELS[area as keyof typeof ISSUE_LABELS]
         return (
           <div key={area}>
-            <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+            <h3 className="flex items-center gap-2 text-lg font-semibold text-[#111111] mb-3">
               <span>{issueInfo?.icon ?? '📋'}</span>
               <span>{issueInfo?.label ?? area}</span>
             </h3>
@@ -36,12 +36,12 @@ export function CandidatePositions({ positions }: Props) {
                 const stanceText = pos.stance_description ?? pos.stance
                 const sourceQuote = pos.source_quote ?? pos.quote
                 return (
-                  <div key={pos.id} className="bg-gray-900 border border-gray-800 rounded-lg p-4">
+                  <div key={pos.id} className="bg-white border border-[#E5E3DE] rounded-lg p-4">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <p className="text-gray-200 text-sm leading-relaxed">{stanceText}</p>
+                        <p className="text-[#222222] text-sm leading-relaxed">{stanceText}</p>
                         {sourceQuote && (
-                          <blockquote className="mt-2 pl-3 border-l-2 border-[#d4af37] text-gray-400 text-xs italic">
+                          <blockquote className="mt-2 pl-3 border-l-2 border-[#1A56A0] text-[#777777] text-xs italic">
                             &ldquo;{sourceQuote}&rdquo;
                           </blockquote>
                         )}
@@ -50,7 +50,7 @@ export function CandidatePositions({ positions }: Props) {
                             href={pos.source_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-2 inline-block text-[#d4af37] text-xs hover:underline"
+                            className="mt-2 inline-block text-[#1A56A0] text-xs hover:underline"
                           >
                             Ver fuente ↗
                           </a>

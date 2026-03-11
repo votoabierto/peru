@@ -1,11 +1,11 @@
 import { FactCheck, VERDICT_LABELS } from '@/lib/types'
 
 const VERDICT_STYLES: Record<string, { bg: string; text: string }> = {
-  true: { bg: 'bg-green-900/50 border-green-800', text: 'text-green-300' },
-  false: { bg: 'bg-red-900/50 border-red-800', text: 'text-red-300' },
-  misleading: { bg: 'bg-orange-900/50 border-orange-800', text: 'text-orange-300' },
-  unverifiable: { bg: 'bg-gray-800 border-gray-700', text: 'text-gray-300' },
-  context_needed: { bg: 'bg-blue-900/50 border-blue-800', text: 'text-blue-300' },
+  true: { bg: 'bg-[#F0FAF4] border-[#2D7D46]', text: 'text-[#1A6B35]' },
+  false: { bg: 'bg-[#FEF2F2] border-[#DC2626]', text: 'text-[#9B1C1C]' },
+  misleading: { bg: 'bg-[#FFFBEB] border-[#D97706]', text: 'text-[#92400E]' },
+  unverifiable: { bg: 'bg-[#F7F6F3] border-[#E5E3DE]', text: 'text-[#4B5563]' },
+  context_needed: { bg: 'bg-[#EEF4FF] border-[#1A56A0]', text: 'text-[#1A56A0]' },
 }
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 export function CandidateFactChecks({ factChecks }: Props) {
   if (factChecks.length === 0) {
     return (
-      <p className="text-gray-500 text-sm">
+      <p className="text-[#777777] text-sm">
         No hay verificaciones para este candidato aún.
       </p>
     )
@@ -38,22 +38,22 @@ export function CandidateFactChecks({ factChecks }: Props) {
                 {label}
               </span>
               <div className="flex-1">
-                <blockquote className="text-gray-200 text-sm italic mb-2">
+                <blockquote className="text-[#222222] text-sm italic mb-2">
                   &ldquo;{fc.claim}&rdquo;
                 </blockquote>
-                <p className="text-gray-400 text-xs leading-relaxed mb-2">{fc.explanation}</p>
+                <p className="text-[#777777] text-xs leading-relaxed mb-2">{fc.explanation}</p>
                 {sourceLink && (
                   <a
                     href={sourceLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#d4af37] text-xs hover:underline inline-flex items-center gap-1"
+                    className="text-[#1A56A0] text-xs hover:underline inline-flex items-center gap-1"
                   >
                     Ver fuente ↗
                   </a>
                 )}
                 {dateStr && (
-                  <span className="text-gray-600 text-xs ml-4">
+                  <span className="text-[#999999] text-xs ml-4">
                     {new Date(dateStr).toLocaleDateString('es-PE')}
                   </span>
                 )}

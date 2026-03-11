@@ -56,27 +56,27 @@ export default async function HomePage() {
   const latestFactChecks = factChecks.slice(0, 3)
 
   return (
-    <div className="bg-votoclaro-base">
+    <div className="bg-white">
       {/* Hero */}
-      <section className="relative py-20 sm:py-28 border-b border-votoclaro-border overflow-hidden">
+      <section className="relative py-20 sm:py-28 border-b border-[#E5E3DE] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-votoclaro-gold/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#1A56A0]/5 rounded-full blur-3xl" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-3xl">
-            <p className="text-votoclaro-gold text-sm font-semibold uppercase tracking-widest mb-4">
+            <p className="text-[#1A56A0] text-sm font-semibold uppercase tracking-widest mb-4">
               Elecciones Generales · Perú 2026
             </p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-votoclaro-text mb-6 leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#111111] mb-6 leading-tight">
               Vota{' '}
-              <span className="text-votoclaro-gold">informado.</span>
+              <span className="text-[#1A56A0]">informado.</span>
             </h1>
-            <p className="text-lg sm:text-xl text-votoclaro-text-muted leading-relaxed mb-8 max-w-2xl">
+            <p className="text-lg sm:text-xl text-[#777777] leading-relaxed mb-8 max-w-2xl">
               El 12 de abril de 2026 los peruanos elegirán presidente, vicepresidentes y,
               por primera vez desde 1992, un Congreso bicameral con{' '}
-              <strong className="text-votoclaro-text">60 senadores</strong> y{' '}
-              <strong className="text-votoclaro-text">130 diputados</strong>.
-              VotoClaro te ayuda a conocer a los candidatos y sus propuestas.
+              <strong className="text-[#111111]">60 senadores</strong> y{' '}
+              <strong className="text-[#111111]">130 diputados</strong>.
+              VotoAbierto te ayuda a conocer a los candidatos y sus propuestas.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/candidatos" className="btn-primary">
@@ -91,20 +91,20 @@ export default async function HomePage() {
       </section>
 
       {/* Countdown */}
-      <section className="py-12 border-b border-votoclaro-border bg-votoclaro-surface">
+      <section className="py-12 border-b border-[#E5E3DE] bg-[#F7F6F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CountdownTimer />
         </div>
       </section>
 
       {/* Stats bar */}
-      <section className="py-8 border-b border-votoclaro-border">
+      <section className="py-8 border-b border-[#E5E3DE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {STATS.map((stat) => (
               <div key={stat.label}>
-                <p className="text-3xl font-extrabold text-votoclaro-gold">{stat.value}</p>
-                <p className="text-xs text-votoclaro-text-muted mt-1">{stat.label}</p>
+                <p className="text-3xl font-extrabold text-[#111111] font-mono">{stat.value}</p>
+                <p className="text-xs text-[#777777] mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -112,26 +112,26 @@ export default async function HomePage() {
       </section>
 
       {/* Feature cards */}
-      <section className="py-16 border-b border-votoclaro-border">
+      <section className="py-16 border-b border-[#E5E3DE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-2">
-            Explora <span className="text-votoclaro-gold">VotoClaro</span>
+            Explora <span className="text-[#1A56A0]">VotoAbierto</span>
           </h2>
-          <p className="text-votoclaro-text-muted mb-8">
+          <p className="text-[#777777] mb-8">
             Todo lo que necesitas para votar con información.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {FEATURES.map((feature) => (
               <Link key={feature.href} href={feature.href} className="group">
-                <div className="card h-full flex flex-col group-hover:border-votoclaro-gold/60 transition-all duration-200">
+                <div className="card h-full flex flex-col transition-all duration-200">
                   <span className="text-3xl mb-3">{feature.icon}</span>
-                  <h3 className="text-base font-semibold text-votoclaro-text mb-2 group-hover:text-votoclaro-gold transition-colors">
+                  <h3 className="text-base font-semibold text-[#111111] mb-2 group-hover:text-[#1A56A0] transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-votoclaro-text-muted leading-relaxed flex-1">
+                  <p className="text-sm text-[#777777] leading-relaxed flex-1">
                     {feature.description}
                   </p>
-                  <span className="mt-4 text-sm font-medium text-votoclaro-gold">
+                  <span className="mt-4 text-sm font-medium text-[#1A56A0]">
                     {feature.cta} →
                   </span>
                 </div>
@@ -142,10 +142,10 @@ export default async function HomePage() {
       </section>
 
       {/* Issue selector */}
-      <section className="py-16 border-b border-votoclaro-border bg-votoclaro-surface">
+      <section className="py-16 border-b border-[#E5E3DE] bg-[#F7F6F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-2">¿Sobre qué te importa más?</h2>
-          <p className="text-votoclaro-text-muted mb-8">
+          <p className="text-[#777777] mb-8">
             Selecciona un tema para ver las posiciones de los candidatos.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -155,7 +155,7 @@ export default async function HomePage() {
                 <Link
                   key={area}
                   href={`/candidatos?issue=${area}`}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-votoclaro-surface-2 border border-votoclaro-border rounded-full text-sm font-medium text-votoclaro-text-muted hover:border-votoclaro-gold hover:text-votoclaro-gold transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#EEEDE9] border border-[#E5E3DE] rounded-full text-sm font-medium text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors"
                 >
                   <span role="img" aria-label={info.label}>
                     {info.icon}
@@ -169,18 +169,18 @@ export default async function HomePage() {
       </section>
 
       {/* Latest fact checks */}
-      <section className="py-16 border-b border-votoclaro-border">
+      <section className="py-16 border-b border-[#E5E3DE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="section-title mb-1">Últimas verificaciones</h2>
-              <p className="text-votoclaro-text-muted text-sm">
+              <p className="text-[#777777] text-sm">
                 Fact-checks de las declaraciones más recientes.
               </p>
             </div>
             <Link
               href="/verificar"
-              className="text-sm font-medium text-votoclaro-gold hover:underline"
+              className="text-sm font-medium text-[#1A56A0] hover:underline"
             >
               Ver todas →
             </Link>
@@ -191,18 +191,18 @@ export default async function HomePage() {
               return (
                 <div key={fc.id} className="card flex flex-col gap-3">
                   {candidate && (
-                    <p className="text-xs font-semibold text-votoclaro-gold">
+                    <p className="text-xs font-semibold text-[#1A56A0]">
                       {candidate.common_name ?? candidate.full_name} ·{' '}
                       {candidate.party_abbreviation}
                     </p>
                   )}
-                  <p className="text-sm text-votoclaro-text leading-relaxed line-clamp-3">
+                  <p className="text-sm text-[#111111] leading-relaxed line-clamp-3">
                     &ldquo;{fc.claim}&rdquo;
                   </p>
                   <div className="mt-auto pt-2">
                     <FactCheckBadge verdict={fc.verdict} size="sm" />
                   </div>
-                  <p className="text-xs text-votoclaro-text-muted line-clamp-2">
+                  <p className="text-xs text-[#777777] line-clamp-2">
                     {fc.explanation}
                   </p>
                 </div>
@@ -215,11 +215,11 @@ export default async function HomePage() {
       {/* Bottom CTA */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold text-votoclaro-text mb-3">
+          <h2 className="text-3xl font-extrabold text-[#111111] mb-3">
             Tu voto vale.{' '}
-            <span className="text-votoclaro-gold">Úsalo bien.</span>
+            <span className="text-[#1A56A0]">Úsalo bien.</span>
           </h2>
-          <p className="text-votoclaro-text-muted mb-8 max-w-xl mx-auto">
+          <p className="text-[#777777] mb-8 max-w-xl mx-auto">
             Plataforma no-partidaria. No apoyamos a ningún candidato. Solo
             información verificada para el ciudadano peruano.
           </p>

@@ -29,8 +29,8 @@ const VERDICT_LABELS: Record<string, string> = {
   misleading: 'Engañoso', unverifiable: 'No verificable', context_needed: 'Contexto',
 };
 const VERDICT_COLORS: Record<string, string> = {
-  true: 'text-green-400', false: 'text-red-400',
-  misleading: 'text-orange-400', unverifiable: 'text-gray-400', context_needed: 'text-blue-400',
+  true: 'text-green-600', false: 'text-red-600',
+  misleading: 'text-orange-600', unverifiable: 'text-[#777777]', context_needed: 'text-blue-600',
 };
 
 function flattenResults(data: ApiResponse): SearchResult[] {
@@ -43,7 +43,7 @@ function flattenResults(data: ApiResponse): SearchResult[] {
       sublabel: c.party_name,
       href: `/candidatos/${c.slug ?? c.id}`,
       badge: c.polling_percentage ? `${c.polling_percentage}%` : undefined,
-      badgeColor: 'text-[#d4af37]',
+      badgeColor: 'text-[#1A56A0]',
     });
   }
   for (const fc of (data.factChecks ?? [])) {
@@ -148,15 +148,15 @@ export function SearchModal({ isOpen, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-start justify-center pt-[15vh] px-4"
+      className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-start justify-center pt-[15vh] px-4"
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
       aria-label="Búsqueda"
     >
-      <div className="w-full max-w-2xl bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl overflow-hidden">
-        <div className="flex items-center gap-3 px-4 py-4 border-b border-gray-800">
-          <span className="text-gray-500 text-lg flex-shrink-0">🔍</span>
+      <div className="w-full max-w-2xl bg-white border border-[#E5E3DE] rounded-2xl shadow-2xl overflow-hidden">
+        <div className="flex items-center gap-3 px-4 py-4 border-b border-[#E5E3DE]">
+          <span className="text-[#777777] text-lg flex-shrink-0">🔍</span>
           <input
             ref={inputRef}
             type="text"
@@ -164,10 +164,10 @@ export function SearchModal({ isOpen, onClose }: Props) {
             onChange={handleQueryChange}
             onKeyDown={handleKeyDown}
             placeholder="Buscar candidatos, verificaciones, regiones..."
-            className="flex-1 bg-transparent text-white placeholder-gray-600 text-base outline-none"
+            className="flex-1 bg-transparent text-[#111111] placeholder-[#999999] text-base outline-none"
           />
-          {loading && <span className="text-gray-600 text-xs flex-shrink-0">Buscando...</span>}
-          <kbd className="hidden sm:inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-gray-500 text-xs flex-shrink-0">
+          {loading && <span className="text-[#777777] text-xs flex-shrink-0">Buscando...</span>}
+          <kbd className="hidden sm:inline-flex items-center px-2 py-1 bg-[#EEEDE9] border border-[#E5E3DE] rounded text-[#777777] text-xs flex-shrink-0">
             Esc
           </kbd>
         </div>
@@ -179,19 +179,19 @@ export function SearchModal({ isOpen, onClose }: Props) {
                 key={`${r.type}-${r.id}`}
                 href={r.href}
                 onClick={onClose}
-                className={`flex items-center gap-3 px-4 py-3 transition-colors border-b border-gray-800/50 last:border-0 ${
-                  i === activeIndex ? 'bg-gray-800' : 'hover:bg-gray-800/50'
+                className={`flex items-center gap-3 px-4 py-3 transition-colors border-b border-[#E5E3DE] last:border-0 ${
+                  i === activeIndex ? 'bg-[#EEEDE9]' : 'hover:bg-[#F7F6F3]'
                 }`}
               >
                 <span className="text-lg flex-shrink-0">{TYPE_ICONS[r.type]}</span>
                 <div className="flex-1 min-w-0">
-                  <div className="text-gray-200 text-sm font-medium truncate">{r.label}</div>
-                  {r.sublabel && <div className="text-gray-500 text-xs truncate">{r.sublabel}</div>}
+                  <div className="text-[#222222] text-sm font-medium truncate">{r.label}</div>
+                  {r.sublabel && <div className="text-[#777777] text-xs truncate">{r.sublabel}</div>}
                 </div>
                 {r.badge && (
                   <span className={`text-xs font-semibold flex-shrink-0 ${r.badgeColor}`}>{r.badge}</span>
                 )}
-                <span className="text-gray-600 text-xs flex-shrink-0">→</span>
+                <span className="text-[#777777] text-xs flex-shrink-0">→</span>
               </a>
             ))}
 
@@ -199,19 +199,19 @@ export function SearchModal({ isOpen, onClose }: Props) {
               <a
                 href={`/buscar?q=${encodeURIComponent(query)}`}
                 onClick={onClose}
-                className="flex items-center justify-center gap-2 px-4 py-3 text-[#d4af37] text-sm hover:bg-gray-800/50 transition-colors"
+                className="flex items-center justify-center gap-2 px-4 py-3 text-[#1A56A0] text-sm hover:bg-[#F7F6F3] transition-colors"
               >
                 Ver todos los resultados para &quot;{query}&quot; →
               </a>
             )}
           </div>
         ) : query.trim() && !loading ? (
-          <div className="px-4 py-8 text-center text-gray-500 text-sm">
+          <div className="px-4 py-8 text-center text-[#777777] text-sm">
             No se encontraron resultados para &quot;{query}&quot;
           </div>
         ) : !query.trim() ? (
           <div className="px-4 py-6">
-            <p className="text-gray-600 text-xs font-medium uppercase tracking-wide mb-3">Búsquedas populares</p>
+            <p className="text-[#777777] text-xs font-medium uppercase tracking-wide mb-3">Búsquedas populares</p>
             <div className="flex flex-wrap gap-2">
               {['Keiko Fujimori', 'López Aliaga', 'Cajamarca', 'minería', 'corrupción'].map(s => (
                 <button
@@ -220,13 +220,13 @@ export function SearchModal({ isOpen, onClose }: Props) {
                     setQuery(s);
                     doSearch(s);
                   }}
-                  className="px-3 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-gray-400 text-xs hover:border-[#d4af37]/50 hover:text-[#d4af37] transition-colors"
+                  className="px-3 py-1.5 bg-[#EEEDE9] border border-[#E5E3DE] rounded-full text-[#777777] text-xs hover:border-[#1A56A0]/50 hover:text-[#1A56A0] transition-colors"
                 >
                   {s}
                 </button>
               ))}
             </div>
-            <div className="mt-4 pt-4 border-t border-gray-800 flex items-center justify-between text-gray-600 text-xs">
+            <div className="mt-4 pt-4 border-t border-[#E5E3DE] flex items-center justify-between text-[#777777] text-xs">
               <span>↑↓ navegar</span>
               <span>↵ seleccionar</span>
               <span>Esc cerrar</span>

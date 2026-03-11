@@ -30,12 +30,12 @@ export function CandidateShareButtons({ candidate }: Props) {
 
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-gray-500 text-xs font-medium uppercase tracking-wide">Compartir</p>
+      <p className="text-[#777777] text-xs font-medium uppercase tracking-wide">Compartir</p>
       <a
         href={`https://wa.me/?text=${whatsappText}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-3 py-2 bg-green-800/30 hover:bg-green-800/50 border border-green-800 rounded-lg text-green-300 text-xs font-medium transition-colors"
+        className="flex items-center gap-2 px-3 py-2 bg-[#F0FAF4] hover:bg-[#DCFCE7] border border-[#2D7D46] rounded-lg text-[#1A6B35] text-xs font-medium transition-colors"
       >
         <span>📱</span> WhatsApp
       </a>
@@ -43,13 +43,13 @@ export function CandidateShareButtons({ candidate }: Props) {
         href={`https://twitter.com/intent/tweet?text=${twitterText}&url=${encodeURIComponent(profileUrl)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-3 py-2 bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800 rounded-lg text-blue-300 text-xs font-medium transition-colors"
+        className="flex items-center gap-2 px-3 py-2 bg-[#EEF4FF] hover:bg-[#DBEAFE] border border-[#1A56A0] rounded-lg text-[#1A56A0] text-xs font-medium transition-colors"
       >
         <span>🐦</span> Twitter/X
       </a>
       <button
         onClick={copyLink}
-        className="flex items-center gap-2 px-3 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-gray-300 text-xs font-medium transition-colors"
+        className="flex items-center gap-2 px-3 py-2 bg-[#F7F6F3] hover:bg-[#EEEDE9] border border-[#E5E3DE] rounded-lg text-[#444444] text-xs font-medium transition-colors"
       >
         <span>{copied ? '✅' : '🔗'}</span> {copied ? 'Copiado' : 'Copiar link'}
       </button>

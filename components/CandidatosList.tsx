@@ -82,21 +82,21 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
   return (
     <>
       {/* Filters */}
-      <section className="border-b border-votoclaro-border py-4 bg-votoclaro-surface sticky top-16 z-40">
+      <section className="bg-[#F7F6F3] sticky top-16 z-40 border-b border-[#E5E3DE] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row gap-3">
             {/* Search */}
             <div className="relative flex-1">
               <Search
                 size={16}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-votoclaro-text-muted"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#777777]"
               />
               <input
                 type="text"
                 placeholder="Buscar candidato o partido..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-9 pr-4 py-2.5 bg-votoclaro-surface-2 border border-votoclaro-border rounded-lg text-sm text-votoclaro-text placeholder-votoclaro-text-muted focus:outline-none focus:border-votoclaro-gold transition-colors"
+                className="w-full pl-9 pr-4 py-2.5 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#111111] placeholder-[#999999] focus:outline-none focus:border-[#1A56A0] transition-colors"
               />
             </div>
 
@@ -104,10 +104,10 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
             <select
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
-              className="px-3 py-2.5 bg-votoclaro-surface-2 border border-votoclaro-border rounded-lg text-sm text-votoclaro-text focus:outline-none focus:border-votoclaro-gold transition-colors"
+              className="px-3 py-2.5 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#111111] focus:outline-none focus:border-[#1A56A0] transition-colors"
             >
               {ROLE_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value} className="bg-votoclaro-surface-2">
+                <option key={opt.value} value={opt.value} className="bg-white">
                   {opt.label}
                 </option>
               ))}
@@ -117,10 +117,10 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
             <select
               value={partyFilter}
               onChange={(e) => setPartyFilter(e.target.value)}
-              className="px-3 py-2.5 bg-votoclaro-surface-2 border border-votoclaro-border rounded-lg text-sm text-votoclaro-text focus:outline-none focus:border-votoclaro-gold transition-colors"
+              className="px-3 py-2.5 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#111111] focus:outline-none focus:border-[#1A56A0] transition-colors"
             >
               {partyOptions.map((opt) => (
-                <option key={opt.value} value={opt.value} className="bg-votoclaro-surface-2">
+                <option key={opt.value} value={opt.value} className="bg-white">
                   {opt.label}
                 </option>
               ))}
@@ -130,10 +130,10 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
             <select
               value={ideologyFilter}
               onChange={(e) => setIdeologyFilter(e.target.value)}
-              className="px-3 py-2.5 bg-votoclaro-surface-2 border border-votoclaro-border rounded-lg text-sm text-votoclaro-text focus:outline-none focus:border-votoclaro-gold transition-colors"
+              className="px-3 py-2.5 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#111111] focus:outline-none focus:border-[#1A56A0] transition-colors"
             >
               {ideologyOptions.map((opt) => (
-                <option key={opt.value} value={opt.value} className="bg-votoclaro-surface-2">
+                <option key={opt.value} value={opt.value} className="bg-white">
                   {opt.label}
                 </option>
               ))}
@@ -147,7 +147,7 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filtered.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-votoclaro-text-muted text-lg">
+              <p className="text-[#777777] text-lg">
                 No se encontraron candidatos con ese criterio.
               </p>
               <button
@@ -157,14 +157,14 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
                   setPartyFilter('')
                   setIdeologyFilter('')
                 }}
-                className="mt-4 text-sm text-votoclaro-gold hover:underline"
+                className="mt-4 text-sm text-[#1A56A0] hover:underline"
               >
                 Limpiar filtros
               </button>
             </div>
           ) : (
             <>
-              <p className="text-xs text-votoclaro-text-muted mb-6">
+              <p className="text-xs text-[#777777] mb-6">
                 Mostrando {Math.min(visibleCount, filtered.length)} de {filtered.length} candidato
                 {filtered.length !== 1 ? 's' : ''}
               </p>
@@ -177,7 +177,7 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
                 <div className="mt-8 text-center">
                   <button
                     onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
-                    className="px-6 py-3 bg-votoclaro-surface-2 border border-votoclaro-border rounded-lg text-sm text-votoclaro-text hover:border-votoclaro-gold transition-colors"
+                    className="px-6 py-3 bg-[#F7F6F3] border border-[#E5E3DE] rounded-lg text-sm text-[#111111] hover:border-[#1A56A0] transition-colors"
                   >
                     Ver más candidatos ({filtered.length - visibleCount} restantes)
                   </button>

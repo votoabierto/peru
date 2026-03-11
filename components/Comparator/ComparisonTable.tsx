@@ -14,9 +14,9 @@ const COMPARISON_ISSUE_LABELS: Record<string, string> = {
 };
 
 const STANCE_BADGE: Record<string, { cls: string; label: string }> = {
-  favor:   { cls: 'bg-green-900/60 text-green-300 border border-green-800',   label: 'Favor' },
-  neutral: { cls: 'bg-gray-800 text-gray-400 border border-gray-700',         label: 'Neutral' },
-  against: { cls: 'bg-red-900/60 text-red-300 border border-red-800',         label: 'Contra' },
+  favor:   { cls: 'bg-[#F0FAF4] text-[#1A6B35] border border-[#2D7D46]',   label: 'Favor' },
+  neutral: { cls: 'bg-[#F9FAFB] text-[#4B5563] border border-[#9CA3AF]',    label: 'Neutral' },
+  against: { cls: 'bg-[#FEF2F2] text-[#9B1C1C] border border-[#DC2626]',   label: 'Contra' },
 };
 
 interface Props {
@@ -50,17 +50,17 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
 
   return (
     <div className="overflow-x-auto -mx-4 md:mx-0">
-      <div className="min-w-[600px] bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
+      <div className="min-w-[600px] bg-white border border-[#E5E3DE] rounded-xl overflow-hidden">
         {/* Header */}
-        <div className="grid divide-x divide-gray-800" style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}>
-          <div className="p-4 bg-gray-900/50" />
+        <div className="grid divide-x divide-[#E5E3DE]" style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}>
+          <div className="p-4 bg-[#F7F6F3]" />
           {candidateCols.map(c => (
-            <div key={c.id} className="p-4 text-center border-b border-gray-800">
-              <div className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-lg font-bold text-white mx-auto mb-2">
+            <div key={c.id} className="p-4 text-center border-b border-[#E5E3DE]">
+              <div className="w-12 h-12 rounded-full bg-[#EEEDE9] flex items-center justify-center text-lg font-bold text-[#111111] mx-auto mb-2">
                 {c.initials}
               </div>
-              <div className="text-white font-semibold text-sm leading-tight">{c.full_name}</div>
-              <div className="text-[#d4af37] text-xs mt-0.5">{c.party_name}</div>
+              <div className="text-[#111111] font-semibold text-sm leading-tight">{c.full_name}</div>
+              <div className="text-[#1A56A0] text-xs mt-0.5">{c.party_name}</div>
             </div>
           ))}
         </div>
@@ -75,12 +75,12 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
         ].map((row, i) => (
           <div
             key={row.label}
-            className={`grid divide-x divide-gray-800 border-b border-gray-800 ${i % 2 === 0 ? 'bg-gray-900/30' : ''}`}
+            className={`grid divide-x divide-[#E5E3DE] border-b border-[#E5E3DE] ${i % 2 === 0 ? 'bg-[#F7F6F3]' : ''}`}
             style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}
           >
-            <div className="px-4 py-3 text-gray-400 text-xs font-medium flex items-center">{row.label}</div>
+            <div className="px-4 py-3 text-[#777777] text-xs font-medium flex items-center">{row.label}</div>
             {candidates.map(c => (
-              <div key={c.id} className="px-4 py-3 text-gray-200 text-sm text-center font-medium">
+              <div key={c.id} className="px-4 py-3 text-[#222222] text-sm text-center font-medium">
                 {row.render(c)}
               </div>
             ))}
@@ -88,21 +88,21 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
         ))}
 
         {/* Issue positions */}
-        <div className="px-4 py-3 bg-gray-800/50 border-b border-gray-700">
-          <span className="text-gray-300 text-xs font-semibold uppercase tracking-wide">Posiciones por tema</span>
+        <div className="px-4 py-3 bg-[#EEEDE9] border-b border-[#E5E3DE]">
+          <span className="text-[#444444] text-xs font-semibold uppercase tracking-wide">Posiciones por tema</span>
         </div>
         {Object.entries(COMPARISON_ISSUE_LABELS).map(([area, label], i) => (
           <div
             key={area}
-            className={`grid divide-x divide-gray-800 border-b border-gray-800 ${i % 2 === 0 ? 'bg-gray-900/20' : ''}`}
+            className={`grid divide-x divide-[#E5E3DE] border-b border-[#E5E3DE] ${i % 2 === 0 ? 'bg-[#F7F6F3]' : ''}`}
             style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}
           >
-            <div className="px-4 py-3 text-gray-400 text-xs font-medium flex items-center">{label}</div>
+            <div className="px-4 py-3 text-[#777777] text-xs font-medium flex items-center">{label}</div>
             {candidates.map(c => {
               const pos = positionMap[c.id]?.[area];
               if (!pos) return (
                 <div key={c.id} className="px-2 py-3 text-center">
-                  <span className="text-gray-700 text-xs">—</span>
+                  <span className="text-[#CBCAC5] text-xs">—</span>
                 </div>
               );
               const badge = STANCE_BADGE[pos.stance] ?? STANCE_BADGE.neutral;
@@ -113,7 +113,7 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
                   </span>
                   {/* Tooltip */}
                   {pos.stance_description && (
-                    <div className="hidden group-hover:block absolute z-20 bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-gray-800 border border-gray-600 rounded-lg p-3 text-xs text-gray-300 text-left shadow-xl">
+                    <div className="hidden group-hover:block absolute z-20 bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-white border border-[#E5E3DE] rounded-lg p-3 text-xs text-[#444444] text-left shadow-xl">
                       {pos.stance_description}
                     </div>
                   )}

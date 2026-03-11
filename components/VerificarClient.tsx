@@ -46,7 +46,7 @@ export default function VerificarClient({
   return (
     <>
       {/* Verdict summary */}
-      <section className="border-b border-votoclaro-border py-6 bg-votoclaro-surface">
+      <section className="border-b border-[#E5E3DE] py-6 bg-[#F7F6F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-3">
             {ALL_VERDICTS.map((verdict) => {
@@ -55,7 +55,7 @@ export default function VerificarClient({
               return (
                 <div key={verdict} className="flex items-center gap-2">
                   <FactCheckBadge verdict={verdict} size="sm" />
-                  <span className="text-xs text-votoclaro-text-muted">({count})</span>
+                  <span className="text-xs text-[#777777]">({count})</span>
                 </div>
               )
             })}
@@ -64,7 +64,7 @@ export default function VerificarClient({
       </section>
 
       {/* Tabs */}
-      <section className="border-b border-votoclaro-border bg-votoclaro-surface sticky top-16 z-40">
+      <section className="border-b border-[#E5E3DE] bg-[#F7F6F3] sticky top-16 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-1 overflow-x-auto py-2 no-scrollbar">
             {VERDICT_TABS.map((tab) => {
@@ -78,14 +78,14 @@ export default function VerificarClient({
                   onClick={() => setActiveTab(tab.value)}
                   className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                     activeTab === tab.value
-                      ? 'bg-votoclaro-gold text-votoclaro-base'
-                      : 'text-votoclaro-text-muted hover:text-votoclaro-gold hover:bg-votoclaro-surface-2'
+                      ? 'bg-[#1A56A0] text-white'
+                      : 'text-[#777777] hover:text-[#1A56A0] hover:bg-[#EEEDE9]'
                   }`}
                 >
                   {tab.label}
                   <span
                     className={`ml-1.5 text-xs ${
-                      activeTab === tab.value ? 'text-votoclaro-base/70' : 'text-votoclaro-text-muted'
+                      activeTab === tab.value ? 'text-white/70' : 'text-[#777777]'
                     }`}
                   >
                     ({count})
@@ -102,7 +102,7 @@ export default function VerificarClient({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filtered.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-votoclaro-text-muted">
+              <p className="text-[#777777]">
                 No hay verificaciones con ese veredicto.
               </p>
             </div>
@@ -113,26 +113,26 @@ export default function VerificarClient({
                 return (
                   <article
                     key={fc.id}
-                    className="bg-votoclaro-surface border border-votoclaro-border rounded-xl p-5 flex flex-col gap-3 hover:border-votoclaro-gold/40 transition-colors"
+                    className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-5 flex flex-col gap-3 hover:border-[#1A56A0]/40 transition-colors"
                   >
                     {/* Candidate */}
                     {candidate && (
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-semibold text-votoclaro-gold">
+                        <span className="text-xs font-semibold text-[#1A56A0]">
                           {candidate.common_name ?? candidate.full_name}
-                          <span className="text-votoclaro-text-muted font-normal ml-1">
+                          <span className="text-[#777777] font-normal ml-1">
                             · {candidate.party_abbreviation}
                           </span>
                         </span>
-                        <span className="text-xs text-votoclaro-text-muted">
+                        <span className="text-xs text-[#777777]">
                           {formatDate(fc.checked_at ?? fc.date_checked ?? '')}
                         </span>
                       </div>
                     )}
 
                     {/* Claim */}
-                    <blockquote className="border-l-2 border-votoclaro-border pl-3">
-                      <p className="text-sm text-votoclaro-text leading-relaxed italic">
+                    <blockquote className="border-l-2 border-[#E5E3DE] pl-3">
+                      <p className="text-sm text-[#111111] leading-relaxed italic">
                         &ldquo;{fc.claim}&rdquo;
                       </p>
                     </blockquote>
@@ -143,7 +143,7 @@ export default function VerificarClient({
                     </div>
 
                     {/* Explanation */}
-                    <p className="text-sm text-votoclaro-text-muted leading-relaxed">
+                    <p className="text-sm text-[#777777] leading-relaxed">
                       {fc.explanation}
                     </p>
 
@@ -153,7 +153,7 @@ export default function VerificarClient({
                         href={fc.source_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-auto inline-flex items-center gap-1.5 text-xs text-votoclaro-text-muted hover:text-votoclaro-gold transition-colors"
+                        className="mt-auto inline-flex items-center gap-1.5 text-xs text-[#777777] hover:text-[#1A56A0] transition-colors"
                       >
                         <ExternalLink size={12} />
                         Ver fuente
@@ -168,23 +168,23 @@ export default function VerificarClient({
       </section>
 
       {/* Methodology note */}
-      <section className="py-8 border-t border-votoclaro-border">
+      <section className="py-8 border-t border-[#E5E3DE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-votoclaro-surface border border-votoclaro-border rounded-xl p-5">
-            <h3 className="text-sm font-semibold text-votoclaro-text mb-2">
+          <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-5">
+            <h3 className="text-sm font-semibold text-[#111111] mb-2">
               Metodología de verificación
             </h3>
-            <p className="text-xs text-votoclaro-text-muted leading-relaxed">
+            <p className="text-xs text-[#777777] leading-relaxed">
               Cada verificación analiza una afirmación pública de un candidato. Usamos
               fuentes oficiales (INEI, BCR, JNE, ONPE, Poder Judicial) y medios de
               comunicación verificables. Los veredictos son:{' '}
-              <strong className="text-green-400">Verdadero</strong> (se sostiene con
-              evidencia), <strong className="text-red-400">Falso</strong> (contradice la
-              evidencia), <strong className="text-orange-400">Engañoso</strong> (contiene
+              <strong className="text-[#1A6B35]">Verdadero</strong> (se sostiene con
+              evidencia), <strong className="text-[#9B1C1C]">Falso</strong> (contradice la
+              evidencia), <strong className="text-orange-600">Engañoso</strong> (contiene
               verdad parcial con contexto distorsionado),{' '}
-              <strong className="text-gray-400">No verificable</strong> (sin datos
+              <strong className="text-[#777777]">No verificable</strong> (sin datos
               suficientes) y{' '}
-              <strong className="text-blue-400">Necesita contexto</strong> (la afirmación
+              <strong className="text-blue-600">Necesita contexto</strong> (la afirmación
               es incompleta sin información adicional).
             </p>
           </div>

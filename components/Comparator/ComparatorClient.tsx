@@ -44,22 +44,22 @@ export function ComparatorClient({ initialSelected, allCandidates, allPositions 
   return (
     <div className="space-y-8">
       {/* Selector */}
-      <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
-        <h2 className="text-white font-semibold mb-4">
+      <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-6">
+        <h2 className="text-[#111111] font-semibold mb-4">
           Candidatos seleccionados ({selected.length}/3)
         </h2>
 
         {/* Selected chips */}
         <div className="flex flex-wrap gap-3 mb-4">
           {selected.map(c => (
-            <div key={c.id} className="flex items-center gap-2 bg-gray-800 border border-gray-700 rounded-full px-3 py-1.5">
-              <div className="w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs font-bold text-white">
+            <div key={c.id} className="flex items-center gap-2 bg-[#EEEDE9] border border-[#E5E3DE] rounded-full px-3 py-1.5">
+              <div className="w-6 h-6 rounded-full bg-[#EEEDE9] flex items-center justify-center text-xs font-bold text-[#111111]">
                 {c.full_name.split(' ')[0][0]}
               </div>
-              <span className="text-gray-200 text-sm">{c.full_name.split(' ')[0]}</span>
+              <span className="text-[#222222] text-sm">{c.full_name.split(' ')[0]}</span>
               <button
                 onClick={() => removeCandidate(c.id)}
-                className="text-gray-500 hover:text-red-400 transition-colors ml-1 text-xs"
+                className="text-[#777777] hover:text-[#9B1C1C] transition-colors ml-1 text-xs"
                 aria-label={`Quitar a ${c.full_name}`}
               >
                 ✕
@@ -67,7 +67,7 @@ export function ComparatorClient({ initialSelected, allCandidates, allPositions 
             </div>
           ))}
           {selected.length === 0 && (
-            <p className="text-gray-500 text-sm">Busca y añade candidatos abajo</p>
+            <p className="text-[#777777] text-sm">Busca y añade candidatos abajo</p>
           )}
         </div>
 
@@ -92,7 +92,7 @@ export function ComparatorClient({ initialSelected, allCandidates, allPositions 
           </div>
         </>
       ) : (
-        <div className="text-center py-20 text-gray-600">
+        <div className="text-center py-20 text-[#777777]">
           <div className="text-4xl mb-4">⚖️</div>
           <p className="text-lg">Selecciona al menos 2 candidatos para comparar</p>
           <p className="text-sm mt-2">Puedes comparar hasta 3 candidatos</p>

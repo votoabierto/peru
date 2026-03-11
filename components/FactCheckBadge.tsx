@@ -7,19 +7,19 @@ export interface FactCheckBadgeProps {
 }
 
 const VERDICT_STYLES: Record<Verdict, string> = {
-  true: 'bg-green-900/60 border-green-700 text-green-300',
-  false: 'bg-red-900/60 border-red-700 text-red-300',
-  misleading: 'bg-orange-900/60 border-orange-700 text-orange-300',
-  unverifiable: 'bg-gray-700/60 border-gray-600 text-gray-300',
-  context_needed: 'bg-blue-900/60 border-blue-700 text-blue-300',
+  true: 'bg-[#F0FAF4] border-[#2D7D46] text-[#1A6B35]',
+  false: 'bg-[#FEF2F2] border-[#DC2626] text-[#9B1C1C]',
+  misleading: 'bg-[#FFFBEB] border-[#D97706] text-[#92400E]',
+  unverifiable: 'bg-[#F9FAFB] border-[#9CA3AF] text-[#4B5563]',
+  context_needed: 'bg-[#EEF4FF] border-[#1A56A0] text-[#1A56A0]',
 }
 
 const VERDICT_DOT: Record<Verdict, string> = {
-  true: 'bg-green-400',
-  false: 'bg-red-400',
-  misleading: 'bg-orange-400',
-  unverifiable: 'bg-gray-400',
-  context_needed: 'bg-blue-400',
+  true: 'bg-[#2D7D46]',
+  false: 'bg-[#DC2626]',
+  misleading: 'bg-[#D97706]',
+  unverifiable: 'bg-[#9CA3AF]',
+  context_needed: 'bg-[#1A56A0]',
 }
 
 const SIZE_CLASSES: Record<'sm' | 'md' | 'lg', string> = {

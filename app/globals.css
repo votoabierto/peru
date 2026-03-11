@@ -1,48 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-votoclaro-gold: #C9A84C;
-  --color-votoclaro-gold-light: #DFC068;
-  --color-votoclaro-gold-dark: #A8873A;
-  --color-votoclaro-base: #0A0A0A;
-  --color-votoclaro-surface: #141414;
-  --color-votoclaro-surface-2: #1E1E1E;
-  --color-votoclaro-text: #F5F5F5;
-  --color-votoclaro-text-muted: #A0A0A0;
-  --color-votoclaro-border: #2A2A2A;
-  --color-votoclaro-alert: #C0392B;
-  --color-votoclaro-success: #27AE60;
-  --color-votoclaro-warning: #E67E22;
-  --color-votoclaro-info: #2980B9;
+  --color-va-blue: #1A56A0;
+  --color-va-blue-hover: #0D3E7A;
+  --color-va-blue-subtle: #EEF4FF;
+  --color-va-red: #D91023;
+  --color-va-bg: #FFFFFF;
+  --color-va-bg-secondary: #F7F6F3;
+  --color-va-bg-tertiary: #EEEDE9;
+  --color-va-bg-inverse: #111111;
+  --color-va-text: #111111;
+  --color-va-text-secondary: #444444;
+  --color-va-text-muted: #777777;
+  --color-va-text-inverse: #F5F5F5;
+  --color-va-border: #E5E3DE;
+  --color-va-border-strong: #CBCAC5;
+  --color-va-alert: #9B1C1C;
 
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Noto Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
 :root {
-  --gold: #C9A84C;
-  --base: #0A0A0A;
-  --surface: #141414;
-  --text: #F5F5F5;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F7F6F3;
+  --bg-tertiary: #EEEDE9;
+  --bg-inverse: #111111;
+  --text-primary: #111111;
+  --text-secondary: #444444;
+  --text-muted: #777777;
+  --text-inverse: #F5F5F5;
+  --text-link: #1A56A0;
+  --text-link-hover: #0D3E7A;
+  --accent-primary: #1A56A0;
+  --accent-primary-hover: #0D3E7A;
+  --accent-primary-subtle: #EEF4FF;
+  --peru-red: #D91023;
+  --verdict-true-bg: #F0FAF4;
+  --verdict-true-text: #1A6B35;
+  --verdict-true-border: #2D7D46;
+  --verdict-false-bg: #FEF2F2;
+  --verdict-false-text: #9B1C1C;
+  --verdict-false-border: #DC2626;
+  --verdict-misleading-bg: #FFFBEB;
+  --verdict-misleading-text: #92400E;
+  --verdict-misleading-border: #D97706;
+  --verdict-unverified-bg: #F9FAFB;
+  --verdict-unverified-text: #4B5563;
+  --verdict-unverified-border: #9CA3AF;
+  --border-default: #E5E3DE;
+  --border-strong: #CBCAC5;
+  --border-focus: #1A56A0;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-hover: 0 4px 12px rgba(0,0,0,0.10);
 }
 
 body {
-  background-color: #0A0A0A;
-  color: #F5F5F5;
-  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-votoclaro-gold text-votoclaro-base font-semibold px-5 py-2.5 rounded-lg hover:bg-votoclaro-gold-light transition-colors;
+    @apply bg-va-blue text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-va-blue-hover transition-colors;
   }
 
   .btn-outline {
-    @apply border border-votoclaro-border text-votoclaro-text px-5 py-2.5 rounded-lg hover:border-votoclaro-gold hover:text-votoclaro-gold transition-colors;
+    @apply border border-va-border text-va-text-secondary px-5 py-2.5 rounded-lg hover:border-va-blue hover:text-va-blue transition-colors;
   }
 
   .card {
-    @apply bg-votoclaro-surface border border-votoclaro-border rounded-xl p-5 hover:border-votoclaro-gold/40 transition-colors;
+    @apply bg-white border border-va-border rounded-xl p-5 hover:shadow-md transition-all;
   }
 
   .badge {
@@ -50,10 +80,10 @@ body {
   }
 
   .section-title {
-    @apply text-2xl font-bold text-votoclaro-text;
+    @apply text-2xl font-bold text-va-text;
   }
 
   .label {
-    @apply text-xs font-medium text-votoclaro-text-muted uppercase tracking-wider;
+    @apply text-xs font-semibold text-va-text-muted uppercase tracking-wider;
   }
 }

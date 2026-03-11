@@ -44,25 +44,25 @@ function CandidateSelector({
 
   if (selected) {
     return (
-      <div className="bg-votoclaro-surface border border-votoclaro-gold/40 rounded-xl p-4 relative">
+      <div className="bg-[#F7F6F3] border border-[#1A56A0]/40 rounded-xl p-4 relative">
         <button
           onClick={onClear}
-          className="absolute top-3 right-3 text-votoclaro-text-muted hover:text-votoclaro-alert transition-colors"
+          className="absolute top-3 right-3 text-[#777777] hover:text-[#9B1C1C] transition-colors"
           aria-label="Quitar candidato"
         >
           <X size={16} />
         </button>
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-full bg-votoclaro-surface-2 border border-votoclaro-border flex items-center justify-center flex-shrink-0">
-            <span className="text-sm font-bold text-votoclaro-text-muted">
+          <div className="w-12 h-12 rounded-full bg-[#EEEDE9] border border-[#E5E3DE] flex items-center justify-center flex-shrink-0">
+            <span className="text-sm font-bold text-[#777777]">
               {getInitials(selected.full_name)}
             </span>
           </div>
           <div>
-            <p className="text-sm font-semibold text-votoclaro-text leading-tight">
+            <p className="text-sm font-semibold text-[#111111] leading-tight">
               {selected.common_name ?? selected.full_name}
             </p>
-            <p className="text-xs text-votoclaro-text-muted">
+            <p className="text-xs text-[#777777]">
               {selected.party_abbreviation} · {ROLE_LABELS[selected.role]}
             </p>
           </div>
@@ -72,8 +72,8 @@ function CandidateSelector({
   }
 
   return (
-    <div className="bg-votoclaro-surface border border-votoclaro-border rounded-xl p-4">
-      <p className="text-xs text-votoclaro-text-muted mb-2 font-medium">
+    <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4">
+      <p className="text-xs text-[#777777] mb-2 font-medium">
         Candidato {slot}
       </p>
       <select
@@ -82,13 +82,13 @@ function CandidateSelector({
           if (c) onSelect(c)
         }}
         defaultValue=""
-        className="w-full px-3 py-2 bg-votoclaro-surface-2 border border-votoclaro-border rounded-lg text-sm text-votoclaro-text focus:outline-none focus:border-votoclaro-gold transition-colors"
+        className="w-full px-3 py-2 bg-[#EEEDE9] border border-[#E5E3DE] rounded-lg text-sm text-[#111111] focus:outline-none focus:border-[#1A56A0] transition-colors"
       >
-        <option value="" disabled className="bg-votoclaro-surface-2">
+        <option value="" disabled className="bg-[#EEEDE9]">
           Selecciona un candidato...
         </option>
         {available.map((c) => (
-          <option key={c.id} value={c.id} className="bg-votoclaro-surface-2">
+          <option key={c.id} value={c.id} className="bg-[#EEEDE9]">
             {c.full_name} ({c.party_abbreviation})
           </option>
         ))}
@@ -155,8 +155,8 @@ export default function CompararClient({
       </div>
 
       {selected.length === 0 ? (
-        <div className="text-center py-20 border border-dashed border-votoclaro-border rounded-xl">
-          <p className="text-votoclaro-text-muted text-lg">
+        <div className="text-center py-20 border border-dashed border-[#E5E3DE] rounded-xl">
+          <p className="text-[#777777] text-lg">
             Selecciona al menos un candidato para comenzar la comparación.
           </p>
         </div>
@@ -167,13 +167,13 @@ export default function CompararClient({
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left py-3 px-4 text-xs font-semibold text-votoclaro-text-muted uppercase tracking-wider bg-votoclaro-surface border border-votoclaro-border rounded-tl-lg w-40">
+                  <th className="text-left py-3 px-4 text-xs font-semibold text-[#777777] uppercase tracking-wider bg-[#F7F6F3] border border-[#E5E3DE] rounded-tl-lg w-40">
                     Campo
                   </th>
                   {selected.map((c) => (
                     <th
                       key={c.id}
-                      className="text-left py-3 px-4 text-sm font-semibold text-votoclaro-gold bg-votoclaro-surface border border-votoclaro-border"
+                      className="text-left py-3 px-4 text-sm font-semibold text-[#1A56A0] bg-[#F7F6F3] border border-[#E5E3DE]"
                     >
                       {c.common_name ?? c.full_name}
                     </th>
@@ -183,24 +183,24 @@ export default function CompararClient({
               <tbody>
                 {/* Partido */}
                 <tr>
-                  <td className="py-3 px-4 text-xs font-medium text-votoclaro-text-muted bg-votoclaro-surface border border-votoclaro-border">
+                  <td className="py-3 px-4 text-xs font-medium text-[#777777] bg-[#F7F6F3] border border-[#E5E3DE]">
                     Partido
                   </td>
                   {selected.map((c) => (
-                    <td key={c.id} className="py-3 px-4 text-sm text-votoclaro-text bg-votoclaro-surface-2 border border-votoclaro-border">
+                    <td key={c.id} className="py-3 px-4 text-sm text-[#111111] bg-[#EEEDE9] border border-[#E5E3DE]">
                       <span className="font-semibold">{c.party_abbreviation}</span>
-                      <span className="text-votoclaro-text-muted ml-1">— {c.party_name}</span>
+                      <span className="text-[#777777] ml-1">— {c.party_name}</span>
                     </td>
                   ))}
                 </tr>
 
                 {/* Ideología */}
                 <tr>
-                  <td className="py-3 px-4 text-xs font-medium text-votoclaro-text-muted bg-votoclaro-surface border border-votoclaro-border">
+                  <td className="py-3 px-4 text-xs font-medium text-[#777777] bg-[#F7F6F3] border border-[#E5E3DE]">
                     Ideología
                   </td>
                   {selected.map((c) => (
-                    <td key={c.id} className="py-3 px-4 text-sm text-votoclaro-text bg-votoclaro-surface-2 border border-votoclaro-border">
+                    <td key={c.id} className="py-3 px-4 text-sm text-[#111111] bg-[#EEEDE9] border border-[#E5E3DE]">
                       {c.ideology ? (IDEOLOGY_LABELS[c.ideology] ?? c.ideology) : '—'}
                     </td>
                   ))}
@@ -208,17 +208,17 @@ export default function CompararClient({
 
                 {/* Encuesta */}
                 <tr>
-                  <td className="py-3 px-4 text-xs font-medium text-votoclaro-text-muted bg-votoclaro-surface border border-votoclaro-border">
+                  <td className="py-3 px-4 text-xs font-medium text-[#777777] bg-[#F7F6F3] border border-[#E5E3DE]">
                     Intención de voto
                   </td>
                   {selected.map((c) => (
-                    <td key={c.id} className="py-3 px-4 bg-votoclaro-surface-2 border border-votoclaro-border">
+                    <td key={c.id} className="py-3 px-4 bg-[#EEEDE9] border border-[#E5E3DE]">
                       {c.current_polling !== undefined ? (
-                        <span className="text-lg font-bold text-votoclaro-gold">
+                        <span className="text-lg font-bold text-[#1A56A0]">
                           {c.current_polling.toFixed(1)}%
                         </span>
                       ) : (
-                        <span className="text-votoclaro-text-muted">—</span>
+                        <span className="text-[#777777]">—</span>
                       )}
                     </td>
                   ))}
@@ -226,11 +226,11 @@ export default function CompararClient({
 
                 {/* Cargo */}
                 <tr>
-                  <td className="py-3 px-4 text-xs font-medium text-votoclaro-text-muted bg-votoclaro-surface border border-votoclaro-border">
+                  <td className="py-3 px-4 text-xs font-medium text-[#777777] bg-[#F7F6F3] border border-[#E5E3DE]">
                     Cargo
                   </td>
                   {selected.map((c) => (
-                    <td key={c.id} className="py-3 px-4 text-sm text-votoclaro-text bg-votoclaro-surface-2 border border-votoclaro-border">
+                    <td key={c.id} className="py-3 px-4 text-sm text-[#111111] bg-[#EEEDE9] border border-[#E5E3DE]">
                       {ROLE_LABELS[c.role] ?? c.role}
                     </td>
                   ))}
@@ -238,18 +238,18 @@ export default function CompararClient({
 
                 {/* Antecedentes */}
                 <tr>
-                  <td className="py-3 px-4 text-xs font-medium text-votoclaro-text-muted bg-votoclaro-surface border border-votoclaro-border">
+                  <td className="py-3 px-4 text-xs font-medium text-[#777777] bg-[#F7F6F3] border border-[#E5E3DE]">
                     Antecedentes penales
                   </td>
                   {selected.map((c) => (
-                    <td key={c.id} className="py-3 px-4 bg-votoclaro-surface-2 border border-votoclaro-border">
+                    <td key={c.id} className="py-3 px-4 bg-[#EEEDE9] border border-[#E5E3DE]">
                       {c.has_criminal_record ? (
-                        <span className="inline-flex items-center gap-1 text-xs font-medium text-votoclaro-alert">
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-[#9B1C1C]">
                           <AlertTriangle size={13} />
                           Sí
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-xs font-medium text-green-400">
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-[#1A6B35]">
                           <CheckCircle size={13} />
                           No
                         </span>
@@ -264,38 +264,38 @@ export default function CompararClient({
           {/* Issue stances comparison */}
           {issuesWithData.length > 0 && (
             <div>
-              <h2 className="text-lg font-bold text-votoclaro-text mb-4">
+              <h2 className="text-lg font-bold text-[#111111] mb-4">
                 Posiciones por tema
               </h2>
               <div className="space-y-4">
                 {issuesWithData.map((issue) => {
                   const info = ISSUE_LABELS[issue]
                   return (
-                    <div key={issue} className="border border-votoclaro-border rounded-xl overflow-hidden">
+                    <div key={issue} className="border border-[#E5E3DE] rounded-xl overflow-hidden">
                       {/* Issue header */}
-                      <div className="bg-votoclaro-surface px-4 py-3 flex items-center gap-2">
+                      <div className="bg-[#F7F6F3] px-4 py-3 flex items-center gap-2">
                         <span className="text-lg" role="img" aria-label={info.label}>
                           {info.icon}
                         </span>
-                        <span className="text-sm font-semibold text-votoclaro-text">
+                        <span className="text-sm font-semibold text-[#111111]">
                           {info.label}
                         </span>
                       </div>
                       {/* Stance columns */}
-                      <div className={`grid grid-cols-1 sm:grid-cols-${selected.length} divide-y sm:divide-y-0 sm:divide-x divide-votoclaro-border`}>
+                      <div className={`grid grid-cols-1 sm:grid-cols-${selected.length} divide-y sm:divide-y-0 sm:divide-x divide-[#E5E3DE]`}>
                         {selected.map((c) => {
                           const stance = getStance(c.id, issue)
                           return (
-                            <div key={c.id} className="p-4 bg-votoclaro-surface-2">
-                              <p className="text-xs font-semibold text-votoclaro-gold mb-2">
+                            <div key={c.id} className="p-4 bg-[#EEEDE9]">
+                              <p className="text-xs font-semibold text-[#1A56A0] mb-2">
                                 {c.common_name ?? c.full_name}
                               </p>
                               {stance ? (
-                                <p className="text-xs text-votoclaro-text-muted leading-relaxed">
+                                <p className="text-xs text-[#777777] leading-relaxed">
                                   {stance}
                                 </p>
                               ) : (
-                                <p className="text-xs text-votoclaro-text-muted italic">
+                                <p className="text-xs text-[#777777] italic">
                                   Sin posición registrada.
                                 </p>
                               )}
@@ -311,14 +311,14 @@ export default function CompararClient({
           )}
 
           {/* Individual profile links */}
-          <div className="border-t border-votoclaro-border pt-6">
-            <p className="text-xs text-votoclaro-text-muted mb-3">Ver perfiles completos:</p>
+          <div className="border-t border-[#E5E3DE] pt-6">
+            <p className="text-xs text-[#777777] mb-3">Ver perfiles completos:</p>
             <div className="flex flex-wrap gap-3">
               {selected.map((c) => (
                 <Link
                   key={c.id}
                   href={`/candidatos/${c.slug}`}
-                  className="text-sm font-medium text-votoclaro-gold hover:underline"
+                  className="text-sm font-medium text-[#1A56A0] hover:underline"
                 >
                   {c.common_name ?? c.full_name} →
                 </Link>

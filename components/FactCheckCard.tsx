@@ -3,11 +3,11 @@ import { useState } from 'react';
 import type { FactCheck } from '@/lib/types';
 
 const VERDICT_CONFIG: Record<string, { bg: string; border: string; text: string; icon: string; label: string }> = {
-  true:           { bg: 'bg-green-900/20',  border: 'border-green-800',  text: 'text-green-300',  icon: '✅', label: 'Verdadero' },
-  false:          { bg: 'bg-red-900/20',    border: 'border-red-800',    text: 'text-red-300',    icon: '❌', label: 'Falso' },
-  misleading:     { bg: 'bg-orange-900/20', border: 'border-orange-800', text: 'text-orange-300', icon: '⚠️', label: 'Engañoso' },
-  unverifiable:   { bg: 'bg-gray-900/40',   border: 'border-gray-700',   text: 'text-gray-300',   icon: '❓', label: 'No verificable' },
-  context_needed: { bg: 'bg-blue-900/20',   border: 'border-blue-800',   text: 'text-blue-300',   icon: '📋', label: 'Necesita contexto' },
+  true:           { bg: 'bg-[#F0FAF4]',  border: 'border-[#2D7D46]',  text: 'text-[#1A6B35]',  icon: '✅', label: 'Verdadero' },
+  false:          { bg: 'bg-[#FEF2F2]',   border: 'border-[#DC2626]',  text: 'text-[#9B1C1C]',  icon: '❌', label: 'Falso' },
+  misleading:     { bg: 'bg-orange-50',    border: 'border-orange-400', text: 'text-orange-700',  icon: '⚠️', label: 'Engañoso' },
+  unverifiable:   { bg: 'bg-[#F9FAFB]',   border: 'border-[#9CA3AF]',  text: 'text-[#4B5563]',  icon: '❓', label: 'No verificable' },
+  context_needed: { bg: 'bg-blue-50',      border: 'border-blue-400',   text: 'text-blue-700',    icon: '📋', label: 'Necesita contexto' },
 };
 
 interface Props { factCheck: FactCheck; }
@@ -29,10 +29,10 @@ export function FactCheckCard({ factCheck: fc }: Props) {
           <div className="flex-1">
             {/* Candidate name */}
             {fc.candidate_name && (
-              <div className="text-votoclaro-text-muted text-xs mb-1">{fc.candidate_name}</div>
+              <div className="text-[#777777] text-xs mb-1">{fc.candidate_name}</div>
             )}
             {/* Claim */}
-            <blockquote className="text-votoclaro-text text-sm font-medium italic leading-relaxed">
+            <blockquote className="text-[#111111] text-sm font-medium italic leading-relaxed">
               &ldquo;{fc.claim}&rdquo;
             </blockquote>
           </div>
@@ -48,20 +48,20 @@ export function FactCheckCard({ factCheck: fc }: Props) {
 
         {expanded && (
           <div className="mt-3 space-y-3">
-            <p className="text-votoclaro-text-muted text-sm leading-relaxed">{fc.explanation}</p>
+            <p className="text-[#777777] text-sm leading-relaxed">{fc.explanation}</p>
             <div className="flex items-center justify-between">
               {sourceUrl && (
                 <a
                   href={sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-votoclaro-gold text-xs hover:underline inline-flex items-center gap-1"
+                  className="text-[#1A56A0] text-xs hover:underline inline-flex items-center gap-1"
                 >
                   🔗 Ver fuente
                 </a>
               )}
               {dateStr && (
-                <span className="text-votoclaro-text-muted text-xs">
+                <span className="text-[#777777] text-xs">
                   Verificado: {new Date(dateStr).toLocaleDateString('es-PE')}
                 </span>
               )}

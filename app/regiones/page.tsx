@@ -9,17 +9,17 @@ function formatPopulation(n: number): string {
 
 export default function RegionesPage() {
   return (
-    <div className="bg-votoclaro-base min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Page header */}
-      <section className="border-b border-votoclaro-border py-10 bg-votoclaro-surface">
+      <section className="border-b border-[#E5E3DE] py-10 bg-[#F7F6F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="label mb-2">Elecciones Perú 2026</p>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-votoclaro-text mb-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#111111] mb-2">
             Regiones
           </h1>
-          <p className="text-votoclaro-text-muted max-w-2xl">
-            El Perú tiene <strong className="text-votoclaro-text">25 regiones</strong> y{' '}
-            <strong className="text-votoclaro-text">27 distritos electorales</strong> (Lima
+          <p className="text-[#777777] max-w-2xl">
+            El Perú tiene <strong className="text-[#111111]">25 regiones</strong> y{' '}
+            <strong className="text-[#111111]">27 distritos electorales</strong> (Lima
             Metropolitana, Lima Provincias y Callao son distritos separados). Explora los
             temas más importantes por región.
           </p>
@@ -27,20 +27,20 @@ export default function RegionesPage() {
       </section>
 
       {/* Stats */}
-      <section className="border-b border-votoclaro-border py-6">
+      <section className="border-b border-[#E5E3DE] py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 gap-6 text-center max-w-md">
             <div>
-              <p className="text-2xl font-extrabold text-votoclaro-gold">25</p>
-              <p className="text-xs text-votoclaro-text-muted mt-1">Regiones</p>
+              <p className="text-2xl font-extrabold text-[#1A56A0]">25</p>
+              <p className="text-xs text-[#777777] mt-1">Regiones</p>
             </div>
             <div>
-              <p className="text-2xl font-extrabold text-votoclaro-gold">130</p>
-              <p className="text-xs text-votoclaro-text-muted mt-1">Escaños en Congreso</p>
+              <p className="text-2xl font-extrabold text-[#1A56A0]">130</p>
+              <p className="text-xs text-[#777777] mt-1">Escaños en Congreso</p>
             </div>
             <div>
-              <p className="text-2xl font-extrabold text-votoclaro-gold">33M</p>
-              <p className="text-xs text-votoclaro-text-muted mt-1">Electores aprox.</p>
+              <p className="text-2xl font-extrabold text-[#1A56A0]">33M</p>
+              <p className="text-xs text-[#777777] mt-1">Electores aprox.</p>
             </div>
           </div>
         </div>
@@ -54,24 +54,24 @@ export default function RegionesPage() {
               const href = `/regiones/${region.code.toLowerCase()}`
               return (
                 <Link key={region.code} href={href} className="block group">
-                  <div className="card group-hover:border-votoclaro-gold/60 transition-all duration-200 h-full flex flex-col">
+                  <div className="card group-hover:border-[#1A56A0]/60 transition-all duration-200 h-full flex flex-col">
                     {/* Header: code chip + congressional seats */}
                     <div className="flex items-start justify-between mb-3">
-                      <span className="text-xs font-bold text-votoclaro-gold bg-votoclaro-gold/10 border border-votoclaro-gold/30 rounded px-2 py-0.5 uppercase tracking-widest">
+                      <span className="text-xs font-bold text-[#1A56A0] bg-[#EEF4FF] border border-[#1A56A0]/30 rounded px-2 py-0.5 uppercase tracking-widest">
                         {region.code}
                       </span>
-                      <span className="text-xs text-votoclaro-text-muted bg-votoclaro-surface-2 border border-votoclaro-border rounded px-2 py-0.5">
+                      <span className="text-xs text-[#777777] bg-[#EEEDE9] border border-[#E5E3DE] rounded px-2 py-0.5">
                         🏛️ {region.congressional_seats} escaño{region.congressional_seats > 1 ? 's' : ''}
                       </span>
                     </div>
 
                     {/* Region name */}
-                    <h3 className="text-base font-semibold text-votoclaro-text group-hover:text-votoclaro-gold transition-colors mb-1">
+                    <h3 className="text-base font-semibold text-[#111111] group-hover:text-[#1A56A0] transition-colors mb-1">
                       {region.name}
                     </h3>
 
                     {/* Population */}
-                    <p className="text-xs text-votoclaro-text-muted mb-3">
+                    <p className="text-xs text-[#777777] mb-3">
                       {formatPopulation(region.population)}
                     </p>
 
@@ -80,7 +80,7 @@ export default function RegionesPage() {
                       {region.main_industries.slice(0, 2).map(ind => (
                         <span
                           key={ind}
-                          className="inline-flex items-center text-xs bg-votoclaro-gold/10 border border-votoclaro-gold/20 rounded-full px-2.5 py-1 text-votoclaro-gold capitalize"
+                          className="inline-flex items-center text-xs bg-[#EEF4FF] border border-[#1A56A0]/20 rounded-full px-2.5 py-1 text-[#1A56A0] capitalize"
                         >
                           {ind}
                         </span>
@@ -89,12 +89,12 @@ export default function RegionesPage() {
 
                     {/* Key issues */}
                     <div className="mt-auto">
-                      <p className="text-xs text-votoclaro-text-muted mb-2">Temas clave</p>
+                      <p className="text-xs text-[#777777] mb-2">Temas clave</p>
                       <div className="flex flex-wrap gap-1.5 mb-3">
                         {region.key_issues.slice(0, 3).map(issue => (
                           <span
                             key={issue}
-                            className="inline-flex items-center text-xs bg-votoclaro-surface-2 border border-votoclaro-border rounded-full px-2.5 py-1 text-votoclaro-text-muted"
+                            className="inline-flex items-center text-xs bg-[#EEEDE9] border border-[#E5E3DE] rounded-full px-2.5 py-1 text-[#777777]"
                           >
                             {issue}
                           </span>
@@ -103,7 +103,7 @@ export default function RegionesPage() {
                     </div>
 
                     {/* CTA */}
-                    <div className="mt-2 text-xs text-votoclaro-gold group-hover:underline">
+                    <div className="mt-2 text-xs text-[#1A56A0] group-hover:underline">
                       Ver región →
                     </div>
                   </div>

@@ -12,11 +12,11 @@ export function ExpandableBio({ bio }: Props) {
 
   return (
     <div>
-      <p className="text-gray-300 leading-relaxed">{displayText}</p>
+      <p className="text-[#444444] leading-relaxed">{displayText}</p>
       {shouldTruncate && (
         <button
           onClick={() => setExpanded((e) => !e)}
-          className="mt-2 text-[#d4af37] text-sm hover:underline"
+          className="mt-2 text-[#1A56A0] text-sm hover:underline"
         >
           {expanded ? 'Leer menos ▲' : 'Leer más ▼'}
         </button>
