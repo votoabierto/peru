@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { AlertTriangle, CheckCircle, ExternalLink, Share2 } from 'lucide-react'
 import IssueStance from '@/components/IssueStance'
 import FactCheckBadge from '@/components/FactCheckBadge'
-import { SEED_CANDIDATES, SEED_POSITIONS, SEED_FACT_CHECKS } from '@/lib/seed-data'
+import { getCandidateById, getPositions, getFactChecks, getCandidates } from '@/lib/data'
 import { IDEOLOGY_COLORS, IDEOLOGY_LABELS } from '@/lib/types'
 
 interface CandidatePageProps {
@@ -28,18 +28,23 @@ const ROLE_LABELS: Record<string, string> = {
 }
 
 export async function generateStaticParams() {
-  return SEED_CANDIDATES.map((c) => ({ id: c.slug }))
+  const candidates = await getCandidates()
+  return candidates.map((c) => ({ id: c.slug }))
 }
 
-export default function CandidatePage({ params }: CandidatePageProps) {
-  const candidate = SEED_CANDIDATES.find((c) => c.slug === params.id)
+export default async function CandidatePage({ params }: CandidatePageProps) {
+  const [candidate, allPositions, allFactChecks] = await Promise.all([
+    getCandidateById(params.id),
+    getPositions(),
+    getFactChecks(),
+  ])
 
   if (!candidate) {
     notFound()
   }
 
-  const positions = SEED_POSITIONS.filter((p) => p.candidate_id === candidate.id)
-  const factChecks = SEED_FACT_CHECKS.filter((fc) => fc.candidate_id === candidate.id)
+  const positions = allPositions.filter((p) => p.candidate_id === candidate.id)
+  const factChecks = allFactChecks.filter((fc) => fc.candidate_id === candidate.id)
   const initials = getInitials(candidate.full_name)
   const ideologyColor = candidate.ideology
     ? (IDEOLOGY_COLORS[candidate.ideology] ?? 'bg-gray-600 text-gray-100')

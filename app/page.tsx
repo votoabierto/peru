@@ -2,7 +2,7 @@ import Link from 'next/link'
 import CountdownTimer from '@/components/CountdownTimer'
 import FactCheckBadge from '@/components/FactCheckBadge'
 import { ISSUE_LABELS, type IssueArea } from '@/lib/types'
-import { SEED_FACT_CHECKS, SEED_CANDIDATES } from '@/lib/seed-data'
+import { getCandidates, getFactChecks } from '@/lib/data'
 
 const FEATURES = [
   {
@@ -48,8 +48,12 @@ const STATS = [
 
 const ISSUE_AREAS = Object.keys(ISSUE_LABELS) as IssueArea[]
 
-export default function HomePage() {
-  const latestFactChecks = SEED_FACT_CHECKS.slice(0, 3)
+export default async function HomePage() {
+  const [candidates, factChecks] = await Promise.all([
+    getCandidates(),
+    getFactChecks(),
+  ])
+  const latestFactChecks = factChecks.slice(0, 3)
 
   return (
     <div className="bg-votoclaro-base">
@@ -183,7 +187,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {latestFactChecks.map((fc) => {
-              const candidate = SEED_CANDIDATES.find((c) => c.id === fc.candidate_id)
+              const candidate = candidates.find((c) => c.id === fc.candidate_id)
               return (
                 <div key={fc.id} className="card flex flex-col gap-3">
                   {candidate && (

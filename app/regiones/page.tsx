@@ -1,7 +1,9 @@
 import RegionCard from '@/components/RegionCard'
-import { PERU_REGIONS } from '@/lib/regions-data'
+import { getRegions } from '@/lib/data'
 
-export default function RegionesPage() {
+export default async function RegionesPage() {
+  const regions = await getRegions()
+
   return (
     <div className="bg-votoclaro-base min-h-screen">
       {/* Page header */}
@@ -44,7 +46,7 @@ export default function RegionesPage() {
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {PERU_REGIONS.map((region) => (
+            {regions.map((region) => (
               <RegionCard
                 key={region.code}
                 name={region.name}

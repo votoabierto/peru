@@ -1,7 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-votoclaro-gold: #C9A84C;
+  --color-votoclaro-gold-light: #DFC068;
+  --color-votoclaro-gold-dark: #A8873A;
+  --color-votoclaro-base: #0A0A0A;
+  --color-votoclaro-surface: #141414;
+  --color-votoclaro-surface-2: #1E1E1E;
+  --color-votoclaro-text: #F5F5F5;
+  --color-votoclaro-text-muted: #A0A0A0;
+  --color-votoclaro-border: #2A2A2A;
+  --color-votoclaro-alert: #C0392B;
+  --color-votoclaro-success: #27AE60;
+  --color-votoclaro-warning: #E67E22;
+  --color-votoclaro-info: #2980B9;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
 
 :root {
   --gold: #C9A84C;
