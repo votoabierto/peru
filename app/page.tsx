@@ -4,6 +4,33 @@ import FactCheckBadge from '@/components/FactCheckBadge'
 import { ISSUE_LABELS, type IssueArea } from '@/lib/types'
 import { getCandidates, getFactChecks } from '@/lib/data'
 
+const ELECTION_TYPES = [
+  {
+    icon: '🏛️',
+    title: 'Presidente',
+    description: '36 candidatos presidenciales compiten en distrito nacional único.',
+    href: '/candidatos',
+  },
+  {
+    icon: '🏦',
+    title: 'Senado',
+    description: '60 escaños en distrito nacional único. Bicameral restaurado desde 1992.',
+    href: '/senado',
+  },
+  {
+    icon: '🗳️',
+    title: 'Diputados',
+    description: '130 escaños en 27 circunscripciones regionales.',
+    href: '/diputados',
+  },
+  {
+    icon: '🌎',
+    title: 'Parlamento Andino',
+    description: '5 representantes ante la Comunidad Andina de Naciones.',
+    href: '/parlamento-andino',
+  },
+]
+
 const FEATURES = [
   {
     icon: '🗳️',
@@ -106,6 +133,34 @@ export default async function HomePage() {
                 <p className="text-3xl font-extrabold text-[#111111] font-mono">{stat.value}</p>
                 <p className="text-xs text-[#777777] mt-1">{stat.label}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Election type cards */}
+      <section className="py-16 border-b border-[#E5E3DE]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-2">Elecciones 2026</h2>
+          <p className="text-[#777777] mb-8">
+            Cuatro elecciones simultáneas el 12 de abril de 2026.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {ELECTION_TYPES.map((election) => (
+              <Link key={election.href} href={election.href} className="group">
+                <div className="card h-full flex flex-col transition-all duration-200">
+                  <span className="text-3xl mb-3">{election.icon}</span>
+                  <h3 className="text-base font-semibold text-[#111111] mb-2 group-hover:text-[#1A56A0] transition-colors">
+                    {election.title}
+                  </h3>
+                  <p className="text-sm text-[#777777] leading-relaxed flex-1">
+                    {election.description}
+                  </p>
+                  <span className="mt-4 text-sm font-medium text-[#1A56A0]">
+                    Ver más →
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

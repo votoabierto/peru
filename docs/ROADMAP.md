@@ -1,4 +1,4 @@
-# VotoClaro — Roadmap de lanzamiento
+# VotoAbierto — Roadmap de lanzamiento
 ## Sprint de 5 semanas hacia las elecciones · 12 de abril de 2026
 
 ---
@@ -6,12 +6,12 @@
 ## Semana 1 — 8–14 marzo 2026: Plataforma viva con top candidatos presidenciales
 
 ### Objetivos
-- [ ] Deploy en Vercel (producción en votoclaro.pe y votoclaro.org)
+- [ ] Deploy en Vercel (producción en votoabierto.pe y votoabierto.org)
 - [ ] Supabase creado y migración 001 aplicada
 - [ ] 10 candidatos presidenciales principales con perfiles completos
 - [ ] 3 posiciones por candidato verificadas (seguridad, economía, educación)
 - [ ] 6 fact checks publicados
-- [ ] Dominio votoclaro.pe registrado y apuntado
+- [ ] Dominio votoabierto.pe registrado y apuntado
 - [ ] Google Analytics / Plausible configurado
 - [ ] Meta tags OG para compartir en WhatsApp y redes
 

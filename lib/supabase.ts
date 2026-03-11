@@ -19,7 +19,7 @@ export function warnIfNotConfigured(): void {
   if (!isSupabaseConfigured() && !_warned) {
     _warned = true
     console.warn(
-      '[VotoClaro] Supabase not configured — using seed data. ' +
+      '[VotoAbierto] Supabase not configured — using seed data. ' +
       'Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to use real data.'
     )
   }

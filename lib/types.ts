@@ -1,3 +1,7 @@
+// ─── Election Types ─────────────────────────────────────────────────────────
+
+export type ElectionType = 'presidente' | 'senado' | 'diputados' | 'parlamento-andino'
+
 // ─── Domain Types ────────────────────────────────────────────────────────────
 
 export type IssueArea =
@@ -190,4 +194,22 @@ export interface CongressCandidate {
   prior_roles: string[]
   key_stances: string[]
   polling_percentage?: number | null
+  electionType?: ElectionType
+  sourceVerified?: boolean
+}
+
+// ─── Party & District Types ─────────────────────────────────────────────────
+
+export interface PartyRegistry {
+  id: string
+  name: string
+  abbr: string
+  color: string
+  presidentCandidate: string
+}
+
+export interface ElectoralDistrict {
+  code: string
+  name: string
+  seats: number
 }

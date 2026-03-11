@@ -35,7 +35,7 @@ export async function getCandidates(filters?: CandidateFilters): Promise<Candida
 
     const { data, error } = await query
     if (error || !data) {
-      console.error('[VotoClaro] Supabase getCandidates error, falling back to seed data:', error)
+      console.error('[VotoAbierto] Supabase getCandidates error, falling back to seed data:', error)
       candidates = SEED_CANDIDATES
     } else {
       candidates = data as Candidate[]
@@ -102,7 +102,7 @@ export async function getPositions(candidateId?: string): Promise<Position[]> {
 
   const { data, error } = await query
   if (error || !data) {
-    console.error('[VotoClaro] Supabase getPositions error, falling back to seed data:', error)
+    console.error('[VotoAbierto] Supabase getPositions error, falling back to seed data:', error)
     if (candidateId) {
       return SEED_POSITIONS.filter((p) => p.candidate_id === candidateId)
     }
@@ -130,7 +130,7 @@ export async function getFactChecks(candidateId?: string): Promise<FactCheck[]> 
 
   const { data, error } = await query
   if (error || !data) {
-    console.error('[VotoClaro] Supabase getFactChecks error, falling back to seed data:', error)
+    console.error('[VotoAbierto] Supabase getFactChecks error, falling back to seed data:', error)
     if (candidateId) {
       return SEED_FACT_CHECKS.filter((f) => f.candidate_id === candidateId)
     }
@@ -153,7 +153,7 @@ export async function getRegions(): Promise<RegionData[]> {
     .select('name, code, population, key_issues')
 
   if (error || !data) {
-    console.error('[VotoClaro] Supabase getRegions error, falling back to seed data:', error)
+    console.error('[VotoAbierto] Supabase getRegions error, falling back to seed data:', error)
     return PERU_REGIONS
   }
 
@@ -185,7 +185,7 @@ export async function getCongressCandidates(filters?: CongressFilters): Promise<
 
     const { data, error } = await query
     if (error || !data) {
-      console.error('[VotoClaro] Supabase getCongressCandidates error, falling back to seed data:', error)
+      console.error('[VotoAbierto] Supabase getCongressCandidates error, falling back to seed data:', error)
       candidates = CONGRESS_CANDIDATES
     } else {
       candidates = data as CongressCandidate[]

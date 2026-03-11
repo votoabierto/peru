@@ -1,5 +1,5 @@
 #!/bin/bash
-# VotoClaro — Reset and Seed Script
+# VotoAbierto — Reset and Seed Script
 # Seeds the Supabase database from all seed data files.
 # Migrations must be applied manually in Supabase SQL editor first.
 #
@@ -24,7 +24,7 @@ if [[ -z "${SUPABASE_SERVICE_ROLE_KEY:-}" ]]; then
   exit 1
 fi
 
-echo "🇵🇪 VotoClaro Database Setup"
+echo "🇵🇪 VotoAbierto Database Setup"
 echo "============================="
 echo ""
 echo "📋 MANUAL STEPS REQUIRED BEFORE RUNNING THIS SCRIPT:"

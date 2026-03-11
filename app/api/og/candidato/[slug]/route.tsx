@@ -3,17 +3,45 @@ import { NextRequest } from 'next/server'
 
 export const runtime = 'edge'
 
-const CANDIDATES_EDGE = [
-  { slug: 'keiko-fujimori', full_name: 'Keiko Fujimori', party: 'Fuerza Popular', ideology: 'Derecha', polling_percentage: 18.5, color: '#1A56A0', issues: ['Seguridad ciudadana', 'Economía de mercado', 'Anti-corrupción'] },
-  { slug: 'pedro-castillo', full_name: 'Pedro Castillo', party: 'Perú Libre', ideology: 'Izquierda', polling_percentage: 12.3, color: '#1A56A0', issues: ['Asamblea constituyente', 'Reforma agraria', 'Educación pública'] },
-  { slug: 'rafael-lopez-aliaga', full_name: 'Rafael López Aliaga', party: 'Renovación Popular', ideology: 'Derecha radical', polling_percentage: 14.2, color: '#1A56A0', issues: ['Economía liberal', 'Seguridad', 'Valores tradicionales'] },
-  { slug: 'veronika-mendoza', full_name: 'Verónika Mendoza', party: 'Juntos por el Perú', ideology: 'Izquierda', polling_percentage: 7.8, color: '#1A56A0', issues: ['Igualdad social', 'Medio ambiente', 'Pueblos indígenas'] },
-  { slug: 'daniel-urresti', full_name: 'Daniel Urresti', party: 'Podemos Perú', ideology: 'Centro', polling_percentage: 9.1, color: '#1A56A0', issues: ['Seguridad ciudadana', 'Empleo', 'Infraestructura'] },
-  { slug: 'julio-guzman', full_name: 'Julio Guzmán', party: 'Partido Morado', ideology: 'Centro progresista', polling_percentage: 5.4, color: '#1A56A0', issues: ['Modernización del Estado', 'Educación', 'Empleo formal'] },
-  { slug: 'yonhy-lescano', full_name: 'Yonhy Lescano', party: 'Acción Popular', ideology: 'Centro', polling_percentage: 6.2, color: '#1A56A0', issues: ['Descentralización', 'Salud pública', 'Agricultura'] },
-  { slug: 'hernando-de-soto', full_name: 'Hernando de Soto', party: 'Avancemos', ideology: 'Derecha liberal', polling_percentage: 4.8, color: '#1A56A0', issues: ['Formalización económica', 'Propiedad privada', 'Libre mercado'] },
-  { slug: 'george-forsyth', full_name: 'George Forsyth', party: 'Victoria Nacional', ideology: 'Centro derecha', polling_percentage: 8.3, color: '#1A56A0', issues: ['Seguridad', 'Modernización', 'Juventud'] },
-  { slug: 'ollanta-humala', full_name: 'Ollanta Humala', party: 'Partido Nacionalista Peruano', ideology: 'Izquierda moderada', polling_percentage: 3.9, color: '#1A56A0', issues: ['Soberanía nacional', 'Recursos naturales', 'Inclusión social'] },
+// Edge-compatible candidate data — mirrors lib/seed-data.ts
+// Cannot import directly because seed-data may use Node.js APIs
+const CANDIDATES_EDGE: { slug: string; full_name: string; party: string; abbreviation: string }[] = [
+  { slug: 'keiko-fujimori', full_name: 'Keiko Fujimori', party: 'Fuerza Popular', abbreviation: 'FP' },
+  { slug: 'cesar-acuna', full_name: 'César Acuña', party: 'Alianza para el Progreso', abbreviation: 'APP' },
+  { slug: 'jorge-nieto-montesinos', full_name: 'Jorge Nieto Montesinos', party: 'Partido del Buen Gobierno', abbreviation: 'PBG' },
+  { slug: 'rosario-del-pilar-fernandez', full_name: 'Rosario del Pilar Fernández', party: 'Un Camino Diferente', abbreviation: 'UCD' },
+  { slug: 'herbert-caller', full_name: 'Herbert Caller', party: 'Partido Patriótico del Perú', abbreviation: 'PPP' },
+  { slug: 'alfonso-lopez-chau', full_name: 'Alfonso López-Chau', party: 'Ahora Nación', abbreviation: 'AN' },
+  { slug: 'jose-luna-galvez', full_name: 'José Luna Gálvez', party: 'Podemos Perú', abbreviation: 'PP' },
+  { slug: 'roberto-sanchez', full_name: 'Roberto Sánchez', party: 'Juntos por el Perú', abbreviation: 'JP' },
+  { slug: 'carlos-jaico', full_name: 'Carlos Jaico', party: 'Perú Moderno', abbreviation: 'PM' },
+  { slug: 'fernando-olivera', full_name: 'Fernando Olivera', party: 'Partido Frente de la Esperanza 2021', abbreviation: 'FE' },
+  { slug: 'charlie-carrasco', full_name: 'Charlie Carrasco', party: 'Partido Demócrata Unido Perú', abbreviation: 'PDUP' },
+  { slug: 'marisol-perez-tello', full_name: 'Marisol Pérez Tello', party: 'Primero la Gente', abbreviation: 'PLG' },
+  { slug: 'paul-jaimes', full_name: 'Paul Jaimes', party: 'Progresemos', abbreviation: 'PROG' },
+  { slug: 'mesias-guevara', full_name: 'Mesías Guevara', party: 'Partido Morado', abbreviation: 'MORA' },
+  { slug: 'alvaro-paz-de-la-barra', full_name: 'Álvaro Paz de la Barra', party: 'Fe en el Perú', abbreviation: 'FEP' },
+  { slug: 'george-forsyth', full_name: 'George Forsyth', party: 'Partido Democrático Somos Perú', abbreviation: 'SP' },
+  { slug: 'carlos-alvarez', full_name: 'Carlos Álvarez', party: 'País Para Todos', abbreviation: 'PPT' },
+  { slug: 'francisco-diez-canseco', full_name: 'Francisco Diez-Canseco', party: 'Perú Acción', abbreviation: 'PA' },
+  { slug: 'wolfgang-grozo', full_name: 'Wolfgang Grozo', party: 'Integridad Democrática', abbreviation: 'ID' },
+  { slug: 'ricardo-belmont', full_name: 'Ricardo Belmont', party: 'Partido Cívico Obras', abbreviation: 'PCO' },
+  { slug: 'napoleon-becerra', full_name: 'Napoleón Becerra', party: 'Partido de los Trabajadores y Emprendedores PTE-Perú', abbreviation: 'PTE' },
+  { slug: 'ronald-atencio', full_name: 'Ronald Atencio', party: 'Alianza Electoral Venceremos', abbreviation: 'AEV' },
+  { slug: 'yonhy-lescano', full_name: 'Yonhy Lescano', party: 'Partido Político Cooperación Popular', abbreviation: 'CP' },
+  { slug: 'mario-vizcarra', full_name: 'Mario Vizcarra', party: 'Partido Político Perú Primero', abbreviation: 'PPR' },
+  { slug: 'joaquin-masse-fernandez', full_name: 'Joaquín Massé Fernández', party: 'Partido Democrático Federal', abbreviation: 'PDF' },
+  { slug: 'enrique-valderrama', full_name: 'Enrique Valderrama', party: 'Partido Aprista Peruano', abbreviation: 'PAP' },
+  { slug: 'alex-gonzales-castillo', full_name: 'Alex Gonzales Castillo', party: 'Partido Demócrata Verde', abbreviation: 'PDV' },
+  { slug: 'roberto-chiabra', full_name: 'Roberto Chiabra', party: 'Unidad Nacional', abbreviation: 'UN' },
+  { slug: 'rafael-belaunde', full_name: 'Rafael Belaunde', party: 'Libertad Popular', abbreviation: 'LP' },
+  { slug: 'carlos-espa', full_name: 'Carlos Espá', party: 'Partido SíCreo', abbreviation: 'SC' },
+  { slug: 'antonio-ortiz-villano', full_name: 'Antonio Ortiz Villano', party: 'Salvemos al Perú', abbreviation: 'SAP' },
+  { slug: 'fiorella-molinelli', full_name: 'Fiorella Molinelli', party: 'Fuerza y Libertad', abbreviation: 'FYL' },
+  { slug: 'vladimir-cerron', full_name: 'Vladimir Cerrón', party: 'Partido Político Nacional Perú Libre', abbreviation: 'PL' },
+  { slug: 'walter-chirinos', full_name: 'Walter Chirinos', party: 'Partido Político PRIN', abbreviation: 'PRIN' },
+  { slug: 'rafael-lopez-aliaga', full_name: 'Rafael López Aliaga', party: 'Renovación Popular', abbreviation: 'RP' },
+  { slug: 'jose-williams-zapata', full_name: 'José Williams Zapata', party: 'Avanza País', abbreviation: 'AVP' },
 ]
 
 export async function GET(
@@ -96,7 +124,7 @@ export async function GET(
               width: '180px',
               height: '180px',
               borderRadius: '90px',
-              background: candidate.color,
+              background: '#1A56A0',
               border: '4px solid #E5E3DE',
               display: 'flex',
               alignItems: 'center',
@@ -109,7 +137,7 @@ export async function GET(
             {initials}
           </div>
 
-          {/* Polling badge */}
+          {/* Party abbreviation badge */}
           <div
             style={{
               background: '#EEF4FF',
@@ -122,23 +150,8 @@ export async function GET(
             }}
           >
             <span style={{ color: '#1A56A0', fontSize: '22px', fontWeight: 'bold' }}>
-              {candidate.polling_percentage}%
+              {candidate.abbreviation}
             </span>
-            <span style={{ color: '#777777', fontSize: '14px' }}>en encuestas</span>
-          </div>
-
-          {/* Ideology badge */}
-          <div
-            style={{
-              background: '#EEEDE9',
-              border: '1px solid #CBCAC5',
-              borderRadius: '12px',
-              padding: '6px 16px',
-              color: '#444444',
-              fontSize: '15px',
-            }}
-          >
-            {candidate.ideology}
           </div>
         </div>
 
@@ -198,35 +211,15 @@ export async function GET(
             }}
           />
 
-          {/* Issues label */}
+          {/* Description */}
           <div
             style={{
-              color: '#777777',
-              fontSize: '13px',
-              letterSpacing: '1.5px',
-              textTransform: 'uppercase',
-              marginBottom: '16px',
+              color: '#444444',
+              fontSize: '20px',
+              lineHeight: 1.5,
             }}
           >
-            Propuestas principales
-          </div>
-
-          {/* Issues list */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {candidate.issues.slice(0, 3).map((issue: string, i: number) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div
-                  style={{
-                    width: '8px',
-                    height: '8px',
-                    borderRadius: '4px',
-                    background: '#1A56A0',
-                    flexShrink: 0,
-                  }}
-                />
-                <span style={{ color: '#444444', fontSize: '20px' }}>{issue}</span>
-              </div>
-            ))}
+            Conoce las propuestas, trayectoria y verificaciones de este candidato.
           </div>
 
           {/* Footer */}

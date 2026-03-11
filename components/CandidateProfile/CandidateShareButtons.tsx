@@ -16,7 +16,7 @@ export function CandidateShareButtons({ candidate }: Props) {
 
   const polling = candidate.polling_percentage ?? candidate.current_polling
   const whatsappText = encodeURIComponent(
-    `Conoce más sobre ${candidate.full_name} (${candidate.party_name}) en VotoClaro: ${profileUrl}`
+    `Conoce más sobre ${candidate.full_name} (${candidate.party_name}) en VotoAbierto: ${profileUrl}`
   )
   const twitterText = encodeURIComponent(
     `Candidato: ${candidate.full_name} | ${candidate.party_name}${polling != null ? ` | ${polling}% en encuestas` : ''}. Más info:`

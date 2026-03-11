@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 /**
- * VotoClaro Production Seeder
+ * VotoAbierto Production Seeder
  * Seeds all candidates, positions, fact-checks, congress candidates, and regions into Supabase.
  *
  * Usage:
@@ -310,7 +310,7 @@ async function verifySeeding(): Promise<void> {
 // Main
 // ============================================================
 async function main(): Promise<void> {
-  log('🇵🇪 VotoClaro — Production Seeder')
+  log('🇵🇪 VotoAbierto — Production Seeder')
   log('==================================')
   log(`📡 Supabase URL: ${supabaseUrl}`)
   log(`📊 Data to seed:`)

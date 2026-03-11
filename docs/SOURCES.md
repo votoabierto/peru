@@ -1,4 +1,4 @@
-# VotoClaro — Fuentes de datos verificadas
+# VotoAbierto — Fuentes de datos verificadas
 ## Peru 2026 Elections Data Sourcing Guide
 
 > **Regla de oro:** Ningún dato se publica sin verificación de al menos 2 fuentes independientes.
@@ -212,7 +212,7 @@ curl "https://infogob.jne.gob.pe/api/candidatos/{id}/declaracion-jurada"
 
 ---
 
-## 9. Protocolo de verificación VotoClaro
+## 9. Protocolo de verificación VotoAbierto
 
 1. **Fuente primaria:** Documento oficial del JNE/ONPE/INFOGOB → marca como `verified: true`
 2. **Fuente secundaria:** Noticia de medio verificado + cruce con otra fuente → `verified: false` pero publicable

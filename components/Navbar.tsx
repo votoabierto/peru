@@ -6,12 +6,13 @@ import { Menu, X } from 'lucide-react'
 import { SearchModal } from './SearchModal'
 
 const navLinks = [
-  { href: '/candidatos', label: 'Candidatos' },
-  { href: '/congreso', label: 'Congreso' },
-  { href: '/regiones', label: 'Regiones' },
+  { href: '/candidatos', label: 'Presidente' },
+  { href: '/senado', label: 'Senado' },
+  { href: '/diputados', label: 'Diputados' },
+  { href: '/parlamento-andino', label: 'Parlamento Andino' },
   { href: '/comparar', label: 'Comparar' },
   { href: '/verificar', label: 'Verificar' },
-  { href: '/metodologia', label: 'Metodología' },
+  { href: '/congreso', label: 'Congreso' },
 ]
 
 export default function Navbar() {

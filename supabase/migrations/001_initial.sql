@@ -1,4 +1,4 @@
--- VotoClaro — Peru 2026 Elections Platform
+-- VotoAbierto — Peru 2026 Elections Platform
 -- Migration 001: Initial schema
 
 -- Regions (24 + Lima Province)
