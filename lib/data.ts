@@ -229,39 +229,84 @@ export async function getFactChecksByCandidateId(candidateId: string): Promise<F
   return getFactChecks(candidateId)
 }
 
-export async function searchCandidates(query: string): Promise<Candidate[]> {
-  if (!query.trim()) return []
-  warnIfNotConfigured()
+// Enhanced searchCandidates — supports Supabase pg_trgm or seed data fallback
+export async function searchCandidates(query: string, limit = 10): Promise<Candidate[]> {
+  if (!query.trim()) return [];
 
-  const q = query.toLowerCase()
-
-  if (!isSupabaseConfigured()) {
-    return SEED_CANDIDATES.filter(
-      (c) =>
-        c.full_name.toLowerCase().includes(q) ||
-        c.party_name.toLowerCase().includes(q) ||
-        c.career_summary?.toLowerCase().includes(q)
-    )
+  if (isSupabaseConfigured()) {
+    const client = getSupabaseClient()!
+    const { data } = await client
+      .from('candidates')
+      .select('*')
+      .or(`full_name.ilike.%${query}%,bio.ilike.%${query}%,party_name.ilike.%${query}%`)
+      .order('polling_percentage', { ascending: false, nullsFirst: false })
+      .limit(limit);
+    if (data && data.length > 0) return data as Candidate[];
   }
 
-  const client = getSupabaseClient()!
-  const { data, error } = await client
-    .from('candidates')
-    .select('*')
-    .or(
-      `full_name.ilike.%${query}%,party_name.ilike.%${query}%,career_summary.ilike.%${query}%`
+  const q = query.toLowerCase();
+  return SEED_CANDIDATES
+    .filter(c =>
+      c.full_name.toLowerCase().includes(q) ||
+      c.party_name.toLowerCase().includes(q) ||
+      (c.bio ?? '').toLowerCase().includes(q) ||
+      (c.ideology ?? '').toLowerCase().includes(q)
     )
-    .limit(10)
+    .sort((a, b) => (b.polling_percentage ?? 0) - (a.polling_percentage ?? 0))
+    .slice(0, limit);
+}
 
-  if (error || !data) {
-    console.error('[VotoClaro] Supabase searchCandidates error, falling back to seed data:', error)
-    return SEED_CANDIDATES.filter(
-      (c) =>
-        c.full_name.toLowerCase().includes(q) ||
-        c.party_name.toLowerCase().includes(q) ||
-        c.career_summary?.toLowerCase().includes(q)
-    )
+export async function searchFactChecks(query: string, limit = 6): Promise<FactCheck[]> {
+  if (!query.trim()) return [];
+
+  if (isSupabaseConfigured()) {
+    const client = getSupabaseClient()!
+    const { data } = await client
+      .from('fact_checks')
+      .select('*')
+      .or(`claim.ilike.%${query}%,explanation.ilike.%${query}%,candidate_name.ilike.%${query}%`)
+      .order('date_checked', { ascending: false })
+      .limit(limit);
+    if (data && data.length > 0) return data as FactCheck[];
   }
 
-  return data as Candidate[]
+  const q = query.toLowerCase();
+  return SEED_FACT_CHECKS
+    .filter(fc =>
+      fc.claim.toLowerCase().includes(q) ||
+      fc.explanation.toLowerCase().includes(q) ||
+      (fc.candidate_name ?? '').toLowerCase().includes(q)
+    )
+    .slice(0, limit);
+}
+
+export async function searchRegions(query: string, limit = 5): Promise<Array<{ id: string; name: string; code: string; capital: string }>> {
+  if (!query.trim()) return [];
+  const { REGIONS_DATA } = await import('./regions-data');
+  const q = query.toLowerCase();
+  return REGIONS_DATA
+    .filter((r: { name: string; capital: string; key_issues?: string[]; main_industries?: string[] }) =>
+      r.name.toLowerCase().includes(q) ||
+      r.capital.toLowerCase().includes(q) ||
+      (r.key_issues ?? []).some((i: string) => i.toLowerCase().includes(q)) ||
+      (r.main_industries ?? []).some((i: string) => i.toLowerCase().includes(q))
+    )
+    .slice(0, limit)
+    .map((r: { name: string; code: string; capital: string }) => ({ id: r.code, name: r.name, code: r.code, capital: r.capital }));
+}
+
+export async function searchAll(query: string): Promise<{
+  candidates: Candidate[];
+  factChecks: FactCheck[];
+  regions: Array<{ id: string; name: string; code: string; capital: string }>;
+}> {
+  if (!query.trim()) return { candidates: [], factChecks: [], regions: [] };
+
+  const [candidates, factChecks, regions] = await Promise.all([
+    searchCandidates(query, 5),
+    searchFactChecks(query, 3),
+    searchRegions(query, 3),
+  ]);
+
+  return { candidates, factChecks, regions };
 }

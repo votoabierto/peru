@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { SearchModal } from './SearchModal'
 
 const navLinks = [
   { href: '/candidatos', label: 'Candidatos' },
@@ -15,6 +16,18 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault()
+        setSearchOpen(true)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   return (
     <nav className="sticky top-0 z-50 bg-votoclaro-surface border-b border-votoclaro-border">
@@ -43,14 +56,27 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2 rounded-lg text-votoclaro-text-muted hover:text-votoclaro-gold hover:bg-votoclaro-surface-2 transition-colors"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Abrir menú"
-          >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Search button + mobile menu */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="flex items-center gap-2 px-3 py-1.5 bg-votoclaro-surface-2 border border-votoclaro-border rounded-lg text-votoclaro-text-muted hover:text-votoclaro-gold hover:border-votoclaro-gold/40 transition-colors text-sm"
+              aria-label="Buscar"
+            >
+              <span>🔍</span>
+              <span className="hidden sm:inline">Buscar</span>
+              <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-votoclaro-surface rounded border border-votoclaro-border text-xs opacity-60">
+                ⌘K
+              </kbd>
+            </button>
+            <button
+              className="md:hidden p-2 rounded-lg text-votoclaro-text-muted hover:text-votoclaro-gold hover:bg-votoclaro-surface-2 transition-colors"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Abrir menú"
+            >
+              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -71,6 +97,8 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </nav>
   )
 }
