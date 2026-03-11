@@ -1,462 +1,353 @@
+#!/usr/bin/env tsx
 /**
- * VotoClaro — Seed script for top presidential candidates
- * Run with: npx tsx scripts/seed-candidates.ts
+ * VotoClaro Production Seeder
+ * Seeds all candidates, positions, fact-checks, congress candidates, and regions into Supabase.
  *
- * Requires env vars:
- *   SUPABASE_URL
- *   SUPABASE_SERVICE_ROLE_KEY  (bypasses RLS)
+ * Usage:
+ *   NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co \
+ *   SUPABASE_SERVICE_ROLE_KEY=your-service-role-key \
+ *   npx tsx scripts/seed-candidates.ts
+ *
+ * The service role key bypasses RLS policies (needed for inserts).
+ * NEVER use this key client-side or expose it publicly.
+ *
+ * Requires migrations 001 and 002 to be applied first.
  */
 
-import { createClient } from "@supabase/supabase-js";
+import { createClient } from '@supabase/supabase-js'
+import { SEED_CANDIDATES, SEED_POSITIONS, SEED_FACT_CHECKS } from '../lib/seed-data'
+import { CONGRESS_CANDIDATES } from '../lib/congress-data'
+import { PERU_REGIONS } from '../lib/regions-data'
 
-const supabaseUrl = process.env.SUPABASE_URL ?? "";
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+// ============================================================
+// Configuration validation
+// ============================================================
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
 if (!supabaseUrl || !serviceKey) {
-  console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
-  process.exit(1);
+  console.error('❌ Missing required environment variables:')
+  if (!supabaseUrl) console.error('   NEXT_PUBLIC_SUPABASE_URL is not set')
+  if (!serviceKey) console.error('   SUPABASE_SERVICE_ROLE_KEY is not set')
+  console.error('\nUsage:')
+  console.error('  NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co \\')
+  console.error('  SUPABASE_SERVICE_ROLE_KEY=your-service-role-key \\')
+  console.error('  npx tsx scripts/seed-candidates.ts')
+  process.exit(1)
 }
 
-const supabase = createClient(supabaseUrl, serviceKey);
+const supabase = createClient(supabaseUrl, serviceKey, {
+  auth: {
+    autoRefreshToken: false,
+    persistSession: false,
+  },
+})
 
-// ─── Party IDs (must match migration 001) ───────────────────────────────────
-
-const PARTY = {
-  RP: "11111111-0000-0000-0000-000000000001",
-  FP: "11111111-0000-0000-0000-000000000002",
-  PL: "11111111-0000-0000-0000-000000000003",
-  APP: "11111111-0000-0000-0000-000000000004",
-  PPT: "11111111-0000-0000-0000-000000000005",
-  AN: "11111111-0000-0000-0000-000000000006",
-};
-
-// ─── Candidate IDs (fixed, idempotent) ─────────────────────────────────────
-
-const CANDIDATE = {
-  LOPEZ_ALIAGA: "aaaaaaaa-0000-0000-0000-000000000001",
-  CERRON: "aaaaaaaa-0000-0000-0000-000000000002",
-  FUJIMORI: "aaaaaaaa-0000-0000-0000-000000000003",
-  LOPEZ_CHAU: "aaaaaaaa-0000-0000-0000-000000000004",
-  ACUNA: "aaaaaaaa-0000-0000-0000-000000000005",
-  ALVAREZ: "aaaaaaaa-0000-0000-0000-000000000006",
-};
-
-// ─── Candidates ─────────────────────────────────────────────────────────────
-
-const candidates = [
-  {
-    id: CANDIDATE.LOPEZ_ALIAGA,
-    full_name: "Rafael López Aliaga",
-    common_name: "Porky",
-    slug: "rafael-lopez-aliaga",
-    role: "president",
-    party_id: PARTY.RP,
-    age: 59,
-    current_polling: 14.0,
-    has_criminal_record: false,
-    is_verified: true,
-    education: "Ingeniería Industrial, Universidad de Lima",
-    career_summary:
-      "Empresario inmobiliario y exalcalde de Lima (2023-2025). Miembro del Opus Dei. " +
-      "Estilo comunicativo populista comparado con Donald Trump. Lideró Renovación Popular " +
-      "desde su fundación en 2020. Promete mano dura contra el crimen con apoyo militar.",
-    wikipedia_url: "https://es.wikipedia.org/wiki/Rafael_L%C3%B3pez_Aliaga",
-  },
-  {
-    id: CANDIDATE.CERRON,
-    full_name: "Vladimir Cerrón",
-    common_name: "Cerrón",
-    slug: "vladimir-cerron",
-    role: "president",
-    party_id: PARTY.PL,
-    age: 54,
-    current_polling: 9.0,
-    has_criminal_record: true,
-    criminal_record_detail:
-      "Prófugo de la justicia desde octubre de 2023. Condenado por corrupción y cohecho durante " +
-      "su gestión como gobernador regional de Junín (2003-2010). Anunció candidatura desde la " +
-      "clandestinidad en enero de 2026. Elegibilidad bajo revisión del JNE.",
-    is_verified: true,
-    education: "Médico cirujano, UNMSM",
-    career_summary:
-      "Fundador y líder de Perú Libre. Exgobernador regional de Junín. Artífice del ascenso de " +
-      "Pedro Castillo a la presidencia en 2021. Ideología marxista-leninista. Opera desde la " +
-      "clandestinidad con fuerte base en el sur andino y regiones rurales.",
-    wikipedia_url: "https://es.wikipedia.org/wiki/Vladimir_Cerr%C3%B3n",
-  },
-  {
-    id: CANDIDATE.FUJIMORI,
-    full_name: "Keiko Fujimori",
-    common_name: "Keiko",
-    slug: "keiko-fujimori",
-    role: "president",
-    party_id: PARTY.FP,
-    age: 51,
-    current_polling: 9.0,
-    has_criminal_record: true,
-    criminal_record_detail:
-      "Investigada por irregularidades en el financiamiento de su partido. Tres veces candidata " +
-      "presidencial (2011, 2016, 2021) y tres veces perdedora en segunda vuelta. Hija del " +
-      "expresidente Alberto Fujimori (1990-2000), actualmente fallecido.",
-    is_verified: true,
-    education: "Administración de Empresas, Boston University",
-    career_summary:
-      "Líder de Fuerza Popular y figura central de la derecha peruana. Tres candidaturas " +
-      "presidenciales con derrotas en segunda vuelta. Base electoral concentrada en distritos " +
-      "pobres de Lima y norte del país, vinculada al legado social del fujimorismo.",
-    wikipedia_url: "https://es.wikipedia.org/wiki/Keiko_Fujimori",
-  },
-  {
-    id: CANDIDATE.LOPEZ_CHAU,
-    full_name: "Alfonso López Chau",
-    common_name: "López Chau",
-    slug: "alfonso-lopez-chau",
-    role: "president",
-    party_id: PARTY.AN,
-    age: 62,
-    current_polling: 5.1,
-    has_criminal_record: false,
-    criminal_record_detail:
-      "Bajo investigación por presuntos actos de corrupción durante su gestión como rector de " +
-      "la Universidad Nacional de Ingeniería (UNI, 2021-2025). No hay sentencia firme.",
-    is_verified: true,
-    education: "Economía, PUCP. PhD, Universidad de Cambridge",
-    career_summary:
-      "Exdirector del Banco Central de Reserva del Perú (2006-2012). Exrector de la UNI. " +
-      "Perfil tecnocrático de centro-izquierda. Candidato de Ahora Nación, coalición de " +
-      "partidos reformistas moderados.",
-  },
-  {
-    id: CANDIDATE.ACUNA,
-    full_name: "César Acuña Peralta",
-    common_name: "Acuña",
-    slug: "cesar-acuna",
-    role: "president",
-    party_id: PARTY.APP,
-    age: 63,
-    current_polling: 4.4,
-    has_criminal_record: false,
-    is_verified: true,
-    education: "Educación, Universidad César Vallejo (fundador)",
-    career_summary:
-      "Empresario del sector educativo y exgobernador regional de La Libertad. Fundó la " +
-      "Universidad César Vallejo y el Grupo Acuña. Alianza para el Progreso tiene presencia " +
-      "parlamentaria significativa. Candidato de perfil empresarial y pragmático.",
-    wikipedia_url: "https://es.wikipedia.org/wiki/C%C3%A9sar_Acu%C3%B1a",
-  },
-  {
-    id: CANDIDATE.ALVAREZ,
-    full_name: 'Carlos Álvarez Campos',
-    common_name: "Cachín",
-    slug: "carlos-alvarez-cachin",
-    role: "president",
-    party_id: PARTY.PPT,
-    age: 56,
-    current_polling: 4.0,
-    has_criminal_record: false,
-    is_verified: false,
-    education: "Comunicaciones",
-    career_summary:
-      "Comediante e imitador político conocido como 'Cachín'. Representa el voto protesta y " +
-      "el hartazgo ciudadano con la clase política tradicional. Usa el humor y la parodia como " +
-      "herramienta de campaña. Candidato atípico en un año de récord de candidatos.",
-    wikipedia_url: "https://es.wikipedia.org/wiki/Carlos_%C3%81lvarez_(comediante)",
-  },
-];
-
-// ─── Positions ───────────────────────────────────────────────────────────────
-
-const positions = [
-  // López Aliaga
-  {
-    candidate_id: CANDIDATE.LOPEZ_ALIAGA,
-    issue_area: "security",
-    stance:
-      "Propone juzgar crímenes violentos en tribunales militares. Solicitar asistencia militar " +
-      "de Estados Unidos. Desplegar Fuerzas Armadas en zonas de alta criminalidad al estilo " +
-      "Bukele (El Salvador).",
-    quote:
-      "Vamos a declarar el estado de emergencia en los distritos con más crimen y meter al ejército.",
-    verified: true,
-  },
-  {
-    candidate_id: CANDIDATE.LOPEZ_ALIAGA,
-    issue_area: "economy",
-    stance:
-      "Reducir ministerios y burocracia estatal. Promover inversión privada extranjera. " +
-      "Acuerdos de libre comercio con Estados Unidos. Reducir el rol del Estado en la economía.",
-    verified: true,
-  },
-  {
-    candidate_id: CANDIDATE.LOPEZ_ALIAGA,
-    issue_area: "education",
-    stance:
-      "Recuperar la carrera pública magisterial. Más autonomía para escuelas privadas. " +
-      "Vouchers educativos para familias de bajos recursos.",
-    verified: false,
-  },
-  {
-    candidate_id: CANDIDATE.LOPEZ_ALIAGA,
-    issue_area: "foreign_policy",
-    stance:
-      "Alineamiento con Estados Unidos y administración Trump. Distanciamiento de China. " +
-      "Apoyo a bloque democrático latinoamericano contra Venezuela, Cuba y Nicaragua.",
-    verified: true,
-  },
-
-  // Cerrón
-  {
-    candidate_id: CANDIDATE.CERRON,
-    issue_area: "economy",
-    stance:
-      "Estatización de recursos naturales estratégicos (minería, gas). Modelo de economía " +
-      "mixta con fuerte intervención estatal. Redistribución de la renta minera a comunidades.",
-    verified: true,
-  },
-  {
-    candidate_id: CANDIDATE.CERRON,
-    issue_area: "mining",
-    stance:
-      "Renegociación de contratos mineros. El Estado debe tener participación mayoritaria en " +
-      "las grandes operaciones mineras. Prioridad a las comunidades sobre las empresas extractivas.",
-    verified: true,
-  },
-  {
-    candidate_id: CANDIDATE.CERRON,
-    issue_area: "education",
-    stance:
-      "Educación pública gratuita y de calidad como derecho constitucional. " +
-      "Incremento del presupuesto educativo al 10% del PBI. Nacionalización de universidades privadas con fines de lucro.",
-    verified: false,
-  },
-  {
-    candidate_id: CANDIDATE.CERRON,
-    issue_area: "security",
-    stance:
-      "Enfoque social para reducir la criminalidad: empleo, educación y reducción de la desigualdad. " +
-      "Se opone a militarización de la seguridad ciudadana.",
-    verified: false,
-  },
-
-  // Fujimori
-  {
-    candidate_id: CANDIDATE.FUJIMORI,
-    issue_area: "security",
-    stance:
-      "Pena de muerte para terroristas y narcotraficantes. Cadena perpetua sin beneficios " +
-      "para crimen organizado. Mayor presupuesto a policía y fiscalía anticorrupción.",
-    quote: "Defenderé a los peruanos honestos con mano firme contra la delincuencia.",
-    verified: true,
-  },
-  {
-    candidate_id: CANDIDATE.FUJIMORI,
-    issue_area: "economy",
-    stance:
-      "Continuidad del modelo de economía de mercado con apertura comercial. Incentivos " +
-      "tributarios para inversión en regiones. Formalización del empleo informal.",
-    verified: true,
-  },
-  {
-    candidate_id: CANDIDATE.FUJIMORI,
-    issue_area: "social_programs",
-    stance:
-      "Ampliar programas sociales focalizados (alimentación, salud materna). Recuperar el " +
-      "legado de los programas sociales fujimoristas de los años 90.",
-    verified: false,
-  },
-
-  // López Chau
-  {
-    candidate_id: CANDIDATE.LOPEZ_CHAU,
-    issue_area: "economy",
-    stance:
-      "Reforma fiscal progresiva que incremente la recaudación. Mayor inversión pública en " +
-      "infraestructura. Política monetaria independiente y responsable.",
-    verified: true,
-  },
-  {
-    candidate_id: CANDIDATE.LOPEZ_CHAU,
-    issue_area: "education",
-    stance:
-      "Reforma estructural del sistema educativo. Meritocracia docente. Educación técnica " +
-      "vinculada al mercado laboral. Incremento presupuestal gradual.",
-    verified: true,
-  },
-  {
-    candidate_id: CANDIDATE.LOPEZ_CHAU,
-    issue_area: "corruption",
-    stance:
-      "Fortalecimiento del sistema anticorrupción. Independencia del Ministerio Público. " +
-      "Ley de transparencia reforzada para funcionarios públicos y candidatos.",
-    verified: true,
-  },
-
-  // Acuña
-  {
-    candidate_id: CANDIDATE.ACUNA,
-    issue_area: "economy",
-    stance:
-      "Modelo de economía de mercado con apoyo al sector privado. Reducción de trabas " +
-      "burocráticas para las MYPE. Incentivos para la inversión en regiones.",
-    verified: true,
-  },
-  {
-    candidate_id: CANDIDATE.ACUNA,
-    issue_area: "education",
-    stance:
-      "Experiencia en educación privada. Propone alianzas público-privadas en educación. " +
-      "Mejorar infraestructura educativa en regiones. Becas para jóvenes con talento.",
-    verified: false,
-  },
-  {
-    candidate_id: CANDIDATE.ACUNA,
-    issue_area: "infrastructure",
-    stance:
-      "Acelerar obras de infraestructura paralizadas. Asociaciones público-privadas para " +
-      "grandes proyectos. Descentralización real de la inversión pública.",
-    verified: true,
-  },
-
-  // Álvarez / Cachín
-  {
-    candidate_id: CANDIDATE.ALVAREZ,
-    issue_area: "corruption",
-    stance:
-      "Propone reducción drástica del sueldo de congresistas y funcionarios. Transparencia " +
-      "total en el gasto público. Abolir los privilegios parlamentarios.",
-    quote: "En el Perú la corrupción no es un problema, es una costumbre. Hay que romperla.",
-    verified: false,
-  },
-  {
-    candidate_id: CANDIDATE.ALVAREZ,
-    issue_area: "security",
-    stance:
-      "Propuestas de seguridad basadas en tecnología y prevención comunitaria. " +
-      "Critica la corrupción policial como causa raíz del problema de seguridad.",
-    verified: false,
-  },
-];
-
-// ─── Fact checks ─────────────────────────────────────────────────────────────
-
-const factChecks = [
-  {
-    candidate_id: CANDIDATE.LOPEZ_ALIAGA,
-    claim:
-      "Rafael López Aliaga afirmó que Lima tuvo el mayor descenso de criminalidad de América Latina durante su gestión como alcalde.",
-    verdict: "misleading",
-    explanation:
-      "Las estadísticas del INEI y la PNP muestran una reducción marginal en algunos delitos durante 2023-2024, " +
-      "pero Lima no figura en rankings regionales de seguridad como la ciudad con mayor mejora. " +
-      "La afirmación exagera el impacto real y carece de fuente oficial que la respalde.",
-    source_urls: [
-      "https://www.inei.gob.pe/estadisticas/indice-tematico/seguridad-ciudadana/",
-    ],
-  },
-  {
-    candidate_id: CANDIDATE.CERRON,
-    claim:
-      "Vladimir Cerrón sostiene que no existe sentencia firme en su contra y que es víctima de persecución política.",
-    verdict: "false",
-    explanation:
-      "El Poder Judicial peruano emitió sentencia condenatoria contra Cerrón por los delitos de " +
-      "negociación incompatible y corrupción de funcionarios durante su gestión como gobernador de Junín. " +
-      "La sentencia fue confirmada en segunda instancia. Su condición de prófugo es un hecho establecido.",
-    source_urls: [
-      "https://www.pj.gob.pe/",
-    ],
-  },
-  {
-    candidate_id: CANDIDATE.FUJIMORI,
-    claim:
-      "Keiko Fujimori afirmó que el gobierno de su padre no cometió violaciones a los derechos humanos.",
-    verdict: "false",
-    explanation:
-      "La Comisión de la Verdad y Reconciliación del Perú (CVR) documentó casos de esterilizaciones " +
-      "forzadas, desapariciones y ejecuciones extrajudiciales durante el gobierno de Alberto Fujimori " +
-      "(1990-2000). Cortes internacionales también han reconocido estas violaciones.",
-    source_urls: [
-      "https://www.cverdad.org.pe/",
-    ],
-  },
-  {
-    candidate_id: CANDIDATE.LOPEZ_CHAU,
-    claim:
-      "Alfonso López Chau señaló que fue el Banco Central de Reserva quien controló la inflación durante 2008-2010.",
-    verdict: "context_needed",
-    explanation:
-      "Es correcto que el BCRP implementó políticas de control inflacionario durante ese período. " +
-      "Sin embargo, también influyeron factores externos como los precios de commodities internacionales " +
-      "y la política fiscal del ejecutivo. El rol del BCR fue relevante pero no exclusivo.",
-    source_urls: [
-      "https://www.bcrp.gob.pe/estadisticas/cuadros-anuales-historicos.html",
-    ],
-  },
-  {
-    candidate_id: CANDIDATE.ACUNA,
-    claim:
-      "César Acuña afirmó que la Universidad César Vallejo es la más grande del Perú por número de alumnos.",
-    verdict: "true",
-    explanation:
-      "Según datos de la SUNEDU (Superintendencia Nacional de Educación Superior Universitaria), " +
-      "la Universidad César Vallejo es efectivamente la institución universitaria con mayor matrícula " +
-      "en el Perú, con más de 120,000 estudiantes registrados.",
-    source_urls: [
-      "https://www.sunedu.gob.pe/",
-    ],
-  },
-  {
-    candidate_id: CANDIDATE.ALVAREZ,
-    claim:
-      "Carlos Álvarez 'Cachín' aseguró que el 80% del presupuesto del Congreso se gasta en beneficios para congresistas.",
-    verdict: "unverifiable",
-    explanation:
-      "No existe una auditoría pública que desagregue el presupuesto del Congreso en esos términos. " +
-      "El portal de transparencia del Congreso muestra datos de ejecución presupuestal pero no con " +
-      "el nivel de detalle que permitiría verificar esta afirmación específica.",
-    source_urls: [
-      "https://www.congreso.gob.pe/transparencia/",
-    ],
-  },
-];
-
-// ─── Main ────────────────────────────────────────────────────────────────────
-
-async function seed() {
-  console.log("🗳️  VotoClaro — seeding candidates...\n");
-
-  // Upsert candidates
-  const { error: candErr } = await supabase
-    .from("candidates")
-    .upsert(candidates, { onConflict: "id", ignoreDuplicates: false });
-
-  if (candErr) {
-    console.error("❌ Error seeding candidates:", candErr.message);
-    process.exit(1);
-  }
-  console.log(`✅ ${candidates.length} candidatos insertados/actualizados`);
-
-  // Upsert positions (delete + insert since no stable ID)
-  const candidateIds = candidates.map((c) => c.id);
-  await supabase.from("positions").delete().in("candidate_id", candidateIds);
-
-  const { error: posErr } = await supabase.from("positions").insert(positions);
-  if (posErr) {
-    console.error("❌ Error seeding positions:", posErr.message);
-    process.exit(1);
-  }
-  console.log(`✅ ${positions.length} posiciones insertadas`);
-
-  // Upsert fact checks
-  await supabase.from("fact_checks").delete().in("candidate_id", candidateIds);
-  const { error: fcErr } = await supabase.from("fact_checks").insert(factChecks);
-  if (fcErr) {
-    console.error("❌ Error seeding fact_checks:", fcErr.message);
-    process.exit(1);
-  }
-  console.log(`✅ ${factChecks.length} fact checks insertados`);
-
-  console.log("\n🎉 Seed completo. VotoClaro listo para los datos de elecciones.");
+// ============================================================
+// Party UUID mapping
+// Maps seed data party_id strings → actual DB UUIDs
+// UUIDs starting with 11111111 are seeded in migration 001
+// UUIDs starting with 22222222 are new parties seeded here
+// ============================================================
+const PARTY_ID_MAP: Record<string, string | undefined> = {
+  // Parties from migration 001
+  'party-rp-0001':     '11111111-0000-0000-0000-000000000001', // Renovación Popular
+  'party-fp-0003':     '11111111-0000-0000-0000-000000000002', // Fuerza Popular
+  'party-pl-0002':     '11111111-0000-0000-0000-000000000003', // Perú Libre
+  'party-app-0005':    '11111111-0000-0000-0000-000000000004', // Alianza para el Progreso
+  'party-ppt-0006':    '11111111-0000-0000-0000-000000000005', // País para Todos
+  'party-an-0004':     '11111111-0000-0000-0000-000000000006', // Ahora Nación
+  'party-avp-0010':    '11111111-0000-0000-0000-000000000007', // Avanza País / Avancemos Perú
+  'party-pap-0018':    '11111111-0000-0000-0000-000000000008', // Partido Aprista Peruano
+  'party-sp-0014':     '11111111-0000-0000-0000-000000000009', // Somos Perú
+  'party-ap-0009':     '11111111-0000-0000-0000-000000000010', // Acción Popular
+  'party-ppc-0015':    '11111111-0000-0000-0000-000000000011', // Partido Popular Cristiano
+  // New parties not in migration 001
+  'party-pp-0007':     '22222222-0000-0000-0000-000000000001', // Podemos Perú
+  'party-pm-0008':     '22222222-0000-0000-0000-000000000002', // Partido Morado
+  'party-ind-0011':    '22222222-0000-0000-0000-000000000003', // Independiente
+  'party-vn-0012':     '22222222-0000-0000-0000-000000000004', // Victoria Nacional
+  'party-azp-0016':    '22222222-0000-0000-0000-000000000005', // Avanza País (Hernando de Soto)
+  'party-jp-0017':     '22222222-0000-0000-0000-000000000006', // Juntos por el Perú
+  'party-cpc-0020':    '22222222-0000-0000-0000-000000000007', // Ciudadanos por el Cambio
+  'party-etan-0022':   '22222222-0000-0000-0000-000000000008', // ETAN
+  'party-pnp-0023':    '22222222-0000-0000-0000-000000000009', // Partido Nacionalista Peruano
+  'party-pl-ind-0025': '22222222-0000-0000-0000-000000000010', // Partido Liberal (Carlos Anderson)
+  'party-cp-0026':     '22222222-0000-0000-0000-000000000011', // Coalición Progresista
+  'party-fa-0027':     '22222222-0000-0000-0000-000000000012', // Frente Amplio
+  'party-frepap-0028': '22222222-0000-0000-0000-000000000013', // FREPAP
+  // These reuse existing UUIDs (same underlying party)
+  'party-plm-0031':    '11111111-0000-0000-0000-000000000003', // Perú Libre / Mov. Magisterial
 }
 
-seed();
+// Extra parties to upsert (those not in migration 001).
+// ideology must match parties table CHECK constraint values.
+const EXTRA_PARTIES = [
+  { id: '22222222-0000-0000-0000-000000000001', name: 'Podemos Perú',                abbreviation: 'PP',     ideology: 'center'       },
+  { id: '22222222-0000-0000-0000-000000000002', name: 'Partido Morado',               abbreviation: 'PM',     ideology: 'center'       },
+  { id: '22222222-0000-0000-0000-000000000003', name: 'Independiente',                abbreviation: 'IND',    ideology: 'center'       },
+  { id: '22222222-0000-0000-0000-000000000004', name: 'Victoria Nacional',            abbreviation: 'VN',     ideology: 'center-right' },
+  { id: '22222222-0000-0000-0000-000000000005', name: 'Avanza País',                  abbreviation: 'AZP',    ideology: 'right'        },
+  { id: '22222222-0000-0000-0000-000000000006', name: 'Juntos por el Perú',           abbreviation: 'JP',     ideology: 'left'         },
+  { id: '22222222-0000-0000-0000-000000000007', name: 'Ciudadanos por el Cambio',     abbreviation: 'CPC',    ideology: 'populist'     },
+  { id: '22222222-0000-0000-0000-000000000008', name: 'ETAN',                         abbreviation: 'ETAN',   ideology: 'left'         },
+  { id: '22222222-0000-0000-0000-000000000009', name: 'Partido Nacionalista Peruano', abbreviation: 'PNP',    ideology: 'left'         },
+  { id: '22222222-0000-0000-0000-000000000010', name: 'Partido Liberal',              abbreviation: 'PLI',    ideology: 'center'       },
+  { id: '22222222-0000-0000-0000-000000000011', name: 'Coalición Progresista',        abbreviation: 'CP',     ideology: 'center-left'  },
+  { id: '22222222-0000-0000-0000-000000000012', name: 'Frente Amplio',                abbreviation: 'FA',     ideology: 'left'         },
+  { id: '22222222-0000-0000-0000-000000000013', name: 'FREPAP',                       abbreviation: 'FREPAP', ideology: 'center'       },
+]
+
+// ============================================================
+// Utility
+// ============================================================
+function log(message: string): void {
+  console.log(message)
+}
+
+function logError(message: string, error: unknown): void {
+  console.error(`❌ ${message}`)
+  if (error && typeof error === 'object' && 'message' in error) {
+    console.error(`   ${(error as { message: string }).message}`)
+  } else {
+    console.error('   ', error)
+  }
+}
+
+// ============================================================
+// Seeding functions
+// ============================================================
+
+async function seedExtraParties(): Promise<void> {
+  log(`\n🏛️  Upserting ${EXTRA_PARTIES.length} additional parties...`)
+  const { error } = await supabase
+    .from('parties')
+    .upsert(EXTRA_PARTIES, { onConflict: 'id' })
+  if (error) throw new Error(`Upsert parties failed: ${error.message}`)
+  log(`  ✅ ${EXTRA_PARTIES.length} additional parties upserted`)
+}
+
+async function seedRegions(): Promise<void> {
+  log(`\n📍 Upserting ${PERU_REGIONS.length} regions...`)
+  // Migration 001 already seeds regions; this upserts additional region data.
+  // Using ignoreDuplicates since regions table uses SERIAL id (not specified in insert).
+  const records = PERU_REGIONS.map(r => ({
+    name: r.name,
+    code: r.code,
+    population: r.population,
+    key_issues: r.key_issues as string[],
+  }))
+  const { error } = await supabase
+    .from('regions')
+    .upsert(records, { onConflict: 'code', ignoreDuplicates: true })
+  if (error) {
+    log(`  ⚠️  Region upsert note: ${error.message} (migration 001 already seeds regions)`)
+  } else {
+    log(`  ✅ ${PERU_REGIONS.length} regions upserted`)
+  }
+}
+
+async function seedCandidates(): Promise<void> {
+  log(`\n👤 Seeding ${SEED_CANDIDATES.length} presidential candidates...`)
+
+  // Map TypeScript role values to DB CHECK constraint values
+  const roleMap: Record<string, string> = {
+    president: 'president',
+    vice_president: 'vice_president',
+    senator: 'senator',
+    representative: 'deputy',
+  }
+
+  const records = SEED_CANDIDATES.map(c => ({
+    id: c.id,
+    slug: c.slug,
+    full_name: c.full_name,
+    common_name: c.common_name ?? null,
+    role: roleMap[c.role] ?? c.role,
+    // Map seed party_id string → actual UUID from parties table
+    party_id: PARTY_ID_MAP[c.party_id] ?? null,
+    age: c.age ?? null,
+    career_summary: c.career_summary ?? null,
+    photo_url: c.photo_url ?? null,
+    current_polling: c.current_polling ?? null,
+    is_verified: c.is_verified ?? false,
+    has_criminal_record: c.has_criminal_record ?? false,
+    criminal_record_detail: c.criminal_record_detail ?? null,
+  }))
+
+  const BATCH_SIZE = 20
+  let seeded = 0
+  for (let i = 0; i < records.length; i += BATCH_SIZE) {
+    const batch = records.slice(i, i + BATCH_SIZE)
+    const { error } = await supabase
+      .from('candidates')
+      .upsert(batch, { onConflict: 'id' })
+    if (error) throw new Error(`Upsert candidates batch failed: ${error.message}`)
+    seeded += batch.length
+    log(`  ✅ ${seeded}/${records.length} candidates seeded`)
+  }
+}
+
+async function seedPositions(): Promise<void> {
+  log(`\n📋 Seeding ${SEED_POSITIONS.length} candidate positions...`)
+
+  // SEED_POSITIONS uses non-UUID ids ('pos-0001-sec') — cannot upsert by id.
+  // Delete existing positions for all affected candidates, then re-insert.
+  const candidateIds = [...new Set(SEED_POSITIONS.map(p => p.candidate_id))]
+  const { error: delErr } = await supabase
+    .from('positions')
+    .delete()
+    .in('candidate_id', candidateIds)
+  if (delErr) throw new Error(`Delete positions failed: ${delErr.message}`)
+
+  // Insert without id (DB generates UUID)
+  const records = SEED_POSITIONS.map(p => ({
+    candidate_id: p.candidate_id,
+    issue_area: p.issue_area,
+    stance: p.stance,
+    quote: p.quote ?? null,
+    source_url: p.source_url ?? null,
+    verified: p.verified ?? false,
+  }))
+
+  const BATCH_SIZE = 50
+  let seeded = 0
+  for (let i = 0; i < records.length; i += BATCH_SIZE) {
+    const batch = records.slice(i, i + BATCH_SIZE)
+    const { error } = await supabase.from('positions').insert(batch)
+    if (error) throw new Error(`Insert positions batch failed: ${error.message}`)
+    seeded += batch.length
+    log(`  ✅ ${seeded}/${records.length} positions seeded`)
+  }
+}
+
+async function seedFactChecks(): Promise<void> {
+  log(`\n✔️  Seeding ${SEED_FACT_CHECKS.length} fact-checks...`)
+
+  // SEED_FACT_CHECKS uses non-UUID ids — cannot upsert by id.
+  // Field mapping: source_url (singular) → source_urls (array), checked_at → published_at.
+  const candidateIds = [...new Set(SEED_FACT_CHECKS.map(f => f.candidate_id))]
+  const { error: delErr } = await supabase
+    .from('fact_checks')
+    .delete()
+    .in('candidate_id', candidateIds)
+  if (delErr) throw new Error(`Delete fact_checks failed: ${delErr.message}`)
+
+  const records = SEED_FACT_CHECKS.map(f => ({
+    candidate_id: f.candidate_id,
+    claim: f.claim,
+    verdict: f.verdict,
+    explanation: f.explanation,
+    source_urls: f.source_url ? [f.source_url] : [],
+    published_at: f.checked_at,
+  }))
+
+  const { error } = await supabase.from('fact_checks').insert(records)
+  if (error) throw new Error(`Insert fact_checks failed: ${error.message}`)
+  log(`  ✅ ${SEED_FACT_CHECKS.length} fact-checks seeded`)
+}
+
+async function seedCongressCandidates(): Promise<void> {
+  log(`\n🏛️  Seeding ${CONGRESS_CANDIDATES.length} congressional candidates...`)
+
+  const records = CONGRESS_CANDIDATES.map(c => ({
+    id: c.id,
+    full_name: c.full_name,
+    party: c.party,
+    party_abbreviation: c.party_abbreviation,
+    region: c.region,
+    list_position: c.list_position,
+    role: c.role,
+    ideology: c.ideology,
+    bio: c.bio ?? null,
+    photo_url: c.photo_url ?? null,
+    prior_roles: c.prior_roles,    // Supabase JSONB accepts arrays directly
+    key_stances: c.key_stances,    // Supabase JSONB accepts arrays directly
+    polling_percentage: c.polling_percentage ?? null,
+  }))
+
+  const BATCH_SIZE = 20
+  let seeded = 0
+  for (let i = 0; i < records.length; i += BATCH_SIZE) {
+    const batch = records.slice(i, i + BATCH_SIZE)
+    const { error } = await supabase
+      .from('congress_candidates')
+      .upsert(batch, { onConflict: 'id' })
+    if (error) throw new Error(`Upsert congress_candidates batch failed: ${error.message}`)
+    seeded += batch.length
+    log(`  ✅ ${seeded}/${records.length} congress candidates seeded`)
+  }
+}
+
+async function verifySeeding(): Promise<void> {
+  log('\n🔍 Verifying seeded data...')
+
+  const checks = [
+    { table: 'candidates',          expected: SEED_CANDIDATES.length },
+    { table: 'positions',           expected: SEED_POSITIONS.length },
+    { table: 'fact_checks',         expected: SEED_FACT_CHECKS.length },
+    { table: 'congress_candidates', expected: CONGRESS_CANDIDATES.length },
+  ]
+
+  for (const { table, expected } of checks) {
+    const { count, error } = await supabase
+      .from(table)
+      .select('*', { count: 'exact', head: true })
+
+    if (error) {
+      log(`  ❌ ${table}: error counting rows — ${error.message}`)
+    } else if (count === null) {
+      log(`  ⚠️  ${table}: count returned null`)
+    } else if (count < expected) {
+      log(`  ⚠️  ${table}: ${count} rows (expected at least ${expected})`)
+    } else {
+      log(`  ✅ ${table}: ${count} rows`)
+    }
+  }
+}
+
+// ============================================================
+// Main
+// ============================================================
+async function main(): Promise<void> {
+  log('🇵🇪 VotoClaro — Production Seeder')
+  log('==================================')
+  log(`📡 Supabase URL: ${supabaseUrl}`)
+  log(`📊 Data to seed:`)
+  log(`   Presidential candidates: ${SEED_CANDIDATES.length}`)
+  log(`   Positions: ${SEED_POSITIONS.length}`)
+  log(`   Fact-checks: ${SEED_FACT_CHECKS.length}`)
+  log(`   Congressional candidates: ${CONGRESS_CANDIDATES.length}`)
+  log(`   Regions: ${PERU_REGIONS.length}`)
+  log('')
+  log('⚠️  Positions and fact-checks are DELETE+INSERT per candidate set')
+  log('⚠️  Candidates, parties, and congress candidates are UPSERT')
+  log('')
+
+  try {
+    await seedExtraParties()
+    await seedRegions()
+    await seedCandidates()
+    await seedPositions()
+    await seedFactChecks()
+    await seedCongressCandidates()
+    await verifySeeding()
+
+    log('\n🎉 Seeding complete! Database is ready for production.')
+    log('')
+    log('Next steps:')
+    log('1. Verify data in Supabase dashboard → Table Editor')
+    log('2. Set env vars in Vercel dashboard')
+    log('3. Trigger a redeploy to use live data')
+    process.exit(0)
+  } catch (error) {
+    logError('Seeding failed:', error)
+    log('\n💡 Troubleshooting:')
+    log('   1. Check that migrations 001 and 002 have been applied in Supabase SQL editor')
+    log('   2. Verify SUPABASE_SERVICE_ROLE_KEY is the service role key (not anon key)')
+    log('   3. Check Supabase dashboard for any schema issues')
+    process.exit(1)
+  }
+}
+
+main()

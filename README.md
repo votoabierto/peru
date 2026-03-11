@@ -52,12 +52,13 @@ npm install
 cp .env.local.example .env.local
 # → Editar .env.local con tus credenciales de Supabase
 
-# 4. Aplicar migración de base de datos
-# En tu dashboard de Supabase > SQL Editor > ejecutar:
+# 4. Aplicar migraciones de base de datos
+# En tu dashboard de Supabase > SQL Editor > ejecutar en orden:
 # supabase/migrations/001_initial.sql
+# supabase/migrations/002_indexes_and_rls.sql
 
-# 5. (Opcional) Cargar datos de candidatos
-SUPABASE_URL=tu-url SUPABASE_SERVICE_ROLE_KEY=tu-key \
+# 5. Cargar datos de candidatos
+NEXT_PUBLIC_SUPABASE_URL=tu-url SUPABASE_SERVICE_ROLE_KEY=tu-key \
   npx tsx scripts/seed-candidates.ts
 
 # 6. Correr en desarrollo
@@ -65,6 +66,108 @@ npm run dev
 ```
 
 Abrir [http://localhost:3000](http://localhost:3000)
+
+---
+
+## Database Setup
+
+VotoClaro uses Supabase as its database. The app falls back to seed data when Supabase is not configured, so local development without a database is possible.
+
+### Step 1: Create a Supabase Project
+
+1. Go to [supabase.com](https://supabase.com) and create a new project
+2. Choose a region close to Peru (e.g., South America — São Paulo)
+3. Wait for the project to be ready (~2 minutes)
+4. Go to **Project Settings → API** and note:
+   - **Project URL**: `https://your-project-ref.supabase.co`
+   - **anon/public key**: starts with `eyJ...`
+   - **service_role key**: starts with `eyJ...` (keep this secret)
+
+### Step 2: Apply Database Migrations
+
+In your Supabase project:
+
+1. Go to **SQL Editor** (left sidebar)
+2. Click **New query**
+3. Paste the contents of `supabase/migrations/001_initial.sql` and click **Run**
+4. Create another new query
+5. Paste the contents of `supabase/migrations/002_indexes_and_rls.sql` and click **Run**
+
+Migration 002 adds:
+- Trigram full-text search indexes
+- Performance indexes on commonly filtered columns
+- Row Level Security (read-only for anonymous users)
+- `congress_candidates` table for congressional candidates
+- `search_candidates()` SQL function
+
+### Step 3: Set Environment Variables
+
+Create a `.env.local` file at the project root:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
+```
+
+⚠️ Never commit `.env.local` to Git. It's already in `.gitignore`.
+
+### Step 4: Seed the Database
+
+Run the seeder with your environment variables:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co \
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key \
+npx tsx scripts/seed-candidates.ts
+```
+
+Or use the convenience script (prompts before running):
+
+```bash
+export NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+export SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+bash scripts/reset-and-seed.sh
+```
+
+The seeder is safe to run multiple times. Candidates and parties use UPSERT; positions and fact-checks use DELETE+INSERT per candidate.
+
+### Step 5: Verify Locally
+
+```bash
+npm run dev
+```
+
+Visit `http://localhost:3000` — candidates should load from Supabase. If you see the warning `[VotoClaro] Supabase not configured — using seed data`, check your `.env.local` values.
+
+### Step 6: Configure Vercel Deployment
+
+In your Vercel project:
+
+1. Go to **Settings → Environment Variables**
+2. Add these variables for **Production** and **Preview** environments:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+3. Trigger a redeployment.
+
+### Schema Overview
+
+| Table | Description |
+|-------|-------------|
+| `candidates` | Presidential and vice-presidential candidates |
+| `congress_candidates` | Congressional (Congreso) candidates |
+| `positions` | Candidate stances on issue areas |
+| `fact_checks` | Verified claims with verdicts |
+| `regions` | Peru's 25 regions |
+| `parties` | Political parties |
+
+### Re-seeding After Data Updates
+
+When seed data changes (new candidates, updated positions):
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... npx tsx scripts/seed-candidates.ts
+```
 
 ---
 
