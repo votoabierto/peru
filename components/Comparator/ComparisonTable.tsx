@@ -1,4 +1,4 @@
-import { Candidate, Position, ISSUE_LABELS, IDEOLOGY_LABELS, type IssueArea } from '@/lib/types';
+import { Candidate, Position, IDEOLOGY_LABELS, type IssueArea } from '@/lib/types';
 
 const COMPARISON_ISSUE_LABELS: Record<string, string> = {
   economy: 'Economía',
