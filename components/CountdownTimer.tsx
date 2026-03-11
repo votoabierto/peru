@@ -31,15 +31,19 @@ function calculateTimeLeft(): TimeLeft {
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="bg-white border border-[#E5E3DE] rounded-xl px-5 py-4 min-w-[80px] flex items-center justify-center">
-        <span className="text-3xl sm:text-4xl font-bold text-[#111111] font-mono tabular-nums leading-none">
-          {String(value).padStart(2, '0')}
-        </span>
-      </div>
-      <span className="mt-2 text-xs font-medium text-[#888888] uppercase tracking-widest">
+      <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-mono tabular-nums leading-none">
+        {String(value).padStart(2, '0')}
+      </span>
+      <span className="mt-2 text-[10px] font-medium text-[#666666] uppercase tracking-widest">
         {label}
       </span>
     </div>
+  )
+}
+
+function Separator() {
+  return (
+    <span className="text-[#D91023] text-3xl font-bold mt-1">:</span>
   )
 }
 
@@ -62,46 +66,47 @@ export default function CountdownTimer() {
     timeLeft.seconds === 0
 
   return (
-    <div className="text-center border-t-2 border-[#D91023] pt-6">
-      <p className="text-sm font-semibold text-[#1A56A0] uppercase tracking-widest mb-4">
-        Elección general · 12 de abril de 2026
-      </p>
+    <div className="bg-[#111111] py-10 px-4">
+      <div className="max-w-2xl mx-auto text-center">
+        <p className="text-[#888888] text-xs uppercase tracking-widest mb-4">Faltan</p>
 
-      {isElectionDay ? (
-        <div className="text-2xl font-bold text-[#1A56A0]">
-          ¡Hoy es el día de las elecciones!
-        </div>
-      ) : (
-        <div className="flex items-start justify-center gap-4">
-          {mounted ? (
-            <>
-              <TimeUnit value={timeLeft.days} label="Días" />
-              <div className="text-2xl font-bold text-[#CBCAC5] mt-4">:</div>
-              <TimeUnit value={timeLeft.hours} label="Horas" />
-              <div className="text-2xl font-bold text-[#CBCAC5] mt-4">:</div>
-              <TimeUnit value={timeLeft.minutes} label="Minutos" />
-              <div className="text-2xl font-bold text-[#CBCAC5] mt-4">:</div>
-              <TimeUnit value={timeLeft.seconds} label="Segundos" />
-            </>
-          ) : (
-            // Skeleton while not mounted (SSR)
-            <>
-              {['Días', 'Horas', 'Minutos', 'Segundos'].map((label) => (
-                <div key={label} className="flex flex-col items-center">
-                  <div className="bg-white border border-[#E5E3DE] rounded-xl px-5 py-4 min-w-[80px] flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl font-bold text-[#111111] font-mono tabular-nums leading-none">
+        {isElectionDay ? (
+          <div className="text-2xl font-bold text-[#D91023]">
+            ¡Hoy es el día de las elecciones!
+          </div>
+        ) : (
+          <div className="flex justify-center items-end gap-6 md:gap-10">
+            {mounted ? (
+              <>
+                <TimeUnit value={timeLeft.days} label="DÍAS" />
+                <Separator />
+                <TimeUnit value={timeLeft.hours} label="HORAS" />
+                <Separator />
+                <TimeUnit value={timeLeft.minutes} label="MIN" />
+                <Separator />
+                <TimeUnit value={timeLeft.seconds} label="SEG" />
+              </>
+            ) : (
+              // Skeleton while not mounted (SSR)
+              <>
+                {['DÍAS', 'HORAS', 'MIN', 'SEG'].map((label, i) => (
+                  <div key={label} className="flex flex-col items-center">
+                    <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-mono tabular-nums leading-none">
                       --
                     </span>
+                    <span className="mt-2 text-[10px] font-medium text-[#666666] uppercase tracking-widest">
+                      {label}
+                    </span>
+                    {i < 3 && <span className="text-[#D91023] text-3xl font-bold mt-1 hidden">:</span>}
                   </div>
-                  <span className="mt-2 text-xs font-medium text-[#888888] uppercase tracking-widest">
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </>
-          )}
-        </div>
-      )}
+                ))}
+              </>
+            )}
+          </div>
+        )}
+
+        <p className="text-[#888888] text-sm mt-6">Para las Elecciones Generales del Perú</p>
+      </div>
     </div>
   )
 }

@@ -1,4 +1,16 @@
 import { Candidate, Position, IDEOLOGY_LABELS, type IssueArea } from '@/lib/types';
+import candidatePositionsData from '@/data/candidate-positions.json';
+
+// Shape of candidate-positions.json entries
+interface CandidatePositionEntry {
+  candidate_id: string;
+  candidate_name: string;
+  party: string;
+  party_abbreviation: string;
+  positions: Record<string, { score: number; label: string; verified: boolean }>;
+}
+
+const positionsData = candidatePositionsData as CandidatePositionEntry[];
 
 const COMPARISON_ISSUE_LABELS: Record<string, string> = {
   economy: 'Economía',
@@ -13,11 +25,49 @@ const COMPARISON_ISSUE_LABELS: Record<string, string> = {
   mining: 'Minería',
 };
 
+// Map English issue keys (ComparisonTable) → Spanish keys (candidate-positions.json)
+const ISSUE_KEY_MAP: Record<string, string> = {
+  economy: 'economia',
+  security: 'seguridad',
+  education: 'educacion',
+  environment: 'recursos_naturales',
+  health: 'salud',
+  corruption: 'corrupcion',
+  infrastructure: 'descentralizacion',
+  foreign_policy: 'reforma_judicial',
+  social_programs: 'politica_social',
+  mining: 'constitucion',
+};
+
+// Known years in politics for prominent candidates
+const KNOWN_YEARS_IN_POLITICS: Record<string, string> = {
+  'keiko-fujimori': '20+ años',
+  'rafael-lopez-aliaga': '8 años',
+  'cesar-acuna': '25+ años',
+  'george-forsyth': '8 años',
+  'vladimir-cerron': '15+ años',
+};
+
 const STANCE_BADGE: Record<string, { cls: string; label: string }> = {
   favor:   { cls: 'bg-[#F0FAF4] text-[#1A6B35] border border-[#2D7D46]',   label: 'Favor' },
   neutral: { cls: 'bg-[#F9FAFB] text-[#4B5563] border border-[#9CA3AF]',    label: 'Neutral' },
   against: { cls: 'bg-[#FEF2F2] text-[#9B1C1C] border border-[#DC2626]',   label: 'Contra' },
 };
+
+function ScoreDots({ score }: { score: number }) {
+  return (
+    <div className="flex items-center justify-center gap-1">
+      {[1, 2, 3, 4, 5].map(n => (
+        <span
+          key={n}
+          className={`inline-block w-2.5 h-2.5 rounded-full ${
+            n <= score ? 'bg-[#1A56A0]' : 'bg-[#E5E3DE]'
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
 
 interface Props {
   candidates: Candidate[];
@@ -25,7 +75,7 @@ interface Props {
 }
 
 export function ComparisonTable({ candidates, allPositions }: Props) {
-  // Get positions per candidate per issue
+  // Get positions per candidate per issue from the old Position[] format
   const positionMap: Record<string, Record<string, Position | undefined>> = {};
   for (const c of candidates) {
     positionMap[c.id] = {};
@@ -36,10 +86,30 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
     }
   }
 
+  // Build lookup from candidate-positions.json
+  const cpMap: Record<string, CandidatePositionEntry | undefined> = {};
+  for (const c of candidates) {
+    cpMap[c.id] = positionsData.find(
+      p => p.candidate_id === c.id || p.candidate_id === c.slug
+    );
+  }
+
   function formatPEN(n?: number) {
     if (!n) return 'N/D';
     if (n >= 1_000_000) return `S/ ${(n / 1_000_000).toFixed(1)}M`;
     return `S/ ${Math.round(n / 1000)}K`;
+  }
+
+  function getYearsInPolitics(c: Candidate): string {
+    if (c.years_in_politics) return `${c.years_in_politics}`;
+    const known = KNOWN_YEARS_IN_POLITICS[c.slug] || KNOWN_YEARS_IN_POLITICS[c.id];
+    if (known) return known;
+    return 'N/D';
+  }
+
+  function getIdeology(c: Candidate): string {
+    if (c.ideology) return IDEOLOGY_LABELS[c.ideology] ?? c.ideology;
+    return 'N/D';
   }
 
   // Table header candidates
@@ -67,11 +137,11 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
 
         {/* Stats rows */}
         {[
-          { label: 'Ideología', render: (c: Candidate) => c.ideology ? (IDEOLOGY_LABELS[c.ideology] ?? c.ideology) : 'N/D' },
+          { label: 'Ideología', render: (c: Candidate) => getIdeology(c) },
           { label: 'Encuestas', render: (c: Candidate) => c.polling_percentage ? `${c.polling_percentage}%` : (c.current_polling ? `${c.current_polling.toFixed(1)}%` : 'N/D') },
           { label: 'Bienes declarados', render: (c: Candidate) => formatPEN(c.declared_assets_pen) },
           { label: 'Antecedentes', render: (c: Candidate) => c.criminal_records?.length ? `${c.criminal_records.length}` : (c.has_criminal_record ? 'Sí' : '0') },
-          { label: 'Años en política', render: (c: Candidate) => c.years_in_politics ? `${c.years_in_politics}` : 'N/D' },
+          { label: 'Años en política', render: (c: Candidate) => getYearsInPolitics(c) },
         ].map((row, i) => (
           <div
             key={row.label}
@@ -99,24 +169,43 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
           >
             <div className="px-4 py-3 text-[#777777] text-xs font-medium flex items-center">{label}</div>
             {candidates.map(c => {
+              // First try the old Position[] format
               const pos = positionMap[c.id]?.[area];
-              if (!pos) return (
+              if (pos) {
+                const badge = STANCE_BADGE[pos.stance] ?? STANCE_BADGE.neutral;
+                return (
+                  <div key={c.id} className="px-2 py-3 text-center group relative">
+                    <span className={`inline-block text-xs font-medium px-2 py-1 rounded cursor-help ${badge.cls}`}>
+                      {badge.label}
+                    </span>
+                    {pos.stance_description && (
+                      <div className="hidden group-hover:block absolute z-20 bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-white border border-[#E5E3DE] rounded-lg p-3 text-xs text-[#444444] text-left shadow-xl">
+                        {pos.stance_description}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              // Try candidate-positions.json score data
+              const cpEntry = cpMap[c.id];
+              const spanishKey = ISSUE_KEY_MAP[area];
+              const cpPos = cpEntry?.positions?.[spanishKey];
+              if (cpPos) {
+                return (
+                  <div key={c.id} className="px-2 py-3 text-center group relative">
+                    <ScoreDots score={cpPos.score} />
+                    <p className="text-[10px] text-[#777777] mt-1">{cpPos.label}</p>
+                    {!cpPos.verified && (
+                      <span className="text-[9px] text-[#CBCAC5]">sin verificar</span>
+                    )}
+                  </div>
+                );
+              }
+
+              return (
                 <div key={c.id} className="px-2 py-3 text-center">
                   <span className="text-[#CBCAC5] text-xs">—</span>
-                </div>
-              );
-              const badge = STANCE_BADGE[pos.stance] ?? STANCE_BADGE.neutral;
-              return (
-                <div key={c.id} className="px-2 py-3 text-center group relative">
-                  <span className={`inline-block text-xs font-medium px-2 py-1 rounded cursor-help ${badge.cls}`}>
-                    {badge.label}
-                  </span>
-                  {/* Tooltip */}
-                  {pos.stance_description && (
-                    <div className="hidden group-hover:block absolute z-20 bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-white border border-[#E5E3DE] rounded-lg p-3 text-xs text-[#444444] text-left shadow-xl">
-                      {pos.stance_description}
-                    </div>
-                  )}
                 </div>
               );
             })}

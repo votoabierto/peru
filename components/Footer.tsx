@@ -7,13 +7,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <p className="text-xl font-bold text-white mb-2">VotoAbierto</p>
+            <p className="text-xl font-bold text-white mb-2">
+              Voto<span className="text-[#D91023]">Abierto</span>
+            </p>
             <p className="text-sm text-[#AAAAAA] leading-relaxed">
               Vota informado. Plataforma no-partidaria de información electoral
               para las elecciones generales del Perú, 12 de abril de 2026.
             </p>
-            <p className="mt-3 text-sm italic text-[#888888]">
-              No somos partidarios. Somos ciudadanos.
+            <p className="mt-3 text-sm text-[#888888]">
+              Construido por ciudadanos, para ciudadanos. 🇵🇪
             </p>
           </div>
 
@@ -24,10 +26,10 @@ export default function Footer() {
             </p>
             <ul className="space-y-2">
               {[
-                { href: '/candidatos', label: 'Candidatos' },
+                { href: '/candidatos', label: 'Presidentes' },
                 { href: '/regiones', label: 'Regiones' },
                 { href: '/comparar', label: 'Comparar' },
-                { href: '/verificar', label: 'Verificar hechos' },
+                { href: '/verificar', label: 'Verificación de hechos' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

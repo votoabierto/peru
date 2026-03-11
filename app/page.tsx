@@ -34,7 +34,7 @@ const ELECTION_TYPES = [
 const FEATURES = [
   {
     icon: '🗳️',
-    title: 'Candidatos',
+    title: 'Presidentes',
     description:
       'Conoce el perfil, trayectoria y propuestas de los candidatos a la presidencia y el congreso.',
     href: '/candidatos',
@@ -50,7 +50,7 @@ const FEATURES = [
   },
   {
     icon: '⚖️',
-    title: 'Compara',
+    title: '¿A quién vas a comparar?',
     description:
       'Compara hasta 3 candidatos lado a lado por posición en temas clave.',
     href: '/comparar',
@@ -58,7 +58,7 @@ const FEATURES = [
   },
   {
     icon: '🔍',
-    title: 'Verifica',
+    title: 'Verificación de hechos',
     description:
       'Fact-checks independientes de las declaraciones más importantes de campaña.',
     href: '/verificar',
@@ -75,6 +75,16 @@ const STATS = [
 
 const ISSUE_AREAS = Object.keys(ISSUE_LABELS) as IssueArea[]
 
+function SectionDivider() {
+  return (
+    <div className="flex items-center gap-3 my-0">
+      <div className="h-px bg-[#E5E3DE] flex-1" />
+      <div className="w-8 h-1 bg-[#D91023] rounded-full" />
+      <div className="h-px bg-[#E5E3DE] flex-1" />
+    </div>
+  )
+}
+
 export default async function HomePage() {
   const [candidates, factChecks] = await Promise.all([
     getCandidates(),
@@ -85,44 +95,35 @@ export default async function HomePage() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="relative py-20 sm:py-28 border-b border-[#E5E3DE] overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#1A56A0]/5 rounded-full blur-3xl" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-3xl">
-            <p className="text-[#1A56A0] text-sm font-semibold uppercase tracking-widest mb-4">
-              Elecciones Generales · Perú 2026
-            </p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#111111] mb-6 leading-tight">
-              Vota{' '}
-              <span className="text-[#1A56A0]">informado.</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-[#777777] leading-relaxed mb-8 max-w-2xl">
-              El 12 de abril de 2026 los peruanos elegirán presidente, vicepresidentes y,
-              por primera vez desde 1992, un Congreso bicameral con{' '}
-              <strong className="text-[#111111]">60 senadores</strong> y{' '}
-              <strong className="text-[#111111]">130 diputados</strong>.
-              VotoAbierto te ayuda a conocer a los candidatos y sus propuestas.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/candidatos" className="btn-primary">
-                Ver candidatos
-              </Link>
-              <Link href="/comparar" className="btn-outline">
-                Comparar candidatos
-              </Link>
-            </div>
+      <section className="border-t-4 border-[#D91023] bg-white pt-12 pb-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Eyebrow tag */}
+          <div className="inline-flex items-center gap-2 bg-[#FFF0F0] border border-[#D91023] rounded-full px-4 py-1 mb-6">
+            <span className="text-[#D91023] text-xs font-bold uppercase tracking-widest">Elecciones Generales</span>
+            <span className="text-[#D91023] font-mono text-xs font-bold">12 abril 2026</span>
           </div>
+
+          {/* Main headline */}
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111111] leading-tight mb-4">
+            Tu voto es tuyo.<br/>
+            <span className="text-[#D91023]">Infórmate antes</span> de darlo.
+          </h1>
+
+          <p className="text-[#555555] text-lg max-w-2xl mx-auto mb-8">
+            Datos verificados sobre los 36 candidatos presidenciales, el Senado,
+            la Cámara de Diputados y el Parlamento Andino. No te vendemos ningún candidato.
+          </p>
+
+          {/* Quiz CTA — primary action */}
+          <Link href="/quiz" className="inline-flex items-center gap-2 bg-[#D91023] text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-[#B00D1C] transition-colors shadow-lg shadow-red-100">
+            ¿Con quién votas? →
+          </Link>
+          <p className="text-[#888888] text-sm mt-3">Anónimo · 5 minutos · Sin registro</p>
         </div>
       </section>
 
       {/* Countdown */}
-      <section className="py-12 border-b border-[#E5E3DE] bg-[#F7F6F3]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CountdownTimer />
-        </div>
-      </section>
+      <CountdownTimer />
 
       {/* Stats bar */}
       <section className="py-8 border-b border-[#E5E3DE]">
@@ -138,8 +139,10 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Election type cards */}
-      <section className="py-16 border-b border-[#E5E3DE]">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-2">Elecciones 2026</h2>
           <p className="text-[#777777] mb-8">
@@ -166,14 +169,16 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Feature cards */}
-      <section className="py-16 border-b border-[#E5E3DE]">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-2">
-            Explora <span className="text-[#1A56A0]">VotoAbierto</span>
+            Explora <span className="text-[#D91023]">VotoAbierto</span>
           </h2>
           <p className="text-[#777777] mb-8">
-            Todo lo que necesitas para votar con información.
+            Vota informado. Perú merece más.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {FEATURES.map((feature) => (
@@ -196,8 +201,10 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Issue selector */}
-      <section className="py-16 border-b border-[#E5E3DE] bg-[#F7F6F3]">
+      <section className="py-16 bg-[#F7F6F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-2">¿Sobre qué te importa más?</h2>
           <p className="text-[#777777] mb-8">
@@ -223,8 +230,10 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Latest fact checks */}
-      <section className="py-16 border-b border-[#E5E3DE]">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <div>
@@ -267,12 +276,26 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Quiz CTA Card */}
+      <section className="py-16 bg-[#F7F6F3]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#EEF4FF] border border-[#1A56A0] rounded-xl p-6 text-center">
+            <h2 className="text-xl font-bold text-[#111111]">¿Con quién votas?</h2>
+            <p className="text-[#444444] mt-2">Responde 10 preguntas y descubre qué candidatos comparten tus ideas.</p>
+            <Link href="/quiz" className="mt-4 inline-block bg-[#1A56A0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0D3E7A] transition-colors">
+              Comenzar el quiz
+            </Link>
+            <p className="text-xs text-[#777777] mt-2">Anónimo. Sin registro. Solo información.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
-      <section className="py-16">
+      <section className="py-16 border-t-2 border-[#D91023]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold text-[#111111] mb-3">
             Tu voto vale.{' '}
-            <span className="text-[#1A56A0]">Úsalo bien.</span>
+            <span className="text-[#D91023]">Úsalo bien.</span>
           </h2>
           <p className="text-[#777777] mb-8 max-w-xl mx-auto">
             Plataforma no-partidaria. No apoyamos a ningún candidato. Solo

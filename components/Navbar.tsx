@@ -55,7 +55,11 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-[#444444] hover:text-[#111111] hover:bg-[#F7F6F3] rounded-lg transition-colors"
+                  className={
+                    'highlight' in link && link.highlight
+                      ? 'px-4 py-2 text-sm font-semibold text-[#1A56A0] hover:bg-[#EEF4FF] rounded-lg transition-colors'
+                      : 'px-4 py-2 text-sm font-medium text-[#444444] hover:text-[#111111] hover:bg-[#F7F6F3] rounded-lg transition-colors'
+                  }
                 >
                   {link.label}
                 </Link>

@@ -11,6 +11,7 @@ export interface CandidateCardProps {
   common_name?: string
   party_abbreviation: string
   party_name: string
+  party_color?: string
   role: string
   region_name?: string
   current_polling?: number
@@ -43,6 +44,7 @@ export default function CandidateCard({
   common_name,
   party_abbreviation,
   party_name,
+  party_color,
   role,
   region_name,
   current_polling,
@@ -55,10 +57,14 @@ export default function CandidateCard({
   const ideologyColor = ideology ? (IDEOLOGY_COLORS[ideology] ?? 'bg-gray-600 text-gray-100') : 'bg-gray-600 text-gray-100'
   const ideologyLabel = ideology ? (IDEOLOGY_LABELS[ideology] ?? ideology) : null
   const displayName = common_name ?? full_name
+  const borderColor = party_color ?? '#1A56A0'
 
   return (
     <Link href={`/candidatos/${slug}`} className="block group">
-      <div className="bg-white border border-[#E5E3DE] rounded-xl hover:shadow-md transition-all duration-200 h-full flex flex-col p-4">
+      <div
+        className="bg-white border border-[#E5E3DE] rounded-xl hover:shadow-md transition-all duration-200 h-full flex flex-col p-4 hover:border-l-4"
+        style={{ '--hover-border-color': borderColor } as React.CSSProperties}
+      >
         {/* Header: photo + name */}
         <div className="flex items-start gap-4 mb-4">
           {/* Photo or initials */}
@@ -106,7 +112,11 @@ export default function CandidateCard({
 
         {/* Party + ideology */}
         <div className="flex flex-wrap items-center gap-2 mb-4">
-          <span className="badge bg-[#EEEDE9] border border-[#E5E3DE] text-[#111111] font-semibold text-xs">
+          <span className="inline-flex items-center gap-1.5 badge bg-[#EEEDE9] border border-[#E5E3DE] text-[#111111] font-semibold text-xs">
+            <span
+              className="w-2 h-2 rounded-full flex-shrink-0"
+              style={{ backgroundColor: borderColor }}
+            />
             {party_abbreviation}
           </span>
           <span className="text-xs text-[#777777] truncate">{party_name}</span>
@@ -144,7 +154,7 @@ export default function CandidateCard({
         )}
 
         {/* Secondary action: Compare */}
-        <div className="mt-3 pt-3 border-t border-[#E5E3DE]">
+        <div className="mt-3 pt-3 border-t border-[#E5E3DE] flex items-center justify-between">
           <Link
             href={`/comparar?ids=${slug}`}
             className="text-xs text-[#777777] hover:text-[#1A56A0] transition-colors"
@@ -152,6 +162,9 @@ export default function CandidateCard({
           >
             ⚖️ Comparar
           </Link>
+          <span className="text-xs font-medium text-[#1A56A0] group-hover:underline">
+            Ver perfil completo →
+          </span>
         </div>
       </div>
     </Link>
