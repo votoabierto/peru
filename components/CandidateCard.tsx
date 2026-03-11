@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { CheckCircle, AlertTriangle } from 'lucide-react'
 import { IDEOLOGY_COLORS, IDEOLOGY_LABELS } from '@/lib/types'
 
+// CandidateCardProps intentionally exported for re-use
+
 export interface CandidateCardProps {
   id: string
   slug: string
@@ -140,6 +142,17 @@ export default function CandidateCard({
             Tiene antecedentes penales
           </p>
         )}
+
+        {/* Secondary action: Compare */}
+        <div className="mt-3 pt-3 border-t border-votoclaro-border">
+          <Link
+            href={`/comparar?ids=${slug}`}
+            className="text-xs text-votoclaro-text-muted hover:text-votoclaro-gold transition-colors"
+            onClick={e => e.stopPropagation()}
+          >
+            ⚖️ Comparar
+          </Link>
+        </div>
       </div>
     </Link>
   )

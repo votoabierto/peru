@@ -1,10 +1,5 @@
 import { Position, ISSUE_LABELS } from '@/lib/types'
 
-const STANCE_STYLES: Record<string, string> = {
-  favor: 'bg-green-900/50 text-green-300 border border-green-800',
-  neutral: 'bg-gray-800 text-gray-300 border border-gray-700',
-  against: 'bg-red-900/50 text-red-300 border border-red-800',
-}
 
 interface Props {
   positions: Position[]

@@ -205,6 +205,22 @@ export async function getCongressCandidates(filters?: CongressFilters): Promise<
   })
 }
 
+export async function getCandidatesByIds(ids: string[]): Promise<Candidate[]> {
+  if (ids.length === 0) return [];
+
+  if (isSupabaseConfigured()) {
+    const client = getSupabaseClient()!
+    const { data } = await client
+      .from('candidates')
+      .select('*')
+      .in('id', ids);
+    if (data && data.length > 0) return data as Candidate[];
+  }
+
+  // Fallback: match by id OR slug (wave 6 added slug support)
+  return SEED_CANDIDATES.filter(c => ids.includes(c.id) || ids.includes(c.slug));
+}
+
 export async function getPositionsByCandidateId(candidateId: string): Promise<Position[]> {
   return getPositions(candidateId)
 }
