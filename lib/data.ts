@@ -205,6 +205,14 @@ export async function getCongressCandidates(filters?: CongressFilters): Promise<
   })
 }
 
+export async function getPositionsByCandidateId(candidateId: string): Promise<Position[]> {
+  return getPositions(candidateId)
+}
+
+export async function getFactChecksByCandidateId(candidateId: string): Promise<FactCheck[]> {
+  return getFactChecks(candidateId)
+}
+
 export async function searchCandidates(query: string): Promise<Candidate[]> {
   if (!query.trim()) return []
   warnIfNotConfigured()

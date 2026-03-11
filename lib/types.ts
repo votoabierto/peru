@@ -54,6 +54,15 @@ export interface Party {
   updated_at: string
 }
 
+export interface CriminalRecord {
+  id: string
+  candidate_id: string
+  year: number
+  description: string
+  outcome: string
+  court?: string
+}
+
 export interface Candidate {
   id: string
   slug: string
@@ -69,7 +78,19 @@ export interface Candidate {
   age?: number
   photo_url?: string
   career_summary?: string
+  bio?: string
+  bio_short?: string
   current_polling?: number
+  polling_percentage?: number
+  declared_assets_pen?: number
+  criminal_records?: CriminalRecord[]
+  years_in_politics?: number
+  prior_offices?: string[]
+  born_year?: number
+  born_city?: string
+  website?: string
+  twitter?: string
+  facebook?: string
   is_verified?: boolean
   has_criminal_record?: boolean
   criminal_record_detail?: string
@@ -82,8 +103,11 @@ export interface Position {
   candidate_id: string
   issue_area: IssueArea
   stance: string
+  stance_description?: string
   quote?: string
+  source_quote?: string
   source_url?: string
+  source?: string
   verified?: boolean
   created_at: string
   updated_at: string
@@ -96,7 +120,9 @@ export interface FactCheck {
   verdict: Verdict
   explanation: string
   source_url?: string
+  source?: string
   checked_at: string
+  date_checked?: string
   created_at: string
   updated_at: string
 }

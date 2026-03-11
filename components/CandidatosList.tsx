@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Search } from 'lucide-react'
 import CandidateCard from '@/components/CandidateCard'
 import { IDEOLOGY_LABELS } from '@/lib/types'
@@ -53,9 +53,12 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
     ]
   }, [initialCandidates])
 
-  const filtered = useMemo(() => {
-    // Reset pagination whenever filters change
+  // Reset pagination whenever filters change
+  useEffect(() => {
     setVisibleCount(PAGE_SIZE)
+  }, [search, roleFilter, partyFilter, ideologyFilter])
+
+  const filtered = useMemo(() => {
     return initialCandidates.filter((c) => {
       const q = search.toLowerCase()
       const matchesSearch =
