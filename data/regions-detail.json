@@ -1,0 +1,576 @@
+[
+  {
+    "code": "AMA",
+    "name": "Amazonas",
+    "capital": "Chachapoyas",
+    "population": 430000,
+    "area_km2": 39249,
+    "key_issues": [
+      "conectividad vial",
+      "agricultura",
+      "turismo",
+      "pueblos indígenas",
+      "pobreza rural"
+    ],
+    "gdp_per_capita_usd": 2800,
+    "main_industries": [
+      "agricultura",
+      "ganadería",
+      "turismo",
+      "café"
+    ],
+    "congressional_seats": 2,
+    "description": "Región del nororiente peruano, conocida por la ciudadela de Kuélap. Enfrenta desafíos de conectividad y desarrollo rural, con alta dependencia de la agricultura y potencial turístico subutilizado."
+  },
+  {
+    "code": "ANC",
+    "name": "Áncash",
+    "capital": "Huaraz",
+    "population": 1200000,
+    "area_km2": 35915,
+    "key_issues": [
+      "canon minero",
+      "conflictos sociales",
+      "turismo de aventura",
+      "infraestructura vial",
+      "agua"
+    ],
+    "gdp_per_capita_usd": 5200,
+    "main_industries": [
+      "minería",
+      "turismo",
+      "pesca",
+      "agricultura"
+    ],
+    "congressional_seats": 5,
+    "description": "Región que combina la Cordillera Blanca con el litoral pacífico. Importante receptora de canon minero con el proyecto Antamina, aunque persisten conflictos sobre distribución de recursos y acceso al agua."
+  },
+  {
+    "code": "APU",
+    "name": "Apurímac",
+    "capital": "Abancay",
+    "population": 520000,
+    "area_km2": 20896,
+    "key_issues": [
+      "pobreza extrema",
+      "minería Las Bambas",
+      "conflictos sociales",
+      "educación",
+      "salud rural"
+    ],
+    "gdp_per_capita_usd": 3100,
+    "main_industries": [
+      "minería",
+      "agricultura",
+      "ganadería"
+    ],
+    "congressional_seats": 2,
+    "description": "Una de las regiones con mayor pobreza del Perú, paradójicamente alberga una de las minas de cobre más grandes del mundo (Las Bambas). Los conflictos por la distribución del canon y el impacto ambiental son constantes."
+  },
+  {
+    "code": "ARE",
+    "name": "Arequipa",
+    "capital": "Arequipa",
+    "population": 1500000,
+    "area_km2": 63345,
+    "key_issues": [
+      "agua y Tía María",
+      "crecimiento urbano",
+      "minería",
+      "autonomía regional",
+      "contaminación"
+    ],
+    "gdp_per_capita_usd": 7800,
+    "main_industries": [
+      "minería",
+      "manufactura",
+      "comercio",
+      "turismo",
+      "textil"
+    ],
+    "congressional_seats": 6,
+    "description": "Segunda ciudad del Perú, con economía diversificada y fuerte identidad regional. El proyecto minero Tía María ha generado una de las principales controversias ambientales del país, reflejando la tensión entre desarrollo y protección de fuentes de agua."
+  },
+  {
+    "code": "AYA",
+    "name": "Ayacucho",
+    "capital": "Ayacucho",
+    "population": 710000,
+    "area_km2": 43814,
+    "key_issues": [
+      "legado del conflicto armado",
+      "pobreza",
+      "reparaciones a víctimas",
+      "VRAEM",
+      "cultura e identidad"
+    ],
+    "gdp_per_capita_usd": 2900,
+    "main_industries": [
+      "agricultura",
+      "artesanía",
+      "turismo",
+      "ganadería"
+    ],
+    "congressional_seats": 3,
+    "description": "Región con historia marcada por el conflicto armado interno (1980-2000). En proceso de reconciliación y desarrollo, con rica tradición cultural e histórica. El VRAEM (zona cocalera) en su límite sur sigue siendo un desafío de seguridad."
+  },
+  {
+    "code": "CAJ",
+    "name": "Cajamarca",
+    "capital": "Cajamarca",
+    "population": 1580000,
+    "area_km2": 33318,
+    "key_issues": [
+      "minería Conga",
+      "agua",
+      "conflictos sociales",
+      "pobreza rural",
+      "lechería"
+    ],
+    "gdp_per_capita_usd": 3400,
+    "main_industries": [
+      "minería",
+      "ganadería lechera",
+      "agricultura",
+      "turismo"
+    ],
+    "congressional_seats": 6,
+    "description": "Región emblemática de los conflictos entre minería y agricultura en Perú. El proyecto Conga de Yanacocha fue bloqueado por protestas sociales. A pesar del canon minero, mantiene altos índices de pobreza rural."
+  },
+  {
+    "code": "CAL",
+    "name": "Callao",
+    "capital": "Callao",
+    "population": 1100000,
+    "area_km2": 147,
+    "key_issues": [
+      "inseguridad ciudadana",
+      "crimen organizado",
+      "puerto",
+      "vivienda",
+      "empleo informal"
+    ],
+    "gdp_per_capita_usd": 9200,
+    "main_industries": [
+      "comercio portuario",
+      "manufactura",
+      "logística",
+      "pesca"
+    ],
+    "congressional_seats": 4,
+    "description": "La región más pequeña y densamente poblada del Perú. Alberga el principal puerto del país y el aeropuerto internacional Jorge Chávez, pero también enfrenta graves problemas de inseguridad ciudadana y presencia de organizaciones criminales."
+  },
+  {
+    "code": "CUS",
+    "name": "Cusco",
+    "capital": "Cusco",
+    "population": 1400000,
+    "area_km2": 72104,
+    "key_issues": [
+      "turismo sostenible",
+      "Machu Picchu",
+      "gas de Camisea",
+      "comunidades campesinas",
+      "desarrollo urbano"
+    ],
+    "gdp_per_capita_usd": 6500,
+    "main_industries": [
+      "turismo",
+      "gas natural",
+      "minería",
+      "agricultura"
+    ],
+    "congressional_seats": 5,
+    "description": "Capital histórica del Tahuantinsuyo y primer destino turístico del Perú. El gas de Camisea aporta regalías significativas. Enfrenta el reto de equilibrar el crecimiento turístico con la preservación del patrimonio y el desarrollo de comunidades locales."
+  },
+  {
+    "code": "HUV",
+    "name": "Huancavelica",
+    "capital": "Huancavelica",
+    "population": 380000,
+    "area_km2": 22131,
+    "key_issues": [
+      "pobreza extrema",
+      "anemia infantil",
+      "desnutrición crónica",
+      "minería",
+      "friaje"
+    ],
+    "gdp_per_capita_usd": 1900,
+    "main_industries": [
+      "minería",
+      "ganadería",
+      "agricultura"
+    ],
+    "congressional_seats": 2,
+    "description": "La región más pobre del Perú, con los peores indicadores de desnutrición crónica y anemia infantil del país. Históricamente minera, enfrenta el desafío de convertir los recursos naturales en bienestar para su población."
+  },
+  {
+    "code": "HUC",
+    "name": "Huánuco",
+    "capital": "Huánuco",
+    "population": 900000,
+    "area_km2": 36847,
+    "key_issues": [
+      "coca y VRAEM",
+      "deforestación",
+      "pobreza",
+      "narcotráfico",
+      "conectividad"
+    ],
+    "gdp_per_capita_usd": 3200,
+    "main_industries": [
+      "agricultura",
+      "coca",
+      "ganadería",
+      "madera"
+    ],
+    "congressional_seats": 3,
+    "description": "Región de transición entre sierra y selva con importantes desafíos de desarrollo. Parte de su territorio está vinculado a la economía de la coca. La deforestación amazónica es una preocupación creciente."
+  },
+  {
+    "code": "ICA",
+    "name": "Ica",
+    "capital": "Ica",
+    "population": 900000,
+    "area_km2": 21328,
+    "key_issues": [
+      "agua subterránea",
+      "agroexportación",
+      "terremotos",
+      "empleo agrícola",
+      "vinos y piscos"
+    ],
+    "gdp_per_capita_usd": 8500,
+    "main_industries": [
+      "agroexportación",
+      "pisco",
+      "pesca",
+      "manufactura"
+    ],
+    "congressional_seats": 4,
+    "description": "Motor agroexportador del Perú, especialmente de espárragos, uvas y paltas. Enfrenta una crisis de sobreexplotación de acuíferos crítica para su actividad productiva. El pisco iqueño es parte central de su identidad cultural."
+  },
+  {
+    "code": "JUN",
+    "name": "Junín",
+    "capital": "Huancayo",
+    "population": 1500000,
+    "area_km2": 44197,
+    "key_issues": [
+      "minería y pasivos ambientales",
+      "VRAEM",
+      "comercio",
+      "transporte",
+      "desarrollo amazónico"
+    ],
+    "gdp_per_capita_usd": 5100,
+    "main_industries": [
+      "minería",
+      "comercio",
+      "agricultura",
+      "manufactura"
+    ],
+    "congressional_seats": 5,
+    "description": "Región con fuerte vocación comercial centrada en Huancayo. El VRAEM (Valle de los ríos Apurímac, Ene y Mantaro) abarca parte de su territorio, con presencia de remanentes terroristas y economía cocalera."
+  },
+  {
+    "code": "LAL",
+    "name": "La Libertad",
+    "capital": "Trujillo",
+    "population": 2100000,
+    "area_km2": 25500,
+    "key_issues": [
+      "inseguridad y extorsión",
+      "agroexportación",
+      "patrimonio arqueológico",
+      "agua para Chavimochic",
+      "criminalidad"
+    ],
+    "gdp_per_capita_usd": 6700,
+    "main_industries": [
+      "agroexportación",
+      "manufactura",
+      "minería",
+      "pesca"
+    ],
+    "congressional_seats": 8,
+    "description": "Segunda región más poblada del Perú y segunda economía regional. Trujillo, la Ciudad de la Eterna Primavera, enfrenta un grave problema de inseguridad ciudadana y extorsión que afecta al comercio. Chavimochic es el mayor proyecto de irrigación del norte."
+  },
+  {
+    "code": "LAM",
+    "name": "Lambayeque",
+    "capital": "Chiclayo",
+    "population": 1400000,
+    "area_km2": 14231,
+    "key_issues": [
+      "seguridad ciudadana",
+      "agroexportación",
+      "turismo cultural",
+      "infraestructura",
+      "agua"
+    ],
+    "gdp_per_capita_usd": 5900,
+    "main_industries": [
+      "agroexportación",
+      "comercio",
+      "turismo",
+      "agroindustria"
+    ],
+    "congressional_seats": 5,
+    "description": "Centro comercial del norte del Perú, conocida por sus sitios arqueológicos (Sipán, Túcume). Economía dinámica basada en el agro y el comercio, con Chiclayo como nodo logístico de la macroregión norte."
+  },
+  {
+    "code": "LIM",
+    "name": "Lima",
+    "capital": "Lima",
+    "population": 10800000,
+    "area_km2": 34801,
+    "key_issues": [
+      "tráfico",
+      "inseguridad",
+      "centralismo",
+      "acceso a vivienda",
+      "contaminación",
+      "agua potable"
+    ],
+    "gdp_per_capita_usd": 12500,
+    "main_industries": [
+      "servicios",
+      "manufactura",
+      "comercio",
+      "finanzas",
+      "construcción"
+    ],
+    "congressional_seats": 40,
+    "description": "Capital y motor económico del Perú, concentra el 33% de la población nacional y el 50% del PBI. Enfrenta desafíos estructurales de movilidad urbana, seguridad ciudadana y acceso a servicios básicos en zonas periféricas."
+  },
+  {
+    "code": "LOR",
+    "name": "Loreto",
+    "capital": "Iquitos",
+    "population": 1100000,
+    "area_km2": 368852,
+    "key_issues": [
+      "petróleo y derrames",
+      "pueblos indígenas",
+      "deforestación",
+      "conectividad fluvial",
+      "pobreza"
+    ],
+    "gdp_per_capita_usd": 3800,
+    "main_industries": [
+      "petróleo",
+      "pesca",
+      "turismo",
+      "madera"
+    ],
+    "congressional_seats": 4,
+    "description": "La región más extensa del Perú, completamente amazónica. Iquitos es la ciudad más grande del mundo sin acceso por carretera. Los derrames petroleros del Oleoducto Norperuano han generado conflictos con comunidades indígenas."
+  },
+  {
+    "code": "MDD",
+    "name": "Madre de Dios",
+    "capital": "Puerto Maldonado",
+    "population": 175000,
+    "area_km2": 85183,
+    "key_issues": [
+      "minería ilegal de oro",
+      "deforestación",
+      "tráfico de personas",
+      "biodiversidad",
+      "pueblos en aislamiento"
+    ],
+    "gdp_per_capita_usd": 5900,
+    "main_industries": [
+      "minería aurífera",
+      "turismo",
+      "madera",
+      "castaña"
+    ],
+    "congressional_seats": 1,
+    "description": "La región con mayor biodiversidad per cápita del mundo (Reserva de Biosfera del Manu). La minería ilegal de oro en La Pampa ha destruido miles de hectáreas de bosque y generado una crisis humanitaria con tráfico de personas."
+  },
+  {
+    "code": "MOQ",
+    "name": "Moquegua",
+    "capital": "Moquegua",
+    "population": 200000,
+    "area_km2": 15734,
+    "key_issues": [
+      "agua y minería",
+      "Tía María",
+      "pisco y vino",
+      "desarrollo sostenible",
+      "talento joven"
+    ],
+    "gdp_per_capita_usd": 14200,
+    "main_industries": [
+      "minería de cobre",
+      "agricultura",
+      "pesca"
+    ],
+    "congressional_seats": 1,
+    "description": "La región con mayor PBI per cápita del Perú gracias al canon minero de Southern Copper. Paradójicamente tiene una población pequeña y enfrenta tensiones por el acceso al agua entre la minería y la agricultura."
+  },
+  {
+    "code": "PAS",
+    "name": "Pasco",
+    "capital": "Cerro de Pasco",
+    "population": 290000,
+    "area_km2": 25028,
+    "key_issues": [
+      "contaminación por metales pesados",
+      "Cerro de Pasco",
+      "tajo abierto en ciudad",
+      "salud pública",
+      "diversificación económica"
+    ],
+    "gdp_per_capita_usd": 4600,
+    "main_industries": [
+      "minería de zinc y plata",
+      "ganadería",
+      "agricultura"
+    ],
+    "congressional_seats": 2,
+    "description": "Región minera por excelencia, con Cerro de Pasco (4,380 msnm) siendo la ciudad más alta del Perú. El tajo abierto de la mina divide literalmente la ciudad. Los altos niveles de metales pesados en la sangre de niños es uno de los mayores problemas de salud pública del país."
+  },
+  {
+    "code": "PIU",
+    "name": "Piura",
+    "capital": "Piura",
+    "population": 2100000,
+    "area_km2": 35892,
+    "key_issues": [
+      "El Niño y desastres",
+      "pesca",
+      "petróleo",
+      "agroexportación",
+      "agua"
+    ],
+    "gdp_per_capita_usd": 5500,
+    "main_industries": [
+      "pesca",
+      "petróleo",
+      "agroexportación",
+      "manufactura"
+    ],
+    "congressional_seats": 8,
+    "description": "Región norteña con economía pesquera e industrial significativa. Piura y Talara son centros de procesamiento de petróleo. Históricamente afectada por el Fenómeno El Niño, que en 2017 causó daños por miles de millones de soles."
+  },
+  {
+    "code": "PUN",
+    "name": "Puno",
+    "capital": "Puno",
+    "population": 1500000,
+    "area_km2": 71999,
+    "key_issues": [
+      "minería ilegal",
+      "contrabando",
+      "lago Titicaca",
+      "pueblos aymara y quechua",
+      "friaje"
+    ],
+    "gdp_per_capita_usd": 3600,
+    "main_industries": [
+      "minería",
+      "ganadería de camélidos",
+      "agricultura",
+      "turismo"
+    ],
+    "congressional_seats": 5,
+    "description": "Cuna del lago Titicaca y de civilizaciones preincaicas. Enfrenta el doble problema de la minería ilegal (que contamina el lago) y el contrabando desde Bolivia. El friaje anual afecta a comunidades altoandinas con temperaturas bajo cero."
+  },
+  {
+    "code": "SAM",
+    "name": "San Martín",
+    "capital": "Moyobamba",
+    "population": 950000,
+    "area_km2": 51253,
+    "key_issues": [
+      "deforestación",
+      "café orgánico",
+      "cacao",
+      "amazonia sostenible",
+      "colonización"
+    ],
+    "gdp_per_capita_usd": 4200,
+    "main_industries": [
+      "café",
+      "cacao",
+      "palma aceitera",
+      "arroz"
+    ],
+    "congressional_seats": 3,
+    "description": "Región amazónica que transformó su economía de la coca hacia el café y cacao con apoyo de cooperación internacional. Considerada un caso exitoso de desarrollo alternativo, aunque persisten desafíos de deforestación por colonización."
+  },
+  {
+    "code": "TAC",
+    "name": "Tacna",
+    "capital": "Tacna",
+    "population": 380000,
+    "area_km2": 16076,
+    "key_issues": [
+      "agua en zona árida",
+      "frontera con Chile",
+      "turismo de salud y compras",
+      "minería",
+      "historia"
+    ],
+    "gdp_per_capita_usd": 7100,
+    "main_industries": [
+      "comercio fronterizo",
+      "minería de cobre",
+      "agricultura",
+      "turismo"
+    ],
+    "congressional_seats": 2,
+    "description": "La ciudad más austral del Perú, reintegrada después del Tratado de Lima de 1929. Su economía se beneficia del turismo de compras desde Chile. La escasez de agua en esta zona desértica es un problema estructural crítico."
+  },
+  {
+    "code": "TUM",
+    "name": "Tumbes",
+    "capital": "Tumbes",
+    "population": 260000,
+    "area_km2": 4669,
+    "key_issues": [
+      "pesca y langostinos",
+      "turismo de playa",
+      "frontera con Ecuador",
+      "manglares",
+      "empleo"
+    ],
+    "gdp_per_capita_usd": 5300,
+    "main_industries": [
+      "acuicultura",
+      "pesca",
+      "turismo",
+      "petróleo"
+    ],
+    "congressional_seats": 1,
+    "description": "La región más pequeña por área y la única con manglares del Perú. Colinda con Ecuador y tiene potencial turístico en sus playas. La acuicultura de langostinos es una industria importante aunque ha generado daños en los manglares."
+  },
+  {
+    "code": "UCA",
+    "name": "Ucayali",
+    "capital": "Pucallpa",
+    "population": 620000,
+    "area_km2": 102411,
+    "key_issues": [
+      "deforestación",
+      "tráfico de madera",
+      "pueblos indígenas",
+      "conectividad amazónica",
+      "narcotráfico"
+    ],
+    "gdp_per_capita_usd": 4500,
+    "main_industries": [
+      "madera",
+      "petróleo",
+      "agricultura",
+      "pesca"
+    ],
+    "congressional_seats": 2,
+    "description": "Región amazónica con Pucallpa como principal ciudad fluvial del oriente peruano. Enfrenta alta tasa de deforestación por tala ilegal y expansión agrícola. Diversas comunidades shipibo-conibo han liderado iniciativas de defensa territorial."
+  }
+]

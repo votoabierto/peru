@@ -1,282 +1,128 @@
-# VotoClaro 🗳️
+# VotoAbierto
 
-**Vota informado. Peru 2026.**
+**Transparencia electoral para el Peru. Open source, non-partisan.**
 
-VotoClaro es una plataforma de información electoral **no-partidaria** para las elecciones generales del Perú del **12 de abril de 2026**. Combatimos la desinformación electoral poniendo datos verificados sobre candidatos, propuestas y hechos al alcance de todos los votantes peruanos.
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript)](https://typescriptlang.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?logo=supabase)](https://supabase.com/)
+[![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-deployed-black?logo=vercel)](https://vercel.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> 67% de peruanos obtiene información política de WhatsApp y redes sociales. VotoClaro es la fuente de verdad que sí van a usar.
+<!-- screenshot -->
 
 ---
 
-## Características
+## Que es VotoAbierto?
 
-- **Perfiles de candidatos** — Todos los candidatos presidenciales, senatoriales y de diputados
+VotoAbierto es una plataforma de informacion electoral **no-partidaria** para las elecciones generales del Peru del **12 de abril de 2026**. Combatimos la desinformacion electoral poniendo datos verificados sobre candidatos, propuestas y hechos al alcance de todos los votantes peruanos. Construida por ciudadanos, para ciudadanos.
+
+> 67% de peruanos obtiene informacion politica de WhatsApp y redes sociales. VotoAbierto es la fuente de verdad que van a usar.
+
+---
+
+## Features
+
+- **Perfiles de candidatos** — Todos los candidatos presidenciales, senatoriales y de diputados con datos verificados
 - **Comparador** — Compara hasta 3 candidatos lado a lado en temas clave
-- **Fact-checking** — Verificación de claims con veredictos claros (Verdadero / Falso / Engañoso)
-- **Por región** — Candidatos y temas por las 24 regiones del Perú
-- **Cuenta regresiva** — Días para el 12 de abril de 2026
-- **Compartible** — Diseñado para WhatsApp y redes sociales
+- **Fact-checking** — Verificacion de claims con veredictos claros (Verdadero / Falso / Enganoso)
+- **Por region** — Candidatos y temas por las 24 regiones del Peru
+- **Cuenta regresiva** — Dias para el 12 de abril de 2026
+- **Tarjetas compartibles** — Disenado para WhatsApp y redes sociales
 
 ---
 
-## Stack técnico
+## Tech stack
 
-| Componente | Tecnología |
+| Component | Technology |
 |-----------|-----------|
-| Framework | Next.js 14 (App Router) |
-| Estilos | Tailwind CSS |
-| Base de datos | Supabase (PostgreSQL) |
-| Deploy | Vercel |
-| Fuente | Inter (Google Fonts) |
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript (strict mode) |
+| Styling | Tailwind CSS v4 |
+| Database | Supabase (PostgreSQL) |
+| Deployment | Vercel |
+| Font | Noto Sans + IBM Plex Mono |
 
 ---
 
-## Setup local
+## Project structure
 
-### Prerrequisitos
-- Node.js 18+
-- npm o pnpm
-- Cuenta en Supabase (gratuita)
+```
+votoabierto/
+├── app/                    # Next.js App Router pages and API routes
+│   ├── page.tsx            # Homepage with countdown and candidate cards
+│   ├── candidatos/         # Presidential candidate list and profiles
+│   ├── senado/             # Senate candidates
+│   ├── diputados/          # House candidates
+│   ├── regiones/           # Regional breakdown
+│   ├── comparar/           # Side-by-side candidate comparator
+│   ├── verificar/          # Fact-check feed
+│   └── api/                # API routes (search, candidates, fact-checks)
+├── components/             # React components (Navbar, Footer, Cards, etc.)
+├── lib/                    # Data fetching, Supabase client, TypeScript types
+├── data/                   # JSON data files — edit here to contribute data
+│   ├── candidates.json     # Presidential candidates
+│   ├── congress.json       # Congressional candidates
+│   ├── regions.json        # Regions of Peru
+│   ├── fact-checks.json    # Verified claims
+│   └── positions.json      # Candidate stances on issues
+├── docs/                   # Project documentation
+│   ├── ROADMAP.md          # Launch roadmap
+│   └── SOURCES.md          # Verified data sources
+├── supabase/               # Database migrations
+└── scripts/                # Seed scripts for database
+```
 
-### Instalación
+---
+
+## How to contribute
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Three ways to help:
+
+1. **Add data** (no coding needed) — edit JSON files in `data/` and submit a PR
+2. **Fix bugs** — check [Issues](https://github.com/votoabierto/votoabierto/issues) for open bugs
+3. **Add features** — pick up a feature request or propose your own
+
+---
+
+## Local setup
 
 ```bash
-# 1. Clonar el repositorio
-git clone https://github.com/votoclaro/votoclaro-pe.git
-cd votoclaro-pe
+# 1. Clone the repo
+git clone https://github.com/votoabierto/votoabierto.git
+cd votoabierto
 
-# 2. Instalar dependencias
+# 2. Install dependencies
 npm install
 
-# 3. Configurar variables de entorno
+# 3. Set up environment variables
 cp .env.local.example .env.local
-# → Editar .env.local con tus credenciales de Supabase
+# Edit .env.local with your Supabase credentials (optional — app works without them using seed data)
 
-# 4. Aplicar migraciones de base de datos
-# En tu dashboard de Supabase > SQL Editor > ejecutar en orden:
-# supabase/migrations/001_initial.sql
-# supabase/migrations/002_indexes_and_rls.sql
-
-# 5. Cargar datos de candidatos
-NEXT_PUBLIC_SUPABASE_URL=tu-url SUPABASE_SERVICE_ROLE_KEY=tu-key \
-  npx tsx scripts/seed-candidates.ts
-
-# 6. Correr en desarrollo
+# 4. Run the dev server
 npm run dev
 ```
 
-Abrir [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000). The app uses seed data from `data/` when Supabase is not configured.
+
+### With Supabase (optional)
+
+1. Create a project at [supabase.com](https://supabase.com)
+2. Run migrations in SQL Editor: `supabase/migrations/001_initial.sql` then `002_indexes_and_rls.sql`
+3. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to `.env.local`
+4. Seed the database: `SUPABASE_SERVICE_ROLE_KEY=your-key npx tsx scripts/seed-candidates.ts`
 
 ---
 
-## Database Setup
+## Data sources
 
-VotoClaro uses Supabase as its database. The app falls back to seed data when Supabase is not configured, so local development without a database is possible.
-
-### Step 1: Create a Supabase Project
-
-1. Go to [supabase.com](https://supabase.com) and create a new project
-2. Choose a region close to Peru (e.g., South America — São Paulo)
-3. Wait for the project to be ready (~2 minutes)
-4. Go to **Project Settings → API** and note:
-   - **Project URL**: `https://your-project-ref.supabase.co`
-   - **anon/public key**: starts with `eyJ...`
-   - **service_role key**: starts with `eyJ...` (keep this secret)
-
-### Step 2: Apply Database Migrations
-
-In your Supabase project:
-
-1. Go to **SQL Editor** (left sidebar)
-2. Click **New query**
-3. Paste the contents of `supabase/migrations/001_initial.sql` and click **Run**
-4. Create another new query
-5. Paste the contents of `supabase/migrations/002_indexes_and_rls.sql` and click **Run**
-
-Migration 002 adds:
-- Trigram full-text search indexes
-- Performance indexes on commonly filtered columns
-- Row Level Security (read-only for anonymous users)
-- `congress_candidates` table for congressional candidates
-- `search_candidates()` SQL function
-
-### Step 3: Set Environment Variables
-
-Create a `.env.local` file at the project root:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
-```
-
-⚠️ Never commit `.env.local` to Git. It's already in `.gitignore`.
-
-### Step 4: Seed the Database
-
-Run the seeder with your environment variables:
-
-```bash
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co \
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key \
-npx tsx scripts/seed-candidates.ts
-```
-
-Or use the convenience script (prompts before running):
-
-```bash
-export NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
-export SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-bash scripts/reset-and-seed.sh
-```
-
-The seeder is safe to run multiple times. Candidates and parties use UPSERT; positions and fact-checks use DELETE+INSERT per candidate.
-
-### Step 5: Verify Locally
-
-```bash
-npm run dev
-```
-
-Visit `http://localhost:3000` — candidates should load from Supabase. If you see the warning `[VotoClaro] Supabase not configured — using seed data`, check your `.env.local` values.
-
-### Step 6: Configure Vercel Deployment
-
-In your Vercel project:
-
-1. Go to **Settings → Environment Variables**
-2. Add these variables for **Production** and **Preview** environments:
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-3. Trigger a redeployment.
-
-### Schema Overview
-
-| Table | Description |
-|-------|-------------|
-| `candidates` | Presidential and vice-presidential candidates |
-| `congress_candidates` | Congressional (Congreso) candidates |
-| `positions` | Candidate stances on issue areas |
-| `fact_checks` | Verified claims with verdicts |
-| `regions` | Peru's 25 regions |
-| `parties` | Political parties |
-
-### Re-seeding After Data Updates
-
-When seed data changes (new candidates, updated positions):
-
-```bash
-NEXT_PUBLIC_SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... npx tsx scripts/seed-candidates.ts
-```
+All data is sourced from official Peruvian electoral authorities and verified media. See [docs/SOURCES.md](docs/SOURCES.md) for the complete list of sources and verification protocol.
 
 ---
 
-## Variables de entorno
+## License
 
-```env
-# .env.local
-NEXT_PUBLIC_SUPABASE_URL=https://tu-proyecto.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=tu-anon-key
+[MIT](LICENSE) — free to use, modify, and distribute with attribution.
 
-# Solo para scripts de servidor (no exponer al cliente)
-SUPABASE_SERVICE_ROLE_KEY=tu-service-role-key
-```
-
----
-
-## Estructura del proyecto
-
-```
-votoclaro/
-├── app/
-│   ├── page.tsx              # Homepage
-│   ├── candidatos/
-│   │   ├── page.tsx          # Lista de candidatos
-│   │   └── [id]/page.tsx     # Perfil de candidato
-│   ├── regiones/page.tsx     # Mapa regional
-│   ├── comparar/page.tsx     # Comparador
-│   └── verificar/page.tsx    # Fact-checks
-├── components/
-│   ├── Navbar.tsx
-│   ├── Footer.tsx
-│   ├── CandidateCard.tsx
-│   ├── IssueStance.tsx
-│   ├── FactCheckBadge.tsx
-│   ├── CountdownTimer.tsx
-│   └── RegionCard.tsx
-├── lib/
-│   ├── supabase.ts           # Cliente Supabase
-│   ├── types.ts              # TypeScript types
-│   ├── seed-data.ts          # Datos de candidatos (desarrollo)
-│   └── regions-data.ts       # Datos de regiones
-├── supabase/
-│   └── migrations/
-│       └── 001_initial.sql   # Schema inicial
-├── scripts/
-│   └── seed-candidates.ts    # Script de carga de datos
-└── docs/
-    ├── ROADMAP.md            # Plan de 5 semanas al día E
-    └── SOURCES.md            # Fuentes de datos verificadas
-```
-
----
-
-## Cómo contribuir
-
-### Formas de contribuir
-
-**Datos (más importante ahora mismo)**
-1. Verifica un perfil de candidato contra [INFOGOB](https://infogob.jne.gob.pe)
-2. Abre un Issue con datos corregidos o faltantes
-3. Envía un PR con datos de candidatos de tu región
-
-**Fact-checking**
-1. Identifica un claim verificable de un candidato
-2. Busca 2+ fuentes independientes
-3. Abre un Issue usando la plantilla de fact-check
-
-**Técnico**
-1. Fork del repositorio
-2. `git checkout -b feature/tu-feature`
-3. PR con descripción clara de cambios
-
-### Principios editoriales
-- **No-partidario:** No expresamos preferencias por ningún candidato
-- **Dos fuentes:** Ningún dato sin 2 fuentes verificadas
-- **Transparencia:** Cada dato lleva su fuente
-- **Corrección:** Errores se corrigen públicamente con nota de corrección
-
----
-
-## Elecciones 2026 — Contexto
-
-| Dato | Valor |
-|------|-------|
-| Primera vuelta | 12 de abril de 2026 |
-| Segunda vuelta | 7 de junio de 2026 (si aplica) |
-| Candidatos presidenciales | 34-37 registrados |
-| Senadores a elegir | 60 (primer Senado desde 1992) |
-| Diputados a elegir | 130 |
-| Distritos electorales | 27 |
-| Regiones | 24 + Lima Provincias |
-
----
-
-## Organismos electorales oficiales
-
-- **JNE** (Jurado Nacional de Elecciones): [jne.gob.pe](https://jne.gob.pe)
-- **ONPE** (Oficina Nacional de Procesos Electorales): [onpe.gob.pe](https://onpe.gob.pe)
-- **INFOGOB** (Datos de candidatos): [infogob.jne.gob.pe](https://infogob.jne.gob.pe)
-
----
-
-## Licencia
-
-MIT License — libre para usar, modificar y distribuir con atribución.
-
----
-
-**VotoClaro no está afiliado a ningún partido político, candidato o entidad gubernamental.**
+**VotoAbierto no esta afiliado a ningun partido politico, candidato o entidad gubernamental.**
 *Construido por ciudadanos, para ciudadanos.*
-
-*Plataforma lanzada en emergencia: marzo 2026 · Elecciones: 12 de abril de 2026*
