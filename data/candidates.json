@@ -13,7 +13,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/251cd1c0-acc7-4338-bd8a-439ccb9238d0.jpeg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "cesar-acuna",
@@ -29,7 +31,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/d6fe3cac-7061-474b-8551-0aa686a54bad.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "jorge-nieto-montesinos",
@@ -45,7 +49,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/9ae56ed5-3d0f-49ff-8bb9-0390bad71816.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "rosario-del-pilar-fernandez",
@@ -61,7 +67,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/ac0b0a59-ead5-4ef1-8ef8-8967e322d6ca.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "herbert-caller",
@@ -77,7 +85,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/6ad6c5ff-0411-4ddd-9cf7-b0623f373fcf.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "alfonso-lopez-chau",
@@ -93,7 +103,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/ddfa74eb-cae3-401c-a34c-35543ae83c57.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "jose-luna-galvez",
@@ -109,7 +121,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/a669a883-bf8a-417c-9296-c14b943c3943.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "roberto-sanchez",
@@ -125,7 +139,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/bb7c7465-9c6e-44eb-ac7d-e6cc7f872a1a.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "carlos-jaico",
@@ -141,7 +157,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/7d91e14f-4417-4d61-89ba-3e686dafaa95.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "fernando-olivera",
@@ -157,7 +175,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/3e2312e1-af79-4954-abfa-a36669c1a9e9.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "charlie-carrasco",
@@ -173,7 +193,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/12fa17db-f28f-4330-9123-88549539b538.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "marisol-perez-tello",
@@ -189,7 +211,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/073703ca-c427-44f0-94b1-a782223a5e10.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "paul-jaimes",
@@ -205,7 +229,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/929e1a63-335d-4f3a-ba26-f3c7ff136213.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "mesias-guevara",
@@ -221,7 +247,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/1b861ca7-3a5e-48b4-9024-08a92371e33b.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "alvaro-paz-de-la-barra",
@@ -237,7 +265,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://votoinformado.jne.gob.pe/assets/images/candidatos/ALVARO%20PAZ%20DE%20LA%20BARRA.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "george-forsyth",
@@ -253,7 +283,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/b1d60238-c797-4cba-936e-f13de6a34cc7.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "carlos-alvarez",
@@ -269,7 +301,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/2bd18177-d665-413d-9694-747d729d3e39.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "francisco-diez-canseco",
@@ -285,7 +319,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/2d1bf7f2-6e88-4ea9-8ed2-975c1ae5fb92.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "wolfgang-grozo",
@@ -301,7 +337,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/064360d1-ce49-4abe-939c-f4de8b0130a2.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "ricardo-belmont",
@@ -317,7 +355,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/78647f15-d5d1-4ed6-8ac6-d599e83eeea3.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "napoleon-becerra",
@@ -333,7 +373,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/bab206cb-b2d5-41ec-bde8-ef8cf3e0a2df.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "ronald-atencio",
@@ -349,7 +391,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/bac0288d-3b21-45ac-8849-39f9177fb020.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "yonhy-lescano",
@@ -365,7 +409,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/b9db2b5c-02ff-4265-ae51-db9b1001ad70.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "mario-vizcarra",
@@ -381,7 +427,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/ee7a080e-bc81-4c81-9e5e-9fd95ff459ab.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "joaquin-masse-fernandez",
@@ -397,7 +445,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/cb1adeb7-7d2f-430c-ae87-519137d8edfa.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "enrique-valderrama",
@@ -413,7 +463,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/d72c4b29-e173-42b8-b40d-bdb6d01a526a.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "alex-gonzales-castillo",
@@ -429,7 +481,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/c0ae56bf-21c1-4810-890a-b25c8465bdd9.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "roberto-chiabra",
@@ -445,7 +499,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/5c703ce9-ba1e-4490-90bf-61006740166f.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "rafael-belaunde",
@@ -461,7 +517,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/3302e45b-55c8-4979-a60b-2b11097abf1d.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "carlos-espa",
@@ -477,7 +535,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/85935f77-6c46-4eab-8c7e-2494ffbcece0.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "antonio-ortiz-villano",
@@ -493,7 +553,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/8e6b9124-2883-4143-8768-105f2ce780eb.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "fiorella-molinelli",
@@ -509,7 +571,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/1de656b5-7593-4c60-ab7a-83d618a3d80d.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "vladimir-cerron",
@@ -525,7 +589,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/82ee0ff2-2336-4aba-9590-e576f7564315.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "walter-chirinos",
@@ -541,7 +607,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/a2d0f631-fe47-4c41-92ba-7ed9f4095520.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "rafael-lopez-aliaga",
@@ -557,7 +625,9 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/b2e00ae2-1e50-4ad3-a103-71fc7e4e8255.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   },
   {
     "id": "jose-williams-zapata",
@@ -573,6 +643,8 @@
     "has_criminal_record": false,
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
-    "updated_at": "2026-03-11T00:00:00Z"
+    "updated_at": "2026-03-11T00:00:00Z",
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/b60c471f-a6bb-4b42-a4b2-02ea38acbb0d.jpg",
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
   }
 ]
