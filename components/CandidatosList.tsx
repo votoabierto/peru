@@ -6,6 +6,8 @@ import CandidateCard from '@/components/CandidateCard'
 import { IDEOLOGY_LABELS } from '@/lib/types'
 import type { Candidate } from '@/lib/types'
 
+const PAGE_SIZE = 12
+
 const ROLE_OPTIONS = [
   { value: '', label: 'Todos los cargos' },
   { value: 'president', label: 'Presidente' },
@@ -19,6 +21,7 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
   const [roleFilter, setRoleFilter] = useState('')
   const [partyFilter, setPartyFilter] = useState('')
   const [ideologyFilter, setIdeologyFilter] = useState('')
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
 
   const partyOptions = useMemo(() => {
     const seen = new Map<string, string>()
@@ -51,6 +54,8 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
   }, [initialCandidates])
 
   const filtered = useMemo(() => {
+    // Reset pagination whenever filters change
+    setVisibleCount(PAGE_SIZE)
     return initialCandidates.filter((c) => {
       const q = search.toLowerCase()
       const matchesSearch =
@@ -67,6 +72,9 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
       return matchesSearch && matchesRole && matchesParty && matchesIdeology
     })
   }, [initialCandidates, search, roleFilter, partyFilter, ideologyFilter])
+
+  const visible = filtered.slice(0, visibleCount)
+  const hasMore = visibleCount < filtered.length
 
   return (
     <>
@@ -154,14 +162,24 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
           ) : (
             <>
               <p className="text-xs text-votoclaro-text-muted mb-6">
-                {filtered.length} candidato{filtered.length !== 1 ? 's' : ''} encontrado
+                Mostrando {Math.min(visibleCount, filtered.length)} de {filtered.length} candidato
                 {filtered.length !== 1 ? 's' : ''}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {filtered.map((candidate) => (
+                {visible.map((candidate) => (
                   <CandidateCard key={candidate.id} {...candidate} />
                 ))}
               </div>
+              {hasMore && (
+                <div className="mt-8 text-center">
+                  <button
+                    onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
+                    className="px-6 py-3 bg-votoclaro-surface-2 border border-votoclaro-border rounded-lg text-sm text-votoclaro-text hover:border-votoclaro-gold transition-colors"
+                  >
+                    Ver más candidatos ({filtered.length - visibleCount} restantes)
+                  </button>
+                </div>
+              )}
             </>
           )}
         </div>
