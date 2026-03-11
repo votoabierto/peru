@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/regiones', label: 'Regiones' },
   { href: '/comparar', label: 'Comparar' },
   { href: '/verificar', label: 'Verificar' },
+  { href: '/metodologia', label: 'Metodología' },
 ]
 
 export default function Navbar() {

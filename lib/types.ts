@@ -116,15 +116,17 @@ export interface Position {
 export interface FactCheck {
   id: string
   candidate_id: string
+  candidate_name?: string
   claim: string
   verdict: Verdict
   explanation: string
   source_url?: string
   source?: string
-  checked_at: string
+  checked_at?: string
   date_checked?: string
-  created_at: string
-  updated_at: string
+  category?: string
+  created_at?: string
+  updated_at?: string
 }
 
 // ─── Label & Color Maps ───────────────────────────────────────────────────────

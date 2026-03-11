@@ -125,7 +125,7 @@ export default function VerificarClient({
                           </span>
                         </span>
                         <span className="text-xs text-votoclaro-text-muted">
-                          {formatDate(fc.checked_at)}
+                          {formatDate(fc.checked_at ?? fc.date_checked ?? '')}
                         </span>
                       </div>
                     )}
