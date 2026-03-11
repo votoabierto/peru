@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { href: '/candidatos', label: 'Candidatos' },
+  { href: '/congreso', label: 'Congreso' },
   { href: '/regiones', label: 'Regiones' },
   { href: '/comparar', label: 'Comparar' },
   { href: '/verificar', label: 'Verificar' },

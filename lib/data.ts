@@ -5,7 +5,8 @@ import {
   SEED_FACT_CHECKS,
 } from './seed-data'
 import { PERU_REGIONS, type RegionData } from './regions-data'
-import type { Candidate, Position, FactCheck } from './types'
+import { CONGRESS_CANDIDATES } from './congress-data'
+import type { Candidate, Position, FactCheck, CongressCandidate } from './types'
 
 export interface CandidateFilters {
   role?: 'president' | 'vice_president' | 'senator' | 'representative'
@@ -157,6 +158,51 @@ export async function getRegions(): Promise<RegionData[]> {
   }
 
   return data as RegionData[]
+}
+
+export interface CongressFilters {
+  party?: string
+  region?: string
+}
+
+export async function getCongressCandidates(filters?: CongressFilters): Promise<CongressCandidate[]> {
+  warnIfNotConfigured()
+
+  let candidates: CongressCandidate[]
+
+  if (!isSupabaseConfigured()) {
+    candidates = CONGRESS_CANDIDATES
+  } else {
+    const client = getSupabaseClient()!
+    let query = client.from('congress_candidates').select('*')
+
+    if (filters?.party) {
+      query = query.eq('party', filters.party)
+    }
+    if (filters?.region) {
+      query = query.eq('region', filters.region)
+    }
+
+    const { data, error } = await query
+    if (error || !data) {
+      console.error('[VotoClaro] Supabase getCongressCandidates error, falling back to seed data:', error)
+      candidates = CONGRESS_CANDIDATES
+    } else {
+      candidates = data as CongressCandidate[]
+    }
+  }
+
+  if (filters?.party) {
+    candidates = candidates.filter((c) => c.party === filters.party)
+  }
+  if (filters?.region) {
+    candidates = candidates.filter((c) => c.region === filters.region)
+  }
+
+  return candidates.sort((a, b) => {
+    if (a.party !== b.party) return a.party.localeCompare(b.party)
+    return a.list_position - b.list_position
+  })
 }
 
 export async function searchCandidates(query: string): Promise<Candidate[]> {

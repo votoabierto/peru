@@ -147,3 +147,19 @@ export const VERDICT_LABELS: Record<Verdict, string> = {
   unverifiable: 'No verificable',
   context_needed: 'Necesita contexto',
 }
+
+export interface CongressCandidate {
+  id: string
+  full_name: string
+  party: string
+  party_abbreviation: string
+  region: string
+  list_position: number
+  role: 'congresista'
+  ideology: IdeologyType
+  bio: string
+  photo_url: string | null
+  prior_roles: string[]
+  key_stances: string[]
+  polling_percentage?: number | null
+}
