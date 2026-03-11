@@ -20,12 +20,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const candidate = await getCandidateById(id)
   if (!candidate) return { title: 'Candidato no encontrado — VotoAbierto' }
   const description = candidate.bio_short ?? candidate.career_summary?.slice(0, 150) ?? ''
+  const slug = candidate.slug ?? candidate.id
   return {
     title: `${candidate.full_name} — VotoAbierto`,
     description,
     openGraph: {
       title: `${candidate.full_name} | ${candidate.party_name}`,
       description,
+      images: [`/api/og/candidato/${slug}`],
+      type: 'profile',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${candidate.full_name} — VotoAbierto`,
+      description,
+      images: [`/api/og/candidato/${slug}`],
     },
   }
 }

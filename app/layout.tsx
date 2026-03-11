@@ -19,6 +19,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://votoabierto.pe'),
   title: "VotoAbierto — Vota informado. Peru 2026",
   description:
     "Plataforma de información electoral no-partidaria para las elecciones generales del Perú, 12 de abril de 2026. Conoce a los candidatos, compara propuestas y verifica los hechos.",
@@ -32,6 +33,11 @@ export const metadata: Metadata = {
     description: "Información electoral verificada para el Perú 2026.",
     locale: "es_PE",
     type: "website",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "VotoAbierto — Vota informado.",
+    description: "Información electoral verificada para el Perú 2026.",
   },
 };
 

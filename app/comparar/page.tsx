@@ -10,6 +10,17 @@ interface Props {
 export const metadata: Metadata = {
   title: 'Comparar Candidatos — VotoAbierto',
   description: 'Compara hasta 3 candidatos presidenciales peruanos lado a lado.',
+  openGraph: {
+    title: 'Comparar Candidatos — VotoAbierto',
+    description: 'Compara hasta 3 candidatos presidenciales peruanos lado a lado.',
+    images: ['/api/og/comparar'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Comparar Candidatos — VotoAbierto',
+    description: 'Compara hasta 3 candidatos presidenciales peruanos lado a lado.',
+    images: ['/api/og/comparar'],
+  },
 };
 
 export default async function ComparePage({ searchParams }: Props) {
