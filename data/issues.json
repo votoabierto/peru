@@ -1,0 +1,74 @@
+{
+  "issues": [
+    {
+      "key": "economia",
+      "label": "Modelo económico",
+      "left_label": "Estado regulador / economía mixta",
+      "right_label": "Libre mercado / menos intervención",
+      "question": "¿Cuál debe ser el rol del Estado en la economía?"
+    },
+    {
+      "key": "seguridad",
+      "label": "Seguridad ciudadana",
+      "left_label": "Rehabilitación y prevención social",
+      "right_label": "Mano dura / penas más severas",
+      "question": "¿Cómo debe el Estado combatir la delincuencia?"
+    },
+    {
+      "key": "corrupcion",
+      "label": "Anticorrupción",
+      "left_label": "Reformas institucionales profundas",
+      "right_label": "Penas más duras para funcionarios corruptos",
+      "question": "¿Cuál es la mejor forma de combatir la corrupción?"
+    },
+    {
+      "key": "educacion",
+      "label": "Educación",
+      "left_label": "Educación pública universal y gratuita",
+      "right_label": "Vouchers y libertad de elección educativa",
+      "question": "¿Cómo debe financiarse la educación en el Perú?"
+    },
+    {
+      "key": "recursos_naturales",
+      "label": "Recursos naturales",
+      "left_label": "Prioridad al medio ambiente y comunidades",
+      "right_label": "Maximizar extracción para el crecimiento",
+      "question": "¿Cómo debe el Perú usar sus recursos naturales?"
+    },
+    {
+      "key": "salud",
+      "label": "Sistema de salud",
+      "left_label": "Sistema público universal (tipo SIS ampliado)",
+      "right_label": "Sistema mixto con competencia privada",
+      "question": "¿Cómo debe organizarse el sistema de salud?"
+    },
+    {
+      "key": "descentralizacion",
+      "label": "Descentralización",
+      "left_label": "Mayor autonomía regional / federalismo",
+      "right_label": "Gobierno central fuerte",
+      "question": "¿Cuánta autonomía deben tener las regiones?"
+    },
+    {
+      "key": "reforma_judicial",
+      "label": "Reforma judicial",
+      "left_label": "Reforma estructural profunda del poder judicial",
+      "right_label": "Cambios graduales dentro del sistema actual",
+      "question": "¿Qué tan urgente es reformar el sistema judicial?"
+    },
+    {
+      "key": "politica_social",
+      "label": "Programas sociales",
+      "left_label": "Ampliar programas sociales (más Pensión 65, Juntos, etc.)",
+      "right_label": "Reducir asistencialismo / fomentar empleo formal",
+      "question": "¿Cuál es la mejor estrategia para reducir la pobreza?"
+    },
+    {
+      "key": "constitucion",
+      "label": "Reforma constitucional",
+      "left_label": "Nueva constitución / asamblea constituyente",
+      "right_label": "Mantener la Constitución de 1993 con reformas puntuales",
+      "question": "¿Necesita el Perú una nueva constitución?"
+    }
+  ]
+}

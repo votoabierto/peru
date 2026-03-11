@@ -1,0 +1,650 @@
+[
+  {
+    "candidate_id": "keiko-fujimori",
+    "candidate_name": "Keiko Fujimori",
+    "party": "Fuerza Popular",
+    "party_abbreviation": "FP",
+    "positions": {
+      "economia": { "score": 5, "label": "Libre mercado", "verified": true },
+      "seguridad": { "score": 5, "label": "Mano dura", "verified": true },
+      "corrupcion": { "score": 3, "label": "Posición mixta", "verified": false },
+      "educacion": { "score": 4, "label": "Alianzas público-privadas", "verified": true },
+      "recursos_naturales": { "score": 5, "label": "Pro-extracción", "verified": true },
+      "salud": { "score": 4, "label": "Sistema mixto", "verified": true },
+      "descentralizacion": { "score": 3, "label": "Posición mixta", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Cambios graduales", "verified": false },
+      "politica_social": { "score": 3, "label": "Equilibrio empleo-asistencia", "verified": false },
+      "constitucion": { "score": 5, "label": "Mantener Constitución 1993", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "vladimir-cerron",
+    "candidate_name": "Vladimir Cerrón",
+    "party": "Perú Libre",
+    "party_abbreviation": "PL",
+    "positions": {
+      "economia": { "score": 1, "label": "Estado regulador fuerte", "verified": true },
+      "seguridad": { "score": 2, "label": "Prevención social", "verified": true },
+      "corrupcion": { "score": 2, "label": "Reformas institucionales", "verified": true },
+      "educacion": { "score": 1, "label": "Educación pública universal", "verified": true },
+      "recursos_naturales": { "score": 2, "label": "Prioridad comunidades", "verified": true },
+      "salud": { "score": 1, "label": "Sistema público universal", "verified": true },
+      "descentralizacion": { "score": 4, "label": "Mayor autonomía regional", "verified": true },
+      "reforma_judicial": { "score": 1, "label": "Reforma estructural profunda", "verified": true },
+      "politica_social": { "score": 1, "label": "Ampliar programas sociales", "verified": true },
+      "constitucion": { "score": 1, "label": "Nueva constitución", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "rafael-lopez-aliaga",
+    "candidate_name": "Rafael López Aliaga",
+    "party": "Renovación Popular",
+    "party_abbreviation": "RP",
+    "positions": {
+      "economia": { "score": 5, "label": "Libre mercado total", "verified": true },
+      "seguridad": { "score": 5, "label": "Mano dura / pena de muerte", "verified": true },
+      "corrupcion": { "score": 4, "label": "Penas duras anticorrupción", "verified": true },
+      "educacion": { "score": 5, "label": "Vouchers educativos", "verified": true },
+      "recursos_naturales": { "score": 5, "label": "Maximizar extracción", "verified": true },
+      "salud": { "score": 4, "label": "Competencia privada", "verified": true },
+      "descentralizacion": { "score": 2, "label": "Gobierno central fuerte", "verified": true },
+      "reforma_judicial": { "score": 4, "label": "Reformas puntuales fuertes", "verified": true },
+      "politica_social": { "score": 4, "label": "Fomentar empleo formal", "verified": true },
+      "constitucion": { "score": 5, "label": "Mantener Constitución 1993", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "cesar-acuna",
+    "candidate_name": "César Acuña",
+    "party": "Alianza para el Progreso",
+    "party_abbreviation": "APP",
+    "positions": {
+      "economia": { "score": 4, "label": "Mercado con inversión pública", "verified": true },
+      "seguridad": { "score": 4, "label": "Más policías y penas", "verified": true },
+      "corrupcion": { "score": 3, "label": "Posición mixta", "verified": false },
+      "educacion": { "score": 4, "label": "Inversión público-privada", "verified": true },
+      "recursos_naturales": { "score": 4, "label": "Pro-inversión minera", "verified": true },
+      "salud": { "score": 3, "label": "Sistema mixto", "verified": false },
+      "descentralizacion": { "score": 4, "label": "Mayor descentralización", "verified": true },
+      "reforma_judicial": { "score": 3, "label": "Cambios graduales", "verified": false },
+      "politica_social": { "score": 3, "label": "Equilibrio", "verified": false },
+      "constitucion": { "score": 4, "label": "Reformas puntuales", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "jose-williams-zapata",
+    "candidate_name": "José Williams Zapata",
+    "party": "Avanza País",
+    "party_abbreviation": "AVP",
+    "positions": {
+      "economia": { "score": 5, "label": "Libre mercado", "verified": true },
+      "seguridad": { "score": 5, "label": "Mano dura militar", "verified": true },
+      "corrupcion": { "score": 4, "label": "Penas severas", "verified": true },
+      "educacion": { "score": 4, "label": "Inversión público-privada", "verified": true },
+      "recursos_naturales": { "score": 5, "label": "Pro-extracción", "verified": true },
+      "salud": { "score": 3, "label": "Sistema mixto", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Posición mixta", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Cambios graduales", "verified": false },
+      "politica_social": { "score": 4, "label": "Fomentar empleo", "verified": true },
+      "constitucion": { "score": 5, "label": "Mantener Constitución 1993", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "george-forsyth",
+    "candidate_name": "George Forsyth",
+    "party": "Somos Perú",
+    "party_abbreviation": "SP",
+    "positions": {
+      "economia": { "score": 4, "label": "Mercado con regulación", "verified": true },
+      "seguridad": { "score": 5, "label": "Mano dura / tolerancia cero", "verified": true },
+      "corrupcion": { "score": 4, "label": "Transparencia y castigo", "verified": true },
+      "educacion": { "score": 3, "label": "Posición mixta", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Equilibrio", "verified": false },
+      "salud": { "score": 3, "label": "Sistema mixto", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Posición mixta", "verified": false },
+      "reforma_judicial": { "score": 4, "label": "Reforma necesaria", "verified": true },
+      "politica_social": { "score": 3, "label": "Equilibrio", "verified": false },
+      "constitucion": { "score": 4, "label": "Reformas puntuales", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "roberto-sanchez",
+    "candidate_name": "Roberto Sánchez",
+    "party": "Juntos por el Perú",
+    "party_abbreviation": "JP",
+    "positions": {
+      "economia": { "score": 2, "label": "Economía mixta con Estado fuerte", "verified": true },
+      "seguridad": { "score": 2, "label": "Prevención social", "verified": true },
+      "corrupcion": { "score": 2, "label": "Reformas institucionales", "verified": true },
+      "educacion": { "score": 2, "label": "Educación pública gratuita", "verified": true },
+      "recursos_naturales": { "score": 2, "label": "Prioridad ambiental", "verified": true },
+      "salud": { "score": 2, "label": "Sistema público ampliado", "verified": true },
+      "descentralizacion": { "score": 4, "label": "Autonomía regional", "verified": true },
+      "reforma_judicial": { "score": 2, "label": "Reforma profunda", "verified": true },
+      "politica_social": { "score": 2, "label": "Ampliar programas sociales", "verified": true },
+      "constitucion": { "score": 2, "label": "Hacia nueva constitución", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "yonhy-lescano",
+    "candidate_name": "Yonhy Lescano",
+    "party": "Cooperación Popular",
+    "party_abbreviation": "CP",
+    "positions": {
+      "economia": { "score": 3, "label": "Economía social de mercado", "verified": true },
+      "seguridad": { "score": 3, "label": "Equilibrio prevención-castigo", "verified": true },
+      "corrupcion": { "score": 2, "label": "Reformas institucionales", "verified": true },
+      "educacion": { "score": 2, "label": "Más inversión pública", "verified": true },
+      "recursos_naturales": { "score": 3, "label": "Equilibrio", "verified": true },
+      "salud": { "score": 2, "label": "Sistema público fortalecido", "verified": true },
+      "descentralizacion": { "score": 4, "label": "Mayor descentralización", "verified": true },
+      "reforma_judicial": { "score": 3, "label": "Reforma moderada", "verified": true },
+      "politica_social": { "score": 2, "label": "Fortalecer programas sociales", "verified": true },
+      "constitucion": { "score": 3, "label": "Reformas puntuales amplias", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "mesias-guevara",
+    "candidate_name": "Mesías Guevara",
+    "party": "Partido Morado",
+    "party_abbreviation": "MORA",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro / economía social", "verified": true },
+      "seguridad": { "score": 3, "label": "Equilibrio", "verified": true },
+      "corrupcion": { "score": 2, "label": "Reformas anticorrupción fuertes", "verified": true },
+      "educacion": { "score": 2, "label": "Inversión pública prioritaria", "verified": true },
+      "recursos_naturales": { "score": 3, "label": "Equilibrio sostenible", "verified": true },
+      "salud": { "score": 2, "label": "Sistema público ampliado", "verified": true },
+      "descentralizacion": { "score": 4, "label": "Mayor descentralización", "verified": true },
+      "reforma_judicial": { "score": 2, "label": "Reforma profunda", "verified": true },
+      "politica_social": { "score": 2, "label": "Fortalecer programas", "verified": true },
+      "constitucion": { "score": 3, "label": "Reformas significativas", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "marisol-perez-tello",
+    "candidate_name": "Marisol Pérez Tello",
+    "party": "Primero la Gente",
+    "party_abbreviation": "PLG",
+    "positions": {
+      "economia": { "score": 3, "label": "Economía social de mercado", "verified": true },
+      "seguridad": { "score": 3, "label": "Enfoque integral", "verified": true },
+      "corrupcion": { "score": 2, "label": "Reformas institucionales fuertes", "verified": true },
+      "educacion": { "score": 2, "label": "Inversión pública", "verified": true },
+      "recursos_naturales": { "score": 3, "label": "Equilibrio sostenible", "verified": true },
+      "salud": { "score": 2, "label": "Sistema público ampliado", "verified": true },
+      "descentralizacion": { "score": 3, "label": "Descentralización moderada", "verified": true },
+      "reforma_judicial": { "score": 2, "label": "Reforma profunda", "verified": true },
+      "politica_social": { "score": 3, "label": "Programas focalizados", "verified": true },
+      "constitucion": { "score": 4, "label": "Reformas puntuales", "verified": true }
+    }
+  },
+  {
+    "candidate_id": "jose-luna-galvez",
+    "candidate_name": "José Luna Gálvez",
+    "party": "Podemos Perú",
+    "party_abbreviation": "PP",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "enrique-valderrama",
+    "candidate_name": "Enrique Valderrama",
+    "party": "Partido Aprista Peruano",
+    "party_abbreviation": "PAP",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "roberto-chiabra",
+    "candidate_name": "Roberto Chiabra",
+    "party": "Unidad Nacional",
+    "party_abbreviation": "UN",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "fernando-olivera",
+    "candidate_name": "Fernando Olivera",
+    "party": "Frente de la Esperanza 2021",
+    "party_abbreviation": "FE",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "jorge-nieto-montesinos",
+    "candidate_name": "Jorge Nieto Montesinos",
+    "party": "Partido del Buen Gobierno",
+    "party_abbreviation": "PBG",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "alvaro-paz-de-la-barra",
+    "candidate_name": "Álvaro Paz de la Barra",
+    "party": "Fe en el Perú",
+    "party_abbreviation": "FEP",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "carlos-jaico",
+    "candidate_name": "Carlos Jaico",
+    "party": "Perú Moderno",
+    "party_abbreviation": "PM",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "fiorella-molinelli",
+    "candidate_name": "Fiorella Molinelli",
+    "party": "Fuerza y Libertad",
+    "party_abbreviation": "FYL",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "walter-chirinos",
+    "candidate_name": "Walter Chirinos",
+    "party": "Partido Político PRIN",
+    "party_abbreviation": "PRIN",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "francisco-diez-canseco",
+    "candidate_name": "Francisco Diez-Canseco",
+    "party": "Perú Acción",
+    "party_abbreviation": "PA",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "paul-jaimes",
+    "candidate_name": "Paul Jaimes",
+    "party": "Progresemos",
+    "party_abbreviation": "PROG",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "rafael-belaunde",
+    "candidate_name": "Rafael Belaunde",
+    "party": "Libertad Popular",
+    "party_abbreviation": "LP",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "carlos-espa",
+    "candidate_name": "Carlos Espá",
+    "party": "Partido SíCreo",
+    "party_abbreviation": "SC",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "rosario-del-pilar-fernandez",
+    "candidate_name": "Rosario del Pilar Fernández",
+    "party": "Un Camino Diferente",
+    "party_abbreviation": "UCD",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "carlos-alvarez",
+    "candidate_name": "Carlos Álvarez",
+    "party": "País Para Todos",
+    "party_abbreviation": "PPT",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "antonio-ortiz-villano",
+    "candidate_name": "Antonio Ortiz Villano",
+    "party": "Salvemos al Perú",
+    "party_abbreviation": "SAP",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "alfonso-lopez-chau",
+    "candidate_name": "Alfonso López-Chau",
+    "party": "Ahora Nación",
+    "party_abbreviation": "AN",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "herbert-caller",
+    "candidate_name": "Herbert Caller",
+    "party": "Partido Patriótico del Perú",
+    "party_abbreviation": "PPP",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "alex-gonzales-castillo",
+    "candidate_name": "Alex Gonzales Castillo",
+    "party": "Partido Demócrata Verde",
+    "party_abbreviation": "PDV",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "ricardo-belmont",
+    "candidate_name": "Ricardo Belmont",
+    "party": "Partido Cívico Obras",
+    "party_abbreviation": "PCO",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "joaquin-masse-fernandez",
+    "candidate_name": "Joaquín Massé Fernández",
+    "party": "Partido Democrático Federal",
+    "party_abbreviation": "PDF",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "charlie-carrasco",
+    "candidate_name": "Charlie Carrasco",
+    "party": "Partido Demócrata Unido Perú",
+    "party_abbreviation": "PDUP",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "mario-vizcarra",
+    "candidate_name": "Mario Vizcarra",
+    "party": "Perú Primero",
+    "party_abbreviation": "PPR",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "napoleon-becerra",
+    "candidate_name": "Napoleón Becerra",
+    "party": "PTE-Perú",
+    "party_abbreviation": "PTE",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "ronald-atencio",
+    "candidate_name": "Ronald Atencio",
+    "party": "Alianza Electoral Venceremos",
+    "party_abbreviation": "AEV",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  },
+  {
+    "candidate_id": "wolfgang-grozo",
+    "candidate_name": "Wolfgang Grozo",
+    "party": "Integridad Democrática",
+    "party_abbreviation": "ID",
+    "positions": {
+      "economia": { "score": 3, "label": "Centro", "verified": false },
+      "seguridad": { "score": 3, "label": "Centro", "verified": false },
+      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
+      "educacion": { "score": 3, "label": "Centro", "verified": false },
+      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
+      "salud": { "score": 3, "label": "Centro", "verified": false },
+      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
+      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
+      "politica_social": { "score": 3, "label": "Centro", "verified": false },
+      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+    }
+  }
+]
