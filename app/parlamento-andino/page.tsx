@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import ContributionNotice from '@/components/ContributionNotice'
 import FeedbackWidget from '@/components/FeedbackWidget'
 import andinoCandidates from '@/data/andino-candidates.json'
@@ -70,28 +71,30 @@ export default function ParlamentoAndinoPage() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
               {list.map((c) => (
-                <div key={c.id + '-' + c.listPosition} className="card flex items-center gap-3 p-3">
-                  <div className="flex-shrink-0">
-                    {c.imageUrl ? (
-                      <img
-                        src={c.imageUrl}
-                        alt={c.name}
-                        className="w-10 h-10 rounded-full object-cover border border-[#E5E3DE]"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-10 h-10 rounded-full bg-[#F7F6F3] border border-[#E5E3DE] flex items-center justify-center">
-                        <span className="text-xs font-bold text-[#777777]">
-                          {c.name.split(' ').slice(0, 2).map(w => w[0]).join('')}
-                        </span>
-                      </div>
-                    )}
+                <Link key={c.id + '-' + c.listPosition} href={`/parlamento-andino/${c.id}`} className="block hover:shadow-md transition-shadow rounded-lg">
+                  <div className="card flex items-center gap-3 p-3">
+                    <div className="flex-shrink-0">
+                      {c.imageUrl ? (
+                        <img
+                          src={c.imageUrl}
+                          alt={c.name}
+                          className="w-10 h-10 rounded-full object-cover border border-[#E5E3DE]"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-10 h-10 rounded-full bg-[#F7F6F3] border border-[#E5E3DE] flex items-center justify-center">
+                          <span className="text-xs font-bold text-[#777777]">
+                            {c.name.split(' ').slice(0, 2).map(w => w[0]).join('')}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold text-[#111111] truncate">{c.name}</p>
+                      <p className="text-xs text-[#777777]">#{c.listPosition}</p>
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-[#111111] truncate">{c.name}</p>
-                    <p className="text-xs text-[#777777]">#{c.listPosition}</p>
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

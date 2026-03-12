@@ -1,6 +1,14 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
+
+function toDistritoSlug(district: string): string {
+  return district.toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i')
+    .replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/ñ/g, 'n')
+}
 
 interface DiputadoCandidate {
   id: string
@@ -150,28 +158,30 @@ export default function DiputadosClient({
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 ml-4">
                     {list.map((c) => (
-                      <div key={c.id + '-' + c.listPosition} className="flex items-center gap-2 p-2 border border-[#E5E3DE] rounded-lg bg-white">
-                        <div className="flex-shrink-0">
-                          {c.imageUrl ? (
-                            <img
-                              src={c.imageUrl}
-                              alt={c.name}
-                              className="w-8 h-8 rounded-full object-cover border border-[#E5E3DE]"
-                              loading="lazy"
-                            />
-                          ) : (
-                            <div className="w-8 h-8 rounded-full bg-[#F7F6F3] border border-[#E5E3DE] flex items-center justify-center">
-                              <span className="text-[10px] font-bold text-[#777777]">
-                                {c.name.split(' ').slice(0, 2).map(w => w[0]).join('')}
-                              </span>
-                            </div>
-                          )}
+                      <Link key={c.id + '-' + c.listPosition} href={`/diputados/${toDistritoSlug(c.district)}/${c.id}`} className="block hover:shadow-md transition-shadow rounded-lg">
+                        <div className="flex items-center gap-2 p-2 border border-[#E5E3DE] rounded-lg bg-white">
+                          <div className="flex-shrink-0">
+                            {c.imageUrl ? (
+                              <img
+                                src={c.imageUrl}
+                                alt={c.name}
+                                className="w-8 h-8 rounded-full object-cover border border-[#E5E3DE]"
+                                loading="lazy"
+                              />
+                            ) : (
+                              <div className="w-8 h-8 rounded-full bg-[#F7F6F3] border border-[#E5E3DE] flex items-center justify-center">
+                                <span className="text-[10px] font-bold text-[#777777]">
+                                  {c.name.split(' ').slice(0, 2).map(w => w[0]).join('')}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-xs font-medium text-[#111111] truncate">{c.name}</p>
+                            <p className="text-[10px] text-[#777777]">#{c.listPosition}</p>
+                          </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-xs font-medium text-[#111111] truncate">{c.name}</p>
-                          <p className="text-[10px] text-[#777777]">#{c.listPosition}</p>
-                        </div>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </div>
