@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { DATA_FRESHNESS } from '@/lib/data-freshness';
 
 export const metadata: Metadata = {
   title: 'Metodología — VotoAbierto',
@@ -117,6 +118,33 @@ export default function MetodologiaPage() {
                     <div className="text-[#777777] text-xs">{s.desc}</div>
                   </div>
                 </a>
+              ))}
+            </div>
+          </section>
+
+          {/* Actualización de datos */}
+          <section>
+            <h2 className="text-2xl font-bold text-[#111111] mb-4 flex items-center gap-2">
+              <span>🔄</span> Actualización de datos
+            </h2>
+            <p className="text-[#777777] leading-relaxed mb-4">
+              Los datos de candidatos se actualizan automáticamente cada semana desde las APIs oficiales del JNE.
+              Cada actualización genera un pull request que es revisado antes de publicarse.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {([
+                ['Presidenciales', DATA_FRESHNESS.presidential],
+                ['Senadores', DATA_FRESHNESS.senate],
+                ['Diputados', DATA_FRESHNESS.diputados],
+                ['Parlamento Andino', DATA_FRESHNESS.andino],
+                ['Partidos', DATA_FRESHNESS.parties],
+              ] as const).map(([label, date]) => (
+                <div key={label} className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-lg p-3">
+                  <div className="text-[#111111] text-sm font-medium">{label}</div>
+                  <div className="text-[#777777] text-xs">
+                    {date ? new Date(date).toLocaleDateString('es-PE', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Sin datos'}
+                  </div>
+                </div>
               ))}
             </div>
           </section>

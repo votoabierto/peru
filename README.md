@@ -64,6 +64,28 @@ cp .env.local.example .env.local
 npx tsx scripts/seed-candidates.ts
 ```
 
+## Data Pipeline
+
+Los datos de candidatos provienen de APIs oficiales del JNE y se actualizan automáticamente.
+
+| Fuente | Frecuencia | Método |
+|--------|-----------|--------|
+| JNE Voto Informado IA | Semanal | GitHub Actions auto-refresh |
+| JNE SROP | Semanal | GitHub Actions auto-refresh |
+| Contribuciones comunitarias | Tiempo real | Pull request |
+
+### Refresh manual
+```bash
+node scripts/fetch-planes-gobierno.js
+node scripts/fetch-hojas-de-vida.js
+node scripts/fetch-bienes.js
+```
+
+### Verificar frescura de datos
+```bash
+node scripts/check-data-freshness.mjs
+```
+
 ## Scripts de datos
 
 | Script | Qué hace |

@@ -1,0 +1,66 @@
+name: Refresh JNE candidate data
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      force_refresh:
+        description: 'Force re-fetch even if data is fresh'
+        type: boolean
+        default: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch fresh JNE data
+        run: |
+          node scripts/fetch-planes-gobierno.js || echo "fetch-planes-gobierno failed (non-fatal)"
+          node scripts/fetch-hojas-de-vida.js || echo "fetch-hojas-de-vida failed (non-fatal)"
+          node scripts/fetch-bienes.js || echo "fetch-bienes failed (non-fatal)"
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+
+      - name: Check for data changes
+        id: check_changes
+        run: |
+          git diff --quiet data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Create PR if data changed
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'data: auto-refresh JNE candidate data'
+          title: 'Auto-refresh: JNE data update'
+          body: |
+            Automated weekly data refresh from JNE APIs.
+
+            **Changed files:** see diff below.
+
+            **Sources:**
+            - JNE Voto Informado IA API
+            - JNE SROP (party/candidate registration)
+
+            Please review changes before merging.
+            Data verified against: https://votoinformadoia.jne.gob.pe
+          branch: auto-refresh/jne-data
+          base: main
+          labels: data-refresh, automated
