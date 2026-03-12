@@ -5,55 +5,105 @@
     "party": "Fuerza Popular",
     "party_abbreviation": "FP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 5,
         "label": "Libre mercado",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 1,
+        "label": "Libre mercado",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 5,
+        "label": "Libre mercado",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 1,
+        "label": "Libre mercado",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 5,
         "label": "Mano dura",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 4,
         "label": "Alianzas público-privadas",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 5,
+      "medioambiente_industrias": {
+        "score": 1,
         "label": "Pro-extracción",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 4,
+      "salud_universal": {
+        "score": 2,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 2,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Reforma judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": 2,
-        "label": "Ampliar programas sociales",
-        "verified": true
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
-        "score": 5,
+      "inst_constitucion": {
+        "score": 1,
         "label": "Mantener Constitución 1993",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -63,55 +113,105 @@
     "party": "Perú Libre",
     "party_abbreviation": "PL",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 1,
         "label": "Estado regulador fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 5,
+        "label": "Estado regulador fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 1,
+        "label": "Estado regulador fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 5,
+        "label": "Estado regulador fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 2,
         "label": "Prevención social",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
+      "seguridad_fuerzas_armadas": {
         "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+        "label": "Prevención social",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 4,
+        "label": "Prevención social",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 1,
         "label": "Educación pública universal",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
-        "label": "Prioridad comunidades",
-        "verified": true
-      },
-      "salud": {
-        "score": 1,
-        "label": "Sistema público universal",
-        "verified": true
-      },
-      "descentralizacion": {
+      "medioambiente_industrias": {
         "score": 4,
+        "label": "Prioridad comunidades",
+        "verified": false
+      },
+      "salud_universal": {
+        "score": 5,
+        "label": "Sistema público universal",
+        "verified": false
+      },
+      "salud_medicamentos": {
+        "score": 5,
+        "label": "Sistema público universal",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": 2,
         "label": "Mayor autonomía regional",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
-        "score": 1,
+      "inst_fiscal": {
+        "score": 5,
         "label": "Reforma estructural profunda",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
-        "score": 1,
-        "label": "Ampliar programas sociales",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
-        "score": 1,
+      "inst_constitucion": {
+        "score": 5,
         "label": "Nueva constitución",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -121,55 +221,105 @@
     "party": "Renovación Popular",
     "party_abbreviation": "RP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 5,
         "label": "Libre mercado total",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 1,
+        "label": "Libre mercado total",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 5,
+        "label": "Libre mercado total",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 1,
+        "label": "Libre mercado total",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 5,
         "label": "Mano dura / pena de muerte",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 4,
-        "label": "Penas duras anticorrupción",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura / pena de muerte",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura / pena de muerte",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 5,
         "label": "Vouchers educativos",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 5,
+      "medioambiente_industrias": {
+        "score": 1,
         "label": "Maximizar extracción",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 4,
-        "label": "Competencia privada",
-        "verified": true
-      },
-      "descentralizacion": {
+      "salud_universal": {
         "score": 2,
+        "label": "Competencia privada",
+        "verified": false
+      },
+      "salud_medicamentos": {
+        "score": 2,
+        "label": "Competencia privada",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": 4,
         "label": "Gobierno central fuerte",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
-        "score": 4,
+      "inst_fiscal": {
+        "score": 2,
         "label": "Reformas puntuales fuertes",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": 4,
-        "label": "Fomentar empleo formal",
-        "verified": true
+        "label": "Penas duras anticorrupción",
+        "verified": false
       },
-      "constitucion": {
-        "score": 5,
+      "inst_constitucion": {
+        "score": 1,
         "label": "Mantener Constitución 1993",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -179,55 +329,105 @@
     "party": "Alianza para el Progreso",
     "party_abbreviation": "APP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 4,
         "label": "Mercado con inversión pública",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 2,
+        "label": "Mercado con inversión pública",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Mercado con inversión pública",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Mercado con inversión pública",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 4,
         "label": "Más policías y penas",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
+      "seguridad_fuerzas_armadas": {
+        "score": 4,
+        "label": "Más policías y penas",
+        "verified": false
+      },
+      "seguridad_narcotrafico": {
         "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+        "label": "Más policías y penas",
+        "verified": false
       },
-      "educacion": {
+      "educacion_meritocracia": {
         "score": 4,
         "label": "Inversión público-privada",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 4,
+      "medioambiente_industrias": {
+        "score": 2,
         "label": "Pro-inversión minera",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": 3,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
-        "score": 4,
+      "salud_medicamentos": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": 2,
         "label": "Mayor descentralización",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Modernización judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
-        "score": 3,
-        "label": "Programas sociales con formalización",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
-        "score": 4,
+      "inst_constitucion": {
+        "score": 2,
         "label": "Reformas puntuales",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -237,55 +437,105 @@
     "party": "Avanza País",
     "party_abbreviation": "AVP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 5,
         "label": "Libre mercado",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 1,
+        "label": "Libre mercado",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 5,
+        "label": "Libre mercado",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 1,
+        "label": "Libre mercado",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 5,
         "label": "Mano dura militar",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 4,
-        "label": "Penas severas",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura militar",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura militar",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 4,
         "label": "Inversión público-privada",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 5,
+      "medioambiente_industrias": {
+        "score": 1,
         "label": "Pro-extracción",
-        "verified": true
-      },
-      "salud": {
-        "score": null,
-        "label": "Sin datos",
         "verified": false
       },
-      "descentralizacion": {
+      "salud_universal": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "salud_medicamentos": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_anticorrupcion": {
         "score": 4,
-        "label": "Fomentar empleo",
-        "verified": true
+        "label": "Penas severas",
+        "verified": false
       },
-      "constitucion": {
-        "score": 5,
+      "inst_constitucion": {
+        "score": 1,
         "label": "Mantener Constitución 1993",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -295,55 +545,105 @@
     "party": "Somos Perú",
     "party_abbreviation": "SP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 4,
         "label": "Mercado con regulación",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 2,
+        "label": "Mercado con regulación",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Mercado con regulación",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Mercado con regulación",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 5,
         "label": "Mano dura / tolerancia cero",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 4,
-        "label": "Transparencia y castigo",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura / tolerancia cero",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura / tolerancia cero",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": 3,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
-        "score": 4,
+      "inst_fiscal": {
+        "score": 2,
         "label": "Reforma necesaria",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
-        "score": 3,
-        "label": "Programas sociales con formalización",
-        "verified": true
-      },
-      "constitucion": {
+      "inst_anticorrupcion": {
         "score": 4,
+        "label": "Transparencia y castigo",
+        "verified": false
+      },
+      "inst_constitucion": {
+        "score": 2,
         "label": "Reformas puntuales",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -353,55 +653,105 @@
     "party": "Juntos por el Perú",
     "party_abbreviation": "JP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 2,
         "label": "Economía mixta con Estado fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 2,
         "label": "Prevención social",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
+      "seguridad_fuerzas_armadas": {
         "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+        "label": "Prevención social",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 4,
+        "label": "Prevención social",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Educación pública gratuita",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
-        "label": "Prioridad ambiental",
-        "verified": true
-      },
-      "salud": {
-        "score": 2,
-        "label": "Sistema público ampliado",
-        "verified": true
-      },
-      "descentralizacion": {
+      "medioambiente_industrias": {
         "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false
+      },
+      "salud_universal": {
+        "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": 2,
         "label": "Autonomía regional",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
-        "score": 2,
+      "inst_fiscal": {
+        "score": 4,
         "label": "Reforma profunda",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": 2,
-        "label": "Ampliar programas sociales",
-        "verified": true
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
-        "score": 2,
+      "inst_constitucion": {
+        "score": 4,
         "label": "Hacia nueva constitución",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -411,55 +761,105 @@
     "party": "Cooperación Popular",
     "party_abbreviation": "CP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 3,
         "label": "Economía social de mercado",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Equilibrio prevención-castigo",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Equilibrio prevención-castigo",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Equilibrio prevención-castigo",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Más inversión pública",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
+      "medioambiente_industrias": {
         "score": 3,
         "label": "Equilibrio",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
-        "label": "Sistema público fortalecido",
-        "verified": true
-      },
-      "descentralizacion": {
+      "salud_universal": {
         "score": 4,
-        "label": "Mayor descentralización",
-        "verified": true
+        "label": "Sistema público fortalecido",
+        "verified": false
       },
-      "reforma_judicial": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Sistema público fortalecido",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": 2,
+        "label": "Mayor descentralización",
+        "verified": false
+      },
+      "inst_fiscal": {
         "score": 3,
         "label": "Reforma moderada",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": 2,
-        "label": "Fortalecer programas sociales",
-        "verified": true
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
         "score": 3,
         "label": "Reformas puntuales amplias",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -469,55 +869,105 @@
     "party": "Partido Morado",
     "party_abbreviation": "MORA",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 3,
         "label": "Centro / economía social",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 3,
+        "label": "Centro / economía social",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Centro / economía social",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Centro / economía social",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Equilibrio",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas anticorrupción fuertes",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Equilibrio",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Equilibrio",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión pública prioritaria",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
+      "medioambiente_industrias": {
         "score": 3,
         "label": "Equilibrio sostenible",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
-        "label": "Sistema público ampliado",
-        "verified": true
-      },
-      "descentralizacion": {
+      "salud_universal": {
         "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": 2,
         "label": "Mayor descentralización",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
-        "score": 2,
+      "inst_fiscal": {
+        "score": 4,
         "label": "Reforma profunda",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": 2,
-        "label": "Fortalecer programas",
-        "verified": true
+        "label": "Reformas anticorrupción fuertes",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
         "score": 3,
         "label": "Reformas significativas",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -527,55 +977,105 @@
     "party": "Primero la Gente",
     "party_abbreviation": "PLG",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 3,
         "label": "Economía social de mercado",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Enfoque integral",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales fuertes",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión pública",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
+      "medioambiente_industrias": {
         "score": 3,
         "label": "Equilibrio sostenible",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Sistema público ampliado",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": 3,
         "label": "Descentralización moderada",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
-        "score": 2,
-        "label": "Reforma profunda",
-        "verified": true
-      },
-      "politica_social": {
-        "score": 3,
-        "label": "Programas focalizados",
-        "verified": true
-      },
-      "constitucion": {
+      "inst_fiscal": {
         "score": 4,
+        "label": "Reforma profunda",
+        "verified": false
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales fuertes",
+        "verified": false
+      },
+      "inst_constitucion": {
+        "score": 2,
         "label": "Reformas puntuales",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -585,54 +1085,104 @@
     "party": "Podemos Perú",
     "party_abbreviation": "PP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "corrupcion": {
+      "economia_informal": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "educacion": {
+      "economia_inversion": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "recursos_naturales": {
+      "seguridad_pena_muerte": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "salud": {
+      "seguridad_fuerzas_armadas": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "descentralizacion": {
+      "seguridad_narcotrafico": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "educacion_meritocracia": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
+      "medioambiente_industrias": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "constitucion": {
+      "salud_universal": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "salud_medicamentos": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_anticorrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
         "verified": false
       }
     }
@@ -643,55 +1193,105 @@
     "party": "Partido Aprista Peruano",
     "party_abbreviation": "PAP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 2,
         "label": "Economía mixta con Estado fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación pública",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Sistema público ampliado",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Reforma judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
-        "score": 3,
-        "label": "Programas sociales con formalización",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
-        "score": 1,
+      "inst_constitucion": {
+        "score": 5,
         "label": "Nueva constitución",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -701,52 +1301,102 @@
     "party": "Unidad Nacional",
     "party_abbreviation": "UN",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 3,
         "label": "Economía social de mercado",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 5,
         "label": "Mano dura",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": 3,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
-        "score": 2,
+      "inst_fiscal": {
+        "score": 4,
         "label": "Reforma profunda",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
-        "score": 3,
-        "label": "Programas sociales con formalización",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -759,55 +1409,105 @@
     "party": "Frente de la Esperanza 2021",
     "party_abbreviation": "FE",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 2,
         "label": "Economía mixta con Estado fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 5,
         "label": "Mano dura",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": false
+      },
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura",
+        "verified": false
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false
+      },
+      "salud_universal": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": false
+      },
+      "inst_fiscal": {
+        "score": 4,
+        "label": "Reforma profunda",
+        "verified": false
+      },
+      "inst_anticorrupcion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "educacion": {
-        "score": 2,
-        "label": "Inversión en educación",
-        "verified": true
-      },
-      "recursos_naturales": {
-        "score": 2,
-        "label": "Prioridad ambiental",
-        "verified": true
-      },
-      "salud": {
-        "score": 2,
-        "label": "Inversión en salud",
-        "verified": true
-      },
-      "descentralizacion": {
-        "score": 3,
-        "label": "Descentralización moderada",
-        "verified": true
-      },
-      "reforma_judicial": {
-        "score": 2,
-        "label": "Reforma profunda",
-        "verified": true
-      },
-      "politica_social": {
-        "score": 4,
-        "label": "Fomentar empleo formal",
-        "verified": true
-      },
-      "constitucion": {
+      "inst_constitucion": {
         "score": 3,
         "label": "Reformas constitucionales",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -817,52 +1517,102 @@
     "party": "Partido del Buen Gobierno",
     "party_abbreviation": "PBG",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 3,
         "label": "Economía social de mercado",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación pública",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Sistema público ampliado",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
-        "score": 2,
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": 4,
         "label": "Mayor descentralización",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
-        "score": 4,
-        "label": "Fomentar empleo formal",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -875,52 +1625,102 @@
     "party": "Fe en el Perú",
     "party_abbreviation": "FEP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 4,
         "label": "Pro inversión privada",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
-      },
-      "recursos_naturales": {
-        "score": 2,
-        "label": "Prioridad ambiental",
-        "verified": true
-      },
-      "salud": {
-        "score": 2,
-        "label": "Inversión en salud",
-        "verified": true
-      },
-      "descentralizacion": {
-        "score": null,
-        "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
-        "score": null,
-        "label": "Sin datos suficientes",
-        "verified": false
-      },
-      "politica_social": {
+      "medioambiente_industrias": {
         "score": 4,
-        "label": "Fomentar empleo formal",
-        "verified": true
+        "label": "Prioridad ambiental",
+        "verified": false
       },
-      "constitucion": {
+      "salud_universal": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -933,55 +1733,105 @@
     "party": "Perú Moderno",
     "party_abbreviation": "PM",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 2,
         "label": "Economía mixta con Estado fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": 3,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
-        "score": 2,
+      "inst_fiscal": {
+        "score": 4,
         "label": "Reforma profunda",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": 2,
-        "label": "Ampliar programas sociales",
-        "verified": true
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
         "score": 3,
         "label": "Reformas constitucionales",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -991,52 +1841,102 @@
     "party": "Fuerza y Libertad",
     "party_abbreviation": "FYL",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
-      },
-      "corrupcion": {
-        "score": null,
-        "label": "Sin datos suficientes",
         "verified": false
       },
-      "educacion": {
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": 3,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
-        "score": 2,
-        "label": "Ampliar programas sociales",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1049,52 +1949,102 @@
     "party": "Partido Político PRIN",
     "party_abbreviation": "PRIN",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 2,
         "label": "Economía mixta con Estado fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Inversión en salud",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Reforma judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
-        "score": 3,
-        "label": "Programas sociales con formalización",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1107,52 +2057,102 @@
     "party": "Perú Acción",
     "party_abbreviation": "PA",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 4,
         "label": "Pro inversión privada",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 5,
         "label": "Mano dura",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 4,
-        "label": "Penas duras anticorrupción",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Inversión en salud",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
-        "score": 2,
-        "label": "Reforma profunda",
-        "verified": true
-      },
-      "politica_social": {
+      "inst_fiscal": {
         "score": 4,
-        "label": "Fomentar empleo formal",
-        "verified": true
+        "label": "Reforma profunda",
+        "verified": false
       },
-      "constitucion": {
+      "inst_anticorrupcion": {
+        "score": 4,
+        "label": "Penas duras anticorrupción",
+        "verified": false
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1165,52 +2165,102 @@
     "party": "Progresemos",
     "party_abbreviation": "PROG",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_anticorrupcion": {
         "score": 2,
-        "label": "Ampliar programas sociales",
-        "verified": true
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1223,52 +2273,102 @@
     "party": "Libertad Popular",
     "party_abbreviation": "LP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 2,
         "label": "Economía mixta con Estado fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Inversión en salud",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": 3,
         "label": "Equilibrio territorial",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
+      },
+      "inst_constitucion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "constitucion": {
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1281,52 +2381,102 @@
     "party": "Partido SíCreo",
     "party_abbreviation": "SC",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 4,
         "label": "Pro inversión privada",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Inversión en salud",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
+      },
+      "inst_constitucion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "constitucion": {
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1339,52 +2489,102 @@
     "party": "Un Camino Diferente",
     "party_abbreviation": "UCD",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 3,
         "label": "Economía social de mercado",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": 3,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": 3,
         "label": "Descentralización moderada",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
-        "score": 4,
-        "label": "Fomentar empleo formal",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1397,52 +2597,102 @@
     "party": "País Para Todos",
     "party_abbreviation": "PPT",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 4,
         "label": "Pro inversión privada",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": 3,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": 3,
         "label": "Descentralización moderada",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Modernización judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
-        "score": 3,
-        "label": "Programas sociales con formalización",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1455,52 +2705,102 @@
     "party": "Salvemos al Perú",
     "party_abbreviation": "SAP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 3,
         "label": "Economía social de mercado",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": 3,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Modernización judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
+      },
+      "inst_constitucion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "constitucion": {
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1513,52 +2813,102 @@
     "party": "Ahora Nación",
     "party_abbreviation": "AN",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Inversión en salud",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Reforma judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false
+      },
+      "inst_constitucion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "constitucion": {
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1571,52 +2921,102 @@
     "party": "Partido Patriótico del Perú",
     "party_abbreviation": "PPP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
+      "seguridad_fuerzas_armadas": {
         "score": 3,
-        "label": "Reformas y castigo",
-        "verified": true
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Inversión en salud",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": 3,
         "label": "Descentralización moderada",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
+        "score": 3,
+        "label": "Reformas y castigo",
+        "verified": false
+      },
+      "inst_constitucion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "constitucion": {
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1629,52 +3029,102 @@
     "party": "Partido Demócrata Verde",
     "party_abbreviation": "PDV",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 2,
         "label": "Economía mixta con Estado fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Inversión en salud",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": 3,
         "label": "Descentralización moderada",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Modernización judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": 2,
-        "label": "Ampliar programas sociales",
-        "verified": true
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1687,52 +3137,102 @@
     "party": "Partido Cívico Obras",
     "party_abbreviation": "PCO",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 2,
         "label": "Economía mixta con Estado fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "corrupcion": {
-        "score": 3,
-        "label": "Reformas y castigo",
-        "verified": true
+      "seguridad_fuerzas_armadas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 3,
         "label": "Modernización educativa",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Sistema público ampliado",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": 3,
         "label": "Equilibrio territorial",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": 3,
-        "label": "Programas sociales con formalización",
-        "verified": true
+        "label": "Reformas y castigo",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1745,54 +3245,104 @@
     "party": "Partido Democrático Federal",
     "party_abbreviation": "PDF",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "corrupcion": {
+      "economia_informal": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "educacion": {
+      "economia_inversion": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "recursos_naturales": {
+      "seguridad_pena_muerte": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "salud": {
+      "seguridad_fuerzas_armadas": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "descentralizacion": {
+      "seguridad_narcotrafico": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "educacion_meritocracia": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
+      "medioambiente_industrias": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
         "verified": false
       },
-      "constitucion": {
+      "salud_universal": {
         "score": null,
-        "label": "Sin datos",
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "salud_medicamentos": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_anticorrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
         "verified": false
       }
     }
@@ -1803,52 +3353,102 @@
     "party": "Partido Demócrata Unido Perú",
     "party_abbreviation": "PDUP",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 3,
         "label": "Economía social de mercado",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Enfoque integral",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
+      "seguridad_fuerzas_armadas": {
         "score": 3,
-        "label": "Reformas y castigo",
-        "verified": true
+        "label": "Enfoque integral",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Inversión en salud",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": 3,
         "label": "Descentralización moderada",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
-        "score": 2,
+      "inst_fiscal": {
+        "score": 4,
         "label": "Reforma profunda",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
+        "score": 3,
+        "label": "Reformas y castigo",
+        "verified": false
+      },
+      "inst_constitucion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "constitucion": {
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1861,52 +3461,102 @@
     "party": "Perú Primero",
     "party_abbreviation": "PPR",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "corrupcion": {
-        "score": 2,
-        "label": "Reformas institucionales",
-        "verified": true
+      "economia_informal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       },
-      "educacion": {
+      "economia_inversion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad_narcotrafico": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Inversión en salud",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Inversión en salud",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": 2,
-        "label": "Ampliar programas sociales",
-        "verified": true
+        "label": "Reformas institucionales",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
@@ -1919,55 +3569,105 @@
     "party": "PTE-Perú",
     "party_abbreviation": "PTE",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 2,
         "label": "Economía mixta con Estado fuerte",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "corrupcion": {
+      "seguridad_fuerzas_armadas": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Sistema público ampliado",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Reforma judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
-        "score": 2,
-        "label": "Ampliar programas sociales",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       },
-      "constitucion": {
-        "score": 1,
+      "inst_constitucion": {
+        "score": 5,
         "label": "Nueva constitución",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -1977,55 +3677,105 @@
     "party": "Alianza Electoral Venceremos",
     "party_abbreviation": "AEV",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "corrupcion": {
+      "economia_informal": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "educacion": {
+      "economia_inversion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "seguridad_pena_muerte": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad_narcotrafico": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_meritocracia": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
-        "score": 2,
+      "salud_universal": {
+        "score": 4,
         "label": "Sistema público ampliado",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 4,
+        "label": "Sistema público ampliado",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Modernización judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
+      "inst_anticorrupcion": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false
       },
-      "constitucion": {
-        "score": 1,
+      "inst_constitucion": {
+        "score": 5,
         "label": "Nueva constitución",
-        "verified": true
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
       }
     }
   },
@@ -2035,52 +3785,102 @@
     "party": "Integridad Democrática",
     "party_abbreviation": "ID",
     "positions": {
-      "economia": {
+      "economia_igv": {
         "score": 4,
         "label": "Pro inversión privada",
-        "verified": true
+        "verified": false
       },
-      "seguridad": {
+      "economia_mineria": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false
+      },
+      "seguridad_pena_muerte": {
         "score": 3,
         "label": "Seguridad ciudadana",
-        "verified": true
+        "verified": false
       },
-      "corrupcion": {
+      "seguridad_fuerzas_armadas": {
         "score": 3,
-        "label": "Lucha anticorrupción",
-        "verified": true
+        "label": "Seguridad ciudadana",
+        "verified": false
       },
-      "educacion": {
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false
+      },
+      "educacion_meritocracia": {
         "score": 2,
         "label": "Inversión en educación",
-        "verified": true
+        "verified": false
       },
-      "recursos_naturales": {
-        "score": 2,
+      "medioambiente_industrias": {
+        "score": 4,
         "label": "Prioridad ambiental",
-        "verified": true
+        "verified": false
       },
-      "salud": {
+      "salud_universal": {
         "score": 3,
         "label": "Sistema mixto",
-        "verified": true
+        "verified": false
       },
-      "descentralizacion": {
+      "salud_medicamentos": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": false
+      },
+      "territorio_descentralizacion": {
         "score": 3,
         "label": "Descentralización moderada",
-        "verified": true
+        "verified": false
       },
-      "reforma_judicial": {
+      "inst_fiscal": {
         "score": 3,
         "label": "Modernización judicial",
-        "verified": true
+        "verified": false
       },
-      "politica_social": {
-        "score": 4,
-        "label": "Fomentar empleo formal",
-        "verified": true
+      "inst_anticorrupcion": {
+        "score": 3,
+        "label": "Lucha anticorrupción",
+        "verified": false
       },
-      "constitucion": {
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_bilingue": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion_universidad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_rondas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "territorio_lima": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "inst_congreso": {
         "score": null,
         "label": "Sin datos suficientes",
         "verified": false

@@ -1,3 +1,20 @@
+// ─── Quiz Types ─────────────────────────────────────────────────────────────
+
+export interface QuizQuestion {
+  key: string
+  question: string
+  context: string
+  agree_label: string
+  disagree_label: string
+}
+
+export interface QuizTheme {
+  key: string
+  label: string
+  icon: string
+  questions: QuizQuestion[]
+}
+
 // ─── Election Types ─────────────────────────────────────────────────────────
 
 export type ElectionType = 'presidente' | 'senado' | 'diputados' | 'parlamento-andino'

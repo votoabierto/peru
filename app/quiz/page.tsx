@@ -11,7 +11,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
   const baseOg = {
     title: 'Quiz Electoral — VotoAbierto',
-    description: 'Descubre qué candidatos presidenciales comparten tu visión. 10 preguntas, 3 minutos, 100% anónimo.',
+    description: 'Descubre qué candidatos presidenciales comparten tu visión. 20 preguntas, 5 minutos, 100% anónimo.',
   }
 
   if (!encoded) {

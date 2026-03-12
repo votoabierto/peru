@@ -1,74 +1,186 @@
 {
-  "issues": [
+  "themes": [
     {
       "key": "economia",
-      "label": "Modelo económico",
-      "left_label": "Estado regulador / economía mixta",
-      "right_label": "Libre mercado / menos intervención",
-      "question": "¿Cuál debe ser el rol del Estado en la economía?"
+      "label": "Economía",
+      "icon": "📊",
+      "questions": [
+        {
+          "key": "economia_igv",
+          "question": "¿El IGV debe reducirse para fomentar el consumo interno?",
+          "context": "Perú tiene un IGV del 18%, uno de los más altos de la región.",
+          "agree_label": "Sí, reducir IGV activa la economía",
+          "disagree_label": "No, el Estado necesita esos ingresos"
+        },
+        {
+          "key": "economia_mineria",
+          "question": "¿El Estado debe aumentar los impuestos a las empresas mineras?",
+          "context": "La minería aporta ~60% de las exportaciones del Perú.",
+          "agree_label": "Sí, mayor regalías para las regiones",
+          "disagree_label": "No, puede ahuyentar inversión"
+        },
+        {
+          "key": "economia_informal",
+          "question": "¿El Perú debe crear incentivos fiscales para formalizar las microempresas?",
+          "context": "El 70% de trabajadores peruanos son informales.",
+          "agree_label": "Sí, formalización es prioridad",
+          "disagree_label": "No, los mercados deben autorregularse"
+        },
+        {
+          "key": "economia_inversion",
+          "question": "¿El Estado debe tener más control sobre las empresas extranjeras en sectores estratégicos?",
+          "context": "Sectores como energía, telecomunicaciones y minería tienen alta presencia extranjera.",
+          "agree_label": "Sí, soberanía sobre recursos estratégicos",
+          "disagree_label": "No, la inversión extranjera crea empleos"
+        }
+      ]
     },
     {
       "key": "seguridad",
-      "label": "Seguridad ciudadana",
-      "left_label": "Rehabilitación y prevención social",
-      "right_label": "Mano dura / penas más severas",
-      "question": "¿Cómo debe el Estado combatir la delincuencia?"
-    },
-    {
-      "key": "corrupcion",
-      "label": "Anticorrupción",
-      "left_label": "Reformas institucionales profundas",
-      "right_label": "Penas más duras para funcionarios corruptos",
-      "question": "¿Cuál es la mejor forma de combatir la corrupción?"
+      "label": "Seguridad",
+      "icon": "🛡️",
+      "questions": [
+        {
+          "key": "seguridad_pena_muerte",
+          "question": "¿Debe restablecerse la pena de muerte para los casos de violación de menores?",
+          "context": "La Constitución del 93 prohíbe la pena de muerte excepto en tiempos de guerra.",
+          "agree_label": "Sí, penas máximas para los peores crímenes",
+          "disagree_label": "No, no reduce el crimen y es irreversible"
+        },
+        {
+          "key": "seguridad_fuerzas_armadas",
+          "question": "¿Las Fuerzas Armadas deben tener mayor rol en el control del orden interno?",
+          "context": "Debate sobre militarización del orden interno vs. rol exclusivo de la PNP.",
+          "agree_label": "Sí, la situación de seguridad lo requiere",
+          "disagree_label": "No, es rol exclusivo de la policía civil"
+        },
+        {
+          "key": "seguridad_narcotrafico",
+          "question": "¿El Perú debe adoptar un enfoque de salud pública para el consumo de drogas en lugar de penalización?",
+          "context": "Perú es el segundo mayor productor de coca en el mundo.",
+          "agree_label": "Sí, tratar consumo como problema de salud",
+          "disagree_label": "No, mantener penalización estricta"
+        }
+      ]
     },
     {
       "key": "educacion",
       "label": "Educación",
-      "left_label": "Educación pública universal y gratuita",
-      "right_label": "Vouchers y libertad de elección educativa",
-      "question": "¿Cómo debe financiarse la educación en el Perú?"
+      "icon": "📚",
+      "questions": [
+        {
+          "key": "educacion_meritocracia",
+          "question": "¿Los docentes deben ser evaluados con méritos y pueden ser despedidos por bajo rendimiento?",
+          "context": "La Ley Magisterial establece evaluaciones; el SUTEP ha resistido despidos.",
+          "agree_label": "Sí, la calidad docente es clave",
+          "disagree_label": "No, hay factores estructurales que afectan el rendimiento"
+        },
+        {
+          "key": "educacion_bilingue",
+          "question": "¿La educación intercultural bilingüe debe expandirse a todas las regiones con comunidades indígenas?",
+          "context": "Más de 4 millones de peruanos hablan una lengua indígena como idioma principal.",
+          "agree_label": "Sí, es un derecho fundamental",
+          "disagree_label": "No, el español es prioritario para la inserción laboral"
+        },
+        {
+          "key": "educacion_universidad",
+          "question": "¿El Estado debe recuperar control sobre la calidad de las universidades privadas?",
+          "context": "La SUNEDU fue creada para acreditar universidades; algunas han cuestionado su autonomía.",
+          "agree_label": "Sí, garantizar calidad es rol del Estado",
+          "disagree_label": "No, las universidades deben ser autónomas"
+        }
+      ]
     },
     {
-      "key": "recursos_naturales",
-      "label": "Recursos naturales",
-      "left_label": "Prioridad al medio ambiente y comunidades",
-      "right_label": "Maximizar extracción para el crecimiento",
-      "question": "¿Cómo debe el Perú usar sus recursos naturales?"
+      "key": "salud_medioambiente",
+      "label": "Salud y Medioambiente",
+      "icon": "🌿",
+      "questions": [
+        {
+          "key": "salud_universal",
+          "question": "¿El Perú debe unificar el SIS, EsSalud y Sanidades en un solo sistema de salud universal?",
+          "context": "Perú tiene sistemas fragmentados con cobertura desigual según el tipo de empleo.",
+          "agree_label": "Sí, salud universal para todos",
+          "disagree_label": "No, el sistema actual puede mejorarse sin unificarlo"
+        },
+        {
+          "key": "salud_medicamentos",
+          "question": "¿El Estado debe producir medicamentos genéricos para reducir el costo del tratamiento?",
+          "context": "El acceso a medicamentos es una de las principales barreras en salud en Perú.",
+          "agree_label": "Sí, los medicamentos son un bien público",
+          "disagree_label": "No, la competencia privada regula los precios"
+        },
+        {
+          "key": "medioambiente_industrias",
+          "question": "¿Los proyectos de extracción deben poder suspenderse si causan daño ambiental comprobado, aunque generen empleo?",
+          "context": "Conflictos como Conga, Tía María y Tambogrande reflejan esta tensión.",
+          "agree_label": "Sí, el medioambiente es prioritario",
+          "disagree_label": "No, el empleo y el desarrollo económico son urgentes"
+        }
+      ]
     },
     {
-      "key": "salud",
-      "label": "Sistema de salud",
-      "left_label": "Sistema público universal (tipo SIS ampliado)",
-      "right_label": "Sistema mixto con competencia privada",
-      "question": "¿Cómo debe organizarse el sistema de salud?"
+      "key": "instituciones",
+      "label": "Instituciones y Justicia",
+      "icon": "⚖️",
+      "questions": [
+        {
+          "key": "inst_constitucion",
+          "question": "¿El Perú necesita una nueva Constitución a través de una Asamblea Constituyente?",
+          "context": "La Constitución vigente fue aprobada en 1993 bajo el gobierno de Fujimori.",
+          "agree_label": "Sí, refundar el contrato social",
+          "disagree_label": "No, reformar la actual es suficiente"
+        },
+        {
+          "key": "inst_fiscal",
+          "question": "¿Los fiscales y jueces deben ser elegidos por voto popular?",
+          "context": "Algunos proponen elección popular como solución a la captura del poder judicial.",
+          "agree_label": "Sí, legitimidad democrática directa",
+          "disagree_label": "No, requiere formación técnica independiente"
+        },
+        {
+          "key": "inst_congreso",
+          "question": "¿El Congreso debe tener dos cámaras (bicameral) para mejorar la calidad legislativa?",
+          "context": "Perú eliminó el Senado en 1993; se debate su restitución desde entonces.",
+          "agree_label": "Sí, el Senado es un contrapeso necesario",
+          "disagree_label": "No, una sola cámara es más ágil y eficiente"
+        },
+        {
+          "key": "inst_anticorrupcion",
+          "question": "¿Los funcionarios condenados por corrupción deben quedar inhabilitados de por vida para cargos públicos?",
+          "context": "La inhabilitación temporal actual permite el retorno de sentenciados a la política.",
+          "agree_label": "Sí, inhabilitación permanente",
+          "disagree_label": "No, la reinserción debe ser posible"
+        }
+      ]
     },
     {
-      "key": "descentralizacion",
-      "label": "Descentralización",
-      "left_label": "Mayor autonomía regional / federalismo",
-      "right_label": "Gobierno central fuerte",
-      "question": "¿Cuánta autonomía deben tener las regiones?"
-    },
-    {
-      "key": "reforma_judicial",
-      "label": "Reforma judicial",
-      "left_label": "Reforma estructural profunda del poder judicial",
-      "right_label": "Cambios graduales dentro del sistema actual",
-      "question": "¿Cómo debe reformarse el sistema judicial?"
-    },
-    {
-      "key": "politica_social",
-      "label": "Programas sociales",
-      "left_label": "Ampliar programas sociales (más Pensión 65, Juntos, etc.)",
-      "right_label": "Fomentar empleo formal / menos dependencia del Estado",
-      "question": "¿Cuál es la mejor estrategia para reducir la pobreza?"
-    },
-    {
-      "key": "constitucion",
-      "label": "Reforma constitucional",
-      "left_label": "Nueva constitución / asamblea constituyente",
-      "right_label": "Mantener la Constitución de 1993 con reformas puntuales",
-      "question": "¿Qué cambios necesita la Constitución del Perú?"
+      "key": "territorio",
+      "label": "Territorio y Desarrollo",
+      "icon": "🗺️",
+      "questions": [
+        {
+          "key": "territorio_descentralizacion",
+          "question": "¿Los gobiernos regionales deben tener mayor control sobre sus presupuestos sin supervisión del MEF?",
+          "context": "El 60% del presupuesto aún se decide centralmente desde Lima.",
+          "agree_label": "Sí, las regiones saben mejor sus necesidades",
+          "disagree_label": "No, se necesita control central contra la corrupción local"
+        },
+        {
+          "key": "territorio_rondas",
+          "question": "¿Las rondas campesinas y comunidades nativas deben tener jurisdicción legal propia reconocida?",
+          "context": "El Convenio 169 OIT reconoce justicia comunal; su implementación en Perú es parcial.",
+          "agree_label": "Sí, justicia intercultural es un derecho",
+          "disagree_label": "No, solo debe existir un sistema judicial nacional"
+        },
+        {
+          "key": "territorio_lima",
+          "question": "¿El Estado debe mover algunas entidades del gobierno central fuera de Lima?",
+          "context": "El 30% del PBI y el 80% de la inversión se concentran en Lima Metropolitana.",
+          "agree_label": "Sí, descentralización real del poder",
+          "disagree_label": "No, la eficiencia de gestión requiere centralización"
+        }
+      ]
     }
   ]
 }

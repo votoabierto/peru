@@ -20,38 +20,54 @@ export function scoreToAxis(score: number): number {
   return (score - 3) / 2
 }
 
-// Compute economic axis from economia + recursos_naturales + politica_social
-export function computeEconomicAxis(
+// Keys with polarity: +1 means agree=right/conservative, -1 means agree=left/progressive
+const ECONOMIC_KEYS: Array<{ key: string; polarity: number }> = [
+  { key: 'economia_igv', polarity: 1 },        // agree = reduce taxes = free market
+  { key: 'economia_mineria', polarity: -1 },    // agree = more mining taxes = state
+  { key: 'economia_inversion', polarity: -1 },  // agree = more state control = state
+]
+
+const SOCIAL_KEYS: Array<{ key: string; polarity: number }> = [
+  { key: 'seguridad_pena_muerte', polarity: 1 },      // agree = mano dura = conservative
+  { key: 'seguridad_fuerzas_armadas', polarity: 1 },   // agree = military = conservative
+  { key: 'inst_constitucion', polarity: -1 },           // agree = new constitution = progressive
+]
+
+function computeAxis(
+  keys: Array<{ key: string; polarity: number }>,
   positions: Record<string, { score: number | null }>,
   answers?: Record<string, number>,
 ): number | null {
-  const keys = ['economia', 'recursos_naturales', 'politica_social']
-  const source = answers ?? positions
   const scores: number[] = []
-  for (const k of keys) {
-    const val = answers ? (source as Record<string, number>)[k] : (positions[k]?.score ?? null)
-    if (val !== null && val !== undefined) scores.push(val as number)
+  for (const { key, polarity } of keys) {
+    const val = answers
+      ? (answers as Record<string, number>)[key]
+      : (positions[key]?.score ?? null)
+    if (val !== null && val !== undefined) {
+      // Normalize: polarity=1 means score maps directly (5=right), polarity=-1 means reverse
+      const normalized = polarity === 1 ? val : (6 - val)
+      scores.push(normalized)
+    }
   }
   if (scores.length === 0) return null
   const avg = scores.reduce((a, b) => a + b, 0) / scores.length
   return scoreToAxis(avg)
 }
 
-// Compute social axis from constitucion + reforma_judicial + seguridad
+// Compute economic axis from economy-related questions
+export function computeEconomicAxis(
+  positions: Record<string, { score: number | null }>,
+  answers?: Record<string, number>,
+): number | null {
+  return computeAxis(ECONOMIC_KEYS, positions, answers)
+}
+
+// Compute social axis from security + institutional questions
 export function computeSocialAxis(
   positions: Record<string, { score: number | null }>,
   answers?: Record<string, number>,
 ): number | null {
-  const keys = ['constitucion', 'reforma_judicial', 'seguridad']
-  const source = answers ?? positions
-  const scores: number[] = []
-  for (const k of keys) {
-    const val = answers ? (source as Record<string, number>)[k] : (positions[k]?.score ?? null)
-    if (val !== null && val !== undefined) scores.push(val as number)
-  }
-  if (scores.length === 0) return null
-  const avg = scores.reduce((a, b) => a + b, 0) / scores.length
-  return scoreToAxis(avg)
+  return computeAxis(SOCIAL_KEYS, positions, answers)
 }
 
 function distance(x1: number, y1: number, x2: number, y2: number): number {

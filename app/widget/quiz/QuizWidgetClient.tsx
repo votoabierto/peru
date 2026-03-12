@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import issuesData from '@/data/issues.json'
 import candidatePositionsData from '@/data/candidate-positions.json'
+import type { QuizTheme } from '@/lib/types'
 
 type CandidatePosition = {
   candidate_id: string
@@ -13,7 +14,9 @@ type CandidatePosition = {
   positions: Record<string, { score: number | null; label: string; verified: boolean }>
 }
 
-const issues = issuesData.issues
+const themes = issuesData.themes as QuizTheme[]
+const allQuestions = themes.flatMap((t) => t.questions)
+const TOTAL_QUESTIONS = allQuestions.length
 const candidatePositions = candidatePositionsData as CandidatePosition[]
 
 function calculateMatch(
@@ -43,6 +46,14 @@ function encodeResults(answers: Record<string, number>, weights: Record<string, 
   return btoa(payload).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
 }
 
+const ANSWER_OPTIONS = [
+  { score: 5, label: 'Muy de acuerdo' },
+  { score: 4, label: 'De acuerdo' },
+  { score: 3, label: 'Neutral / No sé' },
+  { score: 2, label: 'En desacuerdo' },
+  { score: 1, label: 'Muy en desacuerdo' },
+] as const
+
 const WEIGHT_OPTIONS = [
   { value: 2, label: 'Muy importante' },
   { value: 1, label: 'Importante' },
@@ -54,9 +65,9 @@ export default function QuizWidgetClient() {
   const [answers, setAnswers] = useState<Record<string, number>>({})
   const [weights, setWeights] = useState<Record<string, number>>({})
 
-  const isWeightingStep = step === issues.length
-  const isResultsStep = step > issues.length
-  const currentIssue = step >= 0 && step < issues.length ? issues[step] : null
+  const isWeightingStep = step === TOTAL_QUESTIONS
+  const isResultsStep = step > TOTAL_QUESTIONS
+  const currentQuestion = step >= 0 && step < TOTAL_QUESTIONS ? allQuestions[step] : null
 
   const results = useMemo(() => {
     if (!isResultsStep) return []
@@ -84,7 +95,7 @@ export default function QuizWidgetClient() {
     }
   }, [isResultsStep, results, answers, weights])
 
-  const progress = isResultsStep ? 100 : Math.round((step / (issues.length + 1)) * 100)
+  const progress = isResultsStep ? 100 : Math.round((step / (TOTAL_QUESTIONS + 1)) * 100)
 
   return (
     <div className="min-h-screen bg-white">
@@ -102,7 +113,7 @@ export default function QuizWidgetClient() {
       {!isResultsStep && (
         <div className="px-4 pt-4">
           <div className="flex justify-between text-xs text-[#777777] mb-1">
-            <span>{isWeightingStep ? 'Prioriza temas' : `Pregunta ${step + 1} de ${issues.length}`}</span>
+            <span>{isWeightingStep ? 'Prioriza temas' : `Pregunta ${step + 1} de ${TOTAL_QUESTIONS}`}</span>
             <span>{progress}%</span>
           </div>
           <div className="w-full h-1.5 bg-[#EEEDE9] rounded-full overflow-hidden">
@@ -113,32 +124,25 @@ export default function QuizWidgetClient() {
 
       <div className="px-4 py-6">
         {/* Questions */}
-        {currentIssue && (
+        {currentQuestion && (
           <div>
-            <h2 className="text-lg font-bold text-[#111111] mb-1">{currentIssue.label}</h2>
-            <p className="text-sm text-[#444444] mb-6">{currentIssue.question}</p>
+            <h2 className="text-lg font-bold text-[#111111] mb-1">{currentQuestion.question}</h2>
+            <p className="text-xs text-[#777777] italic mb-4">{currentQuestion.context}</p>
             <div className="space-y-2 mb-6">
-              {[
-                { score: 1, label: currentIssue.left_label, sub: 'Muy de acuerdo' },
-                { score: 2, label: currentIssue.left_label, sub: 'De acuerdo' },
-                { score: 3, label: 'Centro / No tengo posición clara', sub: '' },
-                { score: 4, label: currentIssue.right_label, sub: 'De acuerdo' },
-                { score: 5, label: currentIssue.right_label, sub: 'Muy de acuerdo' },
-              ].map((opt) => (
+              {ANSWER_OPTIONS.map((opt) => (
                 <button
                   key={opt.score}
                   onClick={() => {
-                    setAnswers((prev) => ({ ...prev, [currentIssue.key]: opt.score }))
+                    setAnswers((prev) => ({ ...prev, [currentQuestion.key]: opt.score }))
                     setStep((s) => s + 1)
                   }}
                   className={`w-full text-left px-3 py-2.5 rounded-lg border text-sm transition-all ${
-                    answers[currentIssue.key] === opt.score
+                    answers[currentQuestion.key] === opt.score
                       ? 'bg-[#EEF4FF] border-[#1A56A0] text-[#1A56A0]'
                       : 'bg-white border-[#E5E3DE] text-[#444444] hover:border-[#1A56A0]'
                   }`}
                 >
                   <span className="font-medium">{opt.label}</span>
-                  {opt.sub && <span className="text-xs text-[#777777] ml-1">({opt.sub})</span>}
                 </button>
               ))}
             </div>
@@ -150,12 +154,12 @@ export default function QuizWidgetClient() {
               )}
               <button
                 onClick={() => {
-                  setAnswers((prev) => { const n = { ...prev }; delete n[currentIssue.key]; return n })
+                  setAnswers((prev) => { const n = { ...prev }; delete n[currentQuestion.key]; return n })
                   setStep((s) => s + 1)
                 }}
                 className="text-xs text-[#777777] ml-auto"
               >
-                Prefiero no responder
+                Omitir
               </button>
             </div>
           </div>
@@ -167,19 +171,26 @@ export default function QuizWidgetClient() {
             <h2 className="text-lg font-bold text-[#111111] mb-1">Prioriza tus temas</h2>
             <p className="text-xs text-[#777777] mb-4">¿Qué temas pesan más para tu decisión?</p>
             <div className="space-y-3 mb-6">
-              {issues.map((issue) => {
-                const answered = issue.key in answers
+              {themes.map((theme) => {
+                const themeQuestionKeys = theme.questions.map((q) => q.key)
+                const hasAnswers = themeQuestionKeys.some((k) => k in answers)
                 return (
-                  <div key={issue.key} className={`p-3 rounded-lg border border-[#E5E3DE] ${!answered ? 'opacity-50' : ''}`}>
-                    <p className="text-xs font-semibold text-[#111111] mb-1.5">{issue.label}</p>
+                  <div key={theme.key} className={`p-3 rounded-lg border border-[#E5E3DE] ${!hasAnswers ? 'opacity-50' : ''}`}>
+                    <p className="text-xs font-semibold text-[#111111] mb-1.5">
+                      {theme.icon} {theme.label}
+                    </p>
                     <div className="flex gap-1.5">
                       {WEIGHT_OPTIONS.map((opt) => (
                         <button
                           key={opt.value}
-                          onClick={() => setWeights((prev) => ({ ...prev, [issue.key]: opt.value }))}
-                          disabled={!answered}
+                          onClick={() => {
+                            for (const qk of themeQuestionKeys) {
+                              setWeights((prev) => ({ ...prev, [qk]: opt.value }))
+                            }
+                          }}
+                          disabled={!hasAnswers}
                           className={`flex-1 px-2 py-1.5 rounded text-xs font-medium border transition-colors ${
-                            (weights[issue.key] ?? 1) === opt.value
+                            (weights[themeQuestionKeys[0]] ?? 1) === opt.value
                               ? 'bg-[#1A56A0] text-white border-[#1A56A0]'
                               : 'bg-white text-[#444444] border-[#E5E3DE]'
                           }`}
@@ -197,7 +208,7 @@ export default function QuizWidgetClient() {
                 <ArrowLeft size={14} /> Atrás
               </button>
               <button
-                onClick={() => setStep(issues.length + 1)}
+                onClick={() => setStep(TOTAL_QUESTIONS + 1)}
                 className="px-4 py-2 bg-[#1A56A0] text-white text-sm font-medium rounded-lg hover:bg-[#164A8A] transition-colors flex items-center gap-1"
               >
                 Ver resultados <ArrowRight size={14} />

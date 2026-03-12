@@ -8,6 +8,7 @@ import PoliticalCompass, { computeEconomicAxis, computeSocialAxis } from '@/comp
 import ShareButtons from '@/components/ShareButtons'
 import issuesData from '@/data/issues.json'
 import candidatePositionsData from '@/data/candidate-positions.json'
+import type { QuizTheme } from '@/lib/types'
 
 type CandidatePosition = {
   candidate_id: string
@@ -27,7 +28,9 @@ type MatchResult = {
   verifiedIssueCount: number
 }
 
-const issues = issuesData.issues
+const themes = issuesData.themes as QuizTheme[]
+const allQuestions = themes.flatMap((t) => t.questions)
+const TOTAL_QUESTIONS = allQuestions.length
 const candidatePositions = candidatePositionsData as CandidatePosition[]
 
 const DEPARTMENTS = [
@@ -42,6 +45,14 @@ const WEIGHT_OPTIONS = [
   { value: 2, label: 'Muy importante' },
   { value: 1, label: 'Importante' },
   { value: 0.5, label: 'No tanto' },
+] as const
+
+const ANSWER_OPTIONS = [
+  { score: 5, label: 'Muy de acuerdo' },
+  { score: 4, label: 'De acuerdo' },
+  { score: 3, label: 'Neutral / No sé' },
+  { score: 2, label: 'En desacuerdo' },
+  { score: 1, label: 'Muy en desacuerdo' },
 ] as const
 
 function calculateMatch(
@@ -61,8 +72,8 @@ function calculateMatch(
   ).length
 
   const dataQuality: 'verified' | 'partial' | 'insufficient' =
-    verifiedIssueCount >= 8 ? 'verified' :
-    verifiedIssueCount >= 3 ? 'partial' : 'insufficient'
+    verifiedIssueCount >= 14 ? 'verified' :
+    verifiedIssueCount >= 6 ? 'partial' : 'insufficient'
 
   if (sharedIssues.length < 3) {
     return { matchPct: null, verifiedIssueCount, dataQuality }
@@ -161,9 +172,31 @@ function decodeResults(encoded: string): { answers: Record<string, number>; weig
   }
 }
 
-// Steps: 0=department, 1-10=questions, 11=weighting, 12=results
-const STEP_RESULTS = issues.length + 2
-const TOTAL_STEPS = issues.length + 3
+// Flatten questions with theme info for sequential navigation
+type FlatQuestion = { themeKey: string; themeLabel: string; themeIcon: string; questionIndex: number; isFirstInTheme: boolean } & typeof allQuestions[number]
+
+function buildFlatQuestions(): FlatQuestion[] {
+  const flat: FlatQuestion[] = []
+  for (const theme of themes) {
+    for (let qi = 0; qi < theme.questions.length; qi++) {
+      flat.push({
+        ...theme.questions[qi],
+        themeKey: theme.key,
+        themeLabel: theme.label,
+        themeIcon: theme.icon,
+        questionIndex: qi,
+        isFirstInTheme: qi === 0,
+      })
+    }
+  }
+  return flat
+}
+
+const flatQuestions = buildFlatQuestions()
+
+// Steps: 0=department, 1..N=questions, N+1=weighting, N+2=results
+const STEP_WEIGHTING = TOTAL_QUESTIONS + 1
+const STEP_RESULTS = TOTAL_QUESTIONS + 2
 
 export default function QuizClient() {
   const [step, setStep] = useState(0)
@@ -189,9 +222,13 @@ export default function QuizClient() {
     }
   }, [])
 
-  const currentIssue = step >= 1 && step <= issues.length ? issues[step - 1] : null
-  const isWeightingStep = step === issues.length + 1
+  const questionIndex = step >= 1 && step <= TOTAL_QUESTIONS ? step - 1 : -1
+  const currentQuestion = questionIndex >= 0 ? flatQuestions[questionIndex] : null
+  const isWeightingStep = step === STEP_WEIGHTING
   const isResultsStep = step >= STEP_RESULTS
+
+  // Which theme is current question in
+  const currentThemeKey = currentQuestion?.themeKey ?? null
 
   const results = useMemo(() => {
     if (!isResultsStep) return [] as MatchResult[]
@@ -249,16 +286,16 @@ export default function QuizClient() {
   const userY = computeSocialAxis({}, answers) ?? 0
 
   function handleAnswer(score: number) {
-    if (!currentIssue) return
-    setAnswers((prev) => ({ ...prev, [currentIssue.key]: score }))
+    if (!currentQuestion) return
+    setAnswers((prev) => ({ ...prev, [currentQuestion.key]: score }))
     setStep((s) => s + 1)
   }
 
   function handleSkip() {
-    if (!currentIssue) return
+    if (!currentQuestion) return
     setAnswers((prev) => {
       const next = { ...prev }
-      delete next[currentIssue.key]
+      delete next[currentQuestion.key]
       return next
     })
     setStep((s) => s + 1)
@@ -290,8 +327,14 @@ export default function QuizClient() {
     window.history.replaceState(null, '', '/quiz')
   }
 
-  const answeredIssueKeys = Object.keys(answers)
-  const progress = step === 0 ? 0 : isResultsStep ? 100 : Math.round((step / (TOTAL_STEPS - 1)) * 100)
+  // Jump to a theme's first question
+  function jumpToTheme(themeKey: string) {
+    const idx = flatQuestions.findIndex((q) => q.themeKey === themeKey)
+    if (idx >= 0) setStep(idx + 1)
+  }
+
+  const answeredCount = Object.keys(answers).length
+  const progress = step === 0 ? 0 : isResultsStep ? 100 : Math.round((step / (STEP_RESULTS)) * 100)
 
   const shareText = verifiedResults[0]
     ? `Respondí el quiz de VotoAbierto y tengo ${verifiedResults[0].matchPct}% de afinidad con ${verifiedResults[0].name}. ¿Y tú?`
@@ -311,11 +354,11 @@ export default function QuizClient() {
                 ¿Con quién votas el 12 de abril?
               </h1>
               <p className="text-[#444444] mt-3 max-w-lg mx-auto">
-                Responde 10 preguntas sobre los temas más importantes para el Perú.
+                Responde {TOTAL_QUESTIONS} preguntas sobre los temas más importantes para el Perú.
                 Descubre qué candidatos comparten tu visión.
               </p>
               <div className="flex items-center justify-center gap-4 mt-4 text-sm text-[#777777]">
-                <span>3 minutos</span>
+                <span>5 minutos</span>
                 <span className="text-[#E5E3DE]">|</span>
                 <span>100% anónimo</span>
                 <span className="text-[#E5E3DE]">|</span>
@@ -325,11 +368,11 @@ export default function QuizClient() {
           ) : (
             <>
               <h1 className="text-3xl sm:text-4xl font-extrabold text-[#111111]">
-                {isResultsStep ? 'Tus resultados' : '¿Con quién votas? Descúbrelo en 3 minutos'}
+                {isResultsStep ? 'Tus resultados' : '¿Con quién votas? Descúbrelo en 5 minutos'}
               </h1>
               {!isResultsStep && (
                 <p className="text-[#777777] mt-2 max-w-lg mx-auto">
-                  Responde 10 preguntas sobre temas clave y descubre qué candidatos presidenciales comparten tus ideas. Anónimo, sin registro.
+                  {TOTAL_QUESTIONS} preguntas sobre temas clave. Descubre qué candidatos presidenciales comparten tus ideas. Anónimo, sin registro.
                 </p>
               )}
             </>
@@ -337,18 +380,43 @@ export default function QuizClient() {
         </div>
       </div>
 
-      {/* Progress bar */}
-      {!isResultsStep && (
+      {/* Progress bar + theme pills */}
+      {!isResultsStep && step > 0 && (
         <div className="max-w-3xl mx-auto px-4 pt-6">
+          {/* Theme pills */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {themes.map((theme) => {
+              const isActive = currentThemeKey === theme.key
+              const themeQuestionKeys = theme.questions.map((q) => q.key)
+              const answeredInTheme = themeQuestionKeys.filter((k) => k in answers).length
+              const allAnswered = answeredInTheme === theme.questions.length
+              return (
+                <button
+                  key={theme.key}
+                  onClick={() => jumpToTheme(theme.key)}
+                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+                    isActive
+                      ? 'bg-[#1A56A0] text-white border-[#1A56A0]'
+                      : allAnswered
+                        ? 'bg-green-50 text-green-700 border-green-200'
+                        : 'bg-white text-[#777777] border-[#E5E3DE] hover:border-[#1A56A0] hover:text-[#1A56A0]'
+                  }`}
+                >
+                  <span>{theme.icon}</span>
+                  <span>{theme.label}</span>
+                  {allAnswered && !isActive && <span className="text-green-500">✓</span>}
+                </button>
+              )
+            })}
+          </div>
+
           <div className="flex items-center justify-between text-xs text-[#777777] mb-2">
             <span>
-              {step === 0
-                ? 'Selecciona tu departamento'
-                : isWeightingStep
-                  ? 'Prioriza tus temas'
-                  : `Pregunta ${step} de ${issues.length}`}
+              {isWeightingStep
+                ? 'Prioriza tus temas'
+                : `Pregunta ${questionIndex + 1} de ${TOTAL_QUESTIONS}`}
             </span>
-            <span>{progress}%</span>
+            <span>{answeredCount}/{TOTAL_QUESTIONS} respondidas</span>
           </div>
           <div className="w-full h-2 bg-[#EEEDE9] rounded-full overflow-hidden">
             <div
@@ -394,25 +462,36 @@ export default function QuizClient() {
           </div>
         )}
 
-        {/* Steps 1-10: Questions */}
-        {currentIssue && (
+        {/* Questions */}
+        {currentQuestion && (
           <div>
-            <h2 className="text-xl font-bold text-[#111111] mb-2">{currentIssue.label}</h2>
-            <p className="text-base text-[#444444] mb-8">{currentIssue.question}</p>
+            {/* Theme separator when entering new theme */}
+            {currentQuestion.isFirstInTheme && (
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#E5E3DE]">
+                <span className="text-2xl">{currentQuestion.themeIcon}</span>
+                <div>
+                  <h3 className="text-lg font-bold text-[#111111]">{currentQuestion.themeLabel}</h3>
+                  <p className="text-xs text-[#777777]">
+                    {themes.find((t) => t.key === currentQuestion.themeKey)?.questions.length} preguntas en esta sección
+                  </p>
+                </div>
+              </div>
+            )}
+
+            <h2 className="text-xl font-bold text-[#111111] mb-3" style={{ fontSize: '20px' }}>
+              {currentQuestion.question}
+            </h2>
+            <p className="text-sm text-[#777777] italic mb-8">
+              {currentQuestion.context}
+            </p>
 
             <div className="space-y-3 mb-8">
-              {[
-                { score: 1, label: currentIssue.left_label, sublabel: 'Muy de acuerdo' },
-                { score: 2, label: currentIssue.left_label, sublabel: 'De acuerdo' },
-                { score: 3, label: 'Centro / No tengo una posición clara', sublabel: '' },
-                { score: 4, label: currentIssue.right_label, sublabel: 'De acuerdo' },
-                { score: 5, label: currentIssue.right_label, sublabel: 'Muy de acuerdo' },
-              ].map((option) => (
+              {ANSWER_OPTIONS.map((option) => (
                 <button
                   key={option.score}
                   onClick={() => handleAnswer(option.score)}
                   className={`w-full text-left px-4 py-3 rounded-xl border transition-all ${
-                    answers[currentIssue.key] === option.score
+                    answers[currentQuestion.key] === option.score
                       ? 'bg-[#EEF4FF] border-[#1A56A0] text-[#1A56A0]'
                       : 'bg-white border-[#E5E3DE] text-[#444444] hover:border-[#1A56A0] hover:bg-[#F7F6F3]'
                   }`}
@@ -423,8 +502,11 @@ export default function QuizClient() {
                     </span>
                     <div>
                       <span className="text-sm font-medium">{option.label}</span>
-                      {option.sublabel && (
-                        <span className="text-xs text-[#777777] ml-2">({option.sublabel})</span>
+                      {option.score === 5 && (
+                        <span className="text-xs text-[#999999] ml-2">({currentQuestion.agree_label})</span>
+                      )}
+                      {option.score === 1 && (
+                        <span className="text-xs text-[#999999] ml-2">({currentQuestion.disagree_label})</span>
                       )}
                     </div>
                   </div>
@@ -444,13 +526,13 @@ export default function QuizClient() {
                 onClick={handleSkip}
                 className="text-sm text-[#777777] hover:text-[#1A56A0] transition-colors"
               >
-                Prefiero no responder
+                Omitir esta pregunta
               </button>
             </div>
           </div>
         )}
 
-        {/* Step 11: Importance weighting */}
+        {/* Weighting step */}
         {isWeightingStep && (
           <div>
             <h2 className="text-xl font-bold text-[#111111] mb-2">
@@ -461,33 +543,46 @@ export default function QuizClient() {
             </p>
 
             <div className="space-y-4 mb-8">
-              {issues.map((issue) => {
-                const answered = answeredIssueKeys.includes(issue.key)
-                const currentWeight = weights[issue.key] ?? 1
+              {themes.map((theme) => {
+                const themeQuestionKeys = theme.questions.map((q) => q.key)
+                const answeredInTheme = themeQuestionKeys.filter((k) => k in answers).length
+                const hasAnswers = answeredInTheme > 0
                 return (
                   <div
-                    key={issue.key}
-                    className={`p-4 rounded-xl border border-[#E5E3DE] bg-white ${!answered ? 'opacity-50' : ''}`}
+                    key={theme.key}
+                    className={`p-4 rounded-xl border border-[#E5E3DE] bg-white ${!hasAnswers ? 'opacity-50' : ''}`}
                   >
-                    <p className="text-sm font-semibold text-[#111111] mb-2">{issue.label}</p>
-                    <div className="flex gap-2">
-                      {WEIGHT_OPTIONS.map((opt) => (
-                        <button
-                          key={opt.value}
-                          onClick={() => handleSetWeight(issue.key, opt.value)}
-                          disabled={!answered}
-                          className={`flex-1 px-3 py-2 rounded-lg text-xs font-medium border transition-colors ${
-                            currentWeight === opt.value
-                              ? 'bg-[#1A56A0] text-white border-[#1A56A0]'
-                              : 'bg-white text-[#444444] border-[#E5E3DE] hover:border-[#1A56A0]'
-                          } ${!answered ? 'cursor-not-allowed' : ''}`}
-                        >
-                          {opt.label}
-                        </button>
-                      ))}
+                    <div className="flex items-center gap-2 mb-2">
+                      <span>{theme.icon}</span>
+                      <p className="text-sm font-semibold text-[#111111]">{theme.label}</p>
+                      <span className="text-xs text-[#777777]">({answeredInTheme}/{theme.questions.length})</span>
                     </div>
-                    {!answered && (
-                      <p className="text-[10px] text-[#999999] mt-1">No respondiste esta pregunta</p>
+                    <div className="flex gap-2">
+                      {WEIGHT_OPTIONS.map((opt) => {
+                        // Apply weight to all questions in theme
+                        const currentWeight = weights[themeQuestionKeys[0]] ?? 1
+                        return (
+                          <button
+                            key={opt.value}
+                            onClick={() => {
+                              for (const qk of themeQuestionKeys) {
+                                handleSetWeight(qk, opt.value)
+                              }
+                            }}
+                            disabled={!hasAnswers}
+                            className={`flex-1 px-3 py-2 rounded-lg text-xs font-medium border transition-colors ${
+                              currentWeight === opt.value
+                                ? 'bg-[#1A56A0] text-white border-[#1A56A0]'
+                                : 'bg-white text-[#444444] border-[#E5E3DE] hover:border-[#1A56A0]'
+                            } ${!hasAnswers ? 'cursor-not-allowed' : ''}`}
+                          >
+                            {opt.label}
+                          </button>
+                        )
+                      })}
+                    </div>
+                    {!hasAnswers && (
+                      <p className="text-[10px] text-[#999999] mt-1">No respondiste preguntas de este tema</p>
                     )}
                   </div>
                 )
@@ -571,7 +666,7 @@ export default function QuizClient() {
                     <div key={r.candidateId}>
                       <ResultCard r={r} rank={i + 1} />
                       <p className="text-[10px] text-[#999999] mt-0.5 ml-12">
-                        Basado en {r.verifiedIssueCount} de 10 temas verificados
+                        Basado en {r.verifiedIssueCount} de {TOTAL_QUESTIONS} temas verificados
                       </p>
                     </div>
                   ))}
@@ -593,7 +688,7 @@ export default function QuizClient() {
                     <div key={r.candidateId}>
                       <ResultCard r={r} rank={i + 1} muted />
                       <p className="text-[10px] text-[#999999] mt-0.5 ml-12">
-                        {r.verifiedIssueCount} de 10 temas con datos
+                        {r.verifiedIssueCount} de {TOTAL_QUESTIONS} temas con datos
                       </p>
                     </div>
                   ))}
