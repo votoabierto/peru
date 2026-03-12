@@ -15,7 +15,6 @@ import {
   CandidateStats,
   CandidatePositions,
   CandidateFactChecks,
-  CandidateCriminalRecord,
   ExpandableBio,
 } from '@/components/CandidateProfile'
 import CandidateShareSection from '@/components/CandidateShareSection'
@@ -131,7 +130,6 @@ export default async function CandidatePage({ params }: Props) {
   ])
 
   const bio = candidate.planGobiernoResumen ?? candidate.bio ?? candidate.career_summary ?? ''
-  const criminalRecords = candidate.criminal_records ?? []
 
   // Position scores from candidate-positions.json
   const positionEntry = positionsMatrix.find((cp) => cp.candidate_id === candidate.id)
@@ -172,6 +170,28 @@ export default async function CandidatePage({ params }: Props) {
 
   // Merge antecedentes from DB + seed data
   const allAntecedentes = antecedentesDB.length > 0 ? antecedentesDB : []
+
+  // JNE sentencia penal data (from candidates.json)
+  const sentenciaPenal = candidate.sentencia_penal ?? ''
+  const sentenciaDetalle = candidate.sentencia_penal_detalle ?? []
+  const hasSinAntecedentes = sentenciaPenal === 'SIN ANTECEDENTES PENALES'
+  const jneProfileUrl = candidate.jne_profile_url ?? 'https://votoinformado.jne.gob.pe/presidente-vicepresidentes'
+
+  // Bienes: prefer DB data, fallback to JNE API data in candidates.json
+  const jneBienes = (candidate as unknown as Record<string, unknown>).jne_bienes as {
+    total_bienes_pen?: number | null
+    total_ingresos_anuales_pen?: number | null
+    bienes_inmuebles?: Array<{ descripcion: string; valor_pen: number }>
+    declaration_year?: string
+    source?: string
+  } | undefined
+  const effectiveBienes = bienesDB ?? (jneBienes ? {
+    total_bienes_pen: jneBienes.total_bienes_pen ?? null,
+    total_ingresos_anuales_pen: jneBienes.total_ingresos_anuales_pen ?? null,
+    total_deudas_pen: null,
+    bienes_inmuebles: jneBienes.bienes_inmuebles ?? null,
+    declaration_year: jneBienes.declaration_year ?? '2024',
+  } : null)
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -271,6 +291,30 @@ export default async function CandidatePage({ params }: Props) {
             </div>
           )}
 
+          {/* JNE titulos académicos fallback */}
+          {(!hojaDeVida?.education || hojaDeVida.education.length === 0) && candidate.jne_titulos_academicos && candidate.jne_titulos_academicos.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-base font-semibold text-[#111111] mb-3">Títulos académicos</h3>
+              <ul className="space-y-2">
+                {candidate.jne_titulos_academicos.map((t, i) => (
+                  <li key={i} className="text-sm text-[#333333] flex gap-2 items-start">
+                    <span className="text-[#1A56A0] mt-0.5">&#8226;</span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-[10px] text-[#CBCAC5] mt-2">Fuente: JNE — Hoja de Vida</p>
+            </div>
+          )}
+
+          {/* JNE ocupación */}
+          {candidate.jne_ocupacion && candidate.jne_ocupacion.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-base font-semibold text-[#111111] mb-2">Ocupación / Profesión</h3>
+              <p className="text-sm text-[#333333]">{candidate.jne_ocupacion.join(', ')}</p>
+            </div>
+          )}
+
           {hojaDeVida?.work_history && hojaDeVida.work_history.length > 0 && (
             <div className="mb-6">
               <h3 className="text-base font-semibold text-[#111111] mb-3">Experiencia laboral</h3>
@@ -301,10 +345,46 @@ export default async function CandidatePage({ params }: Props) {
         {/* Antecedentes */}
         <section>
           <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center justify-between">
-            <span>Antecedentes</span>
+            <span>Antecedentes penales</span>
             <span className="text-[10px] font-normal text-[#CBCAC5]">Fuente: JNE</span>
           </h2>
-          {allAntecedentes.length > 0 ? (
+          {sentenciaDetalle.length > 0 ? (
+            <div className="space-y-3">
+              {sentenciaDetalle.map((r, i) => (
+                <div key={i} className="border border-[#E5E3DE] rounded-lg p-4 bg-[#FAFAFA]">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <span className="font-medium text-[#111111] text-sm">{r.materia}</span>
+                    {(() => {
+                      const fallo = r.fallo ?? ''
+                      const modalidad = r.modalidad ?? ''
+                      if (['ABSUELTO', 'SOBRESEIDA', 'ANULADA'].some(k => fallo.includes(k))) {
+                        return <span className="text-xs px-2 py-0.5 bg-[#F0F4FF] text-[#1A56A0] rounded-full border border-[#C7D7F4] whitespace-nowrap">{fallo}</span>
+                      }
+                      if (modalidad === 'EFECTIVA') {
+                        return <span className="text-xs px-2 py-0.5 bg-[#FFF4F4] text-[#9B1C1C] rounded-full border border-[#FECACA] whitespace-nowrap">{fallo} ({modalidad})</span>
+                      }
+                      return <span className="text-xs px-2 py-0.5 bg-[#F7F6F3] text-[#555555] rounded-full border border-[#E5E3DE] whitespace-nowrap">{fallo}{modalidad ? ` (${modalidad})` : ''}</span>
+                    })()}
+                  </div>
+                  <div className="text-xs text-[#777777] space-y-1">
+                    <div>Expediente: {r.expediente} | {r.fuero}</div>
+                    <div>Sentencia: {r.fecSentencia}{r.cumplimientoPena ? ` | Estado: ${r.cumplimientoPena}` : ''}</div>
+                    {r.txComentario && (
+                      <div className="text-[#555555] italic mt-1">&ldquo;{r.txComentario}&rdquo;</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+              <a
+                href={jneProfileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-[#1A56A0] hover:underline"
+              >
+                Ver hoja de vida completa en JNE &rarr;
+              </a>
+            </div>
+          ) : allAntecedentes.length > 0 ? (
             <div className="space-y-3">
               {allAntecedentes.map((ant, i) => (
                 <div key={ant.id || i} className={`rounded-xl border p-4 ${
@@ -330,12 +410,18 @@ export default async function CandidatePage({ params }: Props) {
                 </div>
               ))}
             </div>
-          ) : criminalRecords.length > 0 ? (
-            <CandidateCriminalRecord records={criminalRecords} />
+          ) : hasSinAntecedentes ? (
+            <div className="text-sm text-[#555555] flex items-center gap-2 py-4 px-4 bg-[#F7F6F3] border border-[#E5E3DE] rounded-lg">
+              <span className="text-green-600">&#10003;</span>
+              Sin antecedentes penales registrados en JNE
+              <a href={jneProfileUrl} target="_blank" rel="noopener noreferrer" className="text-[#1A56A0] hover:underline text-xs ml-1">
+                Verificar en JNE &rarr;
+              </a>
+            </div>
           ) : (
             <div className="text-[#777777] text-sm py-4 px-4 bg-[#F7F6F3] border border-[#E5E3DE] rounded-lg">
               <a
-                href={candidate.jne_profile_url ?? 'https://votoinformado.jne.gob.pe/presidente-vicepresidentes'}
+                href={jneProfileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#1A56A0] hover:underline"
@@ -352,33 +438,33 @@ export default async function CandidatePage({ params }: Props) {
             <span>Bienes declarados</span>
             <span className="text-[10px] font-normal text-[#CBCAC5]">Fuente: JNE</span>
           </h2>
-        {bienesDB && (bienesDB.total_bienes_pen || bienesDB.total_ingresos_anuales_pen) ? (
+        {effectiveBienes && (effectiveBienes.total_bienes_pen || effectiveBienes.total_ingresos_anuales_pen) ? (
           <div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {bienesDB.total_bienes_pen != null && (
+              {effectiveBienes.total_bienes_pen != null && (
                 <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-[#1A56A0]">{formatPEN(bienesDB.total_bienes_pen)}</p>
+                  <p className="text-2xl font-bold text-[#1A56A0]">{formatPEN(effectiveBienes.total_bienes_pen)}</p>
                   <p className="text-xs text-[#777777] mt-1">Total bienes</p>
                 </div>
               )}
-              {bienesDB.total_ingresos_anuales_pen != null && (
+              {effectiveBienes.total_ingresos_anuales_pen != null && (
                 <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-[#1A56A0]">{formatPEN(bienesDB.total_ingresos_anuales_pen)}</p>
+                  <p className="text-2xl font-bold text-[#1A56A0]">{formatPEN(effectiveBienes.total_ingresos_anuales_pen)}</p>
                   <p className="text-xs text-[#777777] mt-1">Ingresos anuales</p>
                 </div>
               )}
-              {bienesDB.total_deudas_pen != null && (
+              {effectiveBienes.total_deudas_pen != null && (
                 <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-[#9B1C1C]">{formatPEN(bienesDB.total_deudas_pen)}</p>
+                  <p className="text-2xl font-bold text-[#9B1C1C]">{formatPEN(effectiveBienes.total_deudas_pen)}</p>
                   <p className="text-xs text-[#777777] mt-1">Deudas</p>
                 </div>
               )}
             </div>
-            {bienesDB.bienes_inmuebles && bienesDB.bienes_inmuebles.length > 0 && (
+            {effectiveBienes.bienes_inmuebles && effectiveBienes.bienes_inmuebles.length > 0 && (
               <div className="mt-4">
                 <h3 className="text-sm font-semibold text-[#111111] mb-2">Bienes inmuebles</h3>
                 <div className="space-y-2">
-                  {bienesDB.bienes_inmuebles.map((b, i) => (
+                  {effectiveBienes.bienes_inmuebles.map((b, i) => (
                     <div key={i} className="flex items-center justify-between text-sm text-[#4B5563] bg-white border border-[#E5E3DE] rounded-lg px-3 py-2">
                       <span>{b.descripcion}</span>
                       <span className="font-medium">{formatPEN(b.valor_pen)}</span>
@@ -388,7 +474,7 @@ export default async function CandidatePage({ params }: Props) {
               </div>
             )}
             <p className="text-[10px] text-[#CBCAC5] mt-2">
-              Declaración {bienesDB.declaration_year || '2025'}
+              Declaración {effectiveBienes.declaration_year || '2025'}
             </p>
           </div>
         ) : (
@@ -419,6 +505,17 @@ export default async function CandidatePage({ params }: Props) {
             <span>Plan de Gobierno</span>
             <span className="text-[10px] font-normal text-[#CBCAC5]">Fuente: JNE</span>
           </h2>
+        {candidate.jne_url_plan && (
+          <a
+            href={candidate.jne_url_plan}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mb-4 text-sm text-[#1A56A0] hover:underline"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Descargar plan de gobierno completo (PDF &mdash; JNE)
+          </a>
+        )}
         {ejes.length > 0 ? (
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

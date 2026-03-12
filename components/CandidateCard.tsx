@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CheckCircle, AlertTriangle } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import { IDEOLOGY_COLORS, IDEOLOGY_LABELS } from '@/lib/types'
 
 // CandidateCardProps intentionally exported for re-use
@@ -19,6 +19,7 @@ export interface CandidateCardProps {
   ideology?: string
   is_verified?: boolean
   has_criminal_record?: boolean
+  sentencia_penal?: string
 }
 
 function getInitials(name: string): string {
@@ -52,6 +53,7 @@ export default function CandidateCard({
   ideology,
   is_verified,
   has_criminal_record,
+  sentencia_penal,
 }: CandidateCardProps) {
   const initials = getInitials(full_name)
   const ideologyColor = ideology ? (IDEOLOGY_COLORS[ideology] ?? 'bg-gray-600 text-gray-100') : 'bg-gray-600 text-gray-100'
@@ -93,9 +95,6 @@ export default function CandidateCard({
               </h3>
               {is_verified && (
                 <CheckCircle size={14} className="text-[#1A56A0] flex-shrink-0" />
-              )}
-              {has_criminal_record && (
-                <AlertTriangle size={14} className="text-[#9B1C1C] flex-shrink-0" />
               )}
             </div>
             {common_name && (
@@ -146,11 +145,10 @@ export default function CandidateCard({
           </div>
         )}
 
-        {/* Criminal record warning */}
-        {has_criminal_record && (
-          <p className="mt-3 text-xs text-[#9B1C1C] flex items-center gap-1">
-            <AlertTriangle size={12} />
-            Tiene antecedentes penales
+        {/* Criminal record — neutral informational label */}
+        {(sentencia_penal === 'CON ANTECEDENTES PENALES' || has_criminal_record) && (
+          <p className="mt-3 text-xs text-[#555555] flex items-center gap-1 bg-[#F7F6F3] border border-[#E5E3DE] rounded px-2 py-1 w-fit">
+            Antecedentes penales
           </p>
         )}
 

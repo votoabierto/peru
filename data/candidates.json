@@ -58,7 +58,20 @@
     "jne_ocupacion": [
       "Presidenta"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/da4b943d-4344-4743-9362-a11ccf3054cb.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/da4b943d-4344-4743-9362-a11ccf3054cb.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 115998,
+      "total_ingresos_anuales_pen": 271853.45,
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — Subaru Forester — AXH007",
+          "valor_pen": 115998,
+          "comentario": "El vehículo fue comprado en el 2017. Actualmente embargado.  El valor  consignado es el de adquisición."
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "cesar-acuna",
@@ -130,7 +143,907 @@
       "ASESOR",
       "PRESIDENTE DEL DIRECTORIO"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/72576403-804a-4f28-85d3-bf4c7e648667.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/72576403-804a-4f28-85d3-bf4c7e648667.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 15113167.06,
+      "total_ingresos_anuales_pen": 9836766,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFZ720",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFZ728",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFZ730",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CHB711",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM783",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J701",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHÍCULAR — COLORPLATA VERDE.MARCA TOYOTA. MODELO HILUX — D9T897",
+          "valor_pen": 89266.03,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFY823",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — F0J861",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM799",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFY800",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORGRIS MICA METALICO. MARCA TOYOTA. MODELO: FORTUNER — AVD543",
+          "valor_pen": 96000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA RAUDO. MODELO SEVERO RD — 4005FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J765",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA RAUDO. MODELO SEVERO RD — 2539FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA RAUDO. MODELO SEVERO RD — 3190FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J937",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 68278B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM804",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM847",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — F0K770",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — CLORPLATA MARCA MITSUBISHI. MODELO GALANT 2.5 VRA/T — AAW014",
+          "valor_pen": 24000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL OSCURO PELADO, MARCA NISSAN — T2P113",
+          "valor_pen": 2200,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA MERCEDES BENZ. MODELO S 350. AÑO 2006 — ACH365",
+          "valor_pen": 16761.9,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA MITSUBISHI. MODELO MONTERO LARGA. AÑO 2007 — ACH367",
+          "valor_pen": 17196.31,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA LANDROVER. MODELO RANGE ROVER. AÑO 2009 — ACH363",
+          "valor_pen": 32288.82,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO LANDCRUSIER 200. AÑO 2010 — A3M447",
+          "valor_pen": 41430.51,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX. AÑO 2010 — A5A827",
+          "valor_pen": 16340.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA HIUNDAY. MODELO HD 78 — C6K925",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA CHANGE. MODELO CH6390E. AÑO 2011 — T2L663",
+          "valor_pen": 43158,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D7V780",
+          "valor_pen": 89036.39,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D8K717",
+          "valor_pen": 89036.39,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HIACE. AÑO 2012 — D8Q851",
+          "valor_pen": 109601.47,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D8R899",
+          "valor_pen": 89128.46,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D8R900",
+          "valor_pen": 89128.46,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D8T794",
+          "valor_pen": 109540.4,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D8U920",
+          "valor_pen": 89128.46,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D8U944",
+          "valor_pen": 89128.46,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D9U868",
+          "valor_pen": 109723.82,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D9Z798",
+          "valor_pen": 109601.54,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D9Z882",
+          "valor_pen": 109601.47,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D9Z905",
+          "valor_pen": 109570.97,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D9Z910",
+          "valor_pen": 89266.03,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D0B853",
+          "valor_pen": 109723.82,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D0B875",
+          "valor_pen": 109540.4,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D0B876",
+          "valor_pen": 88973.81,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D0B949",
+          "valor_pen": 109601.54,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D0C811",
+          "valor_pen": 88973.81,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX AÑO 2012 — D0E859",
+          "valor_pen": 109570.97,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX COLOR BLANCO — F0I825",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA. MODELO HILUX — F0I824",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0I826",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0I949",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — F0J702",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J762",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J764",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J798",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — F0J857",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J860",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J846",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J844",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0J845",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — F0J936",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — F0J938",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0K762",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0K766",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — F0K772",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0K774",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — F0K844",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — F0K846",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0K883",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0K884",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA TOYOTA MODELO HILUX — F0Q726",
+          "valor_pen": 120482.75,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO, AZUL, ROJO. MARCA HIGER MODELO FM — F0T845",
+          "valor_pen": 22000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORPLATA METALICO, MARCA LEXUS, MODELO LX — F9A560",
+          "valor_pen": 359650,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO, AZUL, ROJO. MARCA HIGER MODELO KLQ6728G — T6K950",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 28788B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 32158B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 50078B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 51798B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 53088B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 53098B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 54088B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 54238B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 56968B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 59188B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 60378B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 60648B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 61228B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 61848B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 65078B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 69548B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 70148B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 79528B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA HIGER. MODELO KLQ728G. AÑO 2012 — AFU922",
+          "valor_pen": 60421.2,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA HIGER. MODELO KLQ1830F. AÑO 2012 — C8W960",
+          "valor_pen": 258948,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO, AZUL, ROJO. MARCA HIGER MODELO KLQ6728G — AFV840",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA HIGER. MODELO KLQ6796. AÑO 2012 — C8W965",
+          "valor_pen": 100702,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR: AZUL, ROJO, BLANCO. MARCA:HIGER, MODELO: KLQ6728G — AFV845",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR: AZUL, ROJO, BLANCO. MARCA:HIGER, MODELO: KLQ1830F — C8W966",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR: AZUL, ROJO, BLANCO. MARCA:HIGER, MODELO: KLQ6796 — C8W967",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA HIGER. MODELO KLQ6796, AÑO 2012 — C8W968",
+          "valor_pen": 100702,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA HIGER. MODELO KLQ6796 — C8X950",
+          "valor_pen": 100702,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR: AZUL, ROJO, BLANCO. MARCA:HIGER, MODELO: KLQ6728G — AFX818",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR: AZUL, ROJO, BLANCO. MARCA:HIGER, MODELO: KLQ6129GC — AHA728",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR: AZUL, ROJO, BLANCO. MARCA:HIGER, MODELO: KLQ6129GC — AHA729",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA: HIGER. MODELO KLQ6728G. AÑO 2012 — AHR828",
+          "valor_pen": 60421.12,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR: AZUL, ROJO, BLANCO. MARCA:HIGER, MODELO: KLQ6728G — AJA705",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJL924",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM707",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM708",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM709",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM785",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM786",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM818",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM802",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM793",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM828",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM845",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM846",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM881",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORBLANCO. MARCA TOYOTA MODELO HILUX — AJM910",
+          "valor_pen": 30000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA MERCEDES BENZ. MODELO S500L. AÑO 2016 — ARH133",
+          "valor_pen": 160000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA AUDI: MODELO Q3 DESING 2.0 — AYL423",
+          "valor_pen": 143860,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA LEXUS. MODELO LX AÑO 2018 — BDT031",
+          "valor_pen": 420071.2,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLO AZUL. MARCA RAUDO. MODELO SEVERO RJ — 2502FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA RAUDO. MODELO SEERO RD — 2663FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLO AZUL. MARCA RAUDO. MODELO SEVERO RD — 2878FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLO AZUL. MARCA RAUDO. MODELO SEVERO RD — 3172FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA RAUDO. MODELO SEVERO RD — 3235FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA RAUDO. MODELO SEVERO RD — 3509FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA RAUDO. MODELO SEVERO RJ — 4641FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA RAUDO. MODELO SEVERO RD — 4642FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA STILOS. MODELO STILOS — 81018B",
+          "valor_pen": 9000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLORAZUL. MARCA RAUDO. MODELO SEVERO RD — 7480FB",
+          "valor_pen": 10000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR NEGRO MICA. MARCA TOYOTA MODELO FORTUNER — T7I174",
+          "valor_pen": 211142,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR GRIS GRANITE. MARCA BENTLEY MODELO BENTAYGA — CLH508",
+          "valor_pen": 996300,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR NEGRO GRAFITO. MARCA LEXUS  MODELO LX 600 PLUS — CMG518",
+          "valor_pen": 526857.5,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR NEGRO MICA MARCA TOYOTA MODELO FORTUNER — T7X417",
+          "valor_pen": 199851.5,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TEZ921",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TEZ931",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TEZ933",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TEZ935",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TEZ943",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TEZ948",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TFA809",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TFA810",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TFA812",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TFA814",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TFA815",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — TFA898",
+          "valor_pen": 145946.6,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR PLATA NEGRO MARCA MERCEDES BENZ MODELO S 580 MAYBACH — CTW024",
+          "valor_pen": 1088255,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFY801",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFY811",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFY820",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFY853",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFY899",
+          "valor_pen": 140533.8,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR BLANCO MARCA TOYOTA MODELO HILUX — CFY942",
+          "valor_pen": 140533.8,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "jorge-nieto-montesinos",
@@ -198,7 +1111,42 @@
       "MINISTRO",
       "PRESIDENTE"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/19bde703-f7f4-4715-92f3-b82e19bbe651.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/19bde703-f7f4-4715-92f3-b82e19bbe651.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 50000,
+      "total_ingresos_anuales_pen": 180000,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — C10414-AÑO 2011 — C1O414",
+          "valor_pen": 50000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "rosario-del-pilar-fernandez",
@@ -265,7 +1213,30 @@
     "jne_ocupacion": [
       "docente"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/de662f06-21d5-4523-a3ec-4fcbacabe16c.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/de662f06-21d5-4523-a3ec-4fcbacabe16c.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 35000,
+      "total_ingresos_anuales_pen": 36520,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR ROJO — T5H255",
+          "valor_pen": 35000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "herbert-caller",
@@ -336,7 +1307,30 @@
       "EMPRESARIO",
       "OFICIAL SUPERIOR"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/6de519cb-bb4d-4319-a11b-be65d4438f4f.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/6de519cb-bb4d-4319-a11b-be65d4438f4f.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 2800,
+      "total_ingresos_anuales_pen": 186259.32,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — CLASE VEHICULO AUTOMOVIL MENOR (MOTOCICLETA)MARCA RTM - 2006 — NG17217",
+          "valor_pen": 2800,
+          "comentario": "YO NO SOY PROPIETARIO DE LA MENCIONADA MOTOCICLETA DESDE EL 03 DE SEPTIEMBRE DEL AÑO 2009, CUYA ACTA DE TRANSFERENCIA Nº014834-08 A FAVOR DE JUVENAL GILBERTO WILFREDO JUAREZ NIETO, DE FECHA 03 DE SEPTIEMBRE 2009 DEL NOTARIO DE LIMA FERNANDO MEDINA RAGGIO, SE ADJUNTA COMO ANEXO."
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "alfonso-lopez-chau",
@@ -407,7 +1401,23 @@
       "Profesor Principal",
       "Rector"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/7d70c5e1-2246-42e8-90c2-372aa1cf7f52.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/7d70c5e1-2246-42e8-90c2-372aa1cf7f52.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": null,
+      "total_ingresos_anuales_pen": 350000,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "jose-luna-galvez",
@@ -514,7 +1524,19 @@
       "Gerente de la Capital Humano"
     ],
     "jne_id_plan": 29688,
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/3dd0e649-061c-4f31-8c3f-7a0836b58bde.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/3dd0e649-061c-4f31-8c3f-7a0836b58bde.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": null,
+      "total_ingresos_anuales_pen": 224945.83,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "carlos-jaico",
@@ -581,7 +1603,19 @@
       "ASESOR PARLAMENTARIO"
     ],
     "jne_id_plan": 29707,
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/12de1a7b-008b-43c5-9159-c62c9b45eab1.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/12de1a7b-008b-43c5-9159-c62c9b45eab1.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": null,
+      "total_ingresos_anuales_pen": 47158,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "fernando-olivera",
@@ -648,7 +1682,34 @@
       "PRESIDENTE",
       "DIRECTOR DE ECONOMIA Y COOPERACION INTERNACIONAL"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/d656b83f-3177-4053-a381-0f36ec99490a.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/d656b83f-3177-4053-a381-0f36ec99490a.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 15000,
+      "total_ingresos_anuales_pen": null,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — VEHICULO VOLVO S40 AÑO 2004 — BOQ988",
+          "valor_pen": 15000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "charlie-carrasco",
@@ -718,7 +1779,59 @@
     "jne_ocupacion": [
       "Catedratico"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/2e5235de-e828-45f0-92cc-017a830abc33.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/2e5235de-e828-45f0-92cc-017a830abc33.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 82000,
+      "total_ingresos_anuales_pen": 74118,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — Camioneta Hilux — BPJ781",
+          "valor_pen": 75000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — Moto Honda — 5875ZB",
+          "valor_pen": 7000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "marisol-perez-tello",
@@ -822,7 +1935,43 @@
       "ASESOR I"
     ],
     "jne_id_plan": 29722,
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/b2f303a2-1e0d-4933-9d5f-04682a3710b0.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/b2f303a2-1e0d-4933-9d5f-04682a3710b0.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 168161.99,
+      "total_ingresos_anuales_pen": 263500,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — FORD — L1A884",
+          "valor_pen": 13000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — CHEVROLET — Z8A719",
+          "valor_pen": 155161.99,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "mesias-guevara",
@@ -933,7 +2082,112 @@
       "Alcalde",
       "Presidente"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/b4869a0b-ff3d-47d7-af7b-62fd1295db83.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/b4869a0b-ff3d-47d7-af7b-62fd1295db83.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 216000,
+      "total_ingresos_anuales_pen": 341465,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — Camioneta Ford Expedition Limited color blanco Año 2011 — C1D076",
+          "valor_pen": 60000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — BMW 740i color azul año 2012 — C6F200",
+          "valor_pen": 80000,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — Auto Mercedes Benz E300 color azul año 2016 — AUI606",
+          "valor_pen": 76000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "george-forsyth",
@@ -1004,7 +2258,25 @@
       "FUTBOLISTA PROFESIONAL",
       "REPRESENTANTE DE CREDITO FISCAL"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/1334ac30-c28e-42a5-8fc5-79a4638ccd2a.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/1334ac30-c28e-42a5-8fc5-79a4638ccd2a.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 42000,
+      "total_ingresos_anuales_pen": 244000,
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — BMW — A2I249",
+          "valor_pen": 2000,
+          "comentario": "CARRO EN DESHUSO"
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MOTO KAWASAKY — 25359C",
+          "valor_pen": 40000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "carlos-alvarez",
@@ -1066,7 +2338,46 @@
     "jne_ocupacion": [
       "COMEDIANTE"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/76291ee3-eba2-4c88-adef-2530f2d70bb8.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/76291ee3-eba2-4c88-adef-2530f2d70bb8.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 102000,
+      "total_ingresos_anuales_pen": 207543,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "AUTO DEPORTIVO — AÑO 2013 — D4C194",
+          "valor_pen": 102000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "francisco-diez-canseco",
@@ -1132,7 +2443,13 @@
     "jne_ocupacion": [
       "Abogado"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/f4e5c2c2-b0df-4033-adda-6617af774154.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/f4e5c2c2-b0df-4033-adda-6617af774154.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": null,
+      "total_ingresos_anuales_pen": 45000,
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "wolfgang-grozo",
@@ -1200,7 +2517,38 @@
     "jne_ocupacion": [
       "PROFESOR EN GERENCIA"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/ee89ac99-516b-4665-9297-413a0cf104de.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/ee89ac99-516b-4665-9297-413a0cf104de.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 67400,
+      "total_ingresos_anuales_pen": 277827000,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — COLOR: BLANCO, MARCA: JEEP, MODELO: GRAND CHEROKKE LAREDO — BTB350",
+          "valor_pen": 67400,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "ricardo-belmont",
@@ -1266,7 +2614,13 @@
       "EMPRESARIO"
     ],
     "jne_id_plan": 29712,
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/5643db28-6dbd-4d35-b79e-30d20d3bed85.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/5643db28-6dbd-4d35-b79e-30d20d3bed85.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": null,
+      "total_ingresos_anuales_pen": 301514,
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "napoleon-becerra",
@@ -1333,7 +2687,20 @@
     "jne_ocupacion": [
       "EMPLEADO"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/6988c030-5c2b-40d8-b656-dc48899d4d8c.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/6988c030-5c2b-40d8-b656-dc48899d4d8c.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 20000,
+      "total_ingresos_anuales_pen": 72000,
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — SUBARU VERDE OSCURO — F7Y280",
+          "valor_pen": 20000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "ronald-atencio",
@@ -1403,7 +2770,43 @@
       "Gerente - Docente"
     ],
     "jne_id_plan": 29733,
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/9984addc-e998-43b1-920f-1178d4d973aa.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/9984addc-e998-43b1-920f-1178d4d973aa.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 204290,
+      "total_ingresos_anuales_pen": 290119.82,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — CAMIONETA KIA SPORTAGE AÑO 2012- MECANICO — C9J153",
+          "valor_pen": 22900,
+          "comentario": null
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — CAMIONETA HONDA CRV 2024 — CNB144",
+          "valor_pen": 181390,
+          "comentario": "- AUTOMATICA"
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "yonhy-lescano",
@@ -1472,7 +2875,56 @@
       "PROFESOR PRINCIPAL",
       "ASESOR"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/582e0d55-19ee-4a7f-85ef-c254be5bada6.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/582e0d55-19ee-4a7f-85ef-c254be5bada6.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 102000,
+      "total_ingresos_anuales_pen": 120000,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA: TOYOTA, MOCELO: YARIS, COLOR: NEGRO MICA — AHK599",
+          "valor_pen": 25000,
+          "comentario": "CO PROPIETARIO CONTADOR DURAN PATRICIA ELIZABETH"
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA: SUZUKI, MODELO: APV GL, COLOR: BLANCO — AJX130",
+          "valor_pen": 37000,
+          "comentario": "CO PROPIETARIO CONTADOR DURAN PATRICIA ELIZABETH"
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA: TOYOTA, MOCELO: RAIZXE, COLOR: GRIS OSCURO METALICO — CNU168",
+          "valor_pen": 40000,
+          "comentario": "CO PROPIETARIO CONTADOR DURAN PATRICIA ELIZANETH"
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "mario-vizcarra",
@@ -1555,7 +3007,46 @@
       "GERENTE ADMINISTRATIVO"
     ],
     "jne_id_plan": 29709,
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/f9624874-7cf6-4737-8db3-b73707c98e70.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/f9624874-7cf6-4737-8db3-b73707c98e70.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 10000,
+      "total_ingresos_anuales_pen": 117684,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MARCA OLDSMOBILE MODELO: CUTLASS SUPREME, COLOR: TURQUEZA CL — Z8G376",
+          "valor_pen": 10000,
+          "comentario": "PROPIEDAD COMPARTIDO CON:\nVIZCARRA CORNEJO CESAR SANTIAGO, VIZCARRA CORNEJO DORIS CARMEN, VIZCARRA CORNEJO MARTIN ALBERTO"
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "joaquin-masse-fernandez",
@@ -1689,7 +3180,13 @@
       "ANALISTA LEGAL",
       "SUB GERENTE"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/4d581919-b090-43d4-89e4-e284fde587b7.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/4d581919-b090-43d4-89e4-e284fde587b7.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": null,
+      "total_ingresos_anuales_pen": 33600,
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "alex-gonzales-castillo",
@@ -1757,7 +3254,80 @@
       "ALCALDE DISTRITAL",
       "FUNDADOR Y PRESIDENTE DEL COMITE EJECUTIVO NACIONAL"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/3f2a939b-edf2-4505-b709-df775a5e0038.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/3f2a939b-edf2-4505-b709-df775a5e0038.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": null,
+      "total_ingresos_anuales_pen": 36000,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — 0 — BXI484",
+          "valor_pen": 0,
+          "comentario": "No reconoce esta propiedad como suya."
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — 0 — PIU044",
+          "valor_pen": 0,
+          "comentario": "No reconoce esta propiedad como suya."
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — 0 — M52811",
+          "valor_pen": 0,
+          "comentario": "No reconoce esta propiedad como suya."
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — 0 — C55887",
+          "valor_pen": 0,
+          "comentario": "No reconoce esta propiedad como suya."
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — 0 — 4982MA",
+          "valor_pen": 0,
+          "comentario": "No reconoce esta propiedad como suya."
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — 0 — 4430OM",
+          "valor_pen": 0,
+          "comentario": "No reconoce esta propiedad como suya."
+        },
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — 0 — 8089JA",
+          "valor_pen": 0,
+          "comentario": "No reconoce esta propiedad como suya."
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "roberto-chiabra",
@@ -1822,7 +3392,30 @@
     "jne_ocupacion": [
       "CONGRESISTA"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/ae0c9ba2-6278-4ca7-b077-16ed2cc39e76.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/ae0c9ba2-6278-4ca7-b077-16ed2cc39e76.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 93573,
+      "total_ingresos_anuales_pen": 320676,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — CAMIONETA — CBX547",
+          "valor_pen": 93573,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "rafael-belaunde",
@@ -1889,7 +3482,34 @@
       "GERENTE GENERAL",
       "MINISTRO"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/30bab146-a532-4d1b-87a7-e0f8078dc70b.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/30bab146-a532-4d1b-87a7-e0f8078dc70b.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 269600,
+      "total_ingresos_anuales_pen": 2134800,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — MERCEDEZ BEN — AYP453",
+          "valor_pen": 269600,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "carlos-espa",
@@ -1953,7 +3573,47 @@
       "DIRECTOR DE COMUNICACIONES"
     ],
     "jne_id_plan": 29716,
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/e9d731a4-a79f-42e0-9ff7-29f6abe2bd3f.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/e9d731a4-a79f-42e0-9ff7-29f6abe2bd3f.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 45000,
+      "total_ingresos_anuales_pen": 105103,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "CAMIONETA RURAL — HONDA PILOT 2011 4X4 NEGRO — B4M288",
+          "valor_pen": 25000,
+          "comentario": null
+        },
+        {
+          "descripcion": "CAMIONETA RURAL — CRV HONDA NEGRO — C6I503",
+          "valor_pen": 20000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "antonio-ortiz-villano",
@@ -2020,7 +3680,42 @@
     "jne_ocupacion": [
       "GERENTE GENERAL"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/40877746-e670-42d3-840b-cdf683f46355.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/40877746-e670-42d3-840b-cdf683f46355.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 10000,
+      "total_ingresos_anuales_pen": 221634,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — VOLKSWAGEN MODELO 1300 — BI4960",
+          "valor_pen": 10000,
+          "comentario": null
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "fiorella-molinelli",
@@ -2089,7 +3784,23 @@
       "SERVICIO DE DOCENCIA EN CENTRO DE ALTOS ESTUDIOS NACIONALES - CAEN",
       "MINISTRA DE DESARROLLO E INCLUSION SOCIAL"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/d4ab9fba-d366-4083-bbf5-63aa465114d9.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/d4ab9fba-d366-4083-bbf5-63aa465114d9.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": null,
+      "total_ingresos_anuales_pen": 123865.13,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        },
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "vladimir-cerron",
@@ -2260,7 +3971,26 @@
     "jne_ocupacion": [
       "DIRECTOR GENERAL DE GOBIERNO DEL INTERIOR"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/3b89548c-81fa-479d-9ff9-2b7011fec7d2.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/3b89548c-81fa-479d-9ff9-2b7011fec7d2.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": 45000,
+      "total_ingresos_anuales_pen": 24000,
+      "bienes_inmuebles": [
+        {
+          "descripcion": "Inmueble",
+          "valor_pen": 0
+        }
+      ],
+      "bienes_muebles": [
+        {
+          "descripcion": "REGISTRO DE PROPIEDAD VEHICULAR — CHEVROLET CAVALIER — D2Z087",
+          "valor_pen": 45000,
+          "comentario": "AUTOMOVIL"
+        }
+      ],
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "rafael-lopez-aliaga",
@@ -2328,7 +4058,13 @@
       "CATEDRÁTICO",
       "DIRECTOR"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/2096b44a-f3b6-4c81-b03d-94fbfc9ac762.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/2096b44a-f3b6-4c81-b03d-94fbfc9ac762.pdf",
+    "jne_bienes": {
+      "total_bienes_pen": null,
+      "total_ingresos_anuales_pen": 1897374,
+      "declaration_year": "2024",
+      "source": "JNE — Declaración Jurada"
+    }
   },
   {
     "id": "jose-williams-zapata",
