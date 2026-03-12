@@ -49,7 +49,16 @@
     "social_media_verified": false,
     "jne_dni": "10001088",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29690
+    "jne_id_plan": 29690,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "GRADO DE LICENCIADA EN ADMINISTRACIÓN DE EMPRESAS (GRADO DE BACHILLER Y TÍTULO PROFESIONAL)",
+      "TÍTULO DE MÁSTER EN ADMINISTRACIÓN DE EMPRESAS (GRADO DE MAESTRO)"
+    ],
+    "jne_ocupacion": [
+      "Presidenta"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/da4b943d-4344-4743-9362-a11ccf3054cb.pdf"
   },
   {
     "id": "cesar-acuna",
@@ -105,7 +114,23 @@
     "social_media_verified": false,
     "jne_dni": "17903382",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29685
+    "jne_id_plan": 29685,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN INGENIERIA QUIMICA",
+      "INGENIERO QUIMICO",
+      "MAESTRO EN ADMINISTRACION DE LA EDUCACION",
+      "DIPLOMA DE MAGISTER EN DIRECCIÓN UNIVERSITARIA",
+      "TÍTULO DE DOCTOR POR LA UNIVERSIDAD COMPLUTENSE DE MADRID"
+    ],
+    "jne_ocupacion": [
+      "GOBERNAGOR REGIONAL",
+      "GOBERNADOR REGIONAL",
+      "ALCALDE",
+      "ASESOR",
+      "PRESIDENTE DEL DIRECTORIO"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/72576403-804a-4f28-85d3-bf4c7e648667.pdf"
   },
   {
     "id": "jorge-nieto-montesinos",
@@ -163,7 +188,17 @@
     "social_media_verified": false,
     "jne_dni": "06506278",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29720
+    "jne_id_plan": 29720,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN CIENCIAS SOCIALES CON MENCION EN SOCIOLOGIA",
+      "MAESTRÍA EN CIENCIAS SOCIALES CON MENCIÓN EN SOCIOLOGIA."
+    ],
+    "jne_ocupacion": [
+      "MINISTRO",
+      "PRESIDENTE"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/19bde703-f7f4-4715-92f3-b82e19bbe651.pdf"
   },
   {
     "id": "rosario-del-pilar-fernandez",
@@ -221,7 +256,16 @@
     "social_media_verified": false,
     "jne_dni": "18141156",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29731
+    "jne_id_plan": 29731,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "EDUCACIÓN INICIAL",
+      "BACHILLER EN EDUCACION"
+    ],
+    "jne_ocupacion": [
+      "docente"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/de662f06-21d5-4523-a3ec-4fcbacabe16c.pdf"
   },
   {
     "id": "herbert-caller",
@@ -279,7 +323,20 @@
     "social_media_verified": false,
     "jne_dni": "43409673",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29749
+    "jne_id_plan": 29749,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN CIENCIAS",
+      "BACHILLER EN DERECHO",
+      "ABOGADO",
+      "BACHILLER EN CIENCIAS MARÍTIMO NAVALES",
+      "POST GRADO"
+    ],
+    "jne_ocupacion": [
+      "EMPRESARIO",
+      "OFICIAL SUPERIOR"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/6de519cb-bb4d-4319-a11b-be65d4438f4f.pdf"
   },
   {
     "id": "alfonso-lopez-chau",
@@ -337,7 +394,20 @@
     "social_media_verified": false,
     "jne_dni": "25331980",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29723
+    "jne_id_plan": 29723,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "ECONOMISTA",
+      "BACHILLER EN CIENCIAS ECONOMICAS",
+      "GRADO DE DOCTOR EN ECONOMÍA",
+      "GRADO DE MAESTRO EN ECONOMÍA"
+    ],
+    "jne_ocupacion": [
+      "Director de la Escuela de Ingeniería Económica",
+      "Profesor Principal",
+      "Rector"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/7d70c5e1-2246-42e8-90c2-372aa1cf7f52.pdf"
   },
   {
     "id": "jose-luna-galvez",
@@ -360,7 +430,19 @@
     "social_media_verified": false,
     "jne_dni": "07246887",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29694
+    "jne_id_plan": 29694,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "ECONOMISTA",
+      "BACHILLER EN CIENCIAS ECONOMICAS",
+      "DOCTOR EN EDUCACION",
+      "MAESTRO EN ECONOMIA MENCION EN COMERCIO Y FINANZAS INTERNACIONALES"
+    ],
+    "jne_ocupacion": [
+      "CONGRESISTA",
+      "ASESOR"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/67b637b0-e2f7-47cc-8b23-fa16be709cc2.pdf"
   },
   {
     "id": "roberto-sanchez",
@@ -417,7 +499,22 @@
     "social_media": null,
     "social_media_verified": false,
     "jne_dni": "16002918",
-    "sentencia_penal": "SIN ANTECEDENTES PENALES"
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "PSICOLOGO",
+      "BACHILLER EN PSICOLOGIA",
+      "MAESTRIA DE POLITICAS SOCILAES"
+    ],
+    "jne_ocupacion": [
+      "Ministro",
+      "Gerente de Administración y Finanzas",
+      "Congresista",
+      "Gerente de Desarrollo Social",
+      "Gerente de la Capital Humano"
+    ],
+    "jne_id_plan": 29688,
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/3dd0e649-061c-4f31-8c3f-7a0836b58bde.pdf"
   },
   {
     "id": "carlos-jaico",
@@ -470,7 +567,21 @@
     "social_media": null,
     "social_media_verified": false,
     "jne_dni": "06529088",
-    "sentencia_penal": "SIN ANTECEDENTES PENALES"
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "ABOGADO",
+      "GRADO DE LICENCIADO EN DERECHO (MÁSTER EN DERECHO) (GRADO DE MAESTRO)"
+    ],
+    "jne_ocupacion": [
+      "ABOGADO INDEPENDIENTE",
+      "SECRETARIO GENERAL",
+      "PROFESOR DE CATEDRA",
+      "GERENTE GENERAL",
+      "ASESOR PARLAMENTARIO"
+    ],
+    "jne_id_plan": 29707,
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/12de1a7b-008b-43c5-9159-c62c9b45eab1.pdf"
   },
   {
     "id": "fernando-olivera",
@@ -528,7 +639,16 @@
     "social_media_verified": false,
     "jne_dni": "06280714",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29699
+    "jne_id_plan": 29699,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN CIENCIAS CON MENCION EN ADMINISTRACION"
+    ],
+    "jne_ocupacion": [
+      "PRESIDENTE",
+      "DIRECTOR DE ECONOMIA Y COOPERACION INTERNACIONAL"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/d656b83f-3177-4053-a381-0f36ec99490a.pdf"
   },
   {
     "id": "charlie-carrasco",
@@ -586,7 +706,19 @@
     "social_media_verified": false,
     "jne_dni": "40799023",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29700
+    "jne_id_plan": 29700,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN DERECHO",
+      "ABOGADO",
+      "MAESTRO EN DERECHO CONSTITUCIONAL",
+      "DOCTOR EN DERECHO",
+      "Maestro en Gestión Pública"
+    ],
+    "jne_ocupacion": [
+      "Catedratico"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/2e5235de-e828-45f0-92cc-017a830abc33.pdf"
   },
   {
     "id": "marisol-perez-tello",
@@ -609,7 +741,20 @@
     "social_media_verified": false,
     "jne_dni": "07867789",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29704
+    "jne_id_plan": 29704,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "ABOGADO",
+      "BACHILLER EN DERECHO",
+      "MAESTRIA EN DERECHO CONSTITUCIONAL"
+    ],
+    "jne_ocupacion": [
+      "MINISTRA DE JUSTICIA",
+      "DOCENTE FACULTAD DE DERECHO",
+      "NOTARIA",
+      "CONGRESISTA"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/1430b48a-b7d1-4acf-970e-7c5e58f450c2.pdf"
   },
   {
     "id": "paul-jaimes",
@@ -666,7 +811,18 @@
     "social_media": null,
     "social_media_verified": false,
     "jne_dni": "40139245",
-    "sentencia_penal": "SIN ANTECEDENTES PENALES"
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN DERECHO Y CIENCIA POLITICA",
+      "ABOGADO",
+      "GOBIERNO Y GESTIÓN PUBLICA"
+    ],
+    "jne_ocupacion": [
+      "ASESOR I"
+    ],
+    "jne_id_plan": 29722,
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/b2f303a2-1e0d-4933-9d5f-04682a3710b0.pdf"
   },
   {
     "id": "mesias-guevara",
@@ -688,7 +844,23 @@
     "social_media": null,
     "social_media_verified": false,
     "jne_dni": "09871134",
-    "sentencia_penal": "SIN ANTECEDENTES PENALES"
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "MECANICA DE PRODUCCIÓN",
+      "BACHILLER EN INGENIERIA ELECTRONICA",
+      "INGENIERO ELECTRONICO",
+      "MAGISTER EN ADMINISTRACION DE EMPRESAS"
+    ],
+    "jne_ocupacion": [
+      "GOBERNADOR REGIONAL",
+      "LOCADOR FAG",
+      "CONGRESISTA",
+      "CONSULTOR INDEPENDIENTE",
+      "MIEMBRO DEL CONSEJO DIRECTIVO"
+    ],
+    "jne_id_plan": 29687,
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/6eb5d4b8-bd18-4cf0-ae0e-e250ca085f5f.pdf"
   },
   {
     "id": "alvaro-paz-de-la-barra",
@@ -746,7 +918,22 @@
     "social_media_verified": false,
     "jne_dni": "41904418",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29696
+    "jne_id_plan": 29696,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN DERECHO",
+      "ABOGADO",
+      "Maestria en Derecho Constitucional y Derechos Humanos",
+      "Magister en Gestión Pública"
+    ],
+    "jne_ocupacion": [
+      "Gerente Municipal",
+      "Gerente General",
+      "Socio Fundador",
+      "Alcalde",
+      "Presidente"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/b4869a0b-ff3d-47d7-af7b-62fd1295db83.pdf"
   },
   {
     "id": "george-forsyth",
@@ -804,7 +991,20 @@
     "social_media_verified": false,
     "jne_dni": "41265978",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29681
+    "jne_id_plan": 29681,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN ADMINISTRACIÓN DE EMPRESAS",
+      "no concluido",
+      "MAGÍSTER EN ADMINISTRACIÓN"
+    ],
+    "jne_ocupacion": [
+      "GERENTE GENERAL",
+      "ALCALDE DISTRITAL",
+      "FUTBOLISTA PROFESIONAL",
+      "REPRESENTANTE DE CREDITO FISCAL"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/1334ac30-c28e-42a5-8fc5-79a4638ccd2a.pdf"
   },
   {
     "id": "carlos-alvarez",
@@ -860,7 +1060,13 @@
     "social_media_verified": false,
     "jne_dni": "06002034",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29718
+    "jne_id_plan": 29718,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [],
+    "jne_ocupacion": [
+      "COMEDIANTE"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/76291ee3-eba2-4c88-adef-2530f2d70bb8.pdf"
   },
   {
     "id": "francisco-diez-canseco",
@@ -918,7 +1124,15 @@
     "social_media_verified": false,
     "jne_dni": "08263758",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29714
+    "jne_id_plan": 29714,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "Abogado"
+    ],
+    "jne_ocupacion": [
+      "Abogado"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/f4e5c2c2-b0df-4033-adda-6617af774154.pdf"
   },
   {
     "id": "wolfgang-grozo",
@@ -975,7 +1189,18 @@
     "social_media_verified": false,
     "jne_dni": "07260881",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29725
+    "jne_id_plan": 29725,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN CIENCIAS DE LA ADMINISTRACION AEROESPACIAL",
+      "LICENCIADO EN CIENCIAS DE LA ADMINISTRACION AEROESPACIAL",
+      "MAESTRO EN DESARROLLO Y DEFENSA NACIONAL",
+      "DOCTOR EN DESARROLLO Y SEGURIDAD ESTRATEGICA"
+    ],
+    "jne_ocupacion": [
+      "PROFESOR EN GERENCIA"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/ee89ac99-516b-4665-9297-413a0cf104de.pdf"
   },
   {
     "id": "ricardo-belmont",
@@ -1032,7 +1257,16 @@
     "social_media": null,
     "social_media_verified": false,
     "jne_dni": "09177250",
-    "sentencia_penal": "SIN ANTECEDENTES PENALES"
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHIYER ADMINISTRADOR DE EMPRESAS"
+    ],
+    "jne_ocupacion": [
+      "EMPRESARIO"
+    ],
+    "jne_id_plan": 29712,
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/5643db28-6dbd-4d35-b79e-30d20d3bed85.pdf"
   },
   {
     "id": "napoleon-becerra",
@@ -1090,7 +1324,16 @@
     "social_media_verified": false,
     "jne_dni": "08058852",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29717
+    "jne_id_plan": 29717,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "LICENCIADO EN ADMINISTRACION",
+      "BACHILLER EN CIENCIAS ADMINISTRATIVAS"
+    ],
+    "jne_ocupacion": [
+      "EMPLEADO"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/6988c030-5c2b-40d8-b656-dc48899d4d8c.pdf"
   },
   {
     "id": "ronald-atencio",
@@ -1147,7 +1390,20 @@
     "social_media": null,
     "social_media_verified": false,
     "jne_dni": "41373494",
-    "sentencia_penal": "SIN ANTECEDENTES PENALES"
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "ABOGADO",
+      "BACHILLER EN DERECHO Y CIENCIA POLITICA",
+      "MAESTRO EN DERECHO PENAL"
+    ],
+    "jne_ocupacion": [
+      "ASESOR 1",
+      "DOCENTE",
+      "Gerente - Docente"
+    ],
+    "jne_id_plan": 29733,
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/9984addc-e998-43b1-920f-1178d4d973aa.pdf"
   },
   {
     "id": "yonhy-lescano",
@@ -1205,7 +1461,18 @@
     "social_media_verified": false,
     "jne_dni": "01211014",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29748
+    "jne_id_plan": 29748,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN DERECHO",
+      "ABOGADO",
+      "GRADO DE MAGÍSTER EN DERECHO (GRADO DE MAESTRO)"
+    ],
+    "jne_ocupacion": [
+      "PROFESOR PRINCIPAL",
+      "ASESOR"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/582e0d55-19ee-4a7f-85ef-c254be5bada6.pdf"
   },
   {
     "id": "mario-vizcarra",
@@ -1262,7 +1529,33 @@
     "social_media": null,
     "social_media_verified": false,
     "jne_dni": "04411300",
-    "sentencia_penal": "CON ANTECEDENTES PENALES"
+    "sentencia_penal": "CON ANTECEDENTES PENALES",
+    "sentencia_penal_detalle": [
+      {
+        "idHvSentenciaPenal": 136335,
+        "tengoSentenciaPenal": "SI",
+        "itemSentenciaPenal": 1,
+        "fuero": "SALA MIXTA DE MOQUEGUA",
+        "expediente": "015-05",
+        "fecSentencia": "04/10/2005",
+        "fallo": "PENA PRIVATIVA DE LA LIBERTAD",
+        "modalidad": "SUSPENDIDA",
+        "cumplimientoPena": "PENA CUMPLIDA",
+        "materia": "PECULADO",
+        "idEstado": 1,
+        "txComentario": "ME ENCUENTRO REHABILITADO"
+      }
+    ],
+    "jne_titulos_academicos": [
+      "INGENIERIA INDUSTRIAL",
+      "MAGISTER EN ADMINISTRACION"
+    ],
+    "jne_ocupacion": [
+      "GERENTE GERENTE ADMINISTRATIVO",
+      "GERENTE ADMINISTRATIVO"
+    ],
+    "jne_id_plan": 29709,
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/f9624874-7cf6-4737-8db3-b73707c98e70.pdf"
   },
   {
     "id": "joaquin-masse-fernandez",
@@ -1285,7 +1578,50 @@
     "social_media_verified": false,
     "jne_dni": "08255194",
     "sentencia_penal": "CON ANTECEDENTES PENALES",
-    "jne_id_plan": null
+    "jne_id_plan": null,
+    "sentencia_penal_detalle": [
+      {
+        "idHvSentenciaPenal": 136055,
+        "tengoSentenciaPenal": "SI",
+        "itemSentenciaPenal": 2,
+        "fuero": "DECIMO SEGUNDO JUZGADO PENAL DE LIMA",
+        "expediente": "12424-2015",
+        "fecSentencia": "02/10/2019",
+        "fallo": "ABSUELTO",
+        "modalidad": "OTRO",
+        "cumplimientoPena": "PENA CUMPLIDA",
+        "materia": "FRAUDE EN LA ADM. DE LAS PERSONAS JURIDICAS",
+        "idEstado": 1,
+        "txComentario": null
+      },
+      {
+        "idHvSentenciaPenal": 136054,
+        "tengoSentenciaPenal": "SI",
+        "itemSentenciaPenal": 1,
+        "fuero": "TREINTAISIETEAVO JUZGADO PENAL DE LIMA",
+        "expediente": "610-2003",
+        "fecSentencia": "10/10/2006",
+        "fallo": "SOBRESEIDA",
+        "modalidad": "OTRO",
+        "cumplimientoPena": "PENA CUMPLIDA",
+        "materia": "CONTRA EL PATRIMONIO",
+        "idEstado": 1,
+        "txComentario": null
+      }
+    ],
+    "jne_titulos_academicos": [
+      "ABOGADO",
+      "BACHILLER EN DERECHO Y CIENCIAS POLITICAS",
+      "Médico Cirujano",
+      "MAGISTER EN ADMINISTRACION ESTRATEGICA DE EMPRESAS",
+      "Magister Derecho Digital Tecnológico",
+      "Maestria en Propiedad Intelectual y Competencia"
+    ],
+    "jne_ocupacion": [
+      "Medico",
+      "Presidente/Secretario General"
+    ],
+    "jne_url_plan": null
   },
   {
     "id": "enrique-valderrama",
@@ -1343,7 +1679,17 @@
     "social_media_verified": false,
     "jne_dni": "43632186",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29745
+    "jne_id_plan": 29745,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN DERECHO",
+      "Maestría"
+    ],
+    "jne_ocupacion": [
+      "ANALISTA LEGAL",
+      "SUB GERENTE"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/4d581919-b090-43d4-89e4-e284fde587b7.pdf"
   },
   {
     "id": "alex-gonzales-castillo",
@@ -1400,7 +1746,18 @@
     "social_media_verified": false,
     "jne_dni": "09307547",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29702
+    "jne_id_plan": 29702,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "CONCILIACION EXTRAJUDICIAL",
+      "ADMINISTRACION"
+    ],
+    "jne_ocupacion": [
+      "PRESIDENTE",
+      "ALCALDE DISTRITAL",
+      "FUNDADOR Y PRESIDENTE DEL COMITE EJECUTIVO NACIONAL"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/3f2a939b-edf2-4505-b709-df775a5e0038.pdf"
   },
   {
     "id": "roberto-chiabra",
@@ -1456,7 +1813,16 @@
     "social_media_verified": false,
     "jne_dni": "40728264",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29727
+    "jne_id_plan": 29727,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN CIENCIAS MILITARES",
+      "LICENCIADO EN CIENCIAS MILITARES"
+    ],
+    "jne_ocupacion": [
+      "CONGRESISTA"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/ae0c9ba2-6278-4ca7-b077-16ed2cc39e76.pdf"
   },
   {
     "id": "rafael-belaunde",
@@ -1514,7 +1880,16 @@
     "social_media_verified": false,
     "jne_dni": "10219647",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29715
+    "jne_id_plan": 29715,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN ECONOMIA"
+    ],
+    "jne_ocupacion": [
+      "GERENTE GENERAL",
+      "MINISTRO"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/30bab146-a532-4d1b-87a7-e0f8078dc70b.pdf"
   },
   {
     "id": "carlos-espa",
@@ -1568,7 +1943,17 @@
     "social_media": null,
     "social_media_verified": false,
     "jne_dni": "10266270",
-    "sentencia_penal": "SIN ANTECEDENTES PENALES"
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN DERECHO",
+      "ABOGADO"
+    ],
+    "jne_ocupacion": [
+      "DIRECTOR DE COMUNICACIONES"
+    ],
+    "jne_id_plan": 29716,
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/e9d731a4-a79f-42e0-9ff7-29f6abe2bd3f.pdf"
   },
   {
     "id": "antonio-ortiz-villano",
@@ -1626,7 +2011,16 @@
     "social_media_verified": false,
     "jne_dni": "08587486",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29710
+    "jne_id_plan": 29710,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "HABILIDADES GERENCIALES",
+      "I-WEEK PROGRAM EN COMUNICACION POLITICA, GOBERNABILIDAD Y DERECHO"
+    ],
+    "jne_ocupacion": [
+      "GERENTE GENERAL"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/40877746-e670-42d3-840b-cdf683f46355.pdf"
   },
   {
     "id": "fiorella-molinelli",
@@ -1681,7 +2075,21 @@
     "social_media_verified": false,
     "jne_dni": "25681995",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29736
+    "jne_id_plan": 29736,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN CIENCIAS SOCIALES CON MENCION EN ECONOMIA",
+      "LICENCIADO EN ECONOMÍA",
+      "DOCTORA EN GOBIERNO Y POLITICA PUBLICA"
+    ],
+    "jne_ocupacion": [
+      "Docente",
+      "Decana (e) de la Facultad de Ciencias Empresariales / Asesora del Consejo Directivo",
+      "PRESIDENTE EJECUTIVO",
+      "SERVICIO DE DOCENCIA EN CENTRO DE ALTOS ESTUDIOS NACIONALES - CAEN",
+      "MINISTRA DE DESARROLLO E INCLUSION SOCIAL"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/d4ab9fba-d366-4083-bbf5-63aa465114d9.pdf"
   },
   {
     "id": "vladimir-cerron",
@@ -1739,7 +2147,51 @@
     "social_media_verified": false,
     "jne_dni": "06466585",
     "sentencia_penal": "CON ANTECEDENTES PENALES",
-    "jne_id_plan": 29744
+    "jne_id_plan": 29744,
+    "sentencia_penal_detalle": [
+      {
+        "idHvSentenciaPenal": 136244,
+        "tengoSentenciaPenal": "SI",
+        "itemSentenciaPenal": 1,
+        "fuero": "SALA PENAL DE APELACIONES TRANSITORIA - SEDE CENTRAL",
+        "expediente": "01122-2018-27-1501-JR-PE-05",
+        "fecSentencia": "18/10/2019",
+        "fallo": "4 AÑOS DE PENA PRIVATIVA",
+        "modalidad": "SUSPENDIDA",
+        "cumplimientoPena": "PENA CUMPLIDA",
+        "materia": "NEGOCIACIÓN INCOMPATIBLE",
+        "idEstado": 1,
+        "txComentario": "SENTENCIA ANULADA POR EL TRIBUNAL CONSTITUCIONAL, PLENO. SENTENCIA 90/20205 del 3 de diciembre de 2024. EXPEDIENTE Nº 01513-2024-PHC/TC"
+      },
+      {
+        "idHvSentenciaPenal": 136245,
+        "tengoSentenciaPenal": "SI",
+        "itemSentenciaPenal": 2,
+        "fuero": "SALA PENAL DE APELACIÓN TRANSITORIA ESPECIALIZADA",
+        "expediente": "01978-2016-63-1501-JR-PE-01",
+        "fecSentencia": "06/10/2023",
+        "fallo": "3 AÑOS 6 MESES DE PENA PRIVATIVA",
+        "modalidad": "EFECTIVA",
+        "cumplimientoPena": "PENA CUMPLIDA",
+        "materia": "COLUSIÓN",
+        "idEstado": 1,
+        "txComentario": "ABSUELTO DE SENTENCIA PENAL POR RECURSO DE CASACIÓN Nº 3280-2023/JUNÍN DE LA SALA PENAL PERMANENTE DE LA CORTE SUPREMA DE JUSTICIA DE FECHA 26 DE MARZO DE 2025, QUE A LA VEZ IMPUSO UNA REPARACIÓN CIVIL."
+      }
+    ],
+    "jne_titulos_academicos": [
+      "TÍTULO DE ESPECIALISTA DE PRIMER GRADO EN NEUROCIRUGÍA",
+      "TÍTULO DE DOCTOR EN MEDICINA",
+      "DOCTOR EN MEDICINA",
+      "MAGISTER EN NEUROCIENCIAS"
+    ],
+    "jne_ocupacion": [
+      "SECRETARIO GENERAL NACIONAL",
+      "DOCENTE AUXILIAR NOMBRADO",
+      "GOBERNADOR REGIONAL",
+      "PRESIDENTE REGIONAL",
+      "MEDICO NEUROCIRUJANO ASISTENTE"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/b2d25860-484e-4226-bd13-a57fb83c59cb.pdf"
   },
   {
     "id": "walter-chirinos",
@@ -1797,7 +2249,18 @@
     "social_media_verified": false,
     "jne_dni": "18870364",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29746
+    "jne_id_plan": 29746,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "PROFESIONAL TÉCNICO EN MERCADOTECNIA",
+      "CONTADOR PÚBLICO",
+      "Bachiller en Contabilidad y Finanzas",
+      "MAESTRIA EN GESTION PUBLICA"
+    ],
+    "jne_ocupacion": [
+      "DIRECTOR GENERAL DE GOBIERNO DEL INTERIOR"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/3b89548c-81fa-479d-9ff9-2b7011fec7d2.pdf"
   },
   {
     "id": "rafael-lopez-aliaga",
@@ -1853,7 +2316,19 @@
     "social_media_verified": false,
     "jne_dni": "07845838",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29683
+    "jne_id_plan": 29683,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "INGENIERO INDUSTRIAL",
+      "BACHILLER EN CIENCIAS DE LA INGENIERIA",
+      "MAGISTER EN ADMINISTRACION"
+    ],
+    "jne_ocupacion": [
+      "ALCALDE",
+      "CATEDRÁTICO",
+      "DIRECTOR"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/2096b44a-f3b6-4c81-b03d-94fbfc9ac762.pdf"
   },
   {
     "id": "jose-williams-zapata",
@@ -1876,6 +2351,16 @@
     "social_media_verified": false,
     "jne_dni": "43287528",
     "sentencia_penal": "SIN ANTECEDENTES PENALES",
-    "jne_id_plan": 29691
+    "jne_id_plan": 29691,
+    "sentencia_penal_detalle": [],
+    "jne_titulos_academicos": [
+      "BACHILLER EN CIENCIAS MILITARES",
+      "LICENCIADO EN CIENCIAS MILITARES",
+      "MAGISTER EN DESARROLLO Y DEFENSA NACIONAL"
+    ],
+    "jne_ocupacion": [
+      "CONGRESISTA"
+    ],
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/5857261c-789e-4599-ac05-4531654b10b4.pdf"
   }
 ]
