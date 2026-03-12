@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, Share2, ExternalLink } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Share2, ExternalLink, Check } from 'lucide-react'
 import FeedbackWidget from '@/components/FeedbackWidget'
+import PoliticalCompass, { computeEconomicAxis, computeSocialAxis } from '@/components/PoliticalCompass'
 import issuesData from '@/data/issues.json'
 import candidatePositionsData from '@/data/candidate-positions.json'
 
@@ -36,13 +37,19 @@ const DEPARTMENTS = [
   'Tumbes', 'Ucayali',
 ]
 
+const WEIGHT_OPTIONS = [
+  { value: 2, label: 'Muy importante' },
+  { value: 1, label: 'Importante' },
+  { value: 0.5, label: 'No tanto' },
+] as const
+
 function calculateMatch(
   userAnswers: Record<string, number>,
+  weights: Record<string, number>,
   candidatePositions: Record<string, { score: number | null; label: string; verified: boolean }>,
 ): { matchPct: number | null; verifiedIssueCount: number; dataQuality: 'verified' | 'partial' | 'insufficient' } {
   const answeredIssues = Object.keys(userAnswers)
 
-  // Only compare issues where both user answered AND candidate has real data
   const sharedIssues = answeredIssues.filter((issue) => {
     const pos = candidatePositions[issue]
     return pos && pos.score !== null
@@ -60,14 +67,17 @@ function calculateMatch(
     return { matchPct: null, verifiedIssueCount, dataQuality }
   }
 
-  const totalDiff = sharedIssues.reduce((sum, issue) => {
-    const userScore = userAnswers[issue]
-    const candidateScore = candidatePositions[issue].score!
-    return sum + Math.abs(userScore - candidateScore)
-  }, 0)
+  let weightedDiff = 0
+  let totalWeight = 0
 
-  const maxPossibleDiff = sharedIssues.length * 4
-  const matchPct = Math.round((1 - totalDiff / maxPossibleDiff) * 100)
+  for (const issue of sharedIssues) {
+    const w = weights[issue] ?? 1
+    const diff = Math.abs(userAnswers[issue] - candidatePositions[issue].score!)
+    weightedDiff += diff * w
+    totalWeight += w * 4
+  }
+
+  const matchPct = Math.round((1 - weightedDiff / totalWeight) * 100)
 
   return { matchPct, verifiedIssueCount, dataQuality }
 }
@@ -130,21 +140,63 @@ function ResultCard({ r, rank, muted }: { r: MatchResult; rank: number; muted?: 
   )
 }
 
+// Encode answers + weights to URL-safe base64
+function encodeResults(answers: Record<string, number>, weights: Record<string, number>): string {
+  const payload = JSON.stringify({ a: answers, w: weights })
+  return btoa(payload).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+}
+
+function decodeResults(encoded: string): { answers: Record<string, number>; weights: Record<string, number> } | null {
+  try {
+    const padded = encoded.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice(0, (4 - (encoded.length % 4)) % 4)
+    const json = atob(padded)
+    const parsed = JSON.parse(json)
+    if (parsed.a && typeof parsed.a === 'object') {
+      return { answers: parsed.a, weights: parsed.w ?? {} }
+    }
+    return null
+  } catch {
+    return null
+  }
+}
+
+// Steps: 0=department, 1-10=questions, 11=weighting, 12=results
+const STEP_RESULTS = issues.length + 2
+const TOTAL_STEPS = issues.length + 3
+
 export default function QuizPage() {
   const [step, setStep] = useState(0)
   const [department, setDepartment] = useState('')
   const [answers, setAnswers] = useState<Record<string, number>>({})
+  const [weights, setWeights] = useState<Record<string, number>>({})
   const [showAll, setShowAll] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const [loadedFromUrl, setLoadedFromUrl] = useState(false)
 
-  const totalSteps = issues.length + 2
+  // Load results from URL on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const encoded = params.get('r')
+    if (encoded) {
+      const decoded = decodeResults(encoded)
+      if (decoded) {
+        setAnswers(decoded.answers)
+        setWeights(decoded.weights)
+        setStep(STEP_RESULTS)
+        setLoadedFromUrl(true)
+      }
+    }
+  }, [])
 
   const currentIssue = step >= 1 && step <= issues.length ? issues[step - 1] : null
+  const isWeightingStep = step === issues.length + 1
+  const isResultsStep = step >= STEP_RESULTS
 
   const results = useMemo(() => {
-    if (step < totalSteps - 1) return [] as MatchResult[]
+    if (!isResultsStep) return [] as MatchResult[]
     return candidatePositions
       .map((cp): MatchResult => {
-        const { matchPct, verifiedIssueCount, dataQuality } = calculateMatch(answers, cp.positions)
+        const { matchPct, verifiedIssueCount, dataQuality } = calculateMatch(answers, weights, cp.positions)
         return {
           candidateId: cp.candidate_id,
           name: cp.candidate_name,
@@ -155,7 +207,7 @@ export default function QuizPage() {
           verifiedIssueCount,
         }
       })
-  }, [step, answers, totalSteps])
+  }, [isResultsStep, answers, weights])
 
   const verifiedResults = results
     .filter((r) => r.dataQuality === 'verified' && r.matchPct !== null)
@@ -169,6 +221,32 @@ export default function QuizPage() {
     .filter((r) => r.dataQuality === 'insufficient' || r.matchPct === null)
     .sort((a, b) => a.name.localeCompare(b.name))
 
+  // Compass data
+  const compassCandidates = useMemo(() => {
+    if (!isResultsStep) return []
+    return candidatePositions
+      .filter((cp) => {
+        const count = Object.values(cp.positions).filter((p) => p.score !== null).length
+        return count >= 6
+      })
+      .map((cp) => {
+        const x = computeEconomicAxis(cp.positions) ?? 0
+        const y = computeSocialAxis(cp.positions) ?? 0
+        const match = results.find((r) => r.candidateId === cp.candidate_id)
+        return {
+          id: cp.candidate_id,
+          name: cp.candidate_name,
+          partyAbbr: cp.party_abbreviation,
+          x,
+          y,
+          matchPct: match?.matchPct ?? null,
+        }
+      })
+  }, [isResultsStep, results])
+
+  const userX = computeEconomicAxis({}, answers) ?? 0
+  const userY = computeSocialAxis({}, answers) ?? 0
+
   function handleAnswer(score: number) {
     if (!currentIssue) return
     setAnswers((prev) => ({ ...prev, [currentIssue.key]: score }))
@@ -177,7 +255,6 @@ export default function QuizPage() {
 
   function handleSkip() {
     if (!currentIssue) return
-    // Remove the answer for this issue instead of defaulting to 3
     setAnswers((prev) => {
       const next = { ...prev }
       delete next[currentIssue.key]
@@ -186,32 +263,51 @@ export default function QuizPage() {
     setStep((s) => s + 1)
   }
 
-  function handleShare() {
-    // Only share top candidate from verified section
-    const topVerified = verifiedResults[0]
-    const shareText = topVerified
-      ? `Respondí el quiz de VotoAbierto y tengo ${topVerified.matchPct}% de afinidad con ${topVerified.name}. ¿Y tú? votoabierto.org/quiz`
-      : `Hice el quiz electoral en votoabierto.org/quiz`
+  function handleSetWeight(issueKey: string, value: number) {
+    setWeights((prev) => ({ ...prev, [issueKey]: value }))
+  }
 
-    if (navigator.share) {
-      navigator.share({ text: shareText }).catch(() => {
-        navigator.clipboard.writeText(shareText)
-        alert('Texto copiado al portapapeles')
-      })
-    } else {
-      navigator.clipboard.writeText(shareText)
-      alert('Texto copiado al portapapeles')
-    }
+  function getResultsUrl(): string {
+    const encoded = encodeResults(answers, weights)
+    return `${window.location.origin}/quiz?r=${encoded}`
+  }
+
+  function handleShareWhatsApp() {
+    const topVerified = verifiedResults[0]
+    const text = topVerified
+      ? `Respondí el quiz de VotoAbierto y tengo ${topVerified.matchPct}% de afinidad con ${topVerified.name}. ¿Y tú? ${getResultsUrl()}`
+      : `Hice el quiz electoral en VotoAbierto. ¿Y tú? ${getResultsUrl()}`
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank')
+  }
+
+  function handleShareX() {
+    const topVerified = verifiedResults[0]
+    const text = topVerified
+      ? `Respondí el quiz de VotoAbierto y tengo ${topVerified.matchPct}% de afinidad con ${topVerified.name}. ¿Y tú?`
+      : `Hice el quiz electoral en VotoAbierto. ¿Y tú?`
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(getResultsUrl())}`, '_blank')
+  }
+
+  function handleCopyLink() {
+    navigator.clipboard.writeText(getResultsUrl())
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
   }
 
   function handleRestart() {
     setStep(0)
     setDepartment('')
     setAnswers({})
+    setWeights({})
     setShowAll(false)
+    setCopied(false)
+    setLoadedFromUrl(false)
+    // Clean URL
+    window.history.replaceState(null, '', '/quiz')
   }
 
-  const progress = step === 0 ? 0 : step >= totalSteps - 1 ? 100 : Math.round((step / (totalSteps - 1)) * 100)
+  const answeredIssueKeys = Object.keys(answers)
+  const progress = step === 0 ? 0 : isResultsStep ? 100 : Math.round((step / (TOTAL_STEPS - 1)) * 100)
 
   return (
     <main className="min-h-screen bg-white">
@@ -221,21 +317,48 @@ export default function QuizPage() {
           <p className="text-[#1A56A0] text-sm font-semibold uppercase tracking-widest mb-2">
             Quiz Electoral
           </p>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#111111]">
-            ¿Con quién votas? Descúbrelo en 5 minutos
-          </h1>
-          <p className="text-[#777777] mt-2 max-w-lg mx-auto">
-            Responde 10 preguntas sobre temas clave y descubre qué candidatos presidenciales comparten tus ideas. Anónimo, sin registro.
-          </p>
+          {step === 0 && !loadedFromUrl ? (
+            <>
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-[#111111]">
+                ¿Con quién votas el 12 de abril?
+              </h1>
+              <p className="text-[#444444] mt-3 max-w-lg mx-auto">
+                Responde 10 preguntas sobre los temas más importantes para el Perú.
+                Descubre qué candidatos comparten tu visión.
+              </p>
+              <div className="flex items-center justify-center gap-4 mt-4 text-sm text-[#777777]">
+                <span>3 minutos</span>
+                <span className="text-[#E5E3DE]">|</span>
+                <span>100% anónimo</span>
+                <span className="text-[#E5E3DE]">|</span>
+                <span>Datos de planes de gobierno JNE</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-[#111111]">
+                {isResultsStep ? 'Tus resultados' : '¿Con quién votas? Descúbrelo en 3 minutos'}
+              </h1>
+              {!isResultsStep && (
+                <p className="text-[#777777] mt-2 max-w-lg mx-auto">
+                  Responde 10 preguntas sobre temas clave y descubre qué candidatos presidenciales comparten tus ideas. Anónimo, sin registro.
+                </p>
+              )}
+            </>
+          )}
         </div>
       </div>
 
       {/* Progress bar */}
-      {step < totalSteps - 1 && (
+      {!isResultsStep && (
         <div className="max-w-3xl mx-auto px-4 pt-6">
           <div className="flex items-center justify-between text-xs text-[#777777] mb-2">
             <span>
-              {step === 0 ? 'Selecciona tu departamento' : `Pregunta ${step} de ${issues.length}`}
+              {step === 0
+                ? 'Selecciona tu departamento'
+                : isWeightingStep
+                  ? 'Prioriza tus temas'
+                  : `Pregunta ${step} de ${issues.length}`}
             </span>
             <span>{progress}%</span>
           </div>
@@ -276,7 +399,7 @@ export default function QuizPage() {
                 onClick={() => setStep(1)}
                 className="btn-primary"
               >
-                {department ? 'Continuar' : 'Saltar y comenzar'}
+                {department ? 'Continuar' : 'Empezar quiz'}
                 <ArrowRight size={16} className="ml-1 inline" />
               </button>
             </div>
@@ -339,12 +462,104 @@ export default function QuizPage() {
           </div>
         )}
 
-        {/* Results */}
-        {step >= totalSteps - 1 && (
+        {/* Step 11: Importance weighting */}
+        {isWeightingStep && (
           <div>
+            <h2 className="text-xl font-bold text-[#111111] mb-2">
+              ¿Qué temas son más importantes para ti?
+            </h2>
+            <p className="text-sm text-[#777777] mb-6">
+              Indica cuánto peso debe tener cada tema al calcular tu afinidad con los candidatos.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              {issues.map((issue) => {
+                const answered = answeredIssueKeys.includes(issue.key)
+                const currentWeight = weights[issue.key] ?? 1
+                return (
+                  <div
+                    key={issue.key}
+                    className={`p-4 rounded-xl border border-[#E5E3DE] bg-white ${!answered ? 'opacity-50' : ''}`}
+                  >
+                    <p className="text-sm font-semibold text-[#111111] mb-2">{issue.label}</p>
+                    <div className="flex gap-2">
+                      {WEIGHT_OPTIONS.map((opt) => (
+                        <button
+                          key={opt.value}
+                          onClick={() => handleSetWeight(issue.key, opt.value)}
+                          disabled={!answered}
+                          className={`flex-1 px-3 py-2 rounded-lg text-xs font-medium border transition-colors ${
+                            currentWeight === opt.value
+                              ? 'bg-[#1A56A0] text-white border-[#1A56A0]'
+                              : 'bg-white text-[#444444] border-[#E5E3DE] hover:border-[#1A56A0]'
+                          } ${!answered ? 'cursor-not-allowed' : ''}`}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                    {!answered && (
+                      <p className="text-[10px] text-[#999999] mt-1">No respondiste esta pregunta</p>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className="flex items-center justify-between">
+              <button
+                onClick={() => setStep((s) => s - 1)}
+                className="flex items-center gap-1 text-sm text-[#777777] hover:text-[#111111] transition-colors"
+              >
+                <ArrowLeft size={16} />
+                Atrás
+              </button>
+              <button
+                onClick={() => setStep(STEP_RESULTS)}
+                className="btn-primary"
+              >
+                Ver mis resultados
+                <ArrowRight size={16} className="ml-1 inline" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Results */}
+        {isResultsStep && (
+          <div>
+            {loadedFromUrl && (
+              <div className="mb-6 p-4 rounded-xl bg-[#EEF4FF] border border-[#1A56A0]/20">
+                <p className="text-sm text-[#1A56A0]">
+                  Estás viendo resultados guardados.{' '}
+                  <button onClick={handleRestart} className="underline font-medium">
+                    Hacer tu propio quiz
+                  </button>
+                </p>
+              </div>
+            )}
+
+            {/* Political compass */}
+            {compassCandidates.length > 0 && (
+              <div className="mb-10">
+                <h3 className="text-lg font-bold text-[#111111] mb-1 text-center">
+                  Tu posición en el mapa político
+                </h3>
+                <p className="text-xs text-[#777777] mb-4 text-center">
+                  Basado en tus respuestas sobre economía, seguridad y reformas institucionales
+                </p>
+                <PoliticalCompass
+                  candidates={compassCandidates}
+                  userX={userX}
+                  userY={userY}
+                />
+              </div>
+            )}
+
+            {/* Top matches */}
             <div className="text-center mb-8">
               <h2 className="text-2xl font-extrabold text-[#111111] mb-2">
-                Candidatos más afines a tus posiciones
+                Candidatos más afines
               </h2>
               <p className="text-[#777777]">
                 Basado en tus respuestas, estos candidatos tienen posiciones más cercanas a las tuyas.
@@ -364,11 +579,11 @@ export default function QuizPage() {
                   Posiciones extraídas de sus planes de gobierno oficiales (JNE)
                 </p>
                 <div className="space-y-3">
-                  {(showAll ? verifiedResults : verifiedResults.slice(0, 10)).map((r, i) => (
+                  {(showAll ? verifiedResults : verifiedResults.slice(0, 5)).map((r, i) => (
                     <div key={r.candidateId}>
                       <ResultCard r={r} rank={i + 1} />
                       <p className="text-[10px] text-[#999999] mt-0.5 ml-12">
-                        Basado en {r.verifiedIssueCount} de 10 temas con datos verificados
+                        Basado en {r.verifiedIssueCount} de 10 temas verificados
                       </p>
                     </div>
                   ))}
@@ -402,10 +617,10 @@ export default function QuizPage() {
             {insufficientResults.length > 0 && (
               <div className="mb-8">
                 <h3 className="text-sm font-semibold text-[#999999] mb-1">
-                  Sin datos suficientes para calcular
+                  Sin datos suficientes
                 </h3>
                 <p className="text-xs text-[#999999] mb-3">
-                  No tenemos datos suficientes de sus posiciones para calcular afinidad. Revisa su plan de gobierno en JNE.
+                  No tenemos datos suficientes de sus posiciones. Revisa su plan de gobierno en JNE.
                 </p>
                 <div className="space-y-2">
                   {insufficientResults.map((r) => (
@@ -429,7 +644,7 @@ export default function QuizPage() {
               </div>
             )}
 
-            {!showAll && (verifiedResults.length > 10 || partialResults.length > 5) && (
+            {!showAll && (verifiedResults.length > 5 || partialResults.length > 5) && (
               <div className="text-center mb-8">
                 <button
                   onClick={() => setShowAll(true)}
@@ -440,14 +655,52 @@ export default function QuizPage() {
               </div>
             )}
 
+            {/* Share section */}
+            <div className="bg-[#F7F6F3] rounded-xl p-6 mb-8">
+              <h3 className="text-sm font-bold text-[#111111] mb-1 text-center">Compartir resultado</h3>
+              {verifiedResults[0] && (
+                <p className="text-xs text-[#777777] text-center mb-4">
+                  &ldquo;Tomé el quiz de VotoAbierto y tengo {verifiedResults[0].matchPct}% de afinidad con {verifiedResults[0].name}. ¿Y tú?&rdquo;
+                </p>
+              )}
+              <div className="flex flex-wrap gap-3 justify-center">
+                <button
+                  onClick={handleShareWhatsApp}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#25D366] text-white text-sm font-medium hover:bg-[#1da851] transition-colors"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  WhatsApp
+                </button>
+                <button
+                  onClick={handleShareX}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#111111] text-white text-sm font-medium hover:bg-[#333333] transition-colors"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  X / Twitter
+                </button>
+                <button
+                  onClick={handleCopyLink}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-[#444444] text-sm font-medium border border-[#E5E3DE] hover:border-[#1A56A0] transition-colors"
+                >
+                  {copied ? <Check size={14} className="text-green-600" /> : <Share2 size={14} />}
+                  {copied ? 'Enlace copiado' : 'Copiar enlace'}
+                </button>
+              </div>
+            </div>
+
+            {/* Save results */}
+            {!loadedFromUrl && (
+              <div className="text-center mb-8">
+                <button
+                  onClick={handleCopyLink}
+                  className="btn-outline text-sm"
+                >
+                  {copied ? 'Enlace copiado — guárdalo para volver a tus resultados' : 'Guardar mis resultados (copiar enlace)'}
+                </button>
+              </div>
+            )}
+
             <div className="flex flex-wrap gap-3 justify-center">
-              <button
-                onClick={handleShare}
-                className="btn-outline flex items-center gap-2"
-              >
-                <Share2 size={16} />
-                Compartir mi resultado
-              </button>
               <button
                 onClick={handleRestart}
                 className="btn-outline"
@@ -468,7 +721,7 @@ export default function QuizPage() {
             </p>
           </div>
         )}
-        {step >= totalSteps - 1 && (
+        {isResultsStep && (
           <div className="mt-8">
             <FeedbackWidget pageUrl="/quiz" />
           </div>
