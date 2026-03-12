@@ -109,6 +109,26 @@ export interface Candidate {
   // JNE enriched data
   jne_profile_url?: string
   jne_party_id?: number
+  jne_dni?: string
+  jne_id_plan?: number | null
+  jne_url_plan?: string | null
+  jne_titulos_academicos?: string[]
+  jne_ocupacion?: string[]
+  sentencia_penal?: string
+  sentencia_penal_detalle?: Array<{
+    idHvSentenciaPenal?: number
+    tengoSentenciaPenal?: string
+    itemSentenciaPenal?: number
+    fuero?: string
+    expediente?: string
+    fecSentencia?: string
+    fallo?: string
+    modalidad?: string
+    cumplimientoPena?: string
+    materia?: string
+    idEstado?: number
+    txComentario?: string | null
+  }>
   planGobiernoResumen?: string
   planGobiernoEjes?: Array<{ eje: string; descripcion: string }>
   proposals?: string[]
