@@ -243,6 +243,60 @@ export default async function DatosPage() {
           </div>
         </section>
 
+        {/* Public API */}
+        <section className="mb-12">
+          <h2 className="text-xl font-bold text-[#111111] mb-4">API Pública</h2>
+          <p className="text-sm text-[#777777] mb-4">
+            Todos los datos de VotoAbierto están disponibles como API REST libre. Sin autenticación, sin clave de API.
+            Ideal para periodistas, investigadores y desarrolladores.
+          </p>
+          <div className="border border-[#E5E3DE] rounded-xl p-5 bg-[#F7F6F3] space-y-4">
+            <div>
+              <h3 className="text-sm font-semibold text-[#111111] mb-2">Endpoints</h3>
+              <div className="space-y-1.5">
+                {[
+                  { path: '/api/v1/candidates', desc: 'Candidatos presidenciales (36)' },
+                  { path: '/api/v1/candidates/{id}', desc: 'Detalle de candidato' },
+                  { path: '/api/v1/parties', desc: 'Partidos políticos' },
+                  { path: '/api/v1/senate', desc: 'Senadores (1,131)' },
+                  { path: '/api/v1/diputados', desc: 'Diputados (4,106)' },
+                  { path: '/api/v1/andino', desc: 'Parlamento Andino (528)' },
+                ].map(ep => (
+                  <div key={ep.path} className="flex items-center gap-3">
+                    <code className="text-xs font-mono text-[#1A56A0] bg-white px-2 py-0.5 rounded border border-[#E5E3DE]">{ep.path}</code>
+                    <span className="text-xs text-[#777777]">{ep.desc}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[#111111] mb-2">Ejemplos</h3>
+              <pre className="text-xs bg-[#1a1a2e] text-green-400 rounded-lg p-4 overflow-x-auto">
+{`# Todos los candidatos presidenciales
+curl https://votoabierto.org/api/v1/candidates
+
+# Buscar candidato por nombre
+curl "https://votoabierto.org/api/v1/candidates?q=keiko"
+
+# Senadores de un partido
+curl "https://votoabierto.org/api/v1/senate?party=partido-aprista&limit=50"
+
+# Diputados por distrito
+curl "https://votoabierto.org/api/v1/diputados?district=Lima&limit=20"`}
+              </pre>
+            </div>
+            <div className="flex items-center gap-4 pt-2">
+              <a
+                href="/api/v1/openapi.json"
+                className="text-xs text-[#1A56A0] hover:underline font-medium"
+              >
+                OpenAPI Spec (JSON)
+              </a>
+              <span className="text-[10px] text-[#CBCAC5]">Licencia: MIT · Rate limit: 60 req/min</span>
+            </div>
+          </div>
+        </section>
+
         {/* Contribute */}
         <section className="border border-[#1A56A0] rounded-xl p-6 bg-[#F0F4FA] text-center">
           <h2 className="text-xl font-bold text-[#111111] mb-2">Contribuye</h2>

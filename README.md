@@ -100,6 +100,31 @@ node scripts/check-data-freshness.mjs
 | `scripts/seed-parties.ts` | Siembra partidos políticos en Supabase |
 | `scripts/reset-and-seed.sh` | Resetea y re-siembra la base de datos completa |
 
+## API Pública
+
+VotoAbierto expone sus datos como API REST libre. Sin autenticación, sin clave de API.
+
+```bash
+# Candidatos presidenciales
+curl https://votoabierto.org/api/v1/candidates
+
+# Detalle de candidato
+curl https://votoabierto.org/api/v1/candidates/keiko-fujimori
+
+# Partido específico
+curl https://votoabierto.org/api/v1/parties/party-fp
+
+# Senadores del Partido Aprista
+curl "https://votoabierto.org/api/v1/senate?party=partido-aprista"
+
+# Diputados por distrito
+curl "https://votoabierto.org/api/v1/diputados?district=Lima&limit=50"
+```
+
+Endpoints: `/api/v1/candidates`, `/api/v1/parties`, `/api/v1/senate`, `/api/v1/diputados`, `/api/v1/andino`
+
+Ver documentación completa: https://votoabierto.org/datos | OpenAPI spec: https://votoabierto.org/api/v1/openapi.json
+
 ## Contribuir
 
 Por favor lee nuestro [Código de Conducta](CODE_OF_CONDUCT.md) antes de contribuir.
