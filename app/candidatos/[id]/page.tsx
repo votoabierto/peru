@@ -1,6 +1,15 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getCandidateById, getPositionsByCandidateId, getFactChecksByCandidateId, getCandidates } from '@/lib/data'
+import {
+  getCandidateById,
+  getPositionsByCandidateId,
+  getFactChecksByCandidateId,
+  getCandidates,
+  getHojaDeVida,
+  getAntecedentes,
+  getBienes,
+  getCandidatePositionsDB,
+} from '@/lib/data'
 import {
   CandidateHero,
   CandidateStats,
@@ -50,6 +59,13 @@ function calculatePositionMatch(
   return Math.round((1 - totalDiff / maxPossibleDiff) * 100)
 }
 
+function formatPEN(n: number | null | undefined): string {
+  if (!n) return 'N/D'
+  if (n >= 1_000_000) return `S/ ${(n / 1_000_000).toFixed(1)}M`
+  if (n >= 1_000) return `S/ ${(n / 1_000).toFixed(0)}K`
+  return `S/ ${n.toLocaleString()}`
+}
+
 interface Props {
   params: Promise<{ id: string }>
 }
@@ -88,10 +104,16 @@ export default async function CandidatePage({ params }: Props) {
   const candidate = await getCandidateById(id)
   if (!candidate) notFound()
 
-  const [positions, factChecks, allCandidates] = await Promise.all([
+  const slug = candidate.slug ?? candidate.id
+
+  const [positions, factChecks, allCandidates, hojaDeVida, antecedentesDB, bienesDB, positionsDB] = await Promise.all([
     getPositionsByCandidateId(candidate.id),
     getFactChecksByCandidateId(candidate.id),
     getCandidates(),
+    getHojaDeVida(slug),
+    getAntecedentes(slug),
+    getBienes(slug),
+    getCandidatePositionsDB(slug),
   ])
 
   const bio = candidate.planGobiernoResumen ?? candidate.bio ?? candidate.career_summary ?? ''
@@ -134,6 +156,9 @@ export default async function CandidatePage({ params }: Props) {
   const ejes = candidate.planGobiernoEjes ?? []
   const proposals = candidate.proposals ?? []
 
+  // Merge antecedentes from DB + seed data
+  const allAntecedentes = antecedentesDB.length > 0 ? antecedentesDB : []
+
   return (
     <main className="min-h-screen bg-white">
       <CandidateHero candidate={candidate} />
@@ -143,26 +168,149 @@ export default async function CandidatePage({ params }: Props) {
         {bio && (
           <section>
             <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-              <span>👤</span> Biografía
+              <span>Biografía</span>
             </h2>
             <ExpandableBio bio={bio} />
           </section>
         )}
 
-        {criminalRecords.length > 0 && (
+        {/* Hoja de Vida — Education */}
+        {hojaDeVida?.education && hojaDeVida.education.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-              <span>⚖️</span> Antecedentes legales
-            </h2>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Formación académica</h2>
+            <div className="space-y-3">
+              {hojaDeVida.education.map((edu, i) => (
+                <div key={i} className="flex gap-4 items-start border-l-2 border-[#1A56A0] pl-4 py-1">
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-[#111111]">{edu.titulo}</p>
+                    <p className="text-xs text-[#4B5563]">{edu.institucion}</p>
+                    <p className="text-xs text-[#777777] mt-0.5">
+                      {edu.year_start}{edu.year_end ? ` — ${edu.year_end}` : ''} · {edu.country || 'Peru'}
+                    </p>
+                  </div>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-[#F0F4FA] text-[#1A56A0] font-medium capitalize">
+                    {edu.nivel?.replace('_', ' ')}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[10px] text-[#CBCAC5] mt-2">Fuente: JNE — Hoja de Vida · Actualizado: {hojaDeVida.fetched_at?.slice(0, 10)}</p>
+          </section>
+        )}
+
+        {/* Hoja de Vida — Work History */}
+        {hojaDeVida?.work_history && hojaDeVida.work_history.length > 0 && (
+          <section>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Experiencia laboral</h2>
+            <div className="space-y-3">
+              {hojaDeVida.work_history.slice(0, 10).map((job, i) => (
+                <div key={i} className="flex gap-4 items-start border-l-2 border-[#E5E3DE] pl-4 py-1">
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-[#111111]">{job.cargo}</p>
+                    <p className="text-xs text-[#4B5563]">{job.institucion}</p>
+                    <p className="text-xs text-[#777777] mt-0.5">
+                      {job.year_start}{job.year_end ? ` — ${job.year_end}` : ' — presente'}
+                      {job.departamento ? ` · ${job.departamento}` : ''}
+                    </p>
+                  </div>
+                  <span className={`text-[10px] px-2 py-0.5 rounded font-medium ${
+                    job.sector === 'publico' ? 'bg-[#F0FAF4] text-[#1A6B35]' : 'bg-[#F7F6F3] text-[#777777]'
+                  }`}>
+                    {job.sector === 'publico' ? 'Público' : 'Privado'}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[10px] text-[#CBCAC5] mt-2">Fuente: JNE — Hoja de Vida</p>
+          </section>
+        )}
+
+        {/* Antecedentes from DB */}
+        {allAntecedentes.length > 0 && (
+          <section>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Antecedentes legales</h2>
+            <div className="space-y-3">
+              {allAntecedentes.map((ant, i) => (
+                <div key={ant.id || i} className={`rounded-xl border p-4 ${
+                  ant.gravedad === 'alto' ? 'border-red-200 bg-red-50' : 'border-[#E5E3DE] bg-[#F7F6F3]'
+                }`}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className={`text-[10px] px-2 py-0.5 rounded font-medium ${
+                      ant.gravedad === 'alto' ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700'
+                    }`}>
+                      {ant.tipo?.replace('_', ' ')}
+                    </span>
+                    {ant.estado && (
+                      <span className="text-[10px] px-2 py-0.5 rounded bg-[#EEEDE9] text-[#777777] font-medium">
+                        {ant.estado}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm text-[#222222]">{ant.descripcion}</p>
+                  <p className="text-[10px] text-[#CBCAC5] mt-2">
+                    Fuente: {ant.fuente}{ant.fecha_inicio ? ` · ${ant.fecha_inicio}` : ''}
+                    {ant.verified ? ' · Verificado' : ''}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Legacy criminal records fallback */}
+        {criminalRecords.length > 0 && allAntecedentes.length === 0 && (
+          <section>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Antecedentes legales</h2>
             <CandidateCriminalRecord records={criminalRecords} />
+          </section>
+        )}
+
+        {/* Bienes Declarados */}
+        {bienesDB && (bienesDB.total_bienes_pen || bienesDB.total_ingresos_anuales_pen) && (
+          <section>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Bienes declarados</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {bienesDB.total_bienes_pen != null && (
+                <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4 text-center">
+                  <p className="text-2xl font-bold text-[#1A56A0]">{formatPEN(bienesDB.total_bienes_pen)}</p>
+                  <p className="text-xs text-[#777777] mt-1">Total bienes</p>
+                </div>
+              )}
+              {bienesDB.total_ingresos_anuales_pen != null && (
+                <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4 text-center">
+                  <p className="text-2xl font-bold text-[#1A56A0]">{formatPEN(bienesDB.total_ingresos_anuales_pen)}</p>
+                  <p className="text-xs text-[#777777] mt-1">Ingresos anuales</p>
+                </div>
+              )}
+              {bienesDB.total_deudas_pen != null && (
+                <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4 text-center">
+                  <p className="text-2xl font-bold text-[#9B1C1C]">{formatPEN(bienesDB.total_deudas_pen)}</p>
+                  <p className="text-xs text-[#777777] mt-1">Deudas</p>
+                </div>
+              )}
+            </div>
+            {bienesDB.bienes_inmuebles && bienesDB.bienes_inmuebles.length > 0 && (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-[#111111] mb-2">Bienes inmuebles</h3>
+                <div className="space-y-2">
+                  {bienesDB.bienes_inmuebles.map((b, i) => (
+                    <div key={i} className="flex items-center justify-between text-sm text-[#4B5563] bg-white border border-[#E5E3DE] rounded-lg px-3 py-2">
+                      <span>{b.descripcion}</span>
+                      <span className="font-medium">{formatPEN(b.valor_pen)}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            <p className="text-[10px] text-[#CBCAC5] mt-2">
+              Fuente: {bienesDB.source || 'JNE'} · Declaración {bienesDB.declaration_year || '2025'}
+            </p>
           </section>
         )}
 
         {(candidate.prior_offices?.length ?? 0) > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-              <span>🏛️</span> Cargos previos
-            </h2>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Cargos previos</h2>
             <ul className="space-y-2">
               {candidate.prior_offices!.map((office, i) => (
                 <li key={i} className="flex items-center gap-3 text-[#4B5563] text-sm">
@@ -177,9 +325,7 @@ export default async function CandidatePage({ params }: Props) {
         {/* Plan de Gobierno ejes */}
         {ejes.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-              <span>📜</span> Plan de Gobierno
-            </h2>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Plan de Gobierno</h2>
             <p className="text-sm text-[#777777] mb-4">
               Ejes estratégicos del plan de gobierno según JNE.
             </p>
@@ -197,9 +343,7 @@ export default async function CandidatePage({ params }: Props) {
         {/* Propuestas clave */}
         {proposals.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-              <span>📌</span> Propuestas clave
-            </h2>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Propuestas clave</h2>
             <ol className="space-y-3">
               {proposals.map((proposal, i) => (
                 <li key={i} className="flex gap-3 items-start">
@@ -213,11 +357,9 @@ export default async function CandidatePage({ params }: Props) {
           </section>
         )}
 
-        {/* Posiciones por tema — visual bars from candidate-positions.json */}
+        {/* Posiciones por tema — visual bars */}
         <section>
-          <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-            <span>📋</span> Posiciones por tema
-          </h2>
+          <h2 className="text-xl font-bold text-[#111111] mb-4">Posiciones por tema</h2>
           {positionEntry ? (
             <div className="space-y-3">
               {Object.entries(positionEntry.positions).map(([key, pos]) => (
@@ -243,6 +385,31 @@ export default async function CandidatePage({ params }: Props) {
                 </div>
               ))}
             </div>
+          ) : positionsDB.length > 0 ? (
+            <div className="space-y-3">
+              {positionsDB.map((pos) => (
+                <div key={pos.issue_key} className="bg-white border border-[#E5E3DE] rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-[#111111]">
+                      {POSITION_LABELS[pos.issue_key] ?? pos.issue_key}
+                    </span>
+                    <span className="text-xs text-[#777777]">{pos.position_label}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 h-2 bg-[#EEEDE9] rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-[#1A56A0] transition-all"
+                        style={{ width: `${(pos.position_score / 5) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-xs font-bold text-[#1A56A0] w-6 text-right">{pos.position_score}/5</span>
+                  </div>
+                  {pos.source && (
+                    <p className="text-[10px] text-[#CBCAC5] mt-1">Fuente: {pos.source}</p>
+                  )}
+                </div>
+              ))}
+            </div>
           ) : positions.length > 0 ? (
             <CandidatePositions positions={positions} />
           ) : (
@@ -253,16 +420,12 @@ export default async function CandidatePage({ params }: Props) {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-            <span>🔍</span> Verificaciones
-          </h2>
+          <h2 className="text-xl font-bold text-[#111111] mb-4">Verificaciones</h2>
           <CandidateFactChecks factChecks={factChecks} />
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-            <span>📰</span> Noticias recientes
-          </h2>
+          <h2 className="text-xl font-bold text-[#111111] mb-4">Noticias recientes</h2>
           <CandidateNews slug={candidate.slug} />
         </section>
 
@@ -274,16 +437,24 @@ export default async function CandidatePage({ params }: Props) {
           </p>
           <a href={`/contribuir?candidato=${candidate.slug}`}
              className="inline-flex items-center gap-2 text-[#1A56A0] text-sm font-medium hover:underline">
-            📋 Enviar información verificada →
+            Enviar información verificada
           </a>
+        </div>
+
+        {/* Data source transparency */}
+        <div className="border border-[#E5E3DE] rounded-xl p-4 bg-white">
+          <p className="text-[10px] text-[#CBCAC5]">
+            Datos provenientes de: JNE (Jurado Nacional de Elecciones), Infogob, ONPE.
+            {hojaDeVida?.fetched_at && ` Última actualización: ${hojaDeVida.fetched_at.slice(0, 10)}.`}
+            {' '}Todos los datos son públicos y verificables.
+            <Link href="/datos" className="text-[#1A56A0] hover:underline ml-1">Ver fuentes completas</Link>
+          </p>
         </div>
 
         {/* Similar position candidates */}
         {similarCandidates.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-              <span>🤝</span> Candidatos con posiciones similares
-            </h2>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Candidatos con posiciones similares</h2>
             <p className="text-sm text-[#777777] mb-4">
               Candidatos con posiciones similares en los temas clave.
             </p>
@@ -314,9 +485,7 @@ export default async function CandidatePage({ params }: Props) {
         {/* Same party candidates */}
         {samePartyCandidates.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
-              <span>🏛️</span> Candidatos del mismo partido
-            </h2>
+            <h2 className="text-xl font-bold text-[#111111] mb-4">Candidatos del mismo partido</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {samePartyCandidates.map((sc) => (
                 <Link

@@ -310,3 +310,179 @@ export async function searchAll(query: string): Promise<{
 
   return { candidates, factChecks, regions };
 }
+
+// ─── New Data Architecture Functions ─────────────────────────────────────
+
+export interface HojaDeVida {
+  id: string
+  candidate_slug: string
+  education: Array<{
+    nivel: string
+    institucion: string
+    titulo: string
+    year_start: string
+    year_end: string
+    country: string
+  }> | null
+  work_history: Array<{
+    cargo: string
+    institucion: string
+    sector: string
+    year_start: string
+    year_end: string
+    pais: string
+    departamento: string
+  }> | null
+  public_offices: Array<{
+    cargo: string
+    institucion: string
+    year_start: string
+    year_end: string
+  }> | null
+  birth_date: string | null
+  birth_place: string | null
+  age: number | null
+  profession: string | null
+  source: string
+  fetched_at: string
+}
+
+export interface Antecedente {
+  id: string
+  candidate_slug: string
+  tipo: string
+  descripcion: string
+  fuente: string
+  fuente_url: string | null
+  fecha_inicio: string | null
+  fecha_fin: string | null
+  estado: string | null
+  gravedad: string | null
+  verified: boolean
+  created_at: string
+}
+
+export interface BienesCandidato {
+  id: string
+  candidate_slug: string
+  total_bienes_pen: number | null
+  total_ingresos_anuales_pen: number | null
+  total_deudas_pen: number | null
+  bienes_inmuebles: Array<{ descripcion: string; valor_pen: number; ubicacion: string }> | null
+  bienes_muebles: Array<{ descripcion: string; valor_pen: number }> | null
+  declaration_year: number | null
+  source: string
+}
+
+export interface CandidatePositionDB {
+  id: string
+  candidate_slug: string
+  issue_key: string
+  position_score: number
+  position_label: string
+  evidence: string | null
+  source: string
+}
+
+export interface CandidateFactcheckDB {
+  id: string
+  candidate_slug: string
+  claim: string
+  verdict: string
+  explanation: string | null
+  source_url: string | null
+  checked_at: string | null
+}
+
+export async function getHojaDeVida(slug: string): Promise<HojaDeVida | null> {
+  if (!isSupabaseConfigured()) return null
+  const client = getSupabaseClient()!
+  const { data } = await client
+    .from('candidate_hoja_de_vida')
+    .select('*')
+    .eq('candidate_slug', slug)
+    .maybeSingle()
+  return data as HojaDeVida | null
+}
+
+export async function getAntecedentes(slug: string): Promise<Antecedente[]> {
+  if (!isSupabaseConfigured()) return []
+  const client = getSupabaseClient()!
+  const { data } = await client
+    .from('candidate_antecedentes')
+    .select('*')
+    .eq('candidate_slug', slug)
+  return (data as Antecedente[]) ?? []
+}
+
+export async function getBienes(slug: string): Promise<BienesCandidato | null> {
+  if (!isSupabaseConfigured()) return null
+  const client = getSupabaseClient()!
+  const { data } = await client
+    .from('candidate_bienes')
+    .select('*')
+    .eq('candidate_slug', slug)
+    .maybeSingle()
+  return data as BienesCandidato | null
+}
+
+export async function getCandidatePositionsDB(slug: string): Promise<CandidatePositionDB[]> {
+  if (!isSupabaseConfigured()) return []
+  const client = getSupabaseClient()!
+  const { data } = await client
+    .from('candidate_positions_db')
+    .select('*')
+    .eq('candidate_slug', slug)
+  return (data as CandidatePositionDB[]) ?? []
+}
+
+export async function getCandidateFactchecks(slug: string): Promise<CandidateFactcheckDB[]> {
+  if (!isSupabaseConfigured()) return []
+  const client = getSupabaseClient()!
+  const { data } = await client
+    .from('candidate_factchecks')
+    .select('*')
+    .eq('candidate_slug', slug)
+  return (data as CandidateFactcheckDB[]) ?? []
+}
+
+export async function getDataStats(): Promise<{
+  totalCandidates: number
+  totalWithHdv: number
+  totalWithAntecedentes: number
+  totalWithBienes: number
+  totalPositions: number
+  totalFactchecks: number
+  lastUpdated: string | null
+}> {
+  const defaults = {
+    totalCandidates: 36,
+    totalWithHdv: 0,
+    totalWithAntecedentes: 0,
+    totalWithBienes: 0,
+    totalPositions: 0,
+    totalFactchecks: 0,
+    lastUpdated: null,
+  }
+  if (!isSupabaseConfigured()) return defaults
+
+  const client = getSupabaseClient()!
+  const [profiles, hdv, ant, bienes, positions, fc] = await Promise.all([
+    client.from('candidate_profiles').select('candidate_slug', { count: 'exact', head: true }),
+    client.from('candidate_hoja_de_vida').select('candidate_slug', { count: 'exact', head: true }),
+    client.from('candidate_antecedentes').select('candidate_slug', { count: 'exact', head: true }),
+    client.from('candidate_bienes').select('candidate_slug', { count: 'exact', head: true }),
+    client.from('candidate_positions_db').select('candidate_slug', { count: 'exact', head: true }),
+    client.from('candidate_factchecks').select('candidate_slug', { count: 'exact', head: true }),
+  ])
+
+  return {
+    totalCandidates: profiles.count ?? 36,
+    totalWithHdv: hdv.count ?? 0,
+    totalWithAntecedentes: ant.count ?? 0,
+    totalWithBienes: bienes.count ?? 0,
+    totalPositions: positions.count ?? 0,
+    totalFactchecks: fc.count ?? 0,
+    lastUpdated: new Date().toISOString(),
+  }
+}

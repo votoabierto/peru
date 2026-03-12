@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import Link from 'next/link';
 import { ComparatorClient } from '@/components/Comparator/ComparatorClient';
 import { getCandidates, getCandidatesByIds, getPositions } from '@/lib/data';
 import type { Metadata } from 'next';
@@ -40,7 +41,9 @@ export default async function ComparePage({ searchParams }: Props) {
       <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-[#111111] mb-2">Comparar Candidatos</h1>
-          <p className="text-[#777777]">Selecciona hasta 3 candidatos para comparar sus propuestas, historial y posiciones.</p>
+          <p className="text-[#777777]">
+            Selecciona hasta 3 candidatos para comparar sus propuestas, historial y posiciones.
+          </p>
         </div>
 
         <Suspense fallback={<div className="text-[#777777]">Cargando...</div>}>
@@ -50,6 +53,13 @@ export default async function ComparePage({ searchParams }: Props) {
             allPositions={allPositions}
           />
         </Suspense>
+
+        <div className="mt-8 text-center">
+          <p className="text-[10px] text-[#CBCAC5]">
+            Datos de posiciones extraídos de planes de gobierno presentados al JNE.{' '}
+            <Link href="/datos" className="text-[#1A56A0] hover:underline">Ver fuentes completas</Link>
+          </p>
+        </div>
       </div>
     </main>
   );
