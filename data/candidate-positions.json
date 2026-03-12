@@ -5,16 +5,56 @@
     "party": "Fuerza Popular",
     "party_abbreviation": "FP",
     "positions": {
-      "economia": { "score": 5, "label": "Libre mercado", "verified": true },
-      "seguridad": { "score": 5, "label": "Mano dura", "verified": true },
-      "corrupcion": { "score": 3, "label": "Posición mixta", "verified": false },
-      "educacion": { "score": 4, "label": "Alianzas público-privadas", "verified": true },
-      "recursos_naturales": { "score": 5, "label": "Pro-extracción", "verified": true },
-      "salud": { "score": 4, "label": "Sistema mixto", "verified": true },
-      "descentralizacion": { "score": 3, "label": "Posición mixta", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Cambios graduales", "verified": false },
-      "politica_social": { "score": 3, "label": "Equilibrio empleo-asistencia", "verified": false },
-      "constitucion": { "score": 5, "label": "Mantener Constitución 1993", "verified": true }
+      "economia": {
+        "score": 5,
+        "label": "Libre mercado",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 4,
+        "label": "Alianzas público-privadas",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 5,
+        "label": "Pro-extracción",
+        "verified": true
+      },
+      "salud": {
+        "score": 4,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Reforma judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Ampliar programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 5,
+        "label": "Mantener Constitución 1993",
+        "verified": true
+      }
     }
   },
   {
@@ -23,16 +63,56 @@
     "party": "Perú Libre",
     "party_abbreviation": "PL",
     "positions": {
-      "economia": { "score": 1, "label": "Estado regulador fuerte", "verified": true },
-      "seguridad": { "score": 2, "label": "Prevención social", "verified": true },
-      "corrupcion": { "score": 2, "label": "Reformas institucionales", "verified": true },
-      "educacion": { "score": 1, "label": "Educación pública universal", "verified": true },
-      "recursos_naturales": { "score": 2, "label": "Prioridad comunidades", "verified": true },
-      "salud": { "score": 1, "label": "Sistema público universal", "verified": true },
-      "descentralizacion": { "score": 4, "label": "Mayor autonomía regional", "verified": true },
-      "reforma_judicial": { "score": 1, "label": "Reforma estructural profunda", "verified": true },
-      "politica_social": { "score": 1, "label": "Ampliar programas sociales", "verified": true },
-      "constitucion": { "score": 1, "label": "Nueva constitución", "verified": true }
+      "economia": {
+        "score": 1,
+        "label": "Estado regulador fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 2,
+        "label": "Prevención social",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 1,
+        "label": "Educación pública universal",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad comunidades",
+        "verified": true
+      },
+      "salud": {
+        "score": 1,
+        "label": "Sistema público universal",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 4,
+        "label": "Mayor autonomía regional",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 1,
+        "label": "Reforma estructural profunda",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 1,
+        "label": "Ampliar programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 1,
+        "label": "Nueva constitución",
+        "verified": true
+      }
     }
   },
   {
@@ -41,16 +121,56 @@
     "party": "Renovación Popular",
     "party_abbreviation": "RP",
     "positions": {
-      "economia": { "score": 5, "label": "Libre mercado total", "verified": true },
-      "seguridad": { "score": 5, "label": "Mano dura / pena de muerte", "verified": true },
-      "corrupcion": { "score": 4, "label": "Penas duras anticorrupción", "verified": true },
-      "educacion": { "score": 5, "label": "Vouchers educativos", "verified": true },
-      "recursos_naturales": { "score": 5, "label": "Maximizar extracción", "verified": true },
-      "salud": { "score": 4, "label": "Competencia privada", "verified": true },
-      "descentralizacion": { "score": 2, "label": "Gobierno central fuerte", "verified": true },
-      "reforma_judicial": { "score": 4, "label": "Reformas puntuales fuertes", "verified": true },
-      "politica_social": { "score": 4, "label": "Fomentar empleo formal", "verified": true },
-      "constitucion": { "score": 5, "label": "Mantener Constitución 1993", "verified": true }
+      "economia": {
+        "score": 5,
+        "label": "Libre mercado total",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 5,
+        "label": "Mano dura / pena de muerte",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 4,
+        "label": "Penas duras anticorrupción",
+        "verified": true
+      },
+      "educacion": {
+        "score": 5,
+        "label": "Vouchers educativos",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 5,
+        "label": "Maximizar extracción",
+        "verified": true
+      },
+      "salud": {
+        "score": 4,
+        "label": "Competencia privada",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 2,
+        "label": "Gobierno central fuerte",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 4,
+        "label": "Reformas puntuales fuertes",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 4,
+        "label": "Fomentar empleo formal",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 5,
+        "label": "Mantener Constitución 1993",
+        "verified": true
+      }
     }
   },
   {
@@ -59,16 +179,56 @@
     "party": "Alianza para el Progreso",
     "party_abbreviation": "APP",
     "positions": {
-      "economia": { "score": 4, "label": "Mercado con inversión pública", "verified": true },
-      "seguridad": { "score": 4, "label": "Más policías y penas", "verified": true },
-      "corrupcion": { "score": 3, "label": "Posición mixta", "verified": false },
-      "educacion": { "score": 4, "label": "Inversión público-privada", "verified": true },
-      "recursos_naturales": { "score": 4, "label": "Pro-inversión minera", "verified": true },
-      "salud": { "score": 3, "label": "Sistema mixto", "verified": false },
-      "descentralizacion": { "score": 4, "label": "Mayor descentralización", "verified": true },
-      "reforma_judicial": { "score": 3, "label": "Cambios graduales", "verified": false },
-      "politica_social": { "score": 3, "label": "Equilibrio", "verified": false },
-      "constitucion": { "score": 4, "label": "Reformas puntuales", "verified": true }
+      "economia": {
+        "score": 4,
+        "label": "Mercado con inversión pública",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 4,
+        "label": "Más policías y penas",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 4,
+        "label": "Inversión público-privada",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 4,
+        "label": "Pro-inversión minera",
+        "verified": true
+      },
+      "salud": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 4,
+        "label": "Mayor descentralización",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Modernización judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 3,
+        "label": "Programas sociales con formalización",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 4,
+        "label": "Reformas puntuales",
+        "verified": true
+      }
     }
   },
   {
@@ -77,16 +237,56 @@
     "party": "Avanza País",
     "party_abbreviation": "AVP",
     "positions": {
-      "economia": { "score": 5, "label": "Libre mercado", "verified": true },
-      "seguridad": { "score": 5, "label": "Mano dura militar", "verified": true },
-      "corrupcion": { "score": 4, "label": "Penas severas", "verified": true },
-      "educacion": { "score": 4, "label": "Inversión público-privada", "verified": true },
-      "recursos_naturales": { "score": 5, "label": "Pro-extracción", "verified": true },
-      "salud": { "score": 3, "label": "Sistema mixto", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Posición mixta", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Cambios graduales", "verified": false },
-      "politica_social": { "score": 4, "label": "Fomentar empleo", "verified": true },
-      "constitucion": { "score": 5, "label": "Mantener Constitución 1993", "verified": true }
+      "economia": {
+        "score": 5,
+        "label": "Libre mercado",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 5,
+        "label": "Mano dura militar",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 4,
+        "label": "Penas severas",
+        "verified": true
+      },
+      "educacion": {
+        "score": 4,
+        "label": "Inversión público-privada",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 5,
+        "label": "Pro-extracción",
+        "verified": true
+      },
+      "salud": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "politica_social": {
+        "score": 4,
+        "label": "Fomentar empleo",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 5,
+        "label": "Mantener Constitución 1993",
+        "verified": true
+      }
     }
   },
   {
@@ -95,16 +295,56 @@
     "party": "Somos Perú",
     "party_abbreviation": "SP",
     "positions": {
-      "economia": { "score": 4, "label": "Mercado con regulación", "verified": true },
-      "seguridad": { "score": 5, "label": "Mano dura / tolerancia cero", "verified": true },
-      "corrupcion": { "score": 4, "label": "Transparencia y castigo", "verified": true },
-      "educacion": { "score": 3, "label": "Posición mixta", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Equilibrio", "verified": false },
-      "salud": { "score": 3, "label": "Sistema mixto", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Posición mixta", "verified": false },
-      "reforma_judicial": { "score": 4, "label": "Reforma necesaria", "verified": true },
-      "politica_social": { "score": 3, "label": "Equilibrio", "verified": false },
-      "constitucion": { "score": 4, "label": "Reformas puntuales", "verified": true }
+      "economia": {
+        "score": 4,
+        "label": "Mercado con regulación",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 5,
+        "label": "Mano dura / tolerancia cero",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 4,
+        "label": "Transparencia y castigo",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 4,
+        "label": "Reforma necesaria",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 3,
+        "label": "Programas sociales con formalización",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 4,
+        "label": "Reformas puntuales",
+        "verified": true
+      }
     }
   },
   {
@@ -113,16 +353,56 @@
     "party": "Juntos por el Perú",
     "party_abbreviation": "JP",
     "positions": {
-      "economia": { "score": 2, "label": "Economía mixta con Estado fuerte", "verified": true },
-      "seguridad": { "score": 2, "label": "Prevención social", "verified": true },
-      "corrupcion": { "score": 2, "label": "Reformas institucionales", "verified": true },
-      "educacion": { "score": 2, "label": "Educación pública gratuita", "verified": true },
-      "recursos_naturales": { "score": 2, "label": "Prioridad ambiental", "verified": true },
-      "salud": { "score": 2, "label": "Sistema público ampliado", "verified": true },
-      "descentralizacion": { "score": 4, "label": "Autonomía regional", "verified": true },
-      "reforma_judicial": { "score": 2, "label": "Reforma profunda", "verified": true },
-      "politica_social": { "score": 2, "label": "Ampliar programas sociales", "verified": true },
-      "constitucion": { "score": 2, "label": "Hacia nueva constitución", "verified": true }
+      "economia": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 2,
+        "label": "Prevención social",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Educación pública gratuita",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Sistema público ampliado",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 4,
+        "label": "Autonomía regional",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 2,
+        "label": "Reforma profunda",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Ampliar programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 2,
+        "label": "Hacia nueva constitución",
+        "verified": true
+      }
     }
   },
   {
@@ -131,16 +411,56 @@
     "party": "Cooperación Popular",
     "party_abbreviation": "CP",
     "positions": {
-      "economia": { "score": 3, "label": "Economía social de mercado", "verified": true },
-      "seguridad": { "score": 3, "label": "Equilibrio prevención-castigo", "verified": true },
-      "corrupcion": { "score": 2, "label": "Reformas institucionales", "verified": true },
-      "educacion": { "score": 2, "label": "Más inversión pública", "verified": true },
-      "recursos_naturales": { "score": 3, "label": "Equilibrio", "verified": true },
-      "salud": { "score": 2, "label": "Sistema público fortalecido", "verified": true },
-      "descentralizacion": { "score": 4, "label": "Mayor descentralización", "verified": true },
-      "reforma_judicial": { "score": 3, "label": "Reforma moderada", "verified": true },
-      "politica_social": { "score": 2, "label": "Fortalecer programas sociales", "verified": true },
-      "constitucion": { "score": 3, "label": "Reformas puntuales amplias", "verified": true }
+      "economia": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Equilibrio prevención-castigo",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Más inversión pública",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 3,
+        "label": "Equilibrio",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Sistema público fortalecido",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 4,
+        "label": "Mayor descentralización",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Reforma moderada",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Fortalecer programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 3,
+        "label": "Reformas puntuales amplias",
+        "verified": true
+      }
     }
   },
   {
@@ -149,16 +469,56 @@
     "party": "Partido Morado",
     "party_abbreviation": "MORA",
     "positions": {
-      "economia": { "score": 3, "label": "Centro / economía social", "verified": true },
-      "seguridad": { "score": 3, "label": "Equilibrio", "verified": true },
-      "corrupcion": { "score": 2, "label": "Reformas anticorrupción fuertes", "verified": true },
-      "educacion": { "score": 2, "label": "Inversión pública prioritaria", "verified": true },
-      "recursos_naturales": { "score": 3, "label": "Equilibrio sostenible", "verified": true },
-      "salud": { "score": 2, "label": "Sistema público ampliado", "verified": true },
-      "descentralizacion": { "score": 4, "label": "Mayor descentralización", "verified": true },
-      "reforma_judicial": { "score": 2, "label": "Reforma profunda", "verified": true },
-      "politica_social": { "score": 2, "label": "Fortalecer programas", "verified": true },
-      "constitucion": { "score": 3, "label": "Reformas significativas", "verified": true }
+      "economia": {
+        "score": 3,
+        "label": "Centro / economía social",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Equilibrio",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas anticorrupción fuertes",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión pública prioritaria",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 3,
+        "label": "Equilibrio sostenible",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Sistema público ampliado",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 4,
+        "label": "Mayor descentralización",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 2,
+        "label": "Reforma profunda",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Fortalecer programas",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 3,
+        "label": "Reformas significativas",
+        "verified": true
+      }
     }
   },
   {
@@ -167,16 +527,56 @@
     "party": "Primero la Gente",
     "party_abbreviation": "PLG",
     "positions": {
-      "economia": { "score": 3, "label": "Economía social de mercado", "verified": true },
-      "seguridad": { "score": 3, "label": "Enfoque integral", "verified": true },
-      "corrupcion": { "score": 2, "label": "Reformas institucionales fuertes", "verified": true },
-      "educacion": { "score": 2, "label": "Inversión pública", "verified": true },
-      "recursos_naturales": { "score": 3, "label": "Equilibrio sostenible", "verified": true },
-      "salud": { "score": 2, "label": "Sistema público ampliado", "verified": true },
-      "descentralizacion": { "score": 3, "label": "Descentralización moderada", "verified": true },
-      "reforma_judicial": { "score": 2, "label": "Reforma profunda", "verified": true },
-      "politica_social": { "score": 3, "label": "Programas focalizados", "verified": true },
-      "constitucion": { "score": 4, "label": "Reformas puntuales", "verified": true }
+      "economia": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales fuertes",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión pública",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 3,
+        "label": "Equilibrio sostenible",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Sistema público ampliado",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 2,
+        "label": "Reforma profunda",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 3,
+        "label": "Programas focalizados",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 4,
+        "label": "Reformas puntuales",
+        "verified": true
+      }
     }
   },
   {
@@ -185,16 +585,56 @@
     "party": "Podemos Perú",
     "party_abbreviation": "PP",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "seguridad": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "corrupcion": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "educacion": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "recursos_naturales": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "salud": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "politica_social": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      }
     }
   },
   {
@@ -203,16 +643,56 @@
     "party": "Partido Aprista Peruano",
     "party_abbreviation": "PAP",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación pública",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Sistema público ampliado",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Reforma judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 3,
+        "label": "Programas sociales con formalización",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 1,
+        "label": "Nueva constitución",
+        "verified": true
+      }
     }
   },
   {
@@ -221,16 +701,56 @@
     "party": "Unidad Nacional",
     "party_abbreviation": "UN",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 2,
+        "label": "Reforma profunda",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 3,
+        "label": "Programas sociales con formalización",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -239,16 +759,56 @@
     "party": "Frente de la Esperanza 2021",
     "party_abbreviation": "FE",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 2,
+        "label": "Reforma profunda",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 4,
+        "label": "Fomentar empleo formal",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 3,
+        "label": "Reformas constitucionales",
+        "verified": true
+      }
     }
   },
   {
@@ -257,16 +817,56 @@
     "party": "Partido del Buen Gobierno",
     "party_abbreviation": "PBG",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación pública",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Sistema público ampliado",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 2,
+        "label": "Mayor descentralización",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": 4,
+        "label": "Fomentar empleo formal",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -275,16 +875,56 @@
     "party": "Fe en el Perú",
     "party_abbreviation": "FEP",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": 4,
+        "label": "Fomentar empleo formal",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -293,16 +933,56 @@
     "party": "Perú Moderno",
     "party_abbreviation": "PM",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 2,
+        "label": "Reforma profunda",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Ampliar programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 3,
+        "label": "Reformas constitucionales",
+        "verified": true
+      }
     }
   },
   {
@@ -311,16 +991,56 @@
     "party": "Fuerza y Libertad",
     "party_abbreviation": "FYL",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Ampliar programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -329,16 +1049,56 @@
     "party": "Partido Político PRIN",
     "party_abbreviation": "PRIN",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Reforma judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 3,
+        "label": "Programas sociales con formalización",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -347,16 +1107,56 @@
     "party": "Perú Acción",
     "party_abbreviation": "PA",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 4,
+        "label": "Penas duras anticorrupción",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 2,
+        "label": "Reforma profunda",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 4,
+        "label": "Fomentar empleo formal",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -365,16 +1165,56 @@
     "party": "Progresemos",
     "party_abbreviation": "PROG",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Ampliar programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -383,16 +1223,56 @@
     "party": "Libertad Popular",
     "party_abbreviation": "LP",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Equilibrio territorial",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -401,16 +1281,56 @@
     "party": "Partido SíCreo",
     "party_abbreviation": "SC",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -419,16 +1339,56 @@
     "party": "Un Camino Diferente",
     "party_abbreviation": "UCD",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": 4,
+        "label": "Fomentar empleo formal",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -437,16 +1397,56 @@
     "party": "País Para Todos",
     "party_abbreviation": "PPT",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Modernización judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 3,
+        "label": "Programas sociales con formalización",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -455,16 +1455,56 @@
     "party": "Salvemos al Perú",
     "party_abbreviation": "SAP",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Modernización judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -473,16 +1513,56 @@
     "party": "Ahora Nación",
     "party_abbreviation": "AN",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Reforma judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -491,16 +1571,56 @@
     "party": "Partido Patriótico del Perú",
     "party_abbreviation": "PPP",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 3,
+        "label": "Reformas y castigo",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -509,16 +1629,56 @@
     "party": "Partido Demócrata Verde",
     "party_abbreviation": "PDV",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Modernización judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Ampliar programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -527,16 +1687,56 @@
     "party": "Partido Cívico Obras",
     "party_abbreviation": "PCO",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "corrupcion": {
+        "score": 3,
+        "label": "Reformas y castigo",
+        "verified": true
+      },
+      "educacion": {
+        "score": 3,
+        "label": "Modernización educativa",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Sistema público ampliado",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Equilibrio territorial",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": 3,
+        "label": "Programas sociales con formalización",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -545,16 +1745,56 @@
     "party": "Partido Democrático Federal",
     "party_abbreviation": "PDF",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "seguridad": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "corrupcion": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "educacion": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "recursos_naturales": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "salud": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "politica_social": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos",
+        "verified": false
+      }
     }
   },
   {
@@ -563,16 +1803,56 @@
     "party": "Partido Demócrata Unido Perú",
     "party_abbreviation": "PDUP",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 3,
+        "label": "Reformas y castigo",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 2,
+        "label": "Reforma profunda",
+        "verified": true
+      },
+      "politica_social": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -581,16 +1861,56 @@
     "party": "Perú Primero",
     "party_abbreviation": "PPR",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "corrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Inversión en salud",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Ampliar programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   },
   {
@@ -599,16 +1919,56 @@
     "party": "PTE-Perú",
     "party_abbreviation": "PTE",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": true
+      },
+      "seguridad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "corrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Sistema público ampliado",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Reforma judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 2,
+        "label": "Ampliar programas sociales",
+        "verified": true
+      },
+      "constitucion": {
+        "score": 1,
+        "label": "Nueva constitución",
+        "verified": true
+      }
     }
   },
   {
@@ -617,16 +1977,56 @@
     "party": "Alianza Electoral Venceremos",
     "party_abbreviation": "AEV",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "seguridad": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "corrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "educacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 2,
+        "label": "Sistema público ampliado",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Modernización judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      },
+      "constitucion": {
+        "score": 1,
+        "label": "Nueva constitución",
+        "verified": true
+      }
     }
   },
   {
@@ -635,16 +2035,56 @@
     "party": "Integridad Democrática",
     "party_abbreviation": "ID",
     "positions": {
-      "economia": { "score": 3, "label": "Centro", "verified": false },
-      "seguridad": { "score": 3, "label": "Centro", "verified": false },
-      "corrupcion": { "score": 3, "label": "Centro", "verified": false },
-      "educacion": { "score": 3, "label": "Centro", "verified": false },
-      "recursos_naturales": { "score": 3, "label": "Centro", "verified": false },
-      "salud": { "score": 3, "label": "Centro", "verified": false },
-      "descentralizacion": { "score": 3, "label": "Centro", "verified": false },
-      "reforma_judicial": { "score": 3, "label": "Centro", "verified": false },
-      "politica_social": { "score": 3, "label": "Centro", "verified": false },
-      "constitucion": { "score": 3, "label": "Centro", "verified": false }
+      "economia": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": true
+      },
+      "seguridad": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": true
+      },
+      "corrupcion": {
+        "score": 3,
+        "label": "Lucha anticorrupción",
+        "verified": true
+      },
+      "educacion": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": true
+      },
+      "recursos_naturales": {
+        "score": 2,
+        "label": "Prioridad ambiental",
+        "verified": true
+      },
+      "salud": {
+        "score": 3,
+        "label": "Sistema mixto",
+        "verified": true
+      },
+      "descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": true
+      },
+      "reforma_judicial": {
+        "score": 3,
+        "label": "Modernización judicial",
+        "verified": true
+      },
+      "politica_social": {
+        "score": 4,
+        "label": "Fomentar empleo formal",
+        "verified": true
+      },
+      "constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false
+      }
     }
   }
 ]

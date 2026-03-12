@@ -12,7 +12,17 @@ type CandidatePosition = {
   candidate_name: string
   party: string
   party_abbreviation: string
-  positions: Record<string, { score: number; label: string; verified: boolean }>
+  positions: Record<string, { score: number | null; label: string; verified: boolean }>
+}
+
+type MatchResult = {
+  candidateId: string
+  name: string
+  party: string
+  partyAbbr: string
+  matchPct: number | null
+  dataQuality: 'verified' | 'partial' | 'insufficient'
+  verifiedIssueCount: number
 }
 
 const issues = issuesData.issues
@@ -28,17 +38,38 @@ const DEPARTMENTS = [
 
 function calculateMatch(
   userAnswers: Record<string, number>,
-  candidateScores: Record<string, number>,
-): number {
+  candidatePositions: Record<string, { score: number | null; label: string; verified: boolean }>,
+): { matchPct: number | null; verifiedIssueCount: number; dataQuality: 'verified' | 'partial' | 'insufficient' } {
   const answeredIssues = Object.keys(userAnswers)
-  if (answeredIssues.length === 0) return 0
-  const totalDiff = answeredIssues.reduce((sum, issue) => {
-    const userScore = userAnswers[issue] ?? 3
-    const candidateScore = candidateScores[issue] ?? 3
+
+  // Only compare issues where both user answered AND candidate has real data
+  const sharedIssues = answeredIssues.filter((issue) => {
+    const pos = candidatePositions[issue]
+    return pos && pos.score !== null
+  })
+
+  const verifiedIssueCount = Object.values(candidatePositions).filter(
+    (p) => p.score !== null
+  ).length
+
+  const dataQuality: 'verified' | 'partial' | 'insufficient' =
+    verifiedIssueCount >= 8 ? 'verified' :
+    verifiedIssueCount >= 3 ? 'partial' : 'insufficient'
+
+  if (sharedIssues.length < 3) {
+    return { matchPct: null, verifiedIssueCount, dataQuality }
+  }
+
+  const totalDiff = sharedIssues.reduce((sum, issue) => {
+    const userScore = userAnswers[issue]
+    const candidateScore = candidatePositions[issue].score!
     return sum + Math.abs(userScore - candidateScore)
   }, 0)
-  const maxPossibleDiff = answeredIssues.length * 4
-  return Math.round((1 - totalDiff / maxPossibleDiff) * 100)
+
+  const maxPossibleDiff = sharedIssues.length * 4
+  const matchPct = Math.round((1 - totalDiff / maxPossibleDiff) * 100)
+
+  return { matchPct, verifiedIssueCount, dataQuality }
 }
 
 function matchColor(pct: number): string {
@@ -53,38 +84,90 @@ function matchBarColor(pct: number): string {
   return 'bg-gray-400'
 }
 
+function ResultCard({ r, rank, muted }: { r: MatchResult; rank: number; muted?: boolean }) {
+  return (
+    <Link
+      href={`/candidatos/${r.candidateId}`}
+      className="block"
+    >
+      <div className={`flex items-center gap-4 p-4 rounded-xl border border-[#E5E3DE] hover:shadow-md transition-all bg-white ${muted ? 'opacity-75' : ''}`}>
+        <span className="text-lg font-bold text-[#777777] w-8 text-center flex-shrink-0">
+          {rank}
+        </span>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-sm font-semibold text-[#111111] truncate">
+              {r.name}
+            </span>
+            <span className="text-xs text-[#777777]">
+              {r.partyAbbr}
+            </span>
+          </div>
+          <p className="text-xs text-[#777777] truncate">{r.party}</p>
+          {r.matchPct !== null && (
+            <div className="mt-2 w-full h-1.5 bg-[#EEEDE9] rounded-full overflow-hidden">
+              <div
+                className={`h-full rounded-full transition-all duration-500 ${matchBarColor(r.matchPct)}`}
+                style={{ width: `${r.matchPct}%` }}
+              />
+            </div>
+          )}
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          {r.matchPct !== null ? (
+            <span
+              className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-bold border ${matchColor(r.matchPct)}`}
+            >
+              {r.matchPct}%
+            </span>
+          ) : (
+            <span className="text-xs text-[#999999]">Sin datos</span>
+          )}
+          <ExternalLink size={14} className="text-[#777777]" />
+        </div>
+      </div>
+    </Link>
+  )
+}
+
 export default function QuizPage() {
-  const [step, setStep] = useState(0) // 0 = department, 1-10 = questions, 11 = results
+  const [step, setStep] = useState(0)
   const [department, setDepartment] = useState('')
   const [answers, setAnswers] = useState<Record<string, number>>({})
   const [showAll, setShowAll] = useState(false)
 
-  const totalSteps = issues.length + 2 // department + 10 questions + results
+  const totalSteps = issues.length + 2
 
   const currentIssue = step >= 1 && step <= issues.length ? issues[step - 1] : null
 
   const results = useMemo(() => {
-    if (step < totalSteps - 1) return []
+    if (step < totalSteps - 1) return [] as MatchResult[]
     return candidatePositions
-      .map((cp) => {
-        const scores: Record<string, number> = {}
-        for (const [key, val] of Object.entries(cp.positions)) {
-          scores[key] = val.score
-        }
+      .map((cp): MatchResult => {
+        const { matchPct, verifiedIssueCount, dataQuality } = calculateMatch(answers, cp.positions)
         return {
           candidateId: cp.candidate_id,
           name: cp.candidate_name,
           party: cp.party,
           partyAbbr: cp.party_abbreviation,
-          matchPct: calculateMatch(answers, scores),
-          hasVerifiedPositions: Object.values(cp.positions).some((p) => p.verified),
+          matchPct,
+          dataQuality,
+          verifiedIssueCount,
         }
       })
-      .sort((a, b) => b.matchPct - a.matchPct)
   }, [step, answers, totalSteps])
 
-  const topMatches = results.filter((r) => r.matchPct >= 60)
-  const displayResults = showAll ? results : topMatches.length > 0 ? topMatches : results.slice(0, 5)
+  const verifiedResults = results
+    .filter((r) => r.dataQuality === 'verified' && r.matchPct !== null)
+    .sort((a, b) => (b.matchPct ?? 0) - (a.matchPct ?? 0))
+
+  const partialResults = results
+    .filter((r) => r.dataQuality === 'partial' && r.matchPct !== null)
+    .sort((a, b) => (b.matchPct ?? 0) - (a.matchPct ?? 0))
+
+  const insufficientResults = results
+    .filter((r) => r.dataQuality === 'insufficient' || r.matchPct === null)
+    .sort((a, b) => a.name.localeCompare(b.name))
 
   function handleAnswer(score: number) {
     if (!currentIssue) return
@@ -94,15 +177,21 @@ export default function QuizPage() {
 
   function handleSkip() {
     if (!currentIssue) return
-    setAnswers((prev) => ({ ...prev, [currentIssue.key]: 3 }))
+    // Remove the answer for this issue instead of defaulting to 3
+    setAnswers((prev) => {
+      const next = { ...prev }
+      delete next[currentIssue.key]
+      return next
+    })
     setStep((s) => s + 1)
   }
 
   function handleShare() {
-    const top = results[0]
-    const shareText = top
-      ? `Descubrí que tengo ${top.matchPct}% de afinidad con ${top.name}. ¿Y tú? votoabierto.pe/quiz`
-      : `Hice el quiz electoral en votoabierto.pe/quiz — ¿con quién votas?`
+    // Only share top candidate from verified section
+    const topVerified = verifiedResults[0]
+    const shareText = topVerified
+      ? `Respondí el quiz de VotoAbierto y tengo ${topVerified.matchPct}% de afinidad con ${topVerified.name}. ¿Y tú? votoabierto.org/quiz`
+      : `Hice el quiz electoral en votoabierto.org/quiz`
 
     if (navigator.share) {
       navigator.share({ text: shareText }).catch(() => {
@@ -122,7 +211,6 @@ export default function QuizPage() {
     setShowAll(false)
   }
 
-  // Progress bar
   const progress = step === 0 ? 0 : step >= totalSteps - 1 ? 100 : Math.round((step / (totalSteps - 1)) * 100)
 
   return (
@@ -251,7 +339,7 @@ export default function QuizPage() {
           </div>
         )}
 
-        {/* Step 11: Results */}
+        {/* Results */}
         {step >= totalSteps - 1 && (
           <div>
             <div className="text-center mb-8">
@@ -266,57 +354,88 @@ export default function QuizPage() {
               </p>
             </div>
 
-            <div className="space-y-3 mb-8">
-              {displayResults.map((r, i) => (
-                <Link
-                  key={r.candidateId}
-                  href={`/candidatos/${r.candidateId}`}
-                  className="block"
-                >
-                  <div className="flex items-center gap-4 p-4 rounded-xl border border-[#E5E3DE] hover:shadow-md transition-all bg-white">
-                    <span className="text-lg font-bold text-[#777777] w-8 text-center flex-shrink-0">
-                      {i + 1}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-semibold text-[#111111] truncate">
-                          {r.name}
-                        </span>
-                        <span className="badge bg-[#EEEDE9] border border-[#E5E3DE] text-[#111111] font-semibold text-xs">
-                          {r.partyAbbr}
-                        </span>
-                        {!r.hasVerifiedPositions && (
-                          <span className="text-xs text-[#777777]">(datos no verificados)</span>
-                        )}
-                      </div>
-                      <p className="text-xs text-[#777777] truncate">{r.party}</p>
-                      <div className="mt-2 w-full h-1.5 bg-[#EEEDE9] rounded-full overflow-hidden">
-                        <div
-                          className={`h-full rounded-full transition-all duration-500 ${matchBarColor(r.matchPct)}`}
-                          style={{ width: `${r.matchPct}%` }}
-                        />
-                      </div>
+            {/* Section 1: Verified candidates */}
+            {verifiedResults.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold text-[#111111] mb-1">
+                  Candidatos con datos verificados
+                </h3>
+                <p className="text-xs text-[#777777] mb-3">
+                  Posiciones extraídas de sus planes de gobierno oficiales (JNE)
+                </p>
+                <div className="space-y-3">
+                  {(showAll ? verifiedResults : verifiedResults.slice(0, 10)).map((r, i) => (
+                    <div key={r.candidateId}>
+                      <ResultCard r={r} rank={i + 1} />
+                      <p className="text-[10px] text-[#999999] mt-0.5 ml-12">
+                        Basado en {r.verifiedIssueCount} de 10 temas con datos verificados
+                      </p>
                     </div>
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                      <span
-                        className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-bold border ${matchColor(r.matchPct)}`}
-                      >
-                        {r.matchPct}%
-                      </span>
-                      <ExternalLink size={14} className="text-[#777777]" />
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
-            {!showAll && results.length > displayResults.length && (
+            {/* Section 2: Partial data candidates */}
+            {partialResults.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold text-[#777777] mb-1">
+                  Candidatos con datos parciales
+                </h3>
+                <p className="text-xs text-[#999999] mb-3">
+                  Su plan de gobierno no cubre todos los temas del quiz
+                </p>
+                <div className="space-y-3">
+                  {(showAll ? partialResults : partialResults.slice(0, 5)).map((r, i) => (
+                    <div key={r.candidateId}>
+                      <ResultCard r={r} rank={i + 1} muted />
+                      <p className="text-[10px] text-[#999999] mt-0.5 ml-12">
+                        {r.verifiedIssueCount} de 10 temas con datos
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Section 3: Insufficient data */}
+            {insufficientResults.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold text-[#999999] mb-1">
+                  Sin datos suficientes para calcular
+                </h3>
+                <p className="text-xs text-[#999999] mb-3">
+                  No tenemos datos suficientes de sus posiciones para calcular afinidad. Revisa su plan de gobierno en JNE.
+                </p>
+                <div className="space-y-2">
+                  {insufficientResults.map((r) => (
+                    <div
+                      key={r.candidateId}
+                      className="flex items-center justify-between p-3 rounded-lg border border-[#EEEDE9] bg-[#FAFAF8]"
+                    >
+                      <div>
+                        <span className="text-sm text-[#777777]">{r.name}</span>
+                        <span className="text-xs text-[#999999] ml-2">{r.partyAbbr}</span>
+                      </div>
+                      <Link
+                        href={`/candidatos/${r.candidateId}`}
+                        className="text-xs text-[#1A56A0] hover:underline"
+                      >
+                        Ver perfil
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {!showAll && (verifiedResults.length > 10 || partialResults.length > 5) && (
               <div className="text-center mb-8">
                 <button
                   onClick={() => setShowAll(true)}
                   className="text-sm font-medium text-[#1A56A0] hover:underline"
                 >
-                  Ver los {results.length} candidatos →
+                  Ver todos los candidatos
                 </button>
               </div>
             )}

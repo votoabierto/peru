@@ -54,13 +54,13 @@
       "label": "Reforma judicial",
       "left_label": "Reforma estructural profunda del poder judicial",
       "right_label": "Cambios graduales dentro del sistema actual",
-      "question": "¿Qué tan urgente es reformar el sistema judicial?"
+      "question": "¿Cómo debe reformarse el sistema judicial?"
     },
     {
       "key": "politica_social",
       "label": "Programas sociales",
       "left_label": "Ampliar programas sociales (más Pensión 65, Juntos, etc.)",
-      "right_label": "Reducir asistencialismo / fomentar empleo formal",
+      "right_label": "Fomentar empleo formal / menos dependencia del Estado",
       "question": "¿Cuál es la mejor estrategia para reducir la pobreza?"
     },
     {
@@ -68,7 +68,7 @@
       "label": "Reforma constitucional",
       "left_label": "Nueva constitución / asamblea constituyente",
       "right_label": "Mantener la Constitución de 1993 con reformas puntuales",
-      "question": "¿Necesita el Perú una nueva constitución?"
+      "question": "¿Qué cambios necesita la Constitución del Perú?"
     }
   ]
 }

@@ -6,24 +6,44 @@ type CandidatePosition = {
   candidate_name: string
   party: string
   party_abbreviation: string
-  positions: Record<string, { score: number; label: string; verified: boolean }>
+  positions: Record<string, { score: number | null; label: string; verified: boolean }>
 }
 
 const candidatePositions = candidatePositionsData as CandidatePosition[]
 
 function calculateMatch(
   userAnswers: Record<string, number>,
-  candidateScores: Record<string, number>,
-): number {
+  candidatePositions: Record<string, { score: number | null; label: string; verified: boolean }>,
+): { matchPct: number | null; verifiedIssueCount: number; dataQuality: 'verified' | 'partial' | 'insufficient' } {
   const answeredIssues = Object.keys(userAnswers)
-  if (answeredIssues.length === 0) return 0
-  const totalDiff = answeredIssues.reduce((sum, issue) => {
-    const userScore = userAnswers[issue] ?? 3
-    const candidateScore = candidateScores[issue] ?? 3
+
+  const sharedIssues = answeredIssues.filter((issue) => {
+    const pos = candidatePositions[issue]
+    return pos && pos.score !== null
+  })
+
+  const verifiedIssueCount = Object.values(candidatePositions).filter(
+    (p) => p.score !== null
+  ).length
+
+  const dataQuality: 'verified' | 'partial' | 'insufficient' =
+    verifiedIssueCount >= 8 ? 'verified' :
+    verifiedIssueCount >= 3 ? 'partial' : 'insufficient'
+
+  if (sharedIssues.length < 3) {
+    return { matchPct: null, verifiedIssueCount, dataQuality }
+  }
+
+  const totalDiff = sharedIssues.reduce((sum, issue) => {
+    const userScore = userAnswers[issue]
+    const candidateScore = candidatePositions[issue].score!
     return sum + Math.abs(userScore - candidateScore)
   }, 0)
-  const maxPossibleDiff = answeredIssues.length * 4
-  return Math.round((1 - totalDiff / maxPossibleDiff) * 100)
+
+  const maxPossibleDiff = sharedIssues.length * 4
+  const matchPct = Math.round((1 - totalDiff / maxPossibleDiff) * 100)
+
+  return { matchPct, verifiedIssueCount, dataQuality }
 }
 
 export async function POST(request: NextRequest) {
@@ -39,19 +59,18 @@ export async function POST(request: NextRequest) {
 
   const matches = candidatePositions
     .map((cp) => {
-      const scores: Record<string, number> = {}
-      for (const [key, val] of Object.entries(cp.positions)) {
-        scores[key] = val.score
-      }
+      const { matchPct, verifiedIssueCount, dataQuality } = calculateMatch(answers, cp.positions)
       return {
         candidateId: cp.candidate_id,
         name: cp.candidate_name,
         party: cp.party,
         partyAbbr: cp.party_abbreviation,
-        matchPct: calculateMatch(answers, scores),
+        matchPct,
+        dataQuality,
+        verifiedIssueCount,
       }
     })
-    .sort((a, b) => b.matchPct - a.matchPct)
+    .sort((a, b) => (b.matchPct ?? -1) - (a.matchPct ?? -1))
 
   return NextResponse.json({
     matches,
