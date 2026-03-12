@@ -311,7 +311,7 @@ export default async function HomePage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#EEF4FF] border border-[#1A56A0] rounded-xl p-6 text-center">
             <h2 className="text-xl font-bold text-[#111111]">¿Con quién votas?</h2>
-            <p className="text-[#444444] mt-2">Responde 10 preguntas y descubre qué candidatos comparten tus ideas.</p>
+            <p className="text-[#444444] mt-2">Responde 20 preguntas y descubre qué candidatos comparten tus ideas.</p>
             <Link href="/quiz" className="mt-4 inline-block bg-[#1A56A0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0D3E7A] transition-colors">
               Comenzar el quiz
             </Link>
@@ -321,15 +321,26 @@ export default async function HomePage() {
       </section>
 
       {/* Source trust bar */}
-      <section className="py-6 bg-white border-t border-[#E5E3DE]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-sm text-[#777777]">
-            Todos los datos provienen de{' '}
-            <span className="font-semibold text-[#444444]">JNE</span> ·{' '}
-            <span className="font-semibold text-[#444444]">ONPE</span> ·{' '}
-            <span className="font-semibold text-[#444444]">Infogob</span>
-            {' '}— Fuentes oficiales del Estado peruano.
-          </p>
+      <section className="py-8 bg-white border-t border-[#E5E3DE]">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="border border-[#E5E3DE] rounded-lg p-4 bg-[#F7F6F3]">
+            <h3 className="text-sm font-semibold text-[#333333] mb-3">Fuentes de datos</h3>
+            <div className="flex flex-wrap gap-2">
+              <a href="https://www.jne.gob.pe" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-[#E5E3DE] rounded-full text-xs font-medium text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
+                JNE ↗
+              </a>
+              <a href="https://www.onpe.gob.pe" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-[#E5E3DE] rounded-full text-xs font-medium text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
+                ONPE ↗
+              </a>
+              <a href="https://infogob.jne.gob.pe" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-[#E5E3DE] rounded-full text-xs font-medium text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
+                Infogob ↗
+              </a>
+            </div>
+            <p className="text-xs text-[#777777] mt-2">
+              Todos los datos provienen de fuentes oficiales del Estado peruano.
+              <Link href="/datos" className="text-[#1A56A0] hover:underline ml-1">Ver documentación completa →</Link>
+            </p>
+          </div>
         </div>
       </section>
 

@@ -7,10 +7,10 @@ interface CandidatePositionEntry {
   candidate_name: string;
   party: string;
   party_abbreviation: string;
-  positions: Record<string, { score: number; label: string; verified: boolean }>;
+  positions: Record<string, { score: number | null; label: string; verified: boolean }>;
 }
 
-const positionsData = candidatePositionsData as CandidatePositionEntry[];
+const positionsData = candidatePositionsData as unknown as CandidatePositionEntry[];
 
 const COMPARISON_ISSUE_LABELS: Record<string, string> = {
   economy: 'Economía',
@@ -47,7 +47,8 @@ const STANCE_BADGE: Record<string, { cls: string; label: string }> = {
   against: { cls: 'bg-[#FEF2F2] text-[#9B1C1C] border border-[#DC2626]',   label: 'Contra' },
 };
 
-function ScoreBar({ score }: { score: number }) {
+function ScoreBar({ score }: { score: number | null }) {
+  if (score === null) return <div className="text-xs text-[#999999]">—</div>;
   // Color: 1=dark left, 3=center, 5=dark right — neutral grays
   const shade = score <= 2 ? '#555555' : score === 3 ? '#999999' : '#555555';
   return (

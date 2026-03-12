@@ -29,10 +29,10 @@ type CandidatePositionEntry = {
   candidate_name: string
   party: string
   party_abbreviation: string
-  positions: Record<string, { score: number; label: string; verified: boolean }>
+  positions: Record<string, { score: number | null; label: string; verified: boolean }>
 }
 
-const positionsMatrix = candidatePositionsData as CandidatePositionEntry[]
+const positionsMatrix = candidatePositionsData as unknown as CandidatePositionEntry[]
 
 function stripMarkdown(text: string): string {
   return text
@@ -146,14 +146,14 @@ export default async function CandidatePage({ params }: Props) {
   if (currentPositionEntry) {
     const currentScores: Record<string, number> = {}
     for (const [key, val] of Object.entries(currentPositionEntry.positions)) {
-      currentScores[key] = val.score
+      if (val.score != null) currentScores[key] = val.score
     }
     similarCandidates = positionsMatrix
       .filter((cp) => cp.candidate_id !== candidate.id)
       .map((cp) => {
         const scores: Record<string, number> = {}
         for (const [key, val] of Object.entries(cp.positions)) {
-          scores[key] = val.score
+          if (val.score != null) scores[key] = val.score
         }
         return {
           id: cp.candidate_id,
@@ -467,10 +467,10 @@ export default async function CandidatePage({ params }: Props) {
                     <div className="flex-1 h-2 bg-[#EEEDE9] rounded-full overflow-hidden">
                       <div
                         className="h-full rounded-full bg-[#1A56A0] transition-all"
-                        style={{ width: `${(pos.score / 5) * 100}%` }}
+                        style={{ width: `${((pos.score ?? 0) / 5) * 100}%` }}
                       />
                     </div>
-                    <span className="text-xs font-bold text-[#1A56A0] w-6 text-right">{pos.score}/5</span>
+                    <span className="text-xs font-bold text-[#1A56A0] w-6 text-right">{pos.score ?? 0}/5</span>
                   </div>
                   {!pos.verified && (
                     <p className="text-[10px] text-[#CBCAC5] mt-1">Sin verificar</p>

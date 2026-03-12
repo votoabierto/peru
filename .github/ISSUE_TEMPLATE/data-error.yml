@@ -1,0 +1,47 @@
+name: Error en datos
+description: Reportar información incorrecta o desactualizada de un candidato
+labels: [data, bug]
+body:
+  - type: input
+    id: candidate
+    attributes:
+      label: Candidato afectado
+      placeholder: "Nombre completo del candidato"
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Campo incorrecto
+      placeholder: "ej. career_summary, criminal_records, party_name"
+    validations:
+      required: true
+  - type: textarea
+    id: current-value
+    attributes:
+      label: Valor actual (incorrecto)
+      description: Qué dice actualmente la plataforma
+    validations:
+      required: true
+  - type: textarea
+    id: correct-value
+    attributes:
+      label: Valor correcto
+      description: Cuál debería ser la información correcta
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Fuente oficial
+      description: URL de la fuente que respalda la corrección (JNE, ONPE, INFOGOB, medio verificado)
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Contexto adicional
+      description: Cualquier información adicional relevante
+    validations:
+      required: false
