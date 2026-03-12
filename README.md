@@ -80,6 +80,8 @@ npx tsx scripts/seed-candidates.ts
 
 ## Contribuir
 
+Por favor lee nuestro [Código de Conducta](CODE_OF_CONDUCT.md) antes de contribuir.
+
 Ver [CONTRIBUTING.md](CONTRIBUTING.md) para la guía completa. Tres formas de ayudar:
 
 1. **Agregar datos** (sin código) — edita archivos JSON en `data/` y envía un PR con fuente

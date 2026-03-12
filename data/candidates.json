@@ -71,7 +71,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "cesar-acuna",
@@ -1043,7 +1044,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "jorge-nieto-montesinos",
@@ -1146,7 +1148,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "rosario-del-pilar-fernandez",
@@ -1236,7 +1239,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "herbert-caller",
@@ -1330,7 +1334,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "alfonso-lopez-chau",
@@ -1417,7 +1422,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "jose-luna-galvez",
@@ -1452,7 +1458,8 @@
       "CONGRESISTA",
       "ASESOR"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/67b637b0-e2f7-47cc-8b23-fa16be709cc2.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/67b637b0-e2f7-47cc-8b23-fa16be709cc2.pdf",
+    "data_confidence": "official"
   },
   {
     "id": "roberto-sanchez",
@@ -1536,7 +1543,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "carlos-jaico",
@@ -1615,7 +1623,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "fernando-olivera",
@@ -1709,7 +1718,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "charlie-carrasco",
@@ -1831,7 +1841,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "marisol-perez-tello",
@@ -1867,7 +1878,8 @@
       "NOTARIA",
       "CONGRESISTA"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/1430b48a-b7d1-4acf-970e-7c5e58f450c2.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/1430b48a-b7d1-4acf-970e-7c5e58f450c2.pdf",
+    "data_confidence": "official"
   },
   {
     "id": "paul-jaimes",
@@ -1971,7 +1983,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "mesias-guevara",
@@ -2009,7 +2022,8 @@
       "MIEMBRO DEL CONSEJO DIRECTIVO"
     ],
     "jne_id_plan": 29687,
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/6eb5d4b8-bd18-4cf0-ae0e-e250ca085f5f.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/6eb5d4b8-bd18-4cf0-ae0e-e250ca085f5f.pdf",
+    "data_confidence": "official"
   },
   {
     "id": "alvaro-paz-de-la-barra",
@@ -2187,7 +2201,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "george-forsyth",
@@ -2276,7 +2291,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "carlos-alvarez",
@@ -2377,7 +2393,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "francisco-diez-canseco",
@@ -2449,7 +2466,8 @@
       "total_ingresos_anuales_pen": 45000,
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "wolfgang-grozo",
@@ -2548,7 +2566,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "ricardo-belmont",
@@ -2620,7 +2639,8 @@
       "total_ingresos_anuales_pen": 301514,
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "napoleon-becerra",
@@ -2700,7 +2720,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "ronald-atencio",
@@ -2806,7 +2827,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "yonhy-lescano",
@@ -2924,7 +2946,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "mario-vizcarra",
@@ -3046,7 +3069,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "joaquin-masse-fernandez",
@@ -3112,7 +3136,8 @@
       "Medico",
       "Presidente/Secretario General"
     ],
-    "jne_url_plan": null
+    "jne_url_plan": null,
+    "data_confidence": "scraped"
   },
   {
     "id": "enrique-valderrama",
@@ -3186,7 +3211,8 @@
       "total_ingresos_anuales_pen": 33600,
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "alex-gonzales-castillo",
@@ -3327,7 +3353,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "roberto-chiabra",
@@ -3415,7 +3442,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "rafael-belaunde",
@@ -3509,7 +3537,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "carlos-espa",
@@ -3613,7 +3642,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "antonio-ortiz-villano",
@@ -3715,7 +3745,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "fiorella-molinelli",
@@ -3800,7 +3831,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "vladimir-cerron",
@@ -3902,7 +3934,8 @@
       "PRESIDENTE REGIONAL",
       "MEDICO NEUROCIRUJANO ASISTENTE"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/b2d25860-484e-4226-bd13-a57fb83c59cb.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/b2d25860-484e-4226-bd13-a57fb83c59cb.pdf",
+    "data_confidence": "official"
   },
   {
     "id": "walter-chirinos",
@@ -3990,7 +4023,8 @@
       ],
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "rafael-lopez-aliaga",
@@ -4064,7 +4098,8 @@
       "total_ingresos_anuales_pen": 1897374,
       "declaration_year": "2024",
       "source": "JNE — Declaración Jurada"
-    }
+    },
+    "data_confidence": "official"
   },
   {
     "id": "jose-williams-zapata",
@@ -4097,6 +4132,7 @@
     "jne_ocupacion": [
       "CONGRESISTA"
     ],
-    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/5857261c-789e-4599-ac05-4531654b10b4.pdf"
+    "jne_url_plan": "https://mpesije.jne.gob.pe/docs/5857261c-789e-4599-ac05-4531654b10b4.pdf",
+    "data_confidence": "official"
   }
 ]

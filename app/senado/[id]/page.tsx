@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getHojaDeVida, getAntecedentes, getBienes } from '@/lib/data'
 import FeedbackWidget from '@/components/FeedbackWidget'
+import DataConfidenceBadge from '@/components/DataConfidenceBadge'
 import senateCandidates from '@/data/senate-candidates.json'
 import type { Metadata } from 'next'
 
@@ -87,6 +88,7 @@ export default async function SenadoCandidatePage({ params }: Props) {
             <div className="flex items-center gap-2 mt-2">
               <span className="text-xs px-2 py-0.5 rounded-full bg-[#F0F4FA] text-[#1A56A0] font-medium">#{c.listPosition} en lista</span>
               <span className="text-xs px-2 py-0.5 rounded-full bg-[#EEEDE9] text-[#555555] font-medium">Senado Nacional</span>
+              <DataConfidenceBadge confidence="scraped" source="JNE API" />
             </div>
           </div>
         </div>

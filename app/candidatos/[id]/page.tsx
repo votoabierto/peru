@@ -21,6 +21,7 @@ import CandidateShareSection from '@/components/CandidateShareSection'
 import CandidateNews from '@/components/CandidateNews'
 import FeedbackWidget from '@/components/FeedbackWidget'
 import DataFreshness from '@/components/DataFreshness'
+import DataConfidenceBadge from '@/components/DataConfidenceBadge'
 import { Metadata } from 'next'
 import candidatePositionsData from '@/data/candidate-positions.json'
 
@@ -236,11 +237,17 @@ export default async function CandidatePage({ params }: Props) {
       <CandidateStats candidate={candidate} />
 
       <div className="max-w-5xl mx-auto px-4 py-10 space-y-12">
-        <DataFreshness
-          fetchedAt={hojaDeVida?.fetched_at ?? candidate.updated_at}
-          jneUrl={candidate.jne_profile_url}
-          className="mb-2"
-        />
+        <div className="flex items-center gap-3 mb-2">
+          <DataConfidenceBadge
+            confidence={candidate.data_confidence ?? 'pending'}
+            source="JNE ListaCandidatos API"
+            lastVerified={candidate.updated_at?.slice(0, 10)}
+          />
+          <DataFreshness
+            fetchedAt={hojaDeVida?.fetched_at ?? candidate.updated_at}
+            jneUrl={candidate.jne_profile_url}
+          />
+        </div>
         {bio && (
           <section>
             <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">

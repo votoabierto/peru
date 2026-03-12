@@ -1,0 +1,252 @@
+- id: keiko-fujimori
+  full_name: Keiko Fujimori
+  party_name: Fuerza Popular
+  party_abbreviation: FP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/251cd1c0-acc7-4338-bd8a-439ccb9238d0.jpeg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/da4b943d-4344-4743-9362-a11ccf3054cb.pdf
+- id: cesar-acuna
+  full_name: César Acuña
+  party_name: Alianza para el Progreso
+  party_abbreviation: APP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/d6fe3cac-7061-474b-8551-0aa686a54bad.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/72576403-804a-4f28-85d3-bf4c7e648667.pdf
+- id: jorge-nieto-montesinos
+  full_name: Jorge Nieto Montesinos
+  party_name: Partido del Buen Gobierno
+  party_abbreviation: PBG
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/9ae56ed5-3d0f-49ff-8bb9-0390bad71816.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/19bde703-f7f4-4715-92f3-b82e19bbe651.pdf
+- id: rosario-del-pilar-fernandez
+  full_name: Rosario del Pilar Fernández
+  party_name: Un Camino Diferente
+  party_abbreviation: UCD
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/ac0b0a59-ead5-4ef1-8ef8-8967e322d6ca.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/de662f06-21d5-4523-a3ec-4fcbacabe16c.pdf
+- id: herbert-caller
+  full_name: Herbert Caller
+  party_name: Partido Patriótico del Perú
+  party_abbreviation: PPP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/6ad6c5ff-0411-4ddd-9cf7-b0623f373fcf.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/6de519cb-bb4d-4319-a11b-be65d4438f4f.pdf
+- id: alfonso-lopez-chau
+  full_name: Alfonso López-Chau
+  party_name: Ahora Nación
+  party_abbreviation: AN
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/ddfa74eb-cae3-401c-a34c-35543ae83c57.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/7d70c5e1-2246-42e8-90c2-372aa1cf7f52.pdf
+- id: jose-luna-galvez
+  full_name: José Luna Gálvez
+  party_name: Podemos Perú
+  party_abbreviation: PP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/a669a883-bf8a-417c-9296-c14b943c3943.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/67b637b0-e2f7-47cc-8b23-fa16be709cc2.pdf
+- id: roberto-sanchez
+  full_name: Roberto Sánchez
+  party_name: Juntos por el Perú
+  party_abbreviation: JP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/bb7c7465-9c6e-44eb-ac7d-e6cc7f872a1a.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/3dd0e649-061c-4f31-8c3f-7a0836b58bde.pdf
+- id: carlos-jaico
+  full_name: Carlos Jaico
+  party_name: Perú Moderno
+  party_abbreviation: PM
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/7d91e14f-4417-4d61-89ba-3e686dafaa95.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/12de1a7b-008b-43c5-9159-c62c9b45eab1.pdf
+- id: fernando-olivera
+  full_name: Fernando Olivera
+  party_name: Partido Frente de la Esperanza 2021
+  party_abbreviation: FE
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/3e2312e1-af79-4954-abfa-a36669c1a9e9.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/d656b83f-3177-4053-a381-0f36ec99490a.pdf
+- id: charlie-carrasco
+  full_name: Charlie Carrasco
+  party_name: Partido Demócrata Unido Perú
+  party_abbreviation: PDUP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/12fa17db-f28f-4330-9123-88549539b538.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/2e5235de-e828-45f0-92cc-017a830abc33.pdf
+- id: marisol-perez-tello
+  full_name: Marisol Pérez Tello
+  party_name: Primero la Gente
+  party_abbreviation: PLG
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/073703ca-c427-44f0-94b1-a782223a5e10.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/1430b48a-b7d1-4acf-970e-7c5e58f450c2.pdf
+- id: paul-jaimes
+  full_name: Paul Jaimes
+  party_name: Progresemos
+  party_abbreviation: PROG
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/929e1a63-335d-4f3a-ba26-f3c7ff136213.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/b2f303a2-1e0d-4933-9d5f-04682a3710b0.pdf
+- id: mesias-guevara
+  full_name: Mesías Guevara
+  party_name: Partido Morado
+  party_abbreviation: MORA
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/1b861ca7-3a5e-48b4-9024-08a92371e33b.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/6eb5d4b8-bd18-4cf0-ae0e-e250ca085f5f.pdf
+- id: alvaro-paz-de-la-barra
+  full_name: Álvaro Paz de la Barra
+  party_name: Fe en el Perú
+  party_abbreviation: FEP
+  data_confidence: official
+  photo_url: https://votoinformado.jne.gob.pe/assets/images/candidatos/ALVARO%20PAZ%20DE%20LA%20BARRA.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/b4869a0b-ff3d-47d7-af7b-62fd1295db83.pdf
+- id: george-forsyth
+  full_name: George Forsyth
+  party_name: Partido Democrático Somos Perú
+  party_abbreviation: SP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/b1d60238-c797-4cba-936e-f13de6a34cc7.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/1334ac30-c28e-42a5-8fc5-79a4638ccd2a.pdf
+- id: carlos-alvarez
+  full_name: Carlos Álvarez
+  party_name: País Para Todos
+  party_abbreviation: PPT
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/2bd18177-d665-413d-9694-747d729d3e39.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/76291ee3-eba2-4c88-adef-2530f2d70bb8.pdf
+- id: francisco-diez-canseco
+  full_name: Francisco Diez-Canseco
+  party_name: Perú Acción
+  party_abbreviation: PA
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/2d1bf7f2-6e88-4ea9-8ed2-975c1ae5fb92.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/f4e5c2c2-b0df-4033-adda-6617af774154.pdf
+- id: wolfgang-grozo
+  full_name: Wolfgang Grozo
+  party_name: Integridad Democrática
+  party_abbreviation: ID
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/064360d1-ce49-4abe-939c-f4de8b0130a2.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/ee89ac99-516b-4665-9297-413a0cf104de.pdf
+- id: ricardo-belmont
+  full_name: Ricardo Belmont
+  party_name: Partido Cívico Obras
+  party_abbreviation: PCO
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/78647f15-d5d1-4ed6-8ac6-d599e83eeea3.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/5643db28-6dbd-4d35-b79e-30d20d3bed85.pdf
+- id: napoleon-becerra
+  full_name: Napoleón Becerra
+  party_name: Partido de los Trabajadores y Emprendedores PTE-Perú
+  party_abbreviation: PTE
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/bab206cb-b2d5-41ec-bde8-ef8cf3e0a2df.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/6988c030-5c2b-40d8-b656-dc48899d4d8c.pdf
+- id: ronald-atencio
+  full_name: Ronald Atencio
+  party_name: Alianza Electoral Venceremos
+  party_abbreviation: AEV
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/bac0288d-3b21-45ac-8849-39f9177fb020.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/9984addc-e998-43b1-920f-1178d4d973aa.pdf
+- id: yonhy-lescano
+  full_name: Yonhy Lescano
+  party_name: Partido Político Cooperación Popular
+  party_abbreviation: CP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/b9db2b5c-02ff-4265-ae51-db9b1001ad70.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/582e0d55-19ee-4a7f-85ef-c254be5bada6.pdf
+- id: mario-vizcarra
+  full_name: Mario Vizcarra
+  party_name: Partido Político Perú Primero
+  party_abbreviation: PPR
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/ee7a080e-bc81-4c81-9e5e-9fd95ff459ab.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/f9624874-7cf6-4737-8db3-b73707c98e70.pdf
+- id: joaquin-masse-fernandez
+  full_name: Joaquín Massé Fernández
+  party_name: Partido Democrático Federal
+  party_abbreviation: PDF
+  data_confidence: scraped
+  photo_url: https://mpesije.jne.gob.pe/apidocs/cb1adeb7-7d2f-430c-ae87-519137d8edfa.jpg
+  jne_url_plan: null
+- id: enrique-valderrama
+  full_name: Enrique Valderrama
+  party_name: Partido Aprista Peruano
+  party_abbreviation: PAP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/d72c4b29-e173-42b8-b40d-bdb6d01a526a.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/4d581919-b090-43d4-89e4-e284fde587b7.pdf
+- id: alex-gonzales-castillo
+  full_name: Alex Gonzales Castillo
+  party_name: Partido Demócrata Verde
+  party_abbreviation: PDV
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/c0ae56bf-21c1-4810-890a-b25c8465bdd9.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/3f2a939b-edf2-4505-b709-df775a5e0038.pdf
+- id: roberto-chiabra
+  full_name: Roberto Chiabra
+  party_name: Unidad Nacional
+  party_abbreviation: UN
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/5c703ce9-ba1e-4490-90bf-61006740166f.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/ae0c9ba2-6278-4ca7-b077-16ed2cc39e76.pdf
+- id: rafael-belaunde
+  full_name: Rafael Belaunde
+  party_name: Libertad Popular
+  party_abbreviation: LP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/3302e45b-55c8-4979-a60b-2b11097abf1d.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/30bab146-a532-4d1b-87a7-e0f8078dc70b.pdf
+- id: carlos-espa
+  full_name: Carlos Espá
+  party_name: Partido SíCreo
+  party_abbreviation: SC
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/85935f77-6c46-4eab-8c7e-2494ffbcece0.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/e9d731a4-a79f-42e0-9ff7-29f6abe2bd3f.pdf
+- id: antonio-ortiz-villano
+  full_name: Antonio Ortiz Villano
+  party_name: Salvemos al Perú
+  party_abbreviation: SAP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/8e6b9124-2883-4143-8768-105f2ce780eb.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/40877746-e670-42d3-840b-cdf683f46355.pdf
+- id: fiorella-molinelli
+  full_name: Fiorella Molinelli
+  party_name: Fuerza y Libertad
+  party_abbreviation: FYL
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/1de656b5-7593-4c60-ab7a-83d618a3d80d.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/d4ab9fba-d366-4083-bbf5-63aa465114d9.pdf
+- id: vladimir-cerron
+  full_name: Vladimir Cerrón
+  party_name: Partido Político Nacional Perú Libre
+  party_abbreviation: PL
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/82ee0ff2-2336-4aba-9590-e576f7564315.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/b2d25860-484e-4226-bd13-a57fb83c59cb.pdf
+- id: walter-chirinos
+  full_name: Walter Chirinos
+  party_name: Partido Político PRIN
+  party_abbreviation: PRIN
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/a2d0f631-fe47-4c41-92ba-7ed9f4095520.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/3b89548c-81fa-479d-9ff9-2b7011fec7d2.pdf
+- id: rafael-lopez-aliaga
+  full_name: Rafael López Aliaga
+  party_name: Renovación Popular
+  party_abbreviation: RP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/b2e00ae2-1e50-4ad3-a103-71fc7e4e8255.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/2096b44a-f3b6-4c81-b03d-94fbfc9ac762.pdf
+- id: jose-williams-zapata
+  full_name: José Williams Zapata
+  party_name: Avanza País
+  party_abbreviation: AVP
+  data_confidence: official
+  photo_url: https://mpesije.jne.gob.pe/apidocs/b60c471f-a6bb-4b42-a4b2-02ea38acbb0d.jpg
+  jne_url_plan: https://mpesije.jne.gob.pe/docs/5857261c-789e-4599-ac05-4531654b10b4.pdf

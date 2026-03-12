@@ -41,6 +41,22 @@ Cambio: Corregir cargo anterior de "congresista" a "alcalde provincial"
 
 ---
 
+## Corregir datos de candidatos (YAML)
+
+Exportamos los datos clave en formato YAML para facilitar la revisión en Pull Requests:
+
+1. Edita el archivo YAML correspondiente en `data/` (por ejemplo, `data/candidates.yaml`)
+2. Ejecuta `node scripts/export-yaml.mjs` para sincronizar los cambios con JSON
+3. Abre un Pull Request — los diffs de YAML son mucho más fáciles de revisar que JSON
+
+### Fuentes de datos que aceptamos
+- JNE datos oficiales (máxima confianza)
+- Declaraciones de Infogob
+- Redes sociales oficiales de candidatos
+- Medios de comunicación verificados (incluir enlace)
+
+---
+
 ## Estándares de datos
 
 Estos estándares son **obligatorios** para cualquier contribución de datos:

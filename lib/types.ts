@@ -15,6 +15,16 @@ export interface QuizTheme {
   questions: QuizQuestion[]
 }
 
+// ─── Data Confidence Types ──────────────────────────────────────────────────
+
+export type DataConfidence = 'official' | 'scraped' | 'community' | 'pending'
+
+export interface DataConfidenceMeta {
+  level: DataConfidence
+  source: string
+  last_verified: string | null
+}
+
 // ─── Election Types ─────────────────────────────────────────────────────────
 
 export type ElectionType = 'presidente' | 'senado' | 'diputados' | 'parlamento-andino'
@@ -149,6 +159,7 @@ export interface Candidate {
   planGobiernoResumen?: string
   planGobiernoEjes?: Array<{ eje: string; descripcion: string }>
   proposals?: string[]
+  data_confidence?: DataConfidence
   created_at: string
   updated_at: string
 }
@@ -294,6 +305,7 @@ export interface PresidentialCandidate {
   years_in_politics: number | null
   social_media: Record<string, string> | null
   data_quality: string
+  data_confidence?: DataConfidence
   created_at: string
 }
 
@@ -310,6 +322,7 @@ export interface SenateCandidate {
   image_url: string | null
   bio_short: string | null
   social_media: Record<string, string> | null
+  data_confidence?: DataConfidence
   created_at: string
 }
 
@@ -326,6 +339,7 @@ export interface DiputadoCandidate {
   image_url: string | null
   bio_short: string | null
   social_media: Record<string, string> | null
+  data_confidence?: DataConfidence
   created_at: string
 }
 
@@ -339,5 +353,6 @@ export interface AndinoCandidate {
   image_url: string | null
   bio_short: string | null
   social_media: Record<string, string> | null
+  data_confidence?: DataConfidence
   created_at: string
 }
