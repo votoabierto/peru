@@ -54,17 +54,18 @@ const STANCE_BADGE: Record<string, { cls: string; label: string }> = {
   against: { cls: 'bg-[#FEF2F2] text-[#9B1C1C] border border-[#DC2626]',   label: 'Contra' },
 };
 
-function ScoreDots({ score }: { score: number }) {
+function ScoreBar({ score }: { score: number }) {
+  // Color: 1=dark left, 3=center, 5=dark right — neutral grays
+  const shade = score <= 2 ? '#555555' : score === 3 ? '#999999' : '#555555';
   return (
-    <div className="flex items-center justify-center gap-1">
-      {[1, 2, 3, 4, 5].map(n => (
-        <span
-          key={n}
-          className={`inline-block w-2.5 h-2.5 rounded-full ${
-            n <= score ? 'bg-[#1A56A0]' : 'bg-[#E5E3DE]'
-          }`}
+    <div className="flex items-center gap-2">
+      <div className="flex-1 h-2 bg-[#EEEDE9] rounded-full overflow-hidden">
+        <div
+          className="h-full rounded-full transition-all"
+          style={{ width: `${(score / 5) * 100}%`, backgroundColor: shade }}
         />
-      ))}
+      </div>
+      <span className="text-xs font-bold text-[#444444] w-6 text-right">{score}/5</span>
     </div>
   );
 }
@@ -121,16 +122,16 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
   return (
     <div className="overflow-x-auto -mx-4 md:mx-0">
       <div className="min-w-[600px] bg-white border border-[#E5E3DE] rounded-xl overflow-hidden">
-        {/* Header */}
-        <div className="grid divide-x divide-[#E5E3DE]" style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}>
+        {/* Sticky header */}
+        <div className="sticky top-0 z-10 grid divide-x divide-[#E5E3DE] bg-white shadow-sm" style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}>
           <div className="p-4 bg-[#F7F6F3]" />
           {candidateCols.map(c => (
-            <div key={c.id} className="p-4 text-center border-b border-[#E5E3DE]">
+            <div key={c.id} className="p-4 text-center border-b border-[#E5E3DE] bg-white">
               <div className="w-12 h-12 rounded-full bg-[#EEEDE9] flex items-center justify-center text-lg font-bold text-[#111111] mx-auto mb-2">
                 {c.initials}
               </div>
               <div className="text-[#111111] font-semibold text-sm leading-tight">{c.full_name}</div>
-              <div className="text-[#1A56A0] text-xs mt-0.5">{c.party_name}</div>
+              <div className="text-[#777777] text-xs mt-0.5">{c.party_name}</div>
             </div>
           ))}
         </div>
@@ -138,7 +139,7 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
         {/* Stats rows */}
         {[
           { label: 'Ideología', render: (c: Candidate) => getIdeology(c) },
-          { label: 'Encuestas', render: (c: Candidate) => c.polling_percentage ? `${c.polling_percentage}%` : (c.current_polling ? `${c.current_polling.toFixed(1)}%` : 'N/D') },
+          { label: 'Encuestas', render: (c: Candidate) => c.polling_percentage ? `${c.polling_percentage}%` : (c.current_polling ? `${c.current_polling.toFixed(1)}%` : 'Sin datos') },
           { label: 'Bienes declarados', render: (c: Candidate) => formatPEN(c.declared_assets_pen) },
           { label: 'Antecedentes', render: (c: Candidate) => c.criminal_records?.length ? `${c.criminal_records.length}` : (c.has_criminal_record ? 'Sí' : '0') },
           { label: 'Años en política', render: (c: Candidate) => getYearsInPolitics(c) },
@@ -194,7 +195,7 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
               if (cpPos) {
                 return (
                   <div key={c.id} className="px-2 py-3 text-center group relative">
-                    <ScoreDots score={cpPos.score} />
+                    <ScoreBar score={cpPos.score} />
                     <p className="text-[10px] text-[#777777] mt-1">{cpPos.label}</p>
                     {!cpPos.verified && (
                       <span className="text-[9px] text-[#CBCAC5]">sin verificar</span>
