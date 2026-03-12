@@ -95,6 +95,14 @@ export interface Candidate {
   website?: string
   twitter?: string
   facebook?: string
+  social_media?: {
+    twitter?: string | null
+    instagram?: string | null
+    facebook?: string | null
+    youtube?: string | null
+    tiktok?: string | null
+  } | null
+  social_media_verified?: boolean
   is_verified?: boolean
   has_criminal_record?: boolean
   criminal_record_detail?: string

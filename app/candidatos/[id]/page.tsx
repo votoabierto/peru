@@ -61,7 +61,7 @@ function calculatePositionMatch(
 }
 
 function formatPEN(n: number | null | undefined): string {
-  if (!n) return 'N/D'
+  if (!n) return 'Sin datos registrados'
   if (n >= 1_000_000) return `S/ ${(n / 1_000_000).toFixed(1)}M`
   if (n >= 1_000) return `S/ ${(n / 1_000).toFixed(0)}K`
   return `S/ ${n.toLocaleString()}`
@@ -174,6 +174,48 @@ export default async function CandidatePage({ params }: Props) {
             <ExpandableBio bio={bio} />
           </section>
         )}
+
+        {/* Redes Sociales */}
+        <section>
+          <h2 className="text-xl font-bold text-[#111111] mb-4">Redes sociales</h2>
+          {candidate.social_media && Object.values(candidate.social_media).some(v => v) ? (
+            <div className="flex flex-wrap gap-3">
+              {candidate.social_media.twitter && (
+                <a href={`https://x.com/${candidate.social_media.twitter}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
+                  Twitter: @{candidate.social_media.twitter}
+                </a>
+              )}
+              {candidate.social_media.instagram && (
+                <a href={`https://instagram.com/${candidate.social_media.instagram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
+                  Instagram: @{candidate.social_media.instagram}
+                </a>
+              )}
+              {candidate.social_media.facebook && (
+                <a href={candidate.social_media.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
+                  Facebook
+                </a>
+              )}
+              {candidate.social_media.youtube && (
+                <a href={candidate.social_media.youtube} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
+                  YouTube
+                </a>
+              )}
+              {candidate.social_media.tiktok && (
+                <a href={`https://tiktok.com/@${candidate.social_media.tiktok}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
+                  TikTok: @{candidate.social_media.tiktok}
+                </a>
+              )}
+              {candidate.social_media_verified === false && (
+                <span className="text-[10px] text-[#CBCAC5] self-center">(sin verificar)</span>
+              )}
+            </div>
+          ) : (
+            <div className="text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
+              Sin redes sociales verificadas —{' '}
+              <Link href={`/contribuir?candidato=${slug}`} className="text-[#1A56A0] hover:underline">Contribuir con información</Link>
+            </div>
+          )}
+        </section>
 
         {/* Hoja de Vida */}
         <section>
@@ -453,7 +495,7 @@ export default async function CandidatePage({ params }: Props) {
 
         <section>
           <h2 className="text-xl font-bold text-[#111111] mb-4">Verificaciones</h2>
-          <CandidateFactChecks factChecks={factChecks} />
+          <CandidateFactChecks factChecks={factChecks} candidateSlug={slug} />
         </section>
 
         <section>

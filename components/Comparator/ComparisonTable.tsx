@@ -39,14 +39,7 @@ const ISSUE_KEY_MAP: Record<string, string> = {
   mining: 'constitucion',
 };
 
-// Known years in politics for prominent candidates
-const KNOWN_YEARS_IN_POLITICS: Record<string, string> = {
-  'keiko-fujimori': '20+ años',
-  'rafael-lopez-aliaga': '8 años',
-  'cesar-acuna': '25+ años',
-  'george-forsyth': '8 años',
-  'vladimir-cerron': '15+ años',
-};
+// Removed hardcoded KNOWN_YEARS_IN_POLITICS — only use data from JNE/candidates.json for equal treatment
 
 const STANCE_BADGE: Record<string, { cls: string; label: string }> = {
   favor:   { cls: 'bg-[#F0FAF4] text-[#1A6B35] border border-[#2D7D46]',   label: 'Favor' },
@@ -96,21 +89,19 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
   }
 
   function formatPEN(n?: number) {
-    if (!n) return 'Sin datos';
+    if (!n) return 'Sin datos registrados';
     if (n >= 1_000_000) return `S/ ${(n / 1_000_000).toFixed(1)}M`;
     return `S/ ${Math.round(n / 1000)}K`;
   }
 
   function getYearsInPolitics(c: Candidate): string {
     if (c.years_in_politics) return `${c.years_in_politics}`;
-    const known = KNOWN_YEARS_IN_POLITICS[c.slug] || KNOWN_YEARS_IN_POLITICS[c.id];
-    if (known) return known;
-    return 'Sin datos';
+    return 'Sin datos registrados';
   }
 
   function getIdeology(c: Candidate): string {
     if (c.ideology) return IDEOLOGY_LABELS[c.ideology] ?? c.ideology;
-    return 'Sin datos';
+    return 'Sin datos registrados';
   }
 
   // Table header candidates
@@ -139,7 +130,7 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
         {/* Stats rows */}
         {[
           { label: 'Ideología', render: (c: Candidate) => getIdeology(c) },
-          { label: 'Encuestas', render: (c: Candidate) => c.polling_percentage ? `${c.polling_percentage}%` : (c.current_polling ? `${c.current_polling.toFixed(1)}%` : 'Sin datos') },
+          { label: 'Encuestas', render: (c: Candidate) => c.polling_percentage ? `${c.polling_percentage}%` : (c.current_polling ? `${c.current_polling.toFixed(1)}%` : 'Sin datos registrados') },
           { label: 'Bienes declarados', render: (c: Candidate) => formatPEN(c.declared_assets_pen) },
           { label: 'Antecedentes', render: (c: Candidate) => c.criminal_records?.length ? `${c.criminal_records.length}` : (c.has_criminal_record ? 'Sí' : '0') },
           { label: 'Años en política', render: (c: Candidate) => getYearsInPolitics(c) },
@@ -206,7 +197,7 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
 
               return (
                 <div key={c.id} className="px-2 py-3 text-center">
-                  <span className="text-[#CBCAC5] text-xs">Sin datos (JNE)</span>
+                  <span className="text-[#CBCAC5] text-xs">Sin datos registrados (JNE)</span>
                 </div>
               );
             })}
@@ -240,7 +231,7 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
                     ))}
                   </ul>
                 ) : (
-                  <span className="text-[#CBCAC5] text-xs">Sin propuestas disponibles</span>
+                  <span className="text-[#CBCAC5] text-xs">Sin datos registrados (JNE)</span>
                 )}
               </div>
             );
@@ -271,7 +262,7 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
                     ))}
                   </ul>
                 ) : (
-                  <span className="text-[#CBCAC5] text-xs">Sin datos (JNE)</span>
+                  <span className="text-[#CBCAC5] text-xs">Sin datos registrados (JNE)</span>
                 )}
               </div>
             );
@@ -283,10 +274,10 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
           <span className="text-[#444444] text-xs font-semibold uppercase tracking-wide">Perfil</span>
         </div>
         {[
-          { label: 'Edad', render: (c: Candidate) => c.age ? `${c.age} años` : 'Sin datos' },
+          { label: 'Edad', render: (c: Candidate) => c.age ? `${c.age} años` : 'Sin datos registrados' },
           { label: 'Cargos previos', render: (c: Candidate) => {
             const offices = c.prior_offices ?? [];
-            if (offices.length === 0) return 'Sin datos';
+            if (offices.length === 0) return 'Sin datos registrados';
             return offices.slice(0, 2).join(', ');
           }},
         ].map((row, i) => (
@@ -303,6 +294,56 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
             ))}
           </div>
         ))}
+
+        {/* Redes Sociales */}
+        <div className="px-4 py-3 bg-[#EEEDE9] border-b border-[#E5E3DE]">
+          <span className="text-[#444444] text-xs font-semibold uppercase tracking-wide">Redes Sociales</span>
+        </div>
+        <div
+          className="grid divide-x divide-[#E5E3DE] border-b border-[#E5E3DE] bg-[#F7F6F3]"
+          style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}
+        >
+          <div className="px-4 py-3 text-[#777777] text-xs font-medium flex items-center">Cuentas oficiales</div>
+          {candidates.map(c => {
+            const sm = c.social_media;
+            const hasAny = sm && Object.values(sm).some(v => v);
+            return (
+              <div key={c.id} className="px-3 py-3">
+                {hasAny ? (
+                  <div className="flex flex-col gap-1">
+                    {sm!.twitter && (
+                      <a href={`https://x.com/${sm!.twitter}`} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                        Twitter: @{sm!.twitter}
+                      </a>
+                    )}
+                    {sm!.instagram && (
+                      <a href={`https://instagram.com/${sm!.instagram}`} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                        IG: @{sm!.instagram}
+                      </a>
+                    )}
+                    {sm!.facebook && (
+                      <a href={sm!.facebook} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                        Facebook
+                      </a>
+                    )}
+                    {sm!.youtube && (
+                      <a href={sm!.youtube} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                        YouTube
+                      </a>
+                    )}
+                    {sm!.tiktok && (
+                      <a href={`https://tiktok.com/@${sm!.tiktok}`} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                        TikTok: @{sm!.tiktok}
+                      </a>
+                    )}
+                  </div>
+                ) : (
+                  <span className="text-[#CBCAC5] text-xs">Sin redes verificadas</span>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ export function CandidateStats({ candidate }: Props) {
       label: 'Bienes declarados',
       value: candidate.declared_assets_pen
         ? formatPEN(candidate.declared_assets_pen)
-        : 'No declarado',
+        : 'Sin datos registrados',
       icon: '💼',
       highlight: false,
     },
@@ -35,7 +35,7 @@ export function CandidateStats({ candidate }: Props) {
     },
     {
       label: 'Años en política',
-      value: candidate.years_in_politics ? `${candidate.years_in_politics} años` : 'N/A',
+      value: candidate.years_in_politics ? `${candidate.years_in_politics} años` : 'Sin datos registrados',
       icon: '🗓️',
       highlight: false,
     },
@@ -43,7 +43,7 @@ export function CandidateStats({ candidate }: Props) {
       label: 'Cargos previos',
       value: candidate.prior_offices?.length
         ? `${candidate.prior_offices.length} cargo${candidate.prior_offices.length > 1 ? 's' : ''}`
-        : 'Ninguno',
+        : 'Sin datos registrados',
       icon: '🏛️',
       highlight: false,
     },

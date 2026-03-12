@@ -73,6 +73,11 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
       const matchesIdeology = !ideologyFilter || c.ideology === ideologyFilter
 
       return matchesSearch && matchesRole && matchesParty && matchesIdeology
+    }).sort((a, b) => {
+      // Sort alphabetically by last name (apellido) for equal treatment
+      const aLastName = a.full_name.split(' ').pop() ?? a.full_name
+      const bLastName = b.full_name.split(' ').pop() ?? b.full_name
+      return aLastName.localeCompare(bLastName, 'es')
     })
   }, [initialCandidates, search, roleFilter, partyFilter, ideologyFilter])
 

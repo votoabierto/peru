@@ -44,7 +44,9 @@
       }
     ],
     "proposals": [],
-    "jne_party_id": 1366
+    "jne_party_id": 1366,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "cesar-acuna",
@@ -95,7 +97,9 @@
       "25 millones de unidades, agua y saneamiento, y la modernización de los sistemas de salud y educación, todo ello apoyado por un plan de transformación digital",
       "El documento incluyó anexos con indicadores y metas específicas para monitorear el cumplimiento de cada propuesta"
     ],
-    "jne_party_id": 1257
+    "jne_party_id": 1257,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "jorge-nieto-montesinos",
@@ -148,7 +152,9 @@
       "En la dimensión social, se priorizó el acceso universal a salud y educación de calidad, la seguridad ciudadana y la igualdad de género",
       "La dimensión económica se centró en el crecimiento sostenible, la formalización laboral y la innovación"
     ],
-    "jne_party_id": 2961
+    "jne_party_id": 2961,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "rosario-del-pilar-fernandez",
@@ -201,7 +207,9 @@
       "En educación, destacó la implementación del bachillerato automático y la homologación universitaria, inspirados en modelos europeos, junto con la ampliación de vacantes y comedores escolares",
       "Económicamente, el plan se basó en pilares como la estabilidad macroeconómica, la inversión en capital humano, la productividad, la sostenibilidad y el fortalecimiento institucional"
     ],
-    "jne_party_id": 2998
+    "jne_party_id": 2998,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "herbert-caller",
@@ -254,7 +262,9 @@
       "La visión del partido propuso un Estado participativo en la economía, en conjunto con la empresa privada, y un fuerte enfoque en la familia",
       "Finalmente, en la dimensión ambiental, se abordó la necesidad de desterrar la minería ilegal y sus devastadores efectos"
     ],
-    "jne_party_id": 2869
+    "jne_party_id": 2869,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "alfonso-lopez-chau",
@@ -307,7 +317,9 @@
       "Se fundamentó en un ideario que buscaba \"culminar el proceso de formación de la Nación peruana\" y otorgar \"todo el poder a las regiones\"",
       "El plan se estructuró en cuatro dimensiones estratégicas interconectadas: Social, Institucional, Económica y Ambiental"
     ],
-    "jne_party_id": 2980
+    "jne_party_id": 2980,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "jose-luna-galvez",
@@ -325,7 +337,9 @@
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
     "photo_url": "https://mpesije.jne.gob.pe/apidocs/a669a883-bf8a-417c-9296-c14b943c3943.jpg",
-    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "roberto-sanchez",
@@ -378,7 +392,9 @@
       "Este modelo, basado en la exportación de materias primas y la desregulación, habría generado inseguridad, desconfianza y fractura social",
       "Como solución, el plan propuso una transición hacia un Estado social y democrático de derecho con soberanía y justicia social"
     ],
-    "jne_party_id": 1264
+    "jne_party_id": 1264,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "carlos-jaico",
@@ -427,7 +443,9 @@
     "proposals": [
       "El documento identificó como problemas centrales del país la corrupción sistémica, la falta de visión de país, la pobreza persistente, el centralismo y la ineficiencia del Estado"
     ],
-    "jne_party_id": 2924
+    "jne_party_id": 2924,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "fernando-olivera",
@@ -480,7 +498,9 @@
       "Se plantean reformas estructurales en el sistema de justicia, la eliminación de la inmunidad presidencial y congresal, y la reestructuración de las fuerzas policiales",
       "Se abordan también la seguridad nacional y ciudadana con una reforma integral de las Fuerzas Armadas y la Policía"
     ],
-    "jne_party_id": 2857
+    "jne_party_id": 2857,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "charlie-carrasco",
@@ -533,7 +553,9 @@
       "En Salud, se propuso la descentralización, la construcción de hospitales y la universalización del servicio",
       "También se incluyeron políticas para el desarrollo de la agricultura, ganadería, pesca y minería"
     ],
-    "jne_party_id": 2867
+    "jne_party_id": 2867,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "marisol-perez-tello",
@@ -551,7 +573,9 @@
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
     "photo_url": "https://mpesije.jne.gob.pe/apidocs/073703ca-c427-44f0-94b1-a782223a5e10.jpg",
-    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "paul-jaimes",
@@ -604,7 +628,9 @@
       "La ideología del partido se definió como humanista, fundamentada en el respeto a todo ser viviente y comprometida con la democracia",
       "Se expuso un diagnóstico nacional que identificó problemas clave como la pobreza, la vulnerabilidad social, las brechas territoriales, los riesgos climáticos y una crisis de gobernabilidad"
     ],
-    "jne_party_id": 2967
+    "jne_party_id": 2967,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "mesias-guevara",
@@ -622,7 +648,9 @@
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
     "photo_url": "https://mpesije.jne.gob.pe/apidocs/1b861ca7-3a5e-48b4-9024-08a92371e33b.jpg",
-    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "alvaro-paz-de-la-barra",
@@ -675,7 +703,9 @@
       "Adicionalmente, se incluyó un capítulo específico para la Política para los Peruanos en el Exterior (PEX), con el fin de mejorar los servicios consulares y fortalecer el vínculo con la diáspora",
       "El Plan de Gobierno 2026-2031 del partido político Fe en el Perú se fundamentó en una concepción integral de la persona humana y el Estado constitucional de derecho"
     ],
-    "jne_party_id": 2898
+    "jne_party_id": 2898,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "george-forsyth",
@@ -728,7 +758,9 @@
       "El diagnóstico social reveló una crisis multidimensional con alta pobreza urbana, desigualdad, y programas sociales ineficaces",
       "La dimensión ambiental destacó la extrema vulnerabilidad del Perú al cambio climático, la crisis hídrica, la deforestación y la contaminación"
     ],
-    "jne_party_id": 14
+    "jne_party_id": 14,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "carlos-alvarez",
@@ -779,7 +811,9 @@
       "Para ello, se establecieron cuatro pilares: recuperación de la seguridad ciudadana, reactivación económica, lucha frontal contra la corrupción e inversión social efectiva",
       "La dimensión institucional detalló una estrategia integral contra el crimen organizado, la violencia y la corrupción"
     ],
-    "jne_party_id": 2956
+    "jne_party_id": 2956,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "francisco-diez-canseco",
@@ -832,7 +866,9 @@
       "En educación, se planteó reemplazar el enfoque por competencias por uno de \"transferencia de conocimiento\" y fusionar los ministerios de Educación y Desarrollo Social",
       "En salud, se propuso unificar los sistemas MINSA y EsSalud, adoptando un modelo similar al de Singapur"
     ],
-    "jne_party_id": 2932
+    "jne_party_id": 2932,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "wolfgang-grozo",
@@ -884,7 +920,9 @@
       "En salud, se planteó la creación de un sistema universal, integrado y digitalizado, con énfasis en la medicina preventiva, la lucha contra la anemia y el fortalecimiento del talento médico",
       "En educación, se abogó por la universalización de la cobertura, la mejora de la infraestructura, la revalorización de la carrera magisterial y la modernización del currículo"
     ],
-    "jne_party_id": 2985
+    "jne_party_id": 2985,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "ricardo-belmont",
@@ -937,7 +975,9 @@
       "En la dimensión social, se priorizó el fortalecimiento del tejido comunitario, el cierre de brechas en acceso a salud y educación, y la lucha contra la pobreza y la delincuencia",
       "Económicamente, el plan promovió una economía productiva y formal desde el ámbito local, impulsando la infraestructura vial, la formalización laboral y el desarrollo de cadenas de valor"
     ],
-    "jne_party_id": 2941
+    "jne_party_id": 2941,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "napoleon-becerra",
@@ -990,7 +1030,9 @@
       "Su ideario se basa en la construcción de un país soberano, equitativo, descentralizado y plurinacional, con justicia social, educación y salud universales y de calidad",
       "Se establecen estrategias y metas específicas para 2031, organizadas en cuatro dimensiones: social, institucional, económica y ambiental"
     ],
-    "jne_party_id": 2939
+    "jne_party_id": 2939,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "ronald-atencio",
@@ -1043,7 +1085,9 @@
       "El diagnóstico inicial identifica cuatro \"grandes males\" que aquejan al país: desigualdad, corrupción institucionalizada, criminalidad y abuso de poder",
       "Para combatirlos, la propuesta central es la convocatoria a una Asamblea Constituyente para redactar una nueva Constitución plurinacional"
     ],
-    "jne_party_id": 3025
+    "jne_party_id": 3025,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "yonhy-lescano",
@@ -1096,7 +1140,9 @@
       "Las estrategias se articularon en cuatro dimensiones: Social, Institucional, Económica y Territorial-Ambiental",
       "Para cada dimensión, se presentaron tablas detalladas que identificaban problemas, objetivos estratégicos, indicadores y metas para el período 2026-2031"
     ],
-    "jne_party_id": 2995
+    "jne_party_id": 2995,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "mario-vizcarra",
@@ -1149,7 +1195,9 @@
       "En el diagnóstico se identificaron problemas clave como la persistencia de la pobreza (27",
       "Posteriormente, se presenta la Visión de País, que aspira a un Perú desarrollado, justo, seguro y sostenible"
     ],
-    "jne_party_id": 2925
+    "jne_party_id": 2925,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "joaquin-masse-fernandez",
@@ -1167,7 +1215,9 @@
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
     "photo_url": "https://mpesije.jne.gob.pe/apidocs/cb1adeb7-7d2f-430c-ae87-519137d8edfa.jpg",
-    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "enrique-valderrama",
@@ -1220,7 +1270,9 @@
       "Las propuestas se articularon en cuatro dimensiones: social, institucional, económica y ambiental",
       "El plan estableció metas concretas para el horizonte 2026-2031, buscando un crecimiento sostenido con inclusión social"
     ],
-    "jne_party_id": 2930
+    "jne_party_id": 2930,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "alex-gonzales-castillo",
@@ -1272,7 +1324,9 @@
       "El Eje 1, \"Educación y Cultura\", abordó las brechas estructurales en aprendizaje, infraestructura y formación docente, proponiendo programas como \"Aprende Perú\" y \"Escuelas Dignas\"",
       "El Eje 2, \"Salud\", diagnosticó un sistema fragmentado y con brechas críticas, proponiendo una reforma integral hacia un sistema universal, preventivo e intercultural"
     ],
-    "jne_party_id": 2895
+    "jne_party_id": 2895,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "roberto-chiabra",
@@ -1323,7 +1377,9 @@
       "La visión se centró en lograr cambios estructurales a través de cinco ejes: Institucionalidad, Igualdad, Crecimiento Personal, Desarrollo y Seguridad",
       "El Sector 7, las Cuatro Fortalezas, detalló planes para la agricultura, pesca, minería y turismo"
     ],
-    "jne_party_id": 3023
+    "jne_party_id": 3023,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "rafael-belaunde",
@@ -1376,7 +1432,9 @@
       "El ideario del partido se fundamentó en principios liberales, como la primacía de la persona sobre el Estado, la defensa de la democracia, la separación de poderes y una economía social de mercado",
       "La visión a 2031 fue la de una \"república consolidada donde la Libertad es el motor inquebrantable de la prosperidad\""
     ],
-    "jne_party_id": 2933
+    "jne_party_id": 2933,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "carlos-espa",
@@ -1426,7 +1484,9 @@
       "El documento presentó el Plan de Gobierno y Trabajo del partido político SíCreo para las Elecciones Generales 2026",
       "Para superar esta crisis, se propuso el objetivo general de \"Avanzar en la Modernidad y la Prosperidad Compartida\", desglosado en diez objetivos específicos"
     ],
-    "jne_party_id": 2935
+    "jne_party_id": 2935,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "antonio-ortiz-villano",
@@ -1479,7 +1539,9 @@
       "La Dimensión Social se enfocó en cerrar brechas en salud, educación, vivienda y desarrollo humano",
       "La Dimensión Institucional propuso una reforma del Estado y del sistema de justicia, la lucha contra la corrupción y la promoción de un gobierno digital"
     ],
-    "jne_party_id": 2927
+    "jne_party_id": 2927,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "fiorella-molinelli",
@@ -1529,7 +1591,9 @@
       "El Plan de Gobierno 2026-2031 de Fuerza y Libertad presentó una hoja de ruta para la transformación del Perú, enfocada en la ejecución de políticas con resultados medibles",
       "Se propuso una firme estrategia de seguridad ciudadana para combatir el crimen organizado y la corrupción, junto con la modernización del Estado"
     ],
-    "jne_party_id": 3024
+    "jne_party_id": 3024,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "vladimir-cerron",
@@ -1582,7 +1646,9 @@
       "La Dimensión Económica se centró en transformar el modelo primario-exportador hacia una economía industrializada con soberanía energética y justicia fiscal",
       "Finalmente, la Dimensión Territorial-Ambiental abordó la protección del medio ambiente, la gestión del agua, la transición ecológica justa y el ordenamiento territorial"
     ],
-    "jne_party_id": 2218
+    "jne_party_id": 2218,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "walter-chirinos",
@@ -1635,7 +1701,9 @@
       "Para cada dimensión, se realizó un diagnóstico de los problemas existentes, se definieron objetivos estratégicos, se establecieron indicadores de seguimiento y se plantearon metas específicas",
       "La dimensión social abordó áreas críticas como educación, salud, saneamiento, pobreza, inclusión social y seguridad ciudadana"
     ],
-    "jne_party_id": 2921
+    "jne_party_id": 2921,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "rafael-lopez-aliaga",
@@ -1686,7 +1754,9 @@
       "También aborda la política exterior, la gestión migratoria y una reforma tributaria",
       "El documento concluye con una propuesta de rendición de cuentas que incluye metas fiscales y de crecimiento, y un informe anual a la nación"
     ],
-    "jne_party_id": 22
+    "jne_party_id": 22,
+    "social_media": null,
+    "social_media_verified": false
   },
   {
     "id": "jose-williams-zapata",
@@ -1704,6 +1774,8 @@
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
     "photo_url": "https://mpesije.jne.gob.pe/apidocs/b60c471f-a6bb-4b42-a4b2-02ea38acbb0d.jpg",
-    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes"
+    "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
+    "social_media": null,
+    "social_media_verified": false
   }
 ]

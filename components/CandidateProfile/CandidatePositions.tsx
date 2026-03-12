@@ -1,15 +1,24 @@
+import Link from 'next/link'
 import { Position, ISSUE_LABELS } from '@/lib/types'
 
 
 interface Props {
   positions: Position[]
+  candidateSlug?: string
 }
 
-export function CandidatePositions({ positions }: Props) {
+export function CandidatePositions({ positions, candidateSlug }: Props) {
   if (positions.length === 0) {
     return (
-      <div className="text-[#777777] text-center py-8">
-        No hay posiciones registradas para este candidato.
+      <div className="text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
+        Sin datos de posiciones registrados (JNE)
+        {candidateSlug && (
+          <> —{' '}
+            <Link href={`/contribuir?candidato=${candidateSlug}`} className="text-[#1A56A0] hover:underline">
+              Contribuir con información
+            </Link>
+          </>
+        )}
       </div>
     )
   }

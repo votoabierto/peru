@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FactCheck, VERDICT_LABELS } from '@/lib/types'
 
 const VERDICT_STYLES: Record<string, { bg: string; text: string }> = {
@@ -10,14 +11,22 @@ const VERDICT_STYLES: Record<string, { bg: string; text: string }> = {
 
 interface Props {
   factChecks: FactCheck[]
+  candidateSlug?: string
 }
 
-export function CandidateFactChecks({ factChecks }: Props) {
+export function CandidateFactChecks({ factChecks, candidateSlug }: Props) {
   if (factChecks.length === 0) {
     return (
-      <p className="text-[#777777] text-sm">
-        No hay verificaciones para este candidato aún.
-      </p>
+      <div className="text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
+        Sin verificaciones registradas
+        {candidateSlug && (
+          <> —{' '}
+            <Link href={`/contribuir?candidato=${candidateSlug}`} className="text-[#1A56A0] hover:underline">
+              Contribuir con información
+            </Link>
+          </>
+        )}
+      </div>
     )
   }
 
