@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Noto_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PWAInstallPrompt from "@/components/PWAInstallPrompt";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -48,10 +50,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${notoSans.variable} ${ibmPlexMono.variable}`}>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#1A56A0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="VotoAbierto" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      </head>
       <body className="font-sans antialiased bg-white text-[#444444] min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <PWAInstallPrompt />
+        <Script id="sw-register" strategy="afterInteractive">
+          {`if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js') }`}
+        </Script>
       </body>
     </html>
   );

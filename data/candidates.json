@@ -14,7 +14,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/251cd1c0-acc7-4338-bd8a-439ccb9238d0.jpeg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 de Fuerza Popular, titulado \"Perú con Orden\", se estructuró en torno a tres ejes estratégicos: Orden, Economía y Social, con el objetivo de construir un país seguro, competitivo y justo para 2031. El eje de **Orden** se centró en la seguridad ciudadana, la lucha contra la corrupción, y el establecimiento de un orden económico y jurídico sólido, proponiendo reformas en la policía, el sistema judicial y la gestión pública. El eje de **Economía** buscó impulsar sectores productivos clave como las MYPE, minería, energía, agricultura, pesca y turismo, a través de la simplificación administrativa, el fomento de la inversión y la mejora de la infraestructura. Finalmente, el eje **Social** priorizó el bienestar de la población, con propuestas para mejorar la educación, la salud, el acceso a vivienda, agua y saneamiento, así como fortalecer los programas sociales, las pensiones y promover el deporte. El documento, que incluyó un mensaje de la lideresa Keiko Fujimori, detalló el ideario del partido, un diagnóstico de los problemas nacionales y un conjunto de propuestas específicas con metas e indicadores para cada sector, finalizando con un plan de financiamiento y un sistema de rendición de cuentas.",
     "planGobiernoEjes": [
@@ -46,7 +46,10 @@
     "proposals": [],
     "jne_party_id": 1366,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "10001088",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29690
   },
   {
     "id": "cesar-acuna",
@@ -63,7 +66,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/d6fe3cac-7061-474b-8551-0aa686a54bad.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 de Alianza para el Progreso, bajo el lema \"Más Inversión Privada y Más Justicia Social\", estructuró su propuesta en cuatro ejes estratégicos: Institucional, Económico, Social y Territorial. El eje Institucional propuso una reforma del Estado, reduciendo los ministerios de 19 a 10, fortaleciendo la seguridad ciudadana y el sistema de justicia, y aplicando una enérgica lucha anticorrupción. El eje Económico se centró en la estabilidad macroeconómica, un plan de promoción de inversiones de 80 mil millones de dólares, la formalización empresarial y el impulso a sectores clave como agroexportación, minería, turismo y energía, además de una reforma del sistema de pensiones. El eje Social abordó el cierre de brechas en vivienda, con una meta de 1.25 millones de unidades, agua y saneamiento, y la modernización de los sistemas de salud y educación, todo ello apoyado por un plan de transformación digital. Finalmente, el eje Territorial buscó el desarrollo equilibrado del país mediante un portafolio de 72 proyectos de infraestructura, la centralización de la gestión de APPs y el fortalecimiento de la competitividad regional. El documento incluyó anexos con indicadores y metas específicas para monitorear el cumplimiento de cada propuesta.",
     "planGobiernoEjes": [
@@ -99,7 +102,10 @@
     ],
     "jne_party_id": 1257,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "17903382",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29685
   },
   {
     "id": "jorge-nieto-montesinos",
@@ -116,7 +122,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/9ae56ed5-3d0f-49ff-8bb9-0390bad71816.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 del Partido del Buen Gobierno propuso una transformación integral del Perú hacia un modelo de desarrollo equitativo, sostenible y libre de corrupción. El documento se estructuró en cuatro dimensiones principales: Social, Económica, Territorial-Ambiental y de Gobernanza. Entre sus propuestas clave, se incluyó la transición de un modelo económico extractivista a uno diversificado e inclusivo, una lucha frontal contra la corrupción mediante la reforma institucional y la digitalización, y el fortalecimiento de los servicios públicos. En la dimensión social, se priorizó el acceso universal a salud y educación de calidad, la seguridad ciudadana y la igualdad de género. La dimensión económica se centró en el crecimiento sostenible, la formalización laboral y la innovación. La dimensión territorial-ambiental promovió el desarrollo regional equilibrado, la infraestructura sostenible y la protección del medio ambiente, con un énfasis especial en la Amazonía. Finalmente, la dimensión de gobernanza buscó consolidar la integridad pública, modernizar el Estado y fortalecer las instituciones democráticas, la política exterior y la seguridad nacional.",
     "planGobiernoEjes": [
@@ -154,7 +160,10 @@
     ],
     "jne_party_id": 2961,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "06506278",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29720
   },
   {
     "id": "rosario-del-pilar-fernandez",
@@ -171,7 +180,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/ac0b0a59-ead5-4ef1-8ef8-8967e322d6ca.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El plan de gobierno del partido \"Un Camino Diferente\" propuso una serie de reformas estructurales y objetivos para el Perú. En el ámbito de la descentralización, planteó trasladar el Congreso a Puno y la Presidencia a Trujillo. En seguridad, abogó por la fusión de los ministerios de Defensa e Interior en un \"Ministerio de Guerra\", la creación de \"Escuadrones de la Vida\" y el uso obligatorio de cámaras corporales para las fuerzas del orden. Para la salud, propuso campañas de prevención anuales, la creación de postas médicas, atención 24/7 y la unificación de EsSalud y MINSA. En educación, destacó la implementación del bachillerato automático y la homologación universitaria, inspirados en modelos europeos, junto con la ampliación de vacantes y comedores escolares. Económicamente, el plan se basó en pilares como la estabilidad macroeconómica, la inversión en capital humano, la productividad, la sostenibilidad y el fortalecimiento institucional. Se detallaron políticas para sectores clave como minería, con un enfoque en sostenibilidad y formalización; energía, abordando la diversificación de la matriz y la electrificación rural; y la industria forestal. Además, se presentaron propuestas para la reforma del Estado, incluyendo la reducción de ministerios, la lucha contra la corrupción con una nueva Oficina Nacional Anticorrupción, y grandes proyectos de infraestructura como un tren de alta velocidad Tumbes-Tacna. El documento concluyó con un anexo que formalizó el ideario, la visión y las estrategias del partido, definiendo problemas, actividades e indicadores para cada área de gobierno.",
     "planGobiernoEjes": [
@@ -209,7 +218,10 @@
     ],
     "jne_party_id": 2998,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "18141156",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29731
   },
   {
     "id": "herbert-caller",
@@ -226,7 +238,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/6ad6c5ff-0411-4ddd-9cf7-b0623f373fcf.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento presentó el Plan de Gobierno 2026-2031 del Partido Patriótico del Perú (PPP). Se inició con una presentación del presidente del partido, quien delineó quince objetivos principales, incluyendo la reforma del sistema de contrataciones del Estado, la descentralización educativa y de ministerios, y el impulso a la producción nacional. El plan se fundamentó en el ideario del partido, que busca resolver la crisis política y la corrupción, y se basó en principios como el patriotismo, la meritocracia, el respeto a las instituciones y la defensa de la soberanía. Los objetivos se agruparon en cinco pilares: Seguridad, Educación, Trabajo-Producción, Salud-Nutrición y Lucha contra la Corrupción. La visión del partido propuso un Estado participativo en la economía, en conjunto con la empresa privada, y un fuerte enfoque en la familia. Las propuestas de gobierno se estructuraron en tres ejes estratégicos (seguridad, educación, y trabajo/producción) y se desarrollaron en cuatro dimensiones. En la dimensión económica y social, se plantearon estrategias para la seguridad ciudadana, la transformación de las cárceles en centros productivos, una \"revolución educativa\" con nuevas metodologías y descentralización universitaria, la industrialización del país, la racionalización del gasto público y la garantía de la soberanía alimentaria. En la dimensión institucional, se propuso la renovación del Congreso por tercios y una lucha frontal contra la corrupción con medidas como la imprescriptibilidad de delitos graves y el uso del polígrafo. Finalmente, en la dimensión ambiental, se abordó la necesidad de desterrar la minería ilegal y sus devastadores efectos.",
     "planGobiernoEjes": [
@@ -264,7 +276,10 @@
     ],
     "jne_party_id": 2869,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "43409673",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29749
   },
   {
     "id": "alfonso-lopez-chau",
@@ -281,7 +296,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/ddfa74eb-cae3-401c-a34c-35543ae83c57.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 de la organización política AHORA NACIÓN fue un documento que delineó su visión y propuestas para el desarrollo del Perú. Se fundamentó en un ideario que buscaba \"culminar el proceso de formación de la Nación peruana\" y otorgar \"todo el poder a las regiones\". El plan se estructuró en cuatro dimensiones estratégicas interconectadas: Social, Institucional, Económica y Ambiental. La Dimensión Social se centró en garantizar derechos fundamentales a través de propuestas en salud, educación, vivienda, empleo, inclusión y cultura. La Dimensión Institucional abordó la reforma del Estado para fortalecer la seguridad ciudadana, la justicia, las relaciones exteriores y la defensa nacional. La Dimensión Económica propuso un modelo de desarrollo sostenible con equidad territorial, impulsando la diversificación productiva, la industrialización, la agricultura y la infraestructura. Finalmente, la Dimensión Ambiental estableció una hoja de ruta para la protección del medio ambiente, la transición energética y la gestión sostenible de los recursos. El documento también incluyó un sistema de rendición de cuentas para el seguimiento de sus metas y una serie de anexos que resumían los indicadores y objetivos de cada área.",
     "planGobiernoEjes": [
@@ -319,7 +334,10 @@
     ],
     "jne_party_id": 2980,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "25331980",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29723
   },
   {
     "id": "jose-luna-galvez",
@@ -336,10 +354,13 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/a669a883-bf8a-417c-9296-c14b943c3943.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "07246887",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29694
   },
   {
     "id": "roberto-sanchez",
@@ -356,7 +377,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/bb7c7465-9c6e-44eb-ac7d-e6cc7f872a1a.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 de Juntos por el Perú diagnosticó una crisis múltiple en el país (institucional, de seguridad, económica y social), atribuyéndola al agotamiento del modelo neoliberal. Este modelo, basado en la exportación de materias primas y la desregulación, habría generado inseguridad, desconfianza y fractura social. Como solución, el plan propuso una transición hacia un Estado social y democrático de derecho con soberanía y justicia social. Los ejes principales incluyeron el retorno a la democracia a través de una Nueva Constitución elaborada por una Asamblea Constituyente, para recuperar la soberanía sobre los recursos naturales. Se plantearon estrategias para garantizar los derechos humanos, reformar el sistema de justicia, erradicar la criminalidad mediante una reforma policial y fortalecer la seguridad comunitaria. En el ámbito internacional, se propuso una política de soberanía y solidaridad, buscando la integración en un mundo multipolar (con interés en los BRICS). Se priorizó la salud pública, con el objetivo de aumentar la inversión y reformar el sistema. También se abordó el acceso a la vivienda, una revolución productiva sostenible para romper con el extractivismo, el fortalecimiento de la agricultura familiar para la soberanía alimentaria, la protección del agua, la transformación de la pequeña minería, y una reforma educativa universal para erradicar la inequidad. Finalmente, se delinearon políticas específicas para el futuro de la niñez y la juventud.",
     "planGobiernoEjes": [
@@ -394,7 +415,9 @@
     ],
     "jne_party_id": 1264,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "16002918",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES"
   },
   {
     "id": "carlos-jaico",
@@ -411,7 +434,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/7d91e14f-4417-4d61-89ba-3e686dafaa95.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 del partido político Perú Moderno se presentó como una propuesta de centro, pragmática y modernizadora, con el lema “Construyendo puentes para el desarrollo del Perú hacia 2040”. El documento identificó como problemas centrales del país la corrupción sistémica, la falta de visión de país, la pobreza persistente, el centralismo y la ineficiencia del Estado. La base ideológica del partido se definió como humanista, nacionalista, democrática, descentralista y popular, proponiendo un modelo de Economía Social de Mercado complementado con principios de Economía Circular. Las políticas de gobierno se centraron en la erradicación de la corrupción con medidas drásticas como la \"muerte política\", la reforma constitucional y del sistema de justicia, y la modernización de sectores clave como salud, educación e infraestructura. Entre las propuestas más destacadas se incluyó la construcción de un tren transandino para la integración territorial, la reestructuración de la Policía Nacional por especialidades y el fortalecimiento de la meritocracia en el sector público a través de SERVIR. El plan detalló estrategias y metas cuantificables en dimensiones social, institucional, económica y territorial-ambiental, abordando temas como violencia de género, educación, desarrollo agrícola, seguridad ciudadana y sostenibilidad ambiental. Finalmente, se establecieron medidas de acción inmediata para los primeros 100 días de gobierno, enfocadas en seguridad, reactivación económica y mejora de los servicios de salud, y se propuso un mecanismo de rendición de cuentas anual ante el Congreso.",
     "planGobiernoEjes": [
@@ -445,7 +468,9 @@
     ],
     "jne_party_id": 2924,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "06529088",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES"
   },
   {
     "id": "fernando-olivera",
@@ -462,7 +487,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/3e2312e1-af79-4954-abfa-a36669c1a9e9.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento 'Bases del Plan de Gobierno' del Frente de la Esperanza 2021 presenta una propuesta para 'Refundar el Perú' a partir del 28 de julio de 2026. El plan se articula en torno a la lucha frontal contra la corrupción, proponiendo una 'Ley Patriota' con reformas constitucionales y legales a ser aprobadas por el Congreso y sometidas a referéndum. Se plantean reformas estructurales en el sistema de justicia, la eliminación de la inmunidad presidencial y congresal, y la reestructuración de las fuerzas policiales. Económicamente, se busca un modelo de economía social de mercado con un Estado promotor y regulador, enfocado en la generación de empleo formal, la formalización de la economía informal, y el impulso a sectores clave como la agricultura, textilería y minería sostenible. El plan pone un fuerte énfasis en el desarrollo social, con propuestas detalladas para mejorar la educación, la salud, la nutrición y el acceso a la vivienda. Se abordan también la seguridad nacional y ciudadana con una reforma integral de las Fuerzas Armadas y la Policía. Otros ejes importantes son la descentralización, la protección del medio ambiente y la biodiversidad, la promoción de la cultura y el turismo, y el rescate de valores cívicos. El plan concluye declarando su alineación con propuestas de entidades como el Acuerdo Nacional y la Mesa de Concertación, y anuncia su futura ampliación con programas específicos.",
     "planGobiernoEjes": [
@@ -500,7 +525,10 @@
     ],
     "jne_party_id": 2857,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "06280714",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29699
   },
   {
     "id": "charlie-carrasco",
@@ -517,7 +545,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/12fa17db-f28f-4330-9123-88549539b538.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El plan de gobierno de UNIDO PERÚ, firmado digitalmente el 23 de diciembre de 2025, propuso una reestructuración integral del Estado peruano. El documento se articuló en cinco ejes principales: Reforma del Estado, Seguridad Ciudadana y Anticorrupción, Reforma Económica, Desarrollo Humano e Infraestructura. \n\nEn la Reforma del Estado, se planteó una austeridad extrema, la fusión y descentralización de ministerios, la reorganización de organismos como la SUNAT y una reforma total del sistema de pensiones. \n\nEn Seguridad y Anticorrupción, las medidas fueron drásticas, incluyendo cadena perpetua para delitos graves, servicio militar obligatorio para quienes no estudian ni trabajan, la creación de penales de máxima seguridad y juzgados sumarios, y el retiro de la Convención Americana de Derechos Humanos para posibilitar la pena de muerte. \n\nLa Reforma Económica se basó en un modelo de economía social de mercado, con una reducción del gasto público al 20% del PBI, reducción de impuestos, apertura comercial, y un fuerte impulso a la inversión privada en sectores como agricultura, minería y energías renovables. \n\nEl eje de Desarrollo Humano se centró extensamente en la Educación, declarándola en emergencia y proponiendo un currículo 75% práctico, con énfasis en la formación técnica, industrial y empresarial desde la escuela. En Salud, se propuso la descentralización, la construcción de hospitales y la universalización del servicio. También se incluyeron políticas para el desarrollo de la agricultura, ganadería, pesca y minería. \n\nFinalmente, en Infraestructura, se anunciaron megaproyectos como un tren de alta velocidad, un tren transoceánico, mega cárceles, hospitales, aeropuertos y una amplia red de carreteras.",
     "planGobiernoEjes": [
@@ -555,7 +583,10 @@
     ],
     "jne_party_id": 2867,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "40799023",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29700
   },
   {
     "id": "marisol-perez-tello",
@@ -572,10 +603,13 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/073703ca-c427-44f0-94b1-a782223a5e10.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "07867789",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29704
   },
   {
     "id": "paul-jaimes",
@@ -592,7 +626,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/929e1a63-335d-4f3a-ba26-f3c7ff136213.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento 'PLAN DE GOBIERNO 2026-2031' del partido político PROGRESEMOS presentó una propuesta integral para dicho período. El plan se articuló en torno a seis ejes estratégicos: Seguridad, Vida Digna, Economía y Empleo, Perú Ambientalista y Animalista, Integridad Pública y Lucha Anticorrupción, y Educación y Cultura. El texto inició con un resumen ciudadano, un mensaje al país y diez compromisos priorizados. La ideología del partido se definió como humanista, fundamentada en el respeto a todo ser viviente y comprometida con la democracia. Se expuso un diagnóstico nacional que identificó problemas clave como la pobreza, la vulnerabilidad social, las brechas territoriales, los riesgos climáticos y una crisis de gobernabilidad. El núcleo del documento desarrolló las propuestas específicas para cada uno de los seis ejes, desglosándolos en dimensiones y acciones concretas. Finalmente, el plan incluyó una sección de referencias bibliográficas y un conjunto de matrices que sintetizaron los problemas identificados, los objetivos estratégicos, los indicadores y las metas para el período 2023-2026, abarcando las dimensiones social, institucional, económica, territorial-ambiental y de rendición de cuentas.",
     "planGobiernoEjes": [
@@ -630,7 +664,9 @@
     ],
     "jne_party_id": 2967,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "40139245",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES"
   },
   {
     "id": "mesias-guevara",
@@ -647,10 +683,12 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/1b861ca7-3a5e-48b4-9024-08a92371e33b.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "09871134",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES"
   },
   {
     "id": "alvaro-paz-de-la-barra",
@@ -667,7 +705,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://votoinformado.jne.gob.pe/assets/images/candidatos/ALVARO%20PAZ%20DE%20LA%20BARRA.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 del partido político Fe en el Perú se fundamentó en una concepción integral de la persona humana y el Estado constitucional de derecho. El ideario del partido promovió un modelo de libre mercado con responsabilidad social, guiado por el sentido común, la urgencia y el deber. El plan se estructuró en base a un diagnóstico nacional que identificó brechas estructurales en desarrollo humano, productividad, infraestructura, medio ambiente y gobernabilidad. A partir de este análisis, se definieron cuatro dimensiones de acción: social, económica, ambiental e institucional. La dimensión social se enfocó en garantizar el acceso a servicios básicos de calidad como salud y educación. La dimensión económica buscó impulsar un crecimiento sostenido, inclusivo y descentralizado. La dimensión ambiental se centró en el desarrollo sostenible y la gestión de riesgos climáticos. La dimensión institucional propuso fortalecer el Estado, modernizar la gestión pública y combatir la corrupción. Adicionalmente, se incluyó un capítulo específico para la Política para los Peruanos en el Exterior (PEX), con el fin de mejorar los servicios consulares y fortalecer el vínculo con la diáspora. Finalmente, el documento detalló la estrategia de implementación, seguimiento y evaluación, enfatizando la articulación intergubernamental, la sostenibilidad fiscal, la transparencia y la participación ciudadana.",
     "planGobiernoEjes": [
@@ -705,7 +743,10 @@
     ],
     "jne_party_id": 2898,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "41904418",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29696
   },
   {
     "id": "george-forsyth",
@@ -722,7 +763,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/b1d60238-c797-4cba-936e-f13de6a34cc7.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento presentó el Plan de Gobierno 2026-2031 del Partido Democrático Somos Perú. Se inició con una presentación de los líderes del partido, seguida del ideario, principios y valores de la organización. El núcleo del plan fue un extenso diagnóstico de la situación del país, dividido en cuatro dimensiones: social, ambiental, económica e institucional. El diagnóstico social reveló una crisis multidimensional con alta pobreza urbana, desigualdad, y programas sociales ineficaces. La dimensión ambiental destacó la extrema vulnerabilidad del Perú al cambio climático, la crisis hídrica, la deforestación y la contaminación. Económicamente, se señaló una dependencia de las materias primas, una baja competitividad y una alta informalidad, a pesar de la estabilidad macroeconómica. La dimensión institucional expuso una profunda crisis de representación, corrupción sistémica, y debilidad del Estado en áreas clave como la seguridad y la justicia. Basado en este diagnóstico, el plan propuso una serie de estrategias y programas específicos para cada dimensión, con objetivos y metas claras al 2031. Las propuestas incluyeron reformas estructurales en salud (\"Salud Digna para Todos\"), educación (\"Perú Educa\"), lucha contra la pobreza (\"Perú Alimenta\"), formalización (\"MYPE Formal\"), gestión ambiental (\"Agua para Vivir\", \"Recicla Perú\"), diversificación económica (\"Hecho en Perú\") y fortalecimiento institucional (\"Perú Democrático\", \"Perú Íntegro\"). El plan concluyó con una propuesta de rendición de cuentas y una amplia sección de referencias bibliográficas.",
     "planGobiernoEjes": [
@@ -760,7 +801,10 @@
     ],
     "jne_party_id": 14,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "41265978",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29681
   },
   {
     "id": "carlos-alvarez",
@@ -777,7 +821,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/2bd18177-d665-413d-9694-747d729d3e39.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 de la organización política \"País para Todos\", liderado por el candidato Carlos Álvarez, se presentó como una ruta de acción para abordar las urgencias del Perú, con un enfoque central en restablecer el orden y la seguridad. El documento se estructuró en cuatro dimensiones (social, institucional, económica y territorial-ambiental), partiendo de un ideario que coloca a la persona en el centro y promueve la seguridad, el orden, la integridad y la igualdad de oportunidades.\n\nLa visión del plan aspiró a un Perú donde las familias vivan sin miedo, con oportunidades y un Estado funcional. Para ello, se establecieron cuatro pilares: recuperación de la seguridad ciudadana, reactivación económica, lucha frontal contra la corrupción e inversión social efectiva.\n\nEn la dimensión social, las propuestas se enfocaron en reducir drásticamente la anemia infantil y la pobreza, reformar los sistemas de salud y educación para cerrar brechas, y proteger a las poblaciones vulnerables, incluyendo la creación de un Sistema Nacional de Cuidados.\n\nLa dimensión institucional detalló una estrategia integral contra el crimen organizado, la violencia y la corrupción. Propuso una reforma efectiva de la Policía Nacional, el fortalecimiento del sistema de justicia para hacerlo más rápido y accesible, y una reforma del sistema penitenciario para neutralizar el control criminal desde las cárceles.\n\nEn la dimensión económica, el plan buscó garantizar la estabilidad macroeconómica, mejorar la eficiencia de la inversión pública y fomentar la inversión privada a través de la simplificación regulatoria. Se plantearon reformas para la transformación productiva, la modernización del Estado a través de la digitalización, la inclusión financiera, la formalización laboral y una reforma del sistema de pensiones.\n\nEn la dimensión territorial-ambiental, las propuestas se centraron en garantizar el acceso a agua y saneamiento, mejorar la conectividad vial y digital, proteger la Amazonía de economías ilegales y modernizar el sistema de descentralización para una gestión más eficiente y equitativa de los recursos.\n\nFinalmente, el plan incluyó una propuesta de rendición de cuentas mediante tableros públicos y evaluaciones independientes, y concluyó con la proposición de dos pactos nacionales (por la seguridad y por la niñez) y siete reformas estructurales clave en justicia, política, tributación, servicio civil, sistema penitenciario, infraestructura y salud.",
     "planGobiernoEjes": [
@@ -813,7 +857,10 @@
     ],
     "jne_party_id": 2956,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "06002034",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29718
   },
   {
     "id": "francisco-diez-canseco",
@@ -830,7 +877,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/2d1bf7f2-6e88-4ea9-8ed2-975c1ae5fb92.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno \"Mano de Hierro\" 2026-2031 del Partido Político Perú Acción propuso una \"Revolución Pacífica\" para reestructurar el Estado peruano. El plan se articuló en torno a cinco dimensiones: social, económica, ambiental, e institucional. En la dimensión social, se priorizó la seguridad con una política de \"inmigración ilegal cero\", la creación de mega cárceles y penas severas, incluyendo la pena de muerte para ciertos delitos. En educación, se planteó reemplazar el enfoque por competencias por uno de \"transferencia de conocimiento\" y fusionar los ministerios de Educación y Desarrollo Social. En salud, se propuso unificar los sistemas MINSA y EsSalud, adoptando un modelo similar al de Singapur. La dimensión económica se centró en el libre mercado, la reducción de impuestos, la consolidación de ministerios y la reforma de instituciones como INDECOPI. La dimensión ambiental abordó la formalización de la minería, la reestructuración de Petroperú y el impulso a proyectos de irrigación. Finalmente, la dimensión institucional propuso una reforma total del sistema de justicia, una \"revolución parlamentaria\" con retorno a la bicameralidad y la creación de un Consejo Nacional de la Moral Pública para combatir la corrupción. El documento enfatizó un enfoque de mano dura contra la delincuencia y la corrupción, y la promoción de un Estado más pequeño y eficiente.",
     "planGobiernoEjes": [
@@ -868,7 +915,10 @@
     ],
     "jne_party_id": 2932,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "08263758",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29714
   },
   {
     "id": "wolfgang-grozo",
@@ -885,7 +935,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/064360d1-ce49-4abe-939c-f4de8b0130a2.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 del Partido Político Integridad Democrática se estructuró en cuatro dimensiones: Social, Económica, Ambiental e Institucional. En la Dimensión Social, se propuso una reforma integral de la seguridad, con un enfoque en el liderazgo presidencial, la inteligencia estratégica, el control territorial y una profunda reforma del sistema penitenciario y policial. En salud, se planteó la creación de un sistema universal, integrado y digitalizado, con énfasis en la medicina preventiva, la lucha contra la anemia y el fortalecimiento del talento médico. En educación, se abogó por la universalización de la cobertura, la mejora de la infraestructura, la revalorización de la carrera magisterial y la modernización del currículo. La Dimensión Económica se centró en garantizar la estabilidad macroeconómica, respetando la autonomía del BCRP y manteniendo la disciplina fiscal. Se propuso impulsar la inversión privada como motor de crecimiento, simplificar trámites para el emprendimiento y desarrollar una industrialización estratégica en sectores como minería, textil y petroquímica. La Dimensión Ambiental promovió la gestión sostenible de los recursos, con estrategias para combatir la tala ilegal, implementar una gobernanza ecosistémica, asegurar la seguridad hídrica y avanzar hacia una economía circular y una transición energética ordenada. Finalmente, la Dimensión Institucional presentó una agenda ambiciosa de lucha contra la corrupción y la impunidad, el fortalecimiento del sistema de justicia, la modernización de las relaciones exteriores y la defensa, y una transformación estructural del Estado para reducir la burocracia, mejorar la gestión pública y reordenar el proceso de descentralización.",
     "planGobiernoEjes": [
@@ -922,7 +972,10 @@
     ],
     "jne_party_id": 2985,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "07260881",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29725
   },
   {
     "id": "ricardo-belmont",
@@ -939,7 +992,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/78647f15-d5d1-4ed6-8ac6-d599e83eeea3.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 del Partido Cívico Obras, presentado por el candidato Ricardo Belmont Cassinelli, se fundamentó en un diagnóstico crítico de la realidad peruana, identificando problemas estructurales como la corrupción, el debilitamiento institucional, la desigualdad, el déficit de infraestructura y la crisis de representación. El documento propuso un enfoque de desarrollo basado en la ejecución de obras concretas y una gestión eficiente, bajo el lema \"Menos palabras, más obras\".\n\nLa propuesta se articuló en torno a cuatro dimensiones principales: social, institucional, económica y territorial-ambiental. En la dimensión social, se priorizó el fortalecimiento del tejido comunitario, el cierre de brechas en acceso a salud y educación, y la lucha contra la pobreza y la delincuencia. La dimensión institucional buscó crear un Estado ágil y transparente, combatiendo la corrupción en obras públicas y mejorando la coordinación intergubernamental. Económicamente, el plan promovió una economía productiva y formal desde el ámbito local, impulsando la infraestructura vial, la formalización laboral y el desarrollo de cadenas de valor. Finalmente, la dimensión territorial-ambiental se centró en el ordenamiento territorial, la gestión de riesgos de desastres, el manejo de residuos sólidos y la resolución de conflictos socioambientales.\n\nEl plan se sustentó en diez \"Vigas Maestras\" que incluyeron la imprescriptibilidad de delitos de corrupción, la promoción de una economía social de mercado sin monopolios, y la garantía de educación y salud universales. La implementación se basaría en una gestión por resultados coordinada desde la PCM, con financiamiento proveniente de la reorientación del gasto, asociaciones público-privadas y la industrialización de recursos naturales, asegurando la participación ciudadana a través de plataformas digitales y rendición de cuentas.",
     "planGobiernoEjes": [
@@ -977,7 +1030,9 @@
     ],
     "jne_party_id": 2941,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "09177250",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES"
   },
   {
     "id": "napoleon-becerra",
@@ -994,7 +1049,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/bab206cb-b2d5-41ec-bde8-ef8cf3e0a2df.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento del Partido de los Trabajadores y Emprendedores (PTE-PERÚ) presenta su ideario y plan de gobierno 2026-2031. Inicia con un diagnóstico de la profunda crisis política, social y moral del Perú, atribuyéndola al modelo neoliberal y a la corrupción sistémica, lo que justifica la necesidad de \"refundar el Perú\". El partido se define como una organización de trabajadores, emprendedores e intelectuales que buscan renovar la política con un sentido de servicio y compromiso. Su ideario se basa en la construcción de un país soberano, equitativo, descentralizado y plurinacional, con justicia social, educación y salud universales y de calidad. El plan de gobierno propone una nueva Constitución, una economía diversificada e industrializada, y una lucha frontal contra la pobreza y la corrupción, incluyendo la inhabilitación perpetua para funcionarios corruptos. Se establecen estrategias y metas específicas para 2031, organizadas en cuatro dimensiones: social, institucional, económica y ambiental. Entre las propuestas clave se encuentran destinar el 6% del PBI a educación y salud, una reforma tributaria progresiva, el fortalecimiento de los derechos laborales y la defensa de los recursos naturales. El documento concluye con una invitación a la ciudadanía a unirse al proyecto y una descripción de la metodología participativa y multisectorial para la construcción del plan.",
     "planGobiernoEjes": [
@@ -1032,7 +1087,10 @@
     ],
     "jne_party_id": 2939,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "08058852",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29717
   },
   {
     "id": "ronald-atencio",
@@ -1049,7 +1107,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/bac0288d-3b21-45ac-8849-39f9177fb020.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento \"Plan para la Patria 2026-2031\" fue presentado por la alianza electoral \"Venceremos\" y su candidato presidencial, Ronald Atencio. El plan articula 31 propuestas para una \"refundación\" del Perú, estructuradas en seis dimensiones: Institucional, Económica, Social, Cultural/Ambiental e Internacional. El diagnóstico inicial identifica cuatro \"grandes males\" que aquejan al país: desigualdad, corrupción institucionalizada, criminalidad y abuso de poder. Para combatirlos, la propuesta central es la convocatoria a una Asamblea Constituyente para redactar una nueva Constitución plurinacional. En el ámbito institucional, se busca reformar el sistema de justicia, luchar contra la corrupción y garantizar la memoria y reparación para las víctimas de la violencia política. La dimensión económica propone superar el modelo primario-exportador mediante la industrialización, la soberanía sobre los recursos naturales, una reforma agraria y el fortalecimiento del mercado interno, incluyendo proyectos clave como la red nacional de gasoductos y el acceso universal a internet. En lo social, se plantea la creación de un sistema único de salud, una reforma educativa de calidad, la lucha contra la violencia de género y el establecimiento de un sistema nacional de cuidados. La dimensión cultural y ambiental se enfoca en una transición ecológica justa, la protección de la Amazonía, el reconocimiento de los derechos de la naturaleza y la promoción de la diversidad cultural del país. Finalmente, en el plano internacional, se aboga por una política exterior soberana, de integración latinoamericana (relanzando UNASUR y fortaleciendo la CELAC) y de defensa de los derechos de los migrantes peruanos. El plan enfatiza que la implementación de estas transformaciones profundas requiere la movilización y participación activa del pueblo organizado.",
     "planGobiernoEjes": [
@@ -1087,7 +1145,9 @@
     ],
     "jne_party_id": 3025,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "41373494",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES"
   },
   {
     "id": "yonhy-lescano",
@@ -1104,7 +1164,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/b9db2b5c-02ff-4265-ae51-db9b1001ad70.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento es el Plan de Gobierno del partido político \"Cooperación Popular\" para las Elecciones Generales de 2026, firmado digitalmente el 23 de diciembre de 2025. El plan se inició delineando los principios del partido, centrados en la gobernanza ética y participativa, el desarrollo social inclusivo y el desarrollo sostenible con ciencia y tecnología. La visión del partido se enfocó en institucionalizar la participación ciudadana y fortalecer una democracia descentralizada. Las estrategias se articularon en cuatro dimensiones: Social, Institucional, Económica y Territorial-Ambiental. Para cada dimensión, se presentaron tablas detalladas que identificaban problemas, objetivos estratégicos, indicadores y metas para el período 2026-2031. Entre las propuestas clave se incluyeron una reforma constitucional, la lucha contra la corrupción mediante \"muerte civil\", la mejora de servicios públicos, la renegociación de contratos de concesión y el fortalecimiento de la protección ambiental. El plan concluyó con un compromiso de rendición de cuentas a través de informes periódicos, sesiones descentralizadas y una plataforma digital pública. El documento fue presentado por Yonhy Lescano Ancieta como candidato presidencial.",
     "planGobiernoEjes": [
@@ -1142,7 +1202,10 @@
     ],
     "jne_party_id": 2995,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "01211014",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29748
   },
   {
     "id": "mario-vizcarra",
@@ -1159,7 +1222,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/ee7a080e-bc81-4c81-9e5e-9fd95ff459ab.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento corresponde al Plan de Gobierno 2026-2031 del Partido Político Perú Primero, con el lema \"Volvamos a sonreír\". Estructurado en siete secciones principales, el plan inicia con una presentación, seguida de la exposición del ideario, principios y objetivos del partido, de corte humanista y democrático. La sección central es un exhaustivo diagnóstico de la realidad peruana, organizado en cuatro dimensiones estratégicas: Social, Institucional, Económico-Productiva y Territorial-Ambiental. En el diagnóstico se identificaron problemas clave como la persistencia de la pobreza (27.6% en 2024), brechas significativas en educación y salud, debilidad institucional, corrupción, alta criminalidad, bajo crecimiento económico, alta informalidad laboral (superior al 70%), y una marcada vulnerabilidad al cambio climático. Posteriormente, se presenta la Visión de País, que aspira a un Perú desarrollado, justo, seguro y sostenible. El núcleo del plan lo constituyen las políticas y propuestas de gobierno, detalladas para cada una de las cuatro dimensiones, con lineamientos, políticas, propuestas específicas, indicadores y metas cuantificables. Finalmente, se establecen los mecanismos de control ciudadano, como la rendición de cuentas anual y una plataforma digital de seguimiento, para garantizar la transparencia y el cumplimiento de los compromisos. El plan se sustenta en una amplia base de datos y referencias de organismos nacionales e internacionales.",
     "planGobiernoEjes": [
@@ -1197,7 +1260,9 @@
     ],
     "jne_party_id": 2925,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "04411300",
+    "sentencia_penal": "CON ANTECEDENTES PENALES"
   },
   {
     "id": "joaquin-masse-fernandez",
@@ -1214,10 +1279,13 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/cb1adeb7-7d2f-430c-ae87-519137d8edfa.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "08255194",
+    "sentencia_penal": "CON ANTECEDENTES PENALES",
+    "jne_id_plan": null
   },
   {
     "id": "enrique-valderrama",
@@ -1234,7 +1302,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/d72c4b29-e173-42b8-b40d-bdb6d01a526a.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026 del Partido Aprista Peruano, titulado \"Renovemos el Perú\", presentó una propuesta integral para abordar las crisis estructurales del país. El documento diagnosticó un agotamiento del modelo de Estado, persistencia de la desigualdad, informalidad masiva y debilidad institucional. Basado en la doctrina aprista de la \"democracia funcional\", el plan propuso un nuevo pacto social y político fundamentado en la justicia social, la productividad y la soberanía. Las propuestas se articularon en cuatro dimensiones: social, institucional, económica y ambiental. En la dimensión social, se plantearon reformas para garantizar el acceso universal a salud y educación de calidad, y se propusieron soluciones al déficit de vivienda y la protección de poblaciones vulnerables. La dimensión institucional se centró en una profunda reforma del Estado, incluyendo el sistema constitucional y electoral, la seguridad ciudadana, la defensa nacional y la modernización del sistema penitenciario, con un fuerte énfasis en la meritocracia y la lucha contra la corrupción. Económicamente, el plan buscó consolidar la estabilidad macroeconómica, realizar una reforma tributaria progresiva, formalizar el empleo, y diversificar la matriz productiva a través de sectores estratégicos como la minería, la agricultura y la infraestructura. Finalmente, la dimensión ambiental promovió la transición hacia energías renovables, la economía circular, una política forestal sostenible y una gestión responsable de los recursos naturales, erradicando la minería ilegal. El plan estableció metas concretas para el horizonte 2026-2031, buscando un crecimiento sostenido con inclusión social.",
     "planGobiernoEjes": [
@@ -1272,7 +1340,10 @@
     ],
     "jne_party_id": 2930,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "43632186",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29745
   },
   {
     "id": "alex-gonzales-castillo",
@@ -1289,7 +1360,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/c0ae56bf-21c1-4810-890a-b25c8465bdd9.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento \"Plan de Gobierno 2026-2030\" del partido Demócrata Verde presentó una propuesta integral para el desarrollo del Perú, firmada digitalmente por Julio Sergio Alfaro Taipe el 22 de diciembre de 2025. El plan se estructuró en torno a una visión de un país justo, democrático, competitivo y sostenible, articulado en cuatro objetivos generales: Desarrollo de las Personas, Territorio Sostenible, Competitividad e Innovación, y Democracia y Paz. \n\nInicialmente, se expuso el ideario del partido, fundamentado en la democracia, la ecología política (con una adhesión al ecologismo modernista) y la política como servicio al bien común. Se establecieron principios como el desarrollo sostenible, la innovación, la justicia social, la revolución educativa y de salud, la democracia participativa, la primacía del interés general y la descentralización. \n\nEl plan detalló una visión de gobierno para 2030, aspirando a un Perú con desarrollo humano central, un Estado moderno y transparente, y un territorio integrado y ecológicamente responsable. Para garantizar la ejecución, se propusieron mecanismos de seguimiento y rendición de cuentas, incluyendo un Sistema Nacional de Seguimiento, informes periódicos y una plataforma digital de acceso ciudadano.\n\nLas estrategias se organizaron en 17 ejes temáticos. El Eje 1, \"Educación y Cultura\", abordó las brechas estructurales en aprendizaje, infraestructura y formación docente, proponiendo programas como \"Aprende Perú\" y \"Escuelas Dignas\". El Eje 2, \"Salud\", diagnosticó un sistema fragmentado y con brechas críticas, proponiendo una reforma integral hacia un sistema universal, preventivo e intercultural. Los ejes subsiguientes abordaron temas como orden público, vivienda, igualdad de oportunidades, lucha contra la pobreza, ordenamiento territorial, gestión de riesgos, calidad ambiental, economía, empleo, ciencia y tecnología, infraestructura, gestión pública, sistema de justicia, descentralización e identidad cultural. Cada eje incluyó un diagnóstico detallado, objetivos estratégicos, lineamientos, programas nacionales prioritarios y un sistema de indicadores con metas para 2030 y medios de verificación, demostrando un enfoque estructurado y basado en evidencia para la transformación del país.",
     "planGobiernoEjes": [
@@ -1326,7 +1397,10 @@
     ],
     "jne_party_id": 2895,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "09307547",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29702
   },
   {
     "id": "roberto-chiabra",
@@ -1343,7 +1417,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/5c703ce9-ba1e-4490-90bf-61006740166f.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 de la Alianza Unidad Nacional, conformada por los partidos Popular Cristiano, Unidad y Paz, y Peruanos Unidos Somos Libros, se fundamentó en una concepción humanista, la democracia, la economía social de mercado y el orden como base para el progreso. La visión se centró en lograr cambios estructurales a través de cinco ejes: Institucionalidad, Igualdad, Crecimiento Personal, Desarrollo y Seguridad.\n\nEn el Sector 1, Seguridad Ciudadana, se propuso un plan de emergencia de 100 días, la reestructuración del SINASEC bajo un comando unificado, la repotenciación de la Policía Nacional, una reforma integral del sistema de justicia y penitenciario, y una lucha frontal contra las economías ilegales y la corrupción.\n\nPara el Sector 2, Defensa Nacional, se planteó la modernización y equipamiento de las Fuerzas Armadas para asegurar una capacidad disuasiva, con planes específicos para la Fuerza Aérea, el Ejército y la Marina, y la reactivación del servicio militar obligatorio si fuese necesario.\n\nEn el Sector 3, Relaciones Internacionales y Comercio Exterior, se buscó afianzar la hegemonía del Perú en el Pacífico Sur, continuar el proceso de adhesión a la OCDE y diversificar las exportaciones para superar los US$ 100 mil millones, complementado con un plan de desarrollo de fronteras.\n\nEl Sector 4, Empleo y Competitividad, se enfocó en destrabar inversiones, reestructurar la distribución del canon, modernizar la legislación laboral para fomentar la formalidad y el empleo juvenil, y un fuerte impulso a las MYPES a través de un nuevo Viceministerio y herramientas financieras.\n\nEl Sector 5, Recursos Naturales y Medio Ambiente, reforzó la política de protección ambiental, el control de actividades depredadoras y el fomento de emprendimientos sostenibles con beneficios tributarios.\n\nPara el Sector 6, Infraestructura, se propuso un Plan Nacional de Infraestructura, el fomento de APPs, la creación de un Ministerio de Infraestructura y la implementación de tecnologías digitales para cerrar la brecha existente.\n\nEl Sector 7, las Cuatro Fortalezas, detalló planes para la agricultura, pesca, minería y turismo. Se propusieron proyectos de cosecha de agua, un plan de desarrollo forestal, la formalización de la pesca artesanal, y una reforma del sector minero con el objetivo de convertir al Perú en el primer productor mundial de cobre.\n\nEn el Sector 8, Educación, Salud y Deporte, se planteó un Sistema Unificado de Salud, el fortalecimiento de la atención primaria, una reforma educativa con currículas modernizadas y descentralizadas, y una nueva ley para promover la actividad física y el deporte.\n\nEl Sector 9, Calidad de Vida, se centró en vivienda y agua, con un agresivo plan de construcción de viviendas y la creación de una Autoridad Autónoma del Agua para garantizar el acceso y calidad del servicio.\n\nPara el Sector 10, Programas Sociales, se propusieron políticas específicas para mejorar la inclusión y calidad de vida de las personas con habilidades diferentes y los adultos mayores.\n\nEl Sector 11, Simplificación Administrativa, abordó una reforma profunda del Estado para eliminar barreras burocráticas, digitalizar procesos, mejorar la transparencia y profesionalizar el servicio civil, incluyendo la fusión de varios ministerios.\n\nFinalmente, el Sector 12 presentó el Plan Especial de Solidaridad Focalizado (PLAN 200), un compromiso para llevar infraestructura y servicios de calidad a un mínimo de 200 de los distritos más pobres del país.",
     "planGobiernoEjes": [
@@ -1379,7 +1453,10 @@
     ],
     "jne_party_id": 3023,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "40728264",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29727
   },
   {
     "id": "rafael-belaunde",
@@ -1396,7 +1473,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/3302e45b-55c8-4979-a60b-2b11097abf1d.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 de Libertad Popular, titulado \"Plan para Sacar al Perú Adelante\", presentó un diagnóstico integral de la situación del país y una serie de propuestas estructuradas en cuatro dimensiones: social, institucional, económica y territorial-ambiental. El documento partió de la premisa de que, si bien el modelo económico post-1993 generó crecimiento, este fue insuficiente y frágil, dejando a millones de peruanos en situación de vulnerabilidad. Se identificaron como problemas centrales la debilidad institucional, la inestabilidad política, la corrupción estructural, la inseguridad ciudadana y un estancamiento económico generalizado.\n\nEl ideario del partido se fundamentó en principios liberales, como la primacía de la persona sobre el Estado, la defensa de la democracia, la separación de poderes y una economía social de mercado. La visión a 2031 fue la de una \"república consolidada donde la Libertad es el motor inquebrantable de la prosperidad\".\n\nEn la dimensión social, se propusieron reformas para recuperar la seguridad, cerrar la brecha de vivienda, transformar el sistema de salud, mejorar la calidad educativa, proteger a la mujer, y garantizar el acceso a agua y transporte digno. En la dimensión institucional, las propuestas se centraron en una profunda reforma política y una lucha frontal contra la corrupción, buscando fortalecer la democracia y la confianza ciudadana.\n\nLa dimensión económica abordó la necesidad de recuperar la estabilidad fiscal, reactivar la industria del patrimonio cultural y el turismo, modernizar el sector agrario y pesquero ('Potencia Azul'), y desarrollar un sector minero-energético responsable. Se hizo especial énfasis en el cierre de la brecha de infraestructura, el impulso a las MIPYME y la creación de un ecosistema de innovación.\n\nFinalmente, en la dimensión territorial y ambiental, se propuso un nuevo ordenamiento territorial y urbano para gestionar el crecimiento de las ciudades y la recuperación de los bosques amazónicos. El plan concluyó con un capítulo dedicado a la transparencia y rendición de cuentas, proponiendo un sistema de Gobierno Abierto de cumplimiento obligatorio y mecanismos de evaluación ciudadana del cumplimiento de las metas.",
     "planGobiernoEjes": [
@@ -1434,7 +1511,10 @@
     ],
     "jne_party_id": 2933,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "10219647",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29715
   },
   {
     "id": "carlos-espa",
@@ -1451,7 +1531,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/85935f77-6c46-4eab-8c7e-2494ffbcece0.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento presentó el Plan de Gobierno y Trabajo del partido político SíCreo para las Elecciones Generales 2026. Se inició con una introducción que expuso los 10 mandamientos del partido, seguida de la definición del marco legal y los principios ideológicos, como la defensa de la vida, la libertad, la familia y el libre mercado. El plan realizó un diagnóstico crítico de la situación del Perú, describiéndola como una espiral de decrecimiento, inestabilidad política, corrupción y estancamiento, atrapado en la \"trampa del ingreso medio\". Para superar esta crisis, se propuso el objetivo general de \"Avanzar en la Modernidad y la Prosperidad Compartida\", desglosado en diez objetivos específicos. Las propuestas se estructuraron en un plan de trabajo con fases de \"Shock de Confianza\", \"Reformas Estructurales\", \"Consolidación\" y \"Sostenibilidad\", y se organizaron en cuatro dimensiones: Social (seguridad, salud, educación), Económica (reforma tributaria, informalidad, infraestructura), Institucional (reforma del Estado, lucha anticorrupción) y Ambiental (gestión del agua, minería ilegal). Finalmente, se detallaron mecanismos de control ciudadano, como una plataforma de \"Gobierno Digital\" con trazabilidad blockchain, rendiciones de cuentas públicas y un sistema de \"Denuncia en un Clic\" para garantizar la transparencia y fiscalización del cumplimiento del plan.",
     "planGobiernoEjes": [
@@ -1486,7 +1566,9 @@
     ],
     "jne_party_id": 2935,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "10266270",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES"
   },
   {
     "id": "antonio-ortiz-villano",
@@ -1503,7 +1585,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/8e6b9124-2883-4143-8768-105f2ce780eb.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 del partido 'Salvemos al Perú' se presentó como una propuesta de centro y progresista, fundamentada en la libertad, la dignidad de la persona y el fortalecimiento de la familia. El documento diagnosticó problemas críticos en el país, como la corrupción, la inseguridad, la debilidad institucional y la desigualdad económica. Para abordarlos, el plan se estructuró en cuatro dimensiones principales: Social, Institucional, Económica y Territorial-Ambiental. La Dimensión Social se enfocó en cerrar brechas en salud, educación, vivienda y desarrollo humano. La Dimensión Institucional propuso una reforma del Estado y del sistema de justicia, la lucha contra la corrupción y la promoción de un gobierno digital. La Dimensión Económica buscó fomentar la estabilidad macroeconómica, la conectividad, la diversificación productiva verde y el empleo decente. Finalmente, la Dimensión Territorial-Ambiental se centró en la gestión sostenible de los recursos naturales, la seguridad hídrica y la gestión de riesgos de desastres. El plan concluyó con un firme compromiso de rendición de cuentas, estableciendo informes de avance semestrales y públicos, en línea con las obligaciones constitucionales.",
     "planGobiernoEjes": [
@@ -1541,7 +1623,10 @@
     ],
     "jne_party_id": 2927,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "08587486",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29710
   },
   {
     "id": "fiorella-molinelli",
@@ -1558,7 +1643,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/1de656b5-7593-4c60-ab7a-83d618a3d80d.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 de Fuerza y Libertad presentó una hoja de ruta para la transformación del Perú, enfocada en la ejecución de políticas con resultados medibles. El documento se estructuró en dieciséis capítulos que abordaron un diagnóstico territorial por macro-regiones, un nuevo modelo económico basado en la equidad y sostenibilidad, y un conjunto de políticas sectoriales para el desarrollo humano en áreas como salud, educación, vivienda y protección social. Se propuso una firme estrategia de seguridad ciudadana para combatir el crimen organizado y la corrupción, junto con la modernización del Estado. El plan también detalló una cartera de proyectos de infraestructura con una inversión estimada de 84,910 millones de dólares, y estableció compromisos y medidas legislativas específicas para los primeros 100 días de gobierno, subrayando un cambio hacia una gestión pública eficiente, transparente y descentralizada.",
     "planGobiernoEjes": [
@@ -1593,7 +1678,10 @@
     ],
     "jne_party_id": 3024,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "25681995",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29736
   },
   {
     "id": "vladimir-cerron",
@@ -1610,7 +1698,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/82ee0ff2-2336-4aba-9590-e576f7564315.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El documento presentó el Plan de Gobierno 2026-2031 del Partido Político Nacional Perú Libre, liderado por Vladimir Cerrón Rojas. El plan se fundamentó en una crítica al modelo neoliberal, proponiendo una 'revancha del pueblo' a través de la recuperación del rol del Estado en la economía y la sociedad. Se estructuró en cuatro dimensiones principales. La Dimensión Social propuso garantizar derechos universales como educación y salud, reducir la pobreza y la desigualdad, y formalizar el empleo. La Dimensión Institucional planteó la refundación del Estado mediante una nueva Constitución, la lucha contra la corrupción, la descentralización y el reconocimiento de un Estado plurinacional, además de una política de seguridad ciudadana con enfoque preventivo. La Dimensión Económica se centró en transformar el modelo primario-exportador hacia una economía industrializada con soberanía energética y justicia fiscal. Finalmente, la Dimensión Territorial-Ambiental abordó la protección del medio ambiente, la gestión del agua, la transición ecológica justa y el ordenamiento territorial. El plan concluyó con una propuesta de rendición de cuentas basada en la transparencia y el control popular.",
     "planGobiernoEjes": [
@@ -1648,7 +1736,10 @@
     ],
     "jne_party_id": 2218,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "06466585",
+    "sentencia_penal": "CON ANTECEDENTES PENALES",
+    "jne_id_plan": 29744
   },
   {
     "id": "walter-chirinos",
@@ -1665,7 +1756,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/a2d0f631-fe47-4c41-92ba-7ed9f4095520.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 del Partido Regionalista de Integración Nacional (PRIN) se estructuró como una propuesta integral para el desarrollo del Perú, con un enfoque descentralizado y participativo. El documento se fundamentó en el ideario del partido, que promueve una sociedad justa, equitativa y libre de corrupción, basada en una economía social de mercado. La propuesta se organizó en cuatro dimensiones principales: social, económica, territorial-ambiental e institucional. Para cada dimensión, se realizó un diagnóstico de los problemas existentes, se definieron objetivos estratégicos, se establecieron indicadores de seguimiento y se plantearon metas específicas. La dimensión social abordó áreas críticas como educación, salud, saneamiento, pobreza, inclusión social y seguridad ciudadana. La dimensión económica se centró en la estabilidad macroeconómica, la competitividad, el empleo formal y el desarrollo de las MIPYMES. La dimensión territorial-ambiental trató la deforestación, la contaminación, la gestión de recursos hídricos y la adaptación al cambio climático. Finalmente, la dimensión institucional propuso una profunda reforma del Estado para fortalecer la democracia, mejorar el acceso a la justicia y combatir la corrupción de manera frontal. El plan concluyó con un compromiso de transparencia, proponiendo una rendición de cuentas semestral por parte del Consejo de Ministros sobre los avances del gobierno.",
     "planGobiernoEjes": [
@@ -1703,7 +1794,10 @@
     ],
     "jne_party_id": 2921,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "18870364",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29746
   },
   {
     "id": "rafael-lopez-aliaga",
@@ -1720,7 +1814,7 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/b2e00ae2-1e50-4ad3-a103-71fc7e4e8255.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "planGobiernoResumen": "El Plan de Gobierno 2026-2031 de Renovación Popular se fundamenta en principios humanistas y cristianos, con una visión de un gobierno eficiente, moderno y transparente. El plan se estructura en cuatro dimensiones principales. En la Dimensión Social, se propone una lucha frontal contra la corrupción y la delincuencia, la reducción de la pobreza y la desnutrición, y la mejora del acceso a servicios básicos como salud, educación y vivienda, con especial atención a poblaciones vulnerables. En la Dimensión Institucional, se busca modernizar el Estado a través de la simplificación administrativa, la reforma del servicio civil basada en la meritocracia, y el fortalecimiento del sistema de justicia y la transparencia. También aborda la política exterior, la gestión migratoria y una reforma tributaria. La Dimensión Económica se centra en lograr un crecimiento sostenido del PBI (meta del 7% anual) con baja inflación, mediante la industrialización, el apoyo a las PYMES, y una fuerte inversión en infraestructura de transporte, energía y conectividad digital. Finalmente, la Dimensión Territorial-Ambiental promueve el desarrollo sostenible, la protección de los recursos naturales, el fomento de energías limpias, y el respeto a las comunidades nativas y su entorno. El documento concluye con una propuesta de rendición de cuentas que incluye metas fiscales y de crecimiento, y un informe anual a la nación.",
     "planGobiernoEjes": [
@@ -1756,7 +1850,10 @@
     ],
     "jne_party_id": 22,
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "07845838",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29683
   },
   {
     "id": "jose-williams-zapata",
@@ -1773,9 +1870,12 @@
     "is_verified": false,
     "created_at": "2026-03-01T00:00:00Z",
     "updated_at": "2026-03-11T00:00:00Z",
-    "photo_url": null,
+    "photo_url": "https://mpesije.jne.gob.pe/apidocs/b60c471f-a6bb-4b42-a4b2-02ea38acbb0d.jpg",
     "jne_profile_url": "https://votoinformado.jne.gob.pe/presidente-vicepresidentes",
     "social_media": null,
-    "social_media_verified": false
+    "social_media_verified": false,
+    "jne_dni": "43287528",
+    "sentencia_penal": "SIN ANTECEDENTES PENALES",
+    "jne_id_plan": 29691
   }
 ]

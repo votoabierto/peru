@@ -80,7 +80,7 @@ export default function Navbar() {
                 </kbd>
               </button>
               <button
-                className="md:hidden p-2 rounded-lg text-[#444444] hover:text-[#111111] hover:bg-[#F7F6F3] transition-colors"
+                className="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-[#444444] hover:text-[#111111] hover:bg-[#F7F6F3] transition-colors"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Abrir menú"
               >
@@ -98,7 +98,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block px-4 py-2.5 text-sm font-medium text-[#444444] hover:text-[#111111] hover:bg-[#F7F6F3] rounded-lg transition-colors"
+                  className="flex items-center px-4 py-3 min-h-[44px] text-sm font-medium text-[#444444] hover:text-[#111111] hover:bg-[#F7F6F3] rounded-lg transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

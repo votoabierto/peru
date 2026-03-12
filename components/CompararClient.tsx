@@ -163,8 +163,11 @@ export default function CompararClient({
       ) : (
         <div className="space-y-6">
           {/* Basic info table */}
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+          <p className="text-xs text-[#999999] text-center mb-2 sm:hidden">
+            &larr; Desliza para comparar &rarr;
+          </p>
+          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+            <table className="w-full border-collapse min-w-[500px]">
               <thead>
                 <tr>
                   <th className="text-left py-3 px-4 text-xs font-semibold text-[#777777] uppercase tracking-wider bg-[#F7F6F3] border border-[#E5E3DE] rounded-tl-lg w-40">
