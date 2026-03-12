@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PWAInstallPrompt from "@/components/PWAInstallPrompt";
+import { I18nProvider } from "@/lib/i18n/I18nProvider";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -59,10 +60,19 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
       <body className="font-sans antialiased bg-white text-[#444444] min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <PWAInstallPrompt />
+        <I18nProvider>
+          {/* Skip to main content — WCAG 2.1 AA */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-[#1A56A0] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold focus:outline-2 focus:outline-[#1A56A0] focus:outline-offset-2"
+          >
+            Saltar al contenido principal
+          </a>
+          <Navbar />
+          <main id="main-content" className="flex-1" role="main">{children}</main>
+          <Footer />
+          <PWAInstallPrompt />
+        </I18nProvider>
         <Script id="sw-register" strategy="afterInteractive">
           {`if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js') }`}
         </Script>

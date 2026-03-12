@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
 import FeedbackWidget from '@/components/FeedbackWidget'
@@ -336,6 +336,46 @@ export default function QuizClient() {
   const answeredCount = Object.keys(answers).length
   const progress = step === 0 ? 0 : isResultsStep ? 100 : Math.round((step / (STEP_RESULTS)) * 100)
 
+  // Keyboard navigation (Task 6)
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (isResultsStep || isWeightingStep) return
+
+    // Number keys 1-5 to select answer
+    if (currentQuestion && e.key >= '1' && e.key <= '5') {
+      e.preventDefault()
+      const score = 6 - parseInt(e.key) // 1 maps to score 5 (Muy de acuerdo), 5 maps to score 1
+      handleAnswer(score)
+      return
+    }
+
+    // Arrow right or Enter to go next (if answer already selected)
+    if ((e.key === 'ArrowRight' || e.key === 'Enter') && currentQuestion && answers[currentQuestion.key] !== undefined) {
+      e.preventDefault()
+      setStep((s) => s + 1)
+      return
+    }
+
+    // Arrow left to go back
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault()
+      setStep((s) => Math.max(0, s - 1))
+      return
+    }
+
+    // Escape to go back
+    if (e.key === 'Escape') {
+      e.preventDefault()
+      setStep((s) => Math.max(0, s - 1))
+      return
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentQuestion, isResultsStep, isWeightingStep, answers])
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [handleKeyDown])
+
   const shareText = verifiedResults[0]
     ? `Respondí el quiz de VotoAbierto y tengo ${verifiedResults[0].matchPct}% de afinidad con ${verifiedResults[0].name}. ¿Y tú?`
     : 'Hice el quiz electoral en VotoAbierto. ¿Y tú?'
@@ -485,46 +525,55 @@ export default function QuizClient() {
               {currentQuestion.context}
             </p>
 
-            <div className="space-y-3 mb-8">
-              {ANSWER_OPTIONS.map((option) => (
+            <div className="space-y-3 mb-4" role="radiogroup" aria-label="Opciones de respuesta">
+              {ANSWER_OPTIONS.map((option, idx) => (
                 <button
                   key={option.score}
                   onClick={() => handleAnswer(option.score)}
-                  className={`w-full text-left px-4 py-3 rounded-xl border transition-all ${
+                  className={`w-full text-left px-4 py-3 rounded-xl border transition-all focus:outline-2 focus:outline-[#1A56A0] focus:outline-offset-2 ${
                     answers[currentQuestion.key] === option.score
                       ? 'bg-[#EEF4FF] border-[#1A56A0] text-[#1A56A0]'
                       : 'bg-white border-[#E5E3DE] text-[#444444] hover:border-[#1A56A0] hover:bg-[#F7F6F3]'
                   }`}
+                  role="radio"
+                  aria-checked={answers[currentQuestion.key] === option.score}
+                  aria-label={`Opción ${idx + 1}: ${option.label}`}
                 >
                   <div className="flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full border-2 border-current flex items-center justify-center text-sm font-bold flex-shrink-0">
-                      {option.score}
+                      {idx + 1}
                     </span>
                     <div>
                       <span className="text-sm font-medium">{option.label}</span>
                       {option.score === 5 && (
-                        <span className="text-xs text-[#999999] ml-2">({currentQuestion.agree_label})</span>
+                        <span className="text-xs text-[#666666] ml-2">({currentQuestion.agree_label})</span>
                       )}
                       {option.score === 1 && (
-                        <span className="text-xs text-[#999999] ml-2">({currentQuestion.disagree_label})</span>
+                        <span className="text-xs text-[#666666] ml-2">({currentQuestion.disagree_label})</span>
                       )}
                     </div>
                   </div>
                 </button>
               ))}
             </div>
+            {/* Keyboard shortcut hints */}
+            <p className="text-xs text-[#666666] mb-4 text-center" aria-hidden="true">
+              (1-5) para seleccionar | → siguiente | ← atrás | Esc volver
+            </p>
 
             <div className="flex items-center justify-between">
               <button
                 onClick={() => setStep((s) => Math.max(0, s - 1))}
-                className="flex items-center gap-1 text-sm text-[#777777] hover:text-[#111111] transition-colors"
+                className="flex items-center gap-1 text-sm text-[#666666] hover:text-[#111111] transition-colors focus:outline-2 focus:outline-[#1A56A0] focus:outline-offset-2 rounded-lg px-2 py-1"
+                aria-label="Ir a la pregunta anterior"
               >
                 <ArrowLeft size={16} />
                 Atrás
               </button>
               <button
                 onClick={handleSkip}
-                className="text-sm text-[#777777] hover:text-[#1A56A0] transition-colors"
+                className="text-sm text-[#666666] hover:text-[#1A56A0] transition-colors focus:outline-2 focus:outline-[#1A56A0] focus:outline-offset-2 rounded-lg px-2 py-1"
+                aria-label="Omitir esta pregunta y pasar a la siguiente"
               >
                 Omitir esta pregunta
               </button>

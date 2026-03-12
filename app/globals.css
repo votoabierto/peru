@@ -98,3 +98,32 @@ input, select, textarea {
     @apply text-xs font-semibold text-va-text-muted uppercase tracking-wider;
   }
 }
+
+/* WCAG 2.1 AA — Global focus indicator */
+:focus-visible {
+  outline: 2px solid #1A56A0;
+  outline-offset: 2px;
+}
+
+/* WCAG 2.1 AA — Contrast fix: #777 on white is 4.48:1, bump muted text to #666 */
+/* Applied via Tailwind overrides in components where needed */
+
+/* Simple language mode — larger text + more whitespace */
+html.simple-mode body {
+  font-size: 18px;
+}
+
+html.simple-mode .card {
+  padding: 1.5rem;
+}
+
+html.simple-mode p,
+html.simple-mode span,
+html.simple-mode li {
+  line-height: 1.8;
+}
+
+html.simple-mode section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
