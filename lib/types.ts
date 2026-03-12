@@ -251,14 +251,6 @@ export interface CongressCandidate {
 
 // ─── Party & District Types ─────────────────────────────────────────────────
 
-export interface PartyRegistry {
-  id: string
-  name: string
-  abbr: string
-  color: string
-  presidentCandidate: string
-}
-
 export interface ElectoralDistrict {
   code: string
   name: string

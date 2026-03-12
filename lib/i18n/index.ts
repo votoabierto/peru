@@ -15,9 +15,4 @@ export function t(key: string, locale: Locale = 'es', params?: Record<string, st
   return text
 }
 
-export const LOCALE_LABELS: Record<Locale, string> = {
-  es: 'Español',
-  qu: 'Quechua',
-}
-
 export { es, qu }
