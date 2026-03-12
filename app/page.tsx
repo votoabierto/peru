@@ -67,10 +67,10 @@ const FEATURES = [
 ]
 
 const STATS = [
-  { value: '35+', label: 'Candidatos presidenciales' },
-  { value: '25', label: 'Regiones' },
+  { value: '36', label: 'Candidatos presidenciales' },
   { value: '60', label: 'Senadores a elegir' },
   { value: '130', label: 'Diputados a elegir' },
+  { value: '5', label: 'Parlamento Andino' },
 ]
 
 const ISSUE_AREAS = Object.keys(ISSUE_LABELS) as IssueArea[]
@@ -105,13 +105,13 @@ export default async function HomePage() {
 
           {/* Main headline */}
           <h1 className="text-4xl md:text-5xl font-bold text-[#111111] leading-tight mb-4">
-            Tu voto es tuyo.<br/>
-            <span className="text-[#D91023]">Infórmate antes</span> de darlo.
+            Conoce a tus candidatos<br/>
+            <span className="text-[#D91023]">antes del 12 de abril</span>
           </h1>
 
           <p className="text-[#555555] text-lg max-w-2xl mx-auto mb-8">
-            Datos verificados sobre los 36 candidatos presidenciales, el Senado,
-            la Cámara de Diputados y el Parlamento Andino. No te vendemos ningún candidato.
+            36 candidatos presidenciales · 60 senadores · 130 diputados · 5 parlamentarios andinos.
+            Datos verificados de fuentes oficiales. No te vendemos ningún candidato.
           </p>
 
           {/* Quiz CTA — primary action */}
@@ -290,6 +290,19 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Source trust bar */}
+      <section className="py-6 bg-white border-t border-[#E5E3DE]">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <p className="text-sm text-[#777777]">
+            Todos los datos provienen de{' '}
+            <span className="font-semibold text-[#444444]">JNE</span> ·{' '}
+            <span className="font-semibold text-[#444444]">ONPE</span> ·{' '}
+            <span className="font-semibold text-[#444444]">Infogob</span>
+            {' '}— Fuentes oficiales del Estado peruano.
+          </p>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="py-16 border-t-2 border-[#D91023]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -298,8 +311,8 @@ export default async function HomePage() {
             <span className="text-[#D91023]">Úsalo bien.</span>
           </h2>
           <p className="text-[#777777] mb-8 max-w-xl mx-auto">
-            Plataforma no-partidaria. No apoyamos a ningún candidato. Solo
-            información verificada para el ciudadano peruano.
+            VotoAbierto es una plataforma independiente y no partidaria. No tenemos afiliación
+            política. Solo información verificada para el ciudadano peruano.
           </p>
           <Link href="/candidatos" className="btn-primary">
             Conoce a los candidatos

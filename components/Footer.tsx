@@ -75,7 +75,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-[#333333] flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-[#AAAAAA]">
-            Información para el ciudadano. Plataforma no-partidaria.
+            VotoAbierto es una plataforma independiente y no partidaria. No tenemos afiliación política.
           </p>
           <p className="text-xs text-[#AAAAAA]">
             Elecciones generales · 12 de abril de 2026

@@ -99,14 +99,20 @@ export default function QuizPage() {
   }
 
   function handleShare() {
-    const params = new URLSearchParams()
-    for (const [k, v] of Object.entries(answers)) {
-      params.set(k, String(v))
+    const top = results[0]
+    const shareText = top
+      ? `Descubrí que tengo ${top.matchPct}% de afinidad con ${top.name}. ¿Y tú? votoabierto.pe/quiz`
+      : `Hice el quiz electoral en votoabierto.pe/quiz — ¿con quién votas?`
+
+    if (navigator.share) {
+      navigator.share({ text: shareText }).catch(() => {
+        navigator.clipboard.writeText(shareText)
+        alert('Texto copiado al portapapeles')
+      })
+    } else {
+      navigator.clipboard.writeText(shareText)
+      alert('Texto copiado al portapapeles')
     }
-    if (department) params.set('dept', department)
-    const url = `${window.location.origin}/quiz?${params.toString()}`
-    navigator.clipboard.writeText(url)
-    alert('Enlace copiado al portapapeles')
   }
 
   function handleRestart() {
@@ -128,10 +134,10 @@ export default function QuizPage() {
             Quiz Electoral
           </p>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#111111]">
-            ¿Con quién votas?
+            ¿Con quién votas? Descúbrelo en 5 minutos
           </h1>
           <p className="text-[#777777] mt-2 max-w-lg mx-auto">
-            Responde 10 preguntas y descubre qué candidatos presidenciales comparten tus ideas.
+            Responde 10 preguntas sobre temas clave y descubre qué candidatos presidenciales comparten tus ideas. Anónimo, sin registro.
           </p>
         </div>
       </div>
@@ -239,7 +245,7 @@ export default function QuizPage() {
                 onClick={handleSkip}
                 className="text-sm text-[#777777] hover:text-[#1A56A0] transition-colors"
               >
-                No sé / No me importa este tema
+                Prefiero no responder
               </button>
             </div>
           </div>
@@ -335,6 +341,8 @@ export default function QuizPage() {
             </div>
 
             <p className="text-center text-xs text-[#777777] mt-8">
+              Esta herramienta es informativa. El voto es tuyo.
+              <br />
               Anónimo. Sin registro. No guardamos tus respuestas individuales.
               <br />
               Los porcentajes reflejan afinidad en posiciones declaradas, no una recomendación de voto.
