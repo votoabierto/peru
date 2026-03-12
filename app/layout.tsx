@@ -4,7 +4,7 @@ import { Noto_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PWAInstallPrompt from "@/components/PWAInstallPrompt";
+// PWAInstallPrompt removed — install banners are unwanted UX
 import { I18nProvider } from "@/lib/i18n/I18nProvider";
 
 const notoSans = Noto_Sans({
@@ -71,7 +71,7 @@ export default function RootLayout({
           <Navbar />
           <main id="main-content" className="flex-1" role="main">{children}</main>
           <Footer />
-          <PWAInstallPrompt />
+          {/* PWAInstallPrompt removed */}
         </I18nProvider>
         <Script id="sw-register" strategy="afterInteractive">
           {`if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js') }`}
