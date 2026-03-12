@@ -31,8 +31,15 @@ const ELECTION_TYPES = {
   diputados: { id: 15, label: 'Diputados' },
 };
 
-// Districts to scrape for diputados (add more as needed)
-const TARGET_DISTRICTS = ['LIMA', 'AREQUIPA', 'CUSCO', 'LA LIBERTAD'];
+// Ubigeo prefix → department name (fallback when strDepartamento is empty)
+const UBIGEO_TO_DEPT = {
+  '01': 'AMAZONAS', '02': 'ANCASH', '03': 'APURIMAC', '04': 'AREQUIPA',
+  '05': 'AYACUCHO', '06': 'CAJAMARCA', '07': 'CALLAO', '08': 'CUSCO',
+  '09': 'HUANCAVELICA', '10': 'HUANUCO', '11': 'ICA', '12': 'JUNIN',
+  '13': 'LA LIBERTAD', '14': 'LAMBAYEQUE', '15': 'LIMA', '16': 'LORETO',
+  '17': 'MADRE DE DIOS', '18': 'MOQUEGUA', '19': 'PASCO', '20': 'PIURA',
+  '21': 'PUNO', '22': 'SAN MARTIN', '23': 'TACNA', '24': 'TUMBES', '25': 'UCAYALI',
+};
 
 function fetchAPI(body) {
   return new Promise((resolve, reject) => {
@@ -185,8 +192,9 @@ async function scrapeDiputados() {
     strDepartamento: '',
   });
 
-  const filtered = res.data.filter((raw) => TARGET_DISTRICTS.includes(raw.strDepartamento));
-  const candidates = filtered.map((raw) => buildCandidateRecord(raw, 'diputados', raw.strDepartamento));
+  // Only include candidates with a known department (skip records with empty strDepartamento)
+  const withDept = res.data.filter((raw) => raw.strDepartamento);
+  const candidates = withDept.map((raw) => buildCandidateRecord(raw, 'diputados', raw.strDepartamento));
 
   const dataPath = path.join(__dirname, '..', 'data', 'diputados-candidates.json');
   fs.writeFileSync(dataPath, JSON.stringify(candidates, null, 2) + '\n');
@@ -199,7 +207,7 @@ async function scrapeDiputados() {
   for (const [d, count] of Object.entries(byDistrict)) {
     console.log(`    ${d}: ${count}`);
   }
-  console.log(`  (${res.data.length} total across all districts, ${TARGET_DISTRICTS.length} districts scraped)`);
+  console.log(`  (${res.data.length} total from API, ${withDept.length} with known department, ${res.data.length - withDept.length} skipped)`);
 }
 
 async function main() {

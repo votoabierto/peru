@@ -1,7 +1,9 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { ComparatorClient } from '@/components/Comparator/ComparatorClient';
+import { DiputadosComparator } from '@/components/Comparator/DiputadosComparator';
 import { getCandidates, getCandidatesByIds, getPositions } from '@/lib/data';
+import diputadosCandidates from '@/data/diputados-candidates.json';
 import FeedbackWidget from '@/components/FeedbackWidget';
 import type { Metadata } from 'next';
 
@@ -80,14 +82,16 @@ export default async function ComparePage({ searchParams }: Props) {
               allPositions={allPositions}
             />
           </Suspense>
+        ) : tipo === 'diputados' ? (
+          <DiputadosComparator candidates={diputadosCandidates as Array<{ id: string; name: string; party: string; partyId: string; district: string; listPosition: number; imageUrl: string | null }>} />
         ) : (
           <div className="text-center py-16 border border-[#E5E3DE] rounded-xl bg-[#F7F6F3]">
             <p className="text-lg font-semibold text-[#111111] mb-2">
-              Comparador de {tipo === 'senado' ? 'Senado' : tipo === 'diputados' ? 'Diputados' : 'Parlamento Andino'}
+              Comparador de {tipo === 'senado' ? 'Senado' : 'Parlamento Andino'}
             </p>
             <p className="text-[#777777] text-sm max-w-md mx-auto mb-4">
               Estamos recopilando datos de posiciones para candidatos al{' '}
-              {tipo === 'senado' ? 'Senado' : tipo === 'diputados' ? 'la Cámara de Diputados' : 'Parlamento Andino'}.
+              {tipo === 'senado' ? 'Senado' : 'Parlamento Andino'}.
               Por ahora, puedes ver la lista completa de candidatos.
             </p>
             <Link
