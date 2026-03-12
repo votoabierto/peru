@@ -70,15 +70,15 @@ async function main() {
     console.log(`Found ${senateCandidates.length} senate candidates`)
     let senateInserted = 0
     for (const c of senateCandidates) {
-      const slug = c.slug || c.id || `${c.full_name?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`
+      const slug = c.slug || c.id || `${(c.full_name || c.name || '').toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`
       const row = {
         slug,
-        full_name: c.full_name || c.nombre || '',
+        full_name: c.full_name || c.name || c.nombre || '',
         party_id: c.jne_party_id ?? c.party_id ?? null,
         district_type: c.district_type || c.tipo_distrito || 'nacional',
         district: c.district || c.departamento || null,
-        list_position: c.list_position || c.numero_orden || null,
-        image_url: c.photo_url || c.image_url || null,
+        list_position: c.list_position || c.listPosition || c.numero_orden || null,
+        image_url: c.photo_url || c.image_url || c.imageUrl || null,
         bio_short: c.bio_short || null,
       }
       const { error } = await supabase
@@ -101,14 +101,14 @@ async function main() {
     console.log(`Found ${diputados.length} diputados candidates`)
     let dipInserted = 0
     for (const c of diputados) {
-      const slug = c.slug || c.id || `${c.full_name?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`
+      const slug = c.slug || c.id || `${(c.full_name || c.name || '').toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`
       const row = {
         slug,
-        full_name: c.full_name || c.nombre || '',
+        full_name: c.full_name || c.name || c.nombre || '',
         party_id: c.jne_party_id ?? c.party_id ?? null,
         district: c.district || c.departamento || c.region || '',
-        list_position: c.list_position || c.numero_orden || null,
-        image_url: c.photo_url || c.image_url || null,
+        list_position: c.list_position || c.listPosition || c.numero_orden || null,
+        image_url: c.photo_url || c.image_url || c.imageUrl || null,
         bio_short: c.bio_short || null,
       }
       const { error } = await supabase
@@ -131,13 +131,13 @@ async function main() {
     console.log(`Found ${andinos.length} andino candidates`)
     let andInserted = 0
     for (const c of andinos) {
-      const slug = c.slug || c.id || `${c.full_name?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`
+      const slug = c.slug || c.id || `${(c.full_name || c.name || '').toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`
       const row = {
         slug,
-        full_name: c.full_name || c.nombre || '',
+        full_name: c.full_name || c.name || c.nombre || '',
         party_id: c.jne_party_id ?? c.party_id ?? null,
-        list_position: c.list_position || c.numero_orden || null,
-        image_url: c.photo_url || c.image_url || null,
+        list_position: c.list_position || c.listPosition || c.numero_orden || null,
+        image_url: c.photo_url || c.image_url || c.imageUrl || null,
         bio_short: c.bio_short || null,
       }
       const { error } = await supabase
