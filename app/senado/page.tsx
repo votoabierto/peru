@@ -1,4 +1,5 @@
 import ContributionNotice from '@/components/ContributionNotice'
+import FeedbackWidget from '@/components/FeedbackWidget'
 import senateCandidates from '@/data/senate-candidates.json'
 import type { Metadata } from 'next'
 
@@ -87,6 +88,8 @@ export default function SenadoPage() {
             </div>
           </div>
         ))}
+
+        <FeedbackWidget pageUrl="/senado" />
 
         <div className="text-center text-xs text-[#777777] py-4">
           Fuente:{' '}

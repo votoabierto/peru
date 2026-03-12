@@ -95,7 +95,7 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
   }
 
   function formatPEN(n?: number) {
-    if (!n) return 'N/D';
+    if (!n) return 'Sin datos';
     if (n >= 1_000_000) return `S/ ${(n / 1_000_000).toFixed(1)}M`;
     return `S/ ${Math.round(n / 1000)}K`;
   }
@@ -104,12 +104,12 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
     if (c.years_in_politics) return `${c.years_in_politics}`;
     const known = KNOWN_YEARS_IN_POLITICS[c.slug] || KNOWN_YEARS_IN_POLITICS[c.id];
     if (known) return known;
-    return 'N/D';
+    return 'Sin datos';
   }
 
   function getIdeology(c: Candidate): string {
     if (c.ideology) return IDEOLOGY_LABELS[c.ideology] ?? c.ideology;
-    return 'N/D';
+    return 'Sin datos';
   }
 
   // Table header candidates
@@ -205,7 +205,7 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
 
               return (
                 <div key={c.id} className="px-2 py-3 text-center">
-                  <span className="text-[#CBCAC5] text-xs">—</span>
+                  <span className="text-[#CBCAC5] text-xs">Sin datos (JNE)</span>
                 </div>
               );
             })}
@@ -245,6 +245,63 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
             );
           })}
         </div>
+        {/* Plan de Gobierno ejes */}
+        <div className="px-4 py-3 bg-[#EEEDE9] border-b border-[#E5E3DE]">
+          <span className="text-[#444444] text-xs font-semibold uppercase tracking-wide">Plan de Gobierno</span>
+        </div>
+        <div
+          className="grid divide-x divide-[#E5E3DE] border-b border-[#E5E3DE]"
+          style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}
+        >
+          <div className="px-4 py-3 text-[#777777] text-xs font-medium flex items-start">
+            Ejes estratégicos
+          </div>
+          {candidates.map(c => {
+            const ejes = c.planGobiernoEjes ?? [];
+            return (
+              <div key={c.id} className="px-3 py-3">
+                {ejes.length > 0 ? (
+                  <ul className="space-y-1.5">
+                    {ejes.slice(0, 3).map((eje, i) => (
+                      <li key={i} className="text-[11px] text-[#444444] leading-snug">
+                        <span className="font-semibold text-[#111111]">{eje.eje}:</span>{' '}
+                        {eje.descripcion.slice(0, 80)}{eje.descripcion.length > 80 ? '...' : ''}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <span className="text-[#CBCAC5] text-xs">Sin datos (JNE)</span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Background */}
+        <div className="px-4 py-3 bg-[#EEEDE9] border-b border-[#E5E3DE]">
+          <span className="text-[#444444] text-xs font-semibold uppercase tracking-wide">Perfil</span>
+        </div>
+        {[
+          { label: 'Edad', render: (c: Candidate) => c.age ? `${c.age} años` : 'Sin datos' },
+          { label: 'Cargos previos', render: (c: Candidate) => {
+            const offices = c.prior_offices ?? [];
+            if (offices.length === 0) return 'Sin datos';
+            return offices.slice(0, 2).join(', ');
+          }},
+        ].map((row, i) => (
+          <div
+            key={row.label}
+            className={`grid divide-x divide-[#E5E3DE] border-b border-[#E5E3DE] ${i % 2 === 0 ? 'bg-[#F7F6F3]' : ''}`}
+            style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}
+          >
+            <div className="px-4 py-3 text-[#777777] text-xs font-medium flex items-center">{row.label}</div>
+            {candidates.map(c => (
+              <div key={c.id} className="px-4 py-3 text-[#222222] text-sm text-center">
+                {row.render(c)}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

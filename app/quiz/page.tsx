@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Share2, ExternalLink } from 'lucide-react'
+import FeedbackWidget from '@/components/FeedbackWidget'
 import issuesData from '@/data/issues.json'
 import candidatePositionsData from '@/data/candidate-positions.json'
 
@@ -338,6 +339,11 @@ export default function QuizPage() {
               <br />
               Los porcentajes reflejan afinidad en posiciones declaradas, no una recomendación de voto.
             </p>
+          </div>
+        )}
+        {step >= totalSteps - 1 && (
+          <div className="mt-8">
+            <FeedbackWidget pageUrl="/quiz" />
           </div>
         )}
       </div>

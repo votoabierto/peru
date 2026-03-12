@@ -20,6 +20,7 @@ import {
 } from '@/components/CandidateProfile'
 import { CandidateShareButtons } from '@/components/CandidateProfile/CandidateShareButtons'
 import CandidateNews from '@/components/CandidateNews'
+import FeedbackWidget from '@/components/FeedbackWidget'
 import { Metadata } from 'next'
 import candidatePositionsData from '@/data/candidate-positions.json'
 
@@ -174,61 +175,75 @@ export default async function CandidatePage({ params }: Props) {
           </section>
         )}
 
-        {/* Hoja de Vida — Education */}
-        {hojaDeVida?.education && hojaDeVida.education.length > 0 && (
-          <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4">Formación académica</h2>
-            <div className="space-y-3">
-              {hojaDeVida.education.map((edu, i) => (
-                <div key={i} className="flex gap-4 items-start border-l-2 border-[#1A56A0] pl-4 py-1">
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-[#111111]">{edu.titulo}</p>
-                    <p className="text-xs text-[#4B5563]">{edu.institucion}</p>
-                    <p className="text-xs text-[#777777] mt-0.5">
-                      {edu.year_start}{edu.year_end ? ` — ${edu.year_end}` : ''} · {edu.country || 'Peru'}
-                    </p>
-                  </div>
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-[#F0F4FA] text-[#1A56A0] font-medium capitalize">
-                    {edu.nivel?.replace('_', ' ')}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <p className="text-[10px] text-[#CBCAC5] mt-2">Fuente: JNE — Hoja de Vida · Actualizado: {hojaDeVida.fetched_at?.slice(0, 10)}</p>
-          </section>
-        )}
+        {/* Hoja de Vida */}
+        <section>
+          <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center justify-between">
+            <span>Hoja de Vida</span>
+            <span className="text-[10px] font-normal text-[#CBCAC5]">Fuente: JNE</span>
+          </h2>
 
-        {/* Hoja de Vida — Work History */}
-        {hojaDeVida?.work_history && hojaDeVida.work_history.length > 0 && (
-          <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4">Experiencia laboral</h2>
-            <div className="space-y-3">
-              {hojaDeVida.work_history.slice(0, 10).map((job, i) => (
-                <div key={i} className="flex gap-4 items-start border-l-2 border-[#E5E3DE] pl-4 py-1">
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-[#111111]">{job.cargo}</p>
-                    <p className="text-xs text-[#4B5563]">{job.institucion}</p>
-                    <p className="text-xs text-[#777777] mt-0.5">
-                      {job.year_start}{job.year_end ? ` — ${job.year_end}` : ' — presente'}
-                      {job.departamento ? ` · ${job.departamento}` : ''}
-                    </p>
+          {hojaDeVida?.education && hojaDeVida.education.length > 0 ? (
+            <div className="mb-6">
+              <h3 className="text-base font-semibold text-[#111111] mb-3">Formación académica</h3>
+              <div className="space-y-3">
+                {hojaDeVida.education.map((edu, i) => (
+                  <div key={i} className="flex gap-4 items-start border-l-2 border-[#1A56A0] pl-4 py-1">
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-[#111111]">{edu.titulo}</p>
+                      <p className="text-xs text-[#4B5563]">{edu.institucion}</p>
+                      <p className="text-xs text-[#777777] mt-0.5">
+                        {edu.year_start}{edu.year_end ? ` — ${edu.year_end}` : ''} · {edu.country || 'Peru'}
+                      </p>
+                    </div>
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-[#F0F4FA] text-[#1A56A0] font-medium capitalize">
+                      {edu.nivel?.replace('_', ' ')}
+                    </span>
                   </div>
-                  <span className={`text-[10px] px-2 py-0.5 rounded font-medium ${
-                    job.sector === 'publico' ? 'bg-[#F0FAF4] text-[#1A6B35]' : 'bg-[#F7F6F3] text-[#777777]'
-                  }`}>
-                    {job.sector === 'publico' ? 'Público' : 'Privado'}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
+              <p className="text-[10px] text-[#CBCAC5] mt-2">Actualizado: {hojaDeVida?.fetched_at?.slice(0, 10)}</p>
             </div>
-            <p className="text-[10px] text-[#CBCAC5] mt-2">Fuente: JNE — Hoja de Vida</p>
-          </section>
-        )}
+          ) : (
+            <div className="mb-6 text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
+              No hay datos de formación académica disponibles —{' '}
+              <Link href={`/contribuir?candidato=${slug}`} className="text-[#1A56A0] hover:underline">Contribuir con información</Link>
+            </div>
+          )}
 
-        {/* Antecedentes from DB */}
-        {allAntecedentes.length > 0 && (
-          <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4">Antecedentes legales</h2>
+          {hojaDeVida?.work_history && hojaDeVida.work_history.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-base font-semibold text-[#111111] mb-3">Experiencia laboral</h3>
+              <div className="space-y-3">
+                {hojaDeVida.work_history.slice(0, 10).map((job, i) => (
+                  <div key={i} className="flex gap-4 items-start border-l-2 border-[#E5E3DE] pl-4 py-1">
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-[#111111]">{job.cargo}</p>
+                      <p className="text-xs text-[#4B5563]">{job.institucion}</p>
+                      <p className="text-xs text-[#777777] mt-0.5">
+                        {job.year_start}{job.year_end ? ` — ${job.year_end}` : ' — presente'}
+                        {job.departamento ? ` · ${job.departamento}` : ''}
+                      </p>
+                    </div>
+                    <span className={`text-[10px] px-2 py-0.5 rounded font-medium ${
+                      job.sector === 'publico' ? 'bg-[#F0FAF4] text-[#1A6B35]' : 'bg-[#F7F6F3] text-[#777777]'
+                    }`}>
+                      {job.sector === 'publico' ? 'Público' : 'Privado'}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[10px] text-[#CBCAC5] mt-2">Fuente: JNE — Hoja de Vida</p>
+            </div>
+          )}
+        </section>
+
+        {/* Antecedentes */}
+        <section>
+          <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center justify-between">
+            <span>Antecedentes</span>
+            <span className="text-[10px] font-normal text-[#CBCAC5]">Fuente: JNE</span>
+          </h2>
+          {allAntecedentes.length > 0 ? (
             <div className="space-y-3">
               {allAntecedentes.map((ant, i) => (
                 <div key={ant.id || i} className={`rounded-xl border p-4 ${
@@ -254,21 +269,23 @@ export default async function CandidatePage({ params }: Props) {
                 </div>
               ))}
             </div>
-          </section>
-        )}
-
-        {/* Legacy criminal records fallback */}
-        {criminalRecords.length > 0 && allAntecedentes.length === 0 && (
-          <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4">Antecedentes legales</h2>
+          ) : criminalRecords.length > 0 ? (
             <CandidateCriminalRecord records={criminalRecords} />
-          </section>
-        )}
+          ) : (
+            <div className="text-[#4B5563] text-sm py-4 px-4 bg-[#F0FAF4] border border-[#2D7D46] rounded-lg">
+              Sin impedimentos registrados en JNE
+            </div>
+          )}
+        </section>
 
         {/* Bienes Declarados */}
-        {bienesDB && (bienesDB.total_bienes_pen || bienesDB.total_ingresos_anuales_pen) && (
-          <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4">Bienes declarados</h2>
+        <section>
+          <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center justify-between">
+            <span>Bienes declarados</span>
+            <span className="text-[10px] font-normal text-[#CBCAC5]">Fuente: JNE</span>
+          </h2>
+        {bienesDB && (bienesDB.total_bienes_pen || bienesDB.total_ingresos_anuales_pen) ? (
+          <div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {bienesDB.total_bienes_pen != null && (
                 <div className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4 text-center">
@@ -303,10 +320,16 @@ export default async function CandidatePage({ params }: Props) {
               </div>
             )}
             <p className="text-[10px] text-[#CBCAC5] mt-2">
-              Fuente: {bienesDB.source || 'JNE'} · Declaración {bienesDB.declaration_year || '2025'}
+              Declaración {bienesDB.declaration_year || '2025'}
             </p>
-          </section>
+          </div>
+        ) : (
+          <div className="text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
+            No hay datos de bienes declarados disponibles —{' '}
+            <Link href={`/contribuir?candidato=${slug}`} className="text-[#1A56A0] hover:underline">Contribuir con información</Link>
+          </div>
         )}
+        </section>
 
         {(candidate.prior_offices?.length ?? 0) > 0 && (
           <section>
@@ -323,12 +346,13 @@ export default async function CandidatePage({ params }: Props) {
         )}
 
         {/* Plan de Gobierno ejes */}
-        {ejes.length > 0 && (
-          <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4">Plan de Gobierno</h2>
-            <p className="text-sm text-[#777777] mb-4">
-              Ejes estratégicos del plan de gobierno según JNE.
-            </p>
+        <section>
+          <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center justify-between">
+            <span>Plan de Gobierno</span>
+            <span className="text-[10px] font-normal text-[#CBCAC5]">Fuente: JNE</span>
+          </h2>
+        {ejes.length > 0 ? (
+          <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {ejes.map((eje, i) => (
                 <div key={i} className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4">
@@ -337,29 +361,36 @@ export default async function CandidatePage({ params }: Props) {
                 </div>
               ))}
             </div>
-          </section>
+            {proposals.length > 0 && (
+              <div className="mt-6">
+                <h3 className="text-base font-semibold text-[#111111] mb-3">Propuestas clave</h3>
+                <ol className="space-y-3">
+                  {proposals.map((proposal, i) => (
+                    <li key={i} className="flex gap-3 items-start">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#1A56A0] text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                        {i + 1}
+                      </span>
+                      <p className="text-[#222222] text-sm leading-relaxed">{proposal}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
+            No hay datos del plan de gobierno disponibles —{' '}
+            <Link href={`/contribuir?candidato=${slug}`} className="text-[#1A56A0] hover:underline">Contribuir con información</Link>
+          </div>
         )}
-
-        {/* Propuestas clave */}
-        {proposals.length > 0 && (
-          <section>
-            <h2 className="text-xl font-bold text-[#111111] mb-4">Propuestas clave</h2>
-            <ol className="space-y-3">
-              {proposals.map((proposal, i) => (
-                <li key={i} className="flex gap-3 items-start">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#1A56A0] text-white text-xs font-bold flex items-center justify-center mt-0.5">
-                    {i + 1}
-                  </span>
-                  <p className="text-[#222222] text-sm leading-relaxed">{proposal}</p>
-                </li>
-              ))}
-            </ol>
-          </section>
-        )}
+        </section>
 
         {/* Posiciones por tema — visual bars */}
         <section>
-          <h2 className="text-xl font-bold text-[#111111] mb-4">Posiciones por tema</h2>
+          <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center justify-between">
+            <span>Posiciones por tema</span>
+            <span className="text-[10px] font-normal text-[#CBCAC5]">Fuente: JNE Plan de Gobierno</span>
+          </h2>
           {positionEntry ? (
             <div className="space-y-3">
               {Object.entries(positionEntry.positions).map(([key, pos]) => (
@@ -413,8 +444,9 @@ export default async function CandidatePage({ params }: Props) {
           ) : positions.length > 0 ? (
             <CandidatePositions positions={positions} />
           ) : (
-            <div className="text-[#777777] text-center py-8">
-              No hay posiciones registradas para este candidato.
+            <div className="text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
+              No hay datos de posiciones disponibles —{' '}
+              <Link href={`/contribuir?candidato=${slug}`} className="text-[#1A56A0] hover:underline">Contribuir con información</Link>
             </div>
           )}
         </section>
@@ -429,17 +461,7 @@ export default async function CandidatePage({ params }: Props) {
           <CandidateNews slug={candidate.slug} />
         </section>
 
-        <div className="border border-[#E5E3DE] rounded-xl p-5 bg-[#F7F6F3]">
-          <h3 className="font-semibold text-[#111111] mb-1">¿Tienes información sobre este candidato?</h3>
-          <p className="text-[#666666] text-sm mb-3">
-            Si encontraste una corrección, un plan de gobierno, o una declaración importante,
-            ayúdanos a mantener el perfil actualizado.
-          </p>
-          <a href={`/contribuir?candidato=${candidate.slug}`}
-             className="inline-flex items-center gap-2 text-[#1A56A0] text-sm font-medium hover:underline">
-            Enviar información verificada
-          </a>
-        </div>
+        <FeedbackWidget candidateSlug={slug} />
 
         {/* Data source transparency */}
         <div className="border border-[#E5E3DE] rounded-xl p-4 bg-white">

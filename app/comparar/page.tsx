@@ -2,30 +2,39 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { ComparatorClient } from '@/components/Comparator/ComparatorClient';
 import { getCandidates, getCandidatesByIds, getPositions } from '@/lib/data';
+import FeedbackWidget from '@/components/FeedbackWidget';
 import type { Metadata } from 'next';
 
 interface Props {
-  searchParams: Promise<{ ids?: string }>;
+  searchParams: Promise<{ ids?: string; tipo?: string }>;
 }
 
 export const metadata: Metadata = {
   title: 'Comparar Candidatos — VotoAbierto',
-  description: 'Compara hasta 3 candidatos presidenciales peruanos lado a lado.',
+  description: 'Compara candidatos peruanos lado a lado: presidencia, senado, diputados y parlamento andino.',
   openGraph: {
     title: 'Comparar Candidatos — VotoAbierto',
-    description: 'Compara hasta 3 candidatos presidenciales peruanos lado a lado.',
+    description: 'Compara candidatos peruanos lado a lado para las Elecciones Generales 2026.',
     images: ['/api/og/comparar'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Comparar Candidatos — VotoAbierto',
-    description: 'Compara hasta 3 candidatos presidenciales peruanos lado a lado.',
+    description: 'Compara candidatos peruanos lado a lado para las Elecciones Generales 2026.',
     images: ['/api/og/comparar'],
   },
 };
 
+const ELECTION_TABS = [
+  { key: 'presidente', label: 'Presidencia', href: '/comparar?tipo=presidente' },
+  { key: 'senado', label: 'Senado', href: '/comparar?tipo=senado' },
+  { key: 'diputados', label: 'Diputados', href: '/comparar?tipo=diputados' },
+  { key: 'parlamento-andino', label: 'Parlamento Andino', href: '/comparar?tipo=parlamento-andino' },
+] as const;
+
 export default async function ComparePage({ searchParams }: Props) {
   const resolvedParams = await searchParams;
+  const tipo = resolvedParams.tipo ?? 'presidente';
   const idList = resolvedParams.ids
     ? resolvedParams.ids.split(',').filter(Boolean).slice(0, 3)
     : [];
@@ -46,13 +55,57 @@ export default async function ComparePage({ searchParams }: Props) {
           </p>
         </div>
 
-        <Suspense fallback={<div className="text-[#777777]">Cargando...</div>}>
-          <ComparatorClient
-            initialSelected={selectedCandidates}
-            allCandidates={allCandidates}
-            allPositions={allPositions}
-          />
-        </Suspense>
+        {/* Election type tabs */}
+        <div className="flex flex-wrap gap-1 mb-8 border-b border-[#E5E3DE]">
+          {ELECTION_TABS.map((tab) => (
+            <Link
+              key={tab.key}
+              href={tab.href}
+              className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-colors -mb-px ${
+                tipo === tab.key
+                  ? 'border-[#1A56A0] text-[#1A56A0]'
+                  : 'border-transparent text-[#777777] hover:text-[#444444] hover:border-[#E5E3DE]'
+              }`}
+            >
+              {tab.label}
+            </Link>
+          ))}
+        </div>
+
+        {tipo === 'presidente' ? (
+          <Suspense fallback={<div className="text-[#777777]">Cargando...</div>}>
+            <ComparatorClient
+              initialSelected={selectedCandidates}
+              allCandidates={allCandidates}
+              allPositions={allPositions}
+            />
+          </Suspense>
+        ) : (
+          <div className="text-center py-16 border border-[#E5E3DE] rounded-xl bg-[#F7F6F3]">
+            <p className="text-lg font-semibold text-[#111111] mb-2">
+              Comparador de {tipo === 'senado' ? 'Senado' : tipo === 'diputados' ? 'Diputados' : 'Parlamento Andino'}
+            </p>
+            <p className="text-[#777777] text-sm max-w-md mx-auto mb-4">
+              Estamos recopilando datos de posiciones para candidatos al{' '}
+              {tipo === 'senado' ? 'Senado' : tipo === 'diputados' ? 'la Cámara de Diputados' : 'Parlamento Andino'}.
+              Por ahora, puedes ver la lista completa de candidatos.
+            </p>
+            <Link
+              href={`/${tipo}`}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A56A0] text-white rounded-lg text-sm font-medium hover:bg-[#164A8A] transition-colors"
+            >
+              Ver candidatos
+            </Link>
+            <p className="text-xs text-[#CBCAC5] mt-4">
+              ¿Tienes información sobre las posiciones de estos candidatos?{' '}
+              <Link href="/contribuir" className="text-[#1A56A0] hover:underline">Contribuir</Link>
+            </p>
+          </div>
+        )}
+
+        <div className="mt-8">
+          <FeedbackWidget pageUrl="/comparar" />
+        </div>
 
         <div className="mt-8 text-center">
           <p className="text-[10px] text-[#CBCAC5]">

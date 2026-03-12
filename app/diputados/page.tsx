@@ -1,4 +1,5 @@
 import ContributionNotice from '@/components/ContributionNotice'
+import FeedbackWidget from '@/components/FeedbackWidget'
 import districts from '@/data/districts.json'
 import diputadosCandidates from '@/data/diputados-candidates.json'
 import type { ElectoralDistrict } from '@/lib/types'
@@ -144,6 +145,8 @@ export default function DiputadosPage() {
               ))}
           </div>
         </div>
+
+        <FeedbackWidget pageUrl="/diputados" />
 
         <div className="text-center text-xs text-[#777777] py-4">
           Fuente:{' '}

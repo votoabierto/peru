@@ -1,4 +1,5 @@
 import ContributionNotice from '@/components/ContributionNotice'
+import FeedbackWidget from '@/components/FeedbackWidget'
 import andinoCandidates from '@/data/andino-candidates.json'
 import type { Metadata } from 'next'
 
@@ -88,6 +89,8 @@ export default function ParlamentoAndinoPage() {
             </div>
           </div>
         ))}
+
+        <FeedbackWidget pageUrl="/parlamento-andino" />
 
         <div className="text-center text-xs text-[#777777] py-4">
           Fuente:{' '}
