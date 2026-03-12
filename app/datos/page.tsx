@@ -13,7 +13,7 @@ const DATA_SOURCES = [
     description: 'Fuente principal de datos electorales: candidatos inscritos, hojas de vida, planes de gobierno, antecedentes penales declarados.',
     url: 'https://votoinformado.jne.gob.pe',
     dataTypes: ['Candidatos inscritos', 'Hojas de vida', 'Planes de gobierno (PDF)', 'Antecedentes penales declarados', 'Fotos oficiales'],
-    api: 'API Voto Informado + Voto Informado IA',
+    api: 'API JNE — votoinformadoia.jne.gob.pe',
     reliability: 'Oficial — datos declarados por candidatos ante el JNE',
   },
   {

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'votoabierto-v1'
+const CACHE_NAME = 'votoabierto-v2'
 const STATIC_ASSETS = [
   '/',
   '/candidatos',
