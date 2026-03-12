@@ -218,3 +218,88 @@ export interface ElectoralDistrict {
   name: string
   seats: number
 }
+
+// ─── Relational Schema Types (v2) ──────────────────────────────────────────
+
+export type CandidateType = 'presidente' | 'senado' | 'diputado' | 'andino'
+
+export interface PartyV2 {
+  id: number
+  srop_id: number | null
+  name: string
+  abbreviation: string | null
+  logo_url: string | null
+  spectrum: string | null
+  ideology_family: string | null
+  plan_gobierno_resumen: string | null
+  plan_gobierno_ejes: Array<{ eje: string; descripcion: string }> | null
+  plan_gobierno_pdf_url: string | null
+  color: string | null
+  founded_year: number | null
+  active: boolean
+  created_at: string
+  updated_at: string
+}
+
+export interface PresidentialCandidate {
+  id: string
+  slug: string
+  full_name: string
+  party_id: number | null
+  party?: PartyV2
+  image_url: string | null
+  bio: string | null
+  bio_short: string | null
+  profession: string | null
+  birth_year: number | null
+  birth_place: string | null
+  years_in_politics: number | null
+  social_media: Record<string, string> | null
+  data_quality: string
+  created_at: string
+}
+
+export interface SenateCandidate {
+  id: string
+  slug: string
+  full_name: string
+  party_id: number | null
+  party?: PartyV2
+  district_type: string
+  district: string | null
+  district_ubigeo: string | null
+  list_position: number | null
+  image_url: string | null
+  bio_short: string | null
+  social_media: Record<string, string> | null
+  created_at: string
+}
+
+export interface DiputadoCandidate {
+  id: string
+  slug: string
+  full_name: string
+  party_id: number | null
+  party?: PartyV2
+  district: string
+  district_ubigeo: string | null
+  district_seats: number | null
+  list_position: number | null
+  image_url: string | null
+  bio_short: string | null
+  social_media: Record<string, string> | null
+  created_at: string
+}
+
+export interface AndinoCandidate {
+  id: string
+  slug: string
+  full_name: string
+  party_id: number | null
+  party?: PartyV2
+  list_position: number | null
+  image_url: string | null
+  bio_short: string | null
+  social_media: Record<string, string> | null
+  created_at: string
+}

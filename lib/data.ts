@@ -311,6 +311,99 @@ export async function searchAll(query: string): Promise<{
   return { candidates, factChecks, regions };
 }
 
+// ─── Relational Data Functions (v2 schema) ──────────────────────────────
+
+import type {
+  PartyV2,
+  PresidentialCandidate,
+  SenateCandidate,
+  DiputadoCandidate,
+  AndinoCandidate,
+  CandidateType,
+} from './types'
+
+const CANDIDATE_TABLE_MAP: Record<CandidateType, string> = {
+  presidente: 'candidates_president',
+  senado: 'candidates_senate',
+  diputado: 'candidates_diputados',
+  andino: 'candidates_andino',
+}
+
+export async function getParties(): Promise<PartyV2[]> {
+  if (!isSupabaseConfigured()) return []
+  const client = getSupabaseClient()!
+  const { data, error } = await client.from('parties_v2').select('*').eq('active', true)
+  if (error) {
+    console.error('[VotoAbierto] getParties error:', error.message)
+    return []
+  }
+  return data as PartyV2[]
+}
+
+export async function getPartyBySropId(sropId: number): Promise<PartyV2 | null> {
+  if (!isSupabaseConfigured()) return null
+  const client = getSupabaseClient()!
+  const { data } = await client
+    .from('parties_v2')
+    .select('*')
+    .eq('srop_id', sropId)
+    .maybeSingle()
+  return data as PartyV2 | null
+}
+
+export async function getCandidatesV2(
+  type: CandidateType,
+  filters?: { party_id?: number; district?: string; search?: string }
+): Promise<(PresidentialCandidate | SenateCandidate | DiputadoCandidate | AndinoCandidate)[]> {
+  if (!isSupabaseConfigured()) return []
+  const client = getSupabaseClient()!
+  const table = CANDIDATE_TABLE_MAP[type]
+
+  let query = client.from(table).select('*, parties_v2!party_id(*)')
+
+  if (filters?.party_id) {
+    query = query.eq('party_id', filters.party_id)
+  }
+  if (filters?.district && (type === 'senado' || type === 'diputado')) {
+    query = query.eq('district', filters.district)
+  }
+  if (filters?.search) {
+    query = query.ilike('full_name', `%${filters.search}%`)
+  }
+
+  const { data, error } = await query
+  if (error) {
+    console.error(`[VotoAbierto] getCandidatesV2(${type}) error:`, error.message)
+    return []
+  }
+
+  // Map joined party to nested object
+  return (data ?? []).map((row: Record<string, unknown>) => {
+    const { parties_v2, ...candidate } = row
+    return { ...candidate, party: parties_v2 } as PresidentialCandidate | SenateCandidate | DiputadoCandidate | AndinoCandidate
+  })
+}
+
+export async function getCandidateWithParty(
+  slug: string,
+  type: CandidateType = 'presidente'
+): Promise<(PresidentialCandidate | SenateCandidate | DiputadoCandidate | AndinoCandidate) | null> {
+  if (!isSupabaseConfigured()) return null
+  const client = getSupabaseClient()!
+  const table = CANDIDATE_TABLE_MAP[type]
+
+  const { data, error } = await client
+    .from(table)
+    .select('*, parties_v2!party_id(*)')
+    .eq('slug', slug)
+    .maybeSingle()
+
+  if (error || !data) return null
+
+  const { parties_v2, ...candidate } = data as Record<string, unknown>
+  return { ...candidate, party: parties_v2 } as PresidentialCandidate | SenateCandidate | DiputadoCandidate | AndinoCandidate
+}
+
 // ─── New Data Architecture Functions ─────────────────────────────────────
 
 export interface HojaDeVida {
