@@ -15,7 +15,7 @@ export interface CandidateCardProps {
   role: string
   region_name?: string
   current_polling?: number
-  photo_url?: string
+  photo_url?: string | null
   ideology?: string
   is_verified?: boolean
   has_criminal_record?: boolean

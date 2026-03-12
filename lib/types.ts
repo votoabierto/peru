@@ -80,7 +80,7 @@ export interface Candidate {
   region_name?: string
   ideology?: IdeologyType
   age?: number
-  photo_url?: string
+  photo_url?: string | null
   career_summary?: string
   bio?: string
   bio_short?: string
