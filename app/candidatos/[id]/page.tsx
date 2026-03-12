@@ -34,6 +34,15 @@ type CandidatePositionEntry = {
 
 const positionsMatrix = candidatePositionsData as CandidatePositionEntry[]
 
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/\*(.*?)\*/g, '$1')
+    .replace(/^#{1,3}\s+/gm, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+}
+
 const POSITION_LABELS: Record<string, string> = {
   economia: 'Economía',
   seguridad: 'Seguridad',
@@ -175,48 +184,6 @@ export default async function CandidatePage({ params }: Props) {
           </section>
         )}
 
-        {/* Redes Sociales */}
-        <section>
-          <h2 className="text-xl font-bold text-[#111111] mb-4">Redes sociales</h2>
-          {candidate.social_media && Object.values(candidate.social_media).some(v => v) ? (
-            <div className="flex flex-wrap gap-3">
-              {candidate.social_media.twitter && (
-                <a href={`https://x.com/${candidate.social_media.twitter}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
-                  Twitter: @{candidate.social_media.twitter}
-                </a>
-              )}
-              {candidate.social_media.instagram && (
-                <a href={`https://instagram.com/${candidate.social_media.instagram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
-                  Instagram: @{candidate.social_media.instagram}
-                </a>
-              )}
-              {candidate.social_media.facebook && (
-                <a href={candidate.social_media.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
-                  Facebook
-                </a>
-              )}
-              {candidate.social_media.youtube && (
-                <a href={candidate.social_media.youtube} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
-                  YouTube
-                </a>
-              )}
-              {candidate.social_media.tiktok && (
-                <a href={`https://tiktok.com/@${candidate.social_media.tiktok}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors">
-                  TikTok: @{candidate.social_media.tiktok}
-                </a>
-              )}
-              {candidate.social_media_verified === false && (
-                <span className="text-[10px] text-[#CBCAC5] self-center">(sin verificar)</span>
-              )}
-            </div>
-          ) : (
-            <div className="text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
-              Sin redes sociales verificadas —{' '}
-              <Link href={`/contribuir?candidato=${slug}`} className="text-[#1A56A0] hover:underline">Contribuir con información</Link>
-            </div>
-          )}
-        </section>
-
         {/* Hoja de Vida */}
         <section>
           <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center justify-between">
@@ -246,9 +213,15 @@ export default async function CandidatePage({ params }: Props) {
               <p className="text-[10px] text-[#CBCAC5] mt-2">Actualizado: {hojaDeVida?.fetched_at?.slice(0, 10)}</p>
             </div>
           ) : (
-            <div className="mb-6 text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
-              No hay datos de formación académica disponibles —{' '}
-              <Link href={`/contribuir?candidato=${slug}`} className="text-[#1A56A0] hover:underline">Contribuir con información</Link>
+            <div className="mb-6">
+              <a
+                href={candidate.jne_profile_url ?? 'https://votoinformado.jne.gob.pe/presidente-vicepresidentes'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[#1A56A0] border border-[#1A56A0] rounded-lg hover:bg-[#EEF4FF] transition-colors"
+              >
+                Ver hoja de vida completa en JNE &rarr;
+              </a>
             </div>
           )}
 
@@ -314,8 +287,15 @@ export default async function CandidatePage({ params }: Props) {
           ) : criminalRecords.length > 0 ? (
             <CandidateCriminalRecord records={criminalRecords} />
           ) : (
-            <div className="text-[#4B5563] text-sm py-4 px-4 bg-[#F0FAF4] border border-[#2D7D46] rounded-lg">
-              Sin impedimentos registrados en JNE
+            <div className="text-[#777777] text-sm py-4 px-4 bg-[#F7F6F3] border border-[#E5E3DE] rounded-lg">
+              <a
+                href={candidate.jne_profile_url ?? 'https://votoinformado.jne.gob.pe/presidente-vicepresidentes'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1A56A0] hover:underline"
+              >
+                Ver antecedentes en JNE &rarr;
+              </a>
             </div>
           )}
         </section>
@@ -399,7 +379,7 @@ export default async function CandidatePage({ params }: Props) {
               {ejes.map((eje, i) => (
                 <div key={i} className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4">
                   <h3 className="font-semibold text-[#111111] text-sm mb-2">{eje.eje}</h3>
-                  <p className="text-[#4B5563] text-xs leading-relaxed">{eje.descripcion}</p>
+                  <p className="text-[#4B5563] text-xs leading-relaxed">{stripMarkdown(eje.descripcion)}</p>
                 </div>
               ))}
             </div>

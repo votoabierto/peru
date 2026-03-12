@@ -14,45 +14,52 @@ export function CandidateStats({ candidate }: Props) {
   const criminalCount = candidate.criminal_records?.length ?? 0
   const hasCriminalRecord = criminalCount > 0 || candidate.has_criminal_record
 
-  const stats = [
-    {
+  const stats: { label: string; value: string; icon: string; highlight: boolean }[] = []
+
+  if (candidate.declared_assets_pen) {
+    stats.push({
       label: 'Bienes declarados',
-      value: candidate.declared_assets_pen
-        ? formatPEN(candidate.declared_assets_pen)
-        : 'Sin datos registrados',
+      value: formatPEN(candidate.declared_assets_pen),
       icon: '💼',
       highlight: false,
-    },
-    {
+    })
+  }
+
+  if (hasCriminalRecord) {
+    stats.push({
       label: 'Antecedentes',
       value: criminalCount > 0
         ? `${criminalCount} registro${criminalCount > 1 ? 's' : ''}`
-        : hasCriminalRecord
-        ? 'Registros disponibles'
-        : 'Sin antecedentes',
+        : 'Registros disponibles',
       icon: '⚖️',
-      highlight: hasCriminalRecord,
-    },
-    {
+      highlight: true,
+    })
+  }
+
+  if (candidate.years_in_politics) {
+    stats.push({
       label: 'Años en política',
-      value: candidate.years_in_politics ? `${candidate.years_in_politics} años` : 'Sin datos registrados',
+      value: `${candidate.years_in_politics} años`,
       icon: '🗓️',
       highlight: false,
-    },
-    {
+    })
+  }
+
+  if (candidate.prior_offices?.length) {
+    stats.push({
       label: 'Cargos previos',
-      value: candidate.prior_offices?.length
-        ? `${candidate.prior_offices.length} cargo${candidate.prior_offices.length > 1 ? 's' : ''}`
-        : 'Sin datos registrados',
+      value: `${candidate.prior_offices.length} cargo${candidate.prior_offices.length > 1 ? 's' : ''}`,
       icon: '🏛️',
       highlight: false,
-    },
-  ]
+    })
+  }
+
+  if (stats.length === 0) return null
 
   return (
     <div className="border-y border-[#E5E3DE] bg-[#F7F6F3]">
       <div className="max-w-5xl mx-auto px-4 py-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className={`grid gap-4 ${stats.length === 1 ? 'grid-cols-1' : stats.length === 2 ? 'grid-cols-2' : stats.length === 3 ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'}`}>
           {stats.map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-2xl mb-1">{s.icon}</div>

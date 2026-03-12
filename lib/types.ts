@@ -107,6 +107,7 @@ export interface Candidate {
   has_criminal_record?: boolean
   criminal_record_detail?: string
   // JNE enriched data
+  jne_profile_url?: string
   jne_party_id?: number
   planGobiernoResumen?: string
   planGobiernoEjes?: Array<{ eje: string; descripcion: string }>
