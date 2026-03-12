@@ -211,6 +211,40 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
             })}
           </div>
         ))}
+
+        {/* Proposals comparison */}
+        <div className="px-4 py-3 bg-[#EEEDE9] border-b border-[#E5E3DE]">
+          <span className="text-[#444444] text-xs font-semibold uppercase tracking-wide">Propuestas clave</span>
+        </div>
+        <div
+          className="grid divide-x divide-[#E5E3DE] border-b border-[#E5E3DE]"
+          style={{ gridTemplateColumns: `200px repeat(${candidates.length}, 1fr)` }}
+        >
+          <div className="px-4 py-3 text-[#777777] text-xs font-medium flex items-start">
+            Principales propuestas del plan de gobierno
+          </div>
+          {candidates.map(c => {
+            const proposals = c.proposals ?? [];
+            return (
+              <div key={c.id} className="px-3 py-3">
+                {proposals.length > 0 ? (
+                  <ul className="space-y-2">
+                    {proposals.slice(0, 3).map((p, i) => (
+                      <li key={i} className="flex gap-2 items-start">
+                        <span className="flex-shrink-0 w-4 h-4 rounded-full bg-[#1A56A0] text-white text-[9px] font-bold flex items-center justify-center mt-0.5">
+                          {i + 1}
+                        </span>
+                        <span className="text-[11px] text-[#444444] leading-snug">{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <span className="text-[#CBCAC5] text-xs">Sin propuestas disponibles</span>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

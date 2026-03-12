@@ -98,6 +98,11 @@ export interface Candidate {
   is_verified?: boolean
   has_criminal_record?: boolean
   criminal_record_detail?: string
+  // JNE enriched data
+  jne_party_id?: number
+  planGobiernoResumen?: string
+  planGobiernoEjes?: Array<{ eje: string; descripcion: string }>
+  proposals?: string[]
   created_at: string
   updated_at: string
 }

@@ -24,6 +24,19 @@ type CandidatePositionEntry = {
 
 const positionsMatrix = candidatePositionsData as CandidatePositionEntry[]
 
+const POSITION_LABELS: Record<string, string> = {
+  economia: 'Economía',
+  seguridad: 'Seguridad',
+  corrupcion: 'Corrupción',
+  educacion: 'Educación',
+  recursos_naturales: 'Recursos Naturales',
+  salud: 'Salud',
+  descentralizacion: 'Descentralización',
+  reforma_judicial: 'Reforma Judicial',
+  politica_social: 'Política Social',
+  constitucion: 'Constitución',
+}
+
 function calculatePositionMatch(
   aScores: Record<string, number>,
   bScores: Record<string, number>,
@@ -81,8 +94,11 @@ export default async function CandidatePage({ params }: Props) {
     getCandidates(),
   ])
 
-  const bio = candidate.bio ?? candidate.career_summary ?? ''
+  const bio = candidate.planGobiernoResumen ?? candidate.bio ?? candidate.career_summary ?? ''
   const criminalRecords = candidate.criminal_records ?? []
+
+  // Position scores from candidate-positions.json
+  const positionEntry = positionsMatrix.find((cp) => cp.candidate_id === candidate.id)
 
   // Same party candidates
   const samePartyCandidates = allCandidates
@@ -114,6 +130,9 @@ export default async function CandidatePage({ params }: Props) {
       .sort((a, b) => b.matchPct - a.matchPct)
       .slice(0, 3)
   }
+
+  const ejes = candidate.planGobiernoEjes ?? []
+  const proposals = candidate.proposals ?? []
 
   return (
     <main className="min-h-screen bg-white">
@@ -155,11 +174,82 @@ export default async function CandidatePage({ params }: Props) {
           </section>
         )}
 
+        {/* Plan de Gobierno ejes */}
+        {ejes.length > 0 && (
+          <section>
+            <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
+              <span>📜</span> Plan de Gobierno
+            </h2>
+            <p className="text-sm text-[#777777] mb-4">
+              Ejes estratégicos del plan de gobierno según JNE.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {ejes.map((eje, i) => (
+                <div key={i} className="bg-[#F7F6F3] border border-[#E5E3DE] rounded-xl p-4">
+                  <h3 className="font-semibold text-[#111111] text-sm mb-2">{eje.eje}</h3>
+                  <p className="text-[#4B5563] text-xs leading-relaxed">{eje.descripcion}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Propuestas clave */}
+        {proposals.length > 0 && (
+          <section>
+            <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
+              <span>📌</span> Propuestas clave
+            </h2>
+            <ol className="space-y-3">
+              {proposals.map((proposal, i) => (
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#1A56A0] text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                    {i + 1}
+                  </span>
+                  <p className="text-[#222222] text-sm leading-relaxed">{proposal}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {/* Posiciones por tema — visual bars from candidate-positions.json */}
         <section>
           <h2 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-2">
             <span>📋</span> Posiciones por tema
           </h2>
-          <CandidatePositions positions={positions} />
+          {positionEntry ? (
+            <div className="space-y-3">
+              {Object.entries(positionEntry.positions).map(([key, pos]) => (
+                <div key={key} className="bg-white border border-[#E5E3DE] rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-[#111111]">
+                      {POSITION_LABELS[key] ?? key}
+                    </span>
+                    <span className="text-xs text-[#777777]">{pos.label}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 h-2 bg-[#EEEDE9] rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-[#1A56A0] transition-all"
+                        style={{ width: `${(pos.score / 5) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-xs font-bold text-[#1A56A0] w-6 text-right">{pos.score}/5</span>
+                  </div>
+                  {!pos.verified && (
+                    <p className="text-[10px] text-[#CBCAC5] mt-1">Sin verificar</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : positions.length > 0 ? (
+            <CandidatePositions positions={positions} />
+          ) : (
+            <div className="text-[#777777] text-center py-8">
+              No hay posiciones registradas para este candidato.
+            </div>
+          )}
         </section>
 
         <section>
