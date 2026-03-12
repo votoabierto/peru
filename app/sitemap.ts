@@ -30,10 +30,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const allPages = [...staticPages, ...candidatePages, ...regionPages]
 
+  const priorityMap: Record<string, number> = {
+    '': 1.0,
+    '/candidatos': 0.9,
+    '/quiz': 0.9,
+    '/comparar': 0.8,
+    '/senado': 0.8,
+    '/diputados': 0.7,
+    '/parlamento-andino': 0.7,
+    '/regiones': 0.7,
+    '/verificar': 0.7,
+    '/datos': 0.6,
+    '/metodologia': 0.5,
+  }
+
   return allPages.map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
-    changeFrequency: path === '' ? 'daily' : 'weekly',
-    priority: path === '' ? 1 : path.startsWith('/candidatos/') ? 0.8 : 0.6,
+    changeFrequency: (path === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
+    priority: priorityMap[path] ?? (path.startsWith('/candidatos/') ? 0.8 : path.startsWith('/regiones/') ? 0.6 : 0.5),
   }))
 }

@@ -276,6 +276,36 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Top candidates — SEO internal linking */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-2">Candidatos presidenciales</h2>
+          <p className="text-[#777777] mb-6">
+            Conoce a los 36 candidatos a la presidencia del Perú 2026.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {candidates
+              .sort((a, b) => (b.polling_percentage ?? 0) - (a.polling_percentage ?? 0))
+              .slice(0, 12)
+              .map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/candidatos/${c.slug}`}
+                  className="inline-flex items-center gap-1 px-3 py-2 bg-white border border-[#E5E3DE] rounded-lg text-sm font-medium text-[#444444] hover:border-[#1A56A0] hover:text-[#1A56A0] transition-colors"
+                >
+                  {c.common_name ?? c.full_name}
+                  <span className="text-xs text-[#999999]">· {c.party_abbreviation}</span>
+                </Link>
+              ))}
+          </div>
+          <Link href="/candidatos" className="text-sm font-medium text-[#1A56A0] hover:underline">
+            Ver los 36 candidatos presidenciales →
+          </Link>
+        </div>
+      </section>
+
+      <SectionDivider />
+
       {/* Quiz CTA Card */}
       <section className="py-16 bg-[#F7F6F3]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

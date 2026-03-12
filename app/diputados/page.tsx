@@ -7,8 +7,15 @@ import type { ElectoralDistrict } from '@/lib/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cámara de Diputados — VotoAbierto',
-  description: 'Candidatos a la Cámara de Diputados del Perú para las elecciones del 12 de abril de 2026. 130 escaños en 27 circunscripciones.',
+  title: 'Candidatos a Diputados 2026 — VotoAbierto',
+  description: 'Conoce a los candidatos a la Cámara de Diputados del Perú para las elecciones del 12 de abril de 2026. 130 escaños en 27 circunscripciones regionales. Datos verificados del JNE.',
+  keywords: ['diputados peru 2026', 'candidatos diputados', 'elecciones peru', 'camara de diputados', 'circunscripciones'],
+  openGraph: {
+    title: 'Candidatos a Diputados 2026 | VotoAbierto',
+    description: '130 diputados en 27 circunscripciones regionales. Conoce a los candidatos con datos verificados del JNE.',
+    url: 'https://votoabierto.pe/diputados',
+  },
+  alternates: { canonical: 'https://votoabierto.pe/diputados' },
 }
 
 interface DiputadoCandidate {

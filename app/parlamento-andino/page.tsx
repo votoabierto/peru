@@ -4,8 +4,15 @@ import andinoCandidates from '@/data/andino-candidates.json'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Parlamento Andino — VotoAbierto',
-  description: 'Candidatos al Parlamento Andino por el Perú para las elecciones del 12 de abril de 2026. 5 representantes.',
+  title: 'Candidatos al Parlamento Andino 2026 — VotoAbierto',
+  description: 'Conoce a los candidatos al Parlamento Andino por el Perú para las elecciones del 12 de abril de 2026. 5 representantes ante la Comunidad Andina. Datos verificados del JNE.',
+  keywords: ['parlamento andino 2026', 'candidatos parlamento andino', 'elecciones peru', 'comunidad andina'],
+  openGraph: {
+    title: 'Candidatos al Parlamento Andino 2026 | VotoAbierto',
+    description: '5 representantes peruanos ante la Comunidad Andina. Conoce a los candidatos con datos verificados del JNE.',
+    url: 'https://votoabierto.pe/parlamento-andino',
+  },
+  alternates: { canonical: 'https://votoabierto.pe/parlamento-andino' },
 }
 
 interface AndinoCandidate {

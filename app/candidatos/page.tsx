@@ -1,5 +1,18 @@
 import CandidatosList from '@/components/CandidatosList'
 import { getCandidates } from '@/lib/data'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Candidatos Presidenciales 2026 — VotoAbierto',
+  description: 'Conoce a los 36 candidatos presidenciales para las elecciones generales del Perú del 12 de abril de 2026. Perfiles, propuestas y plan de gobierno. Datos verificados del JNE.',
+  keywords: ['candidatos presidenciales 2026', 'elecciones peru 2026', 'candidatos presidente peru', 'plan de gobierno'],
+  openGraph: {
+    title: 'Candidatos Presidenciales 2026 | VotoAbierto',
+    description: '36 candidatos presidenciales compiten en las elecciones del 12 de abril de 2026. Datos verificados del JNE.',
+    url: 'https://votoabierto.pe/candidatos',
+  },
+  alternates: { canonical: 'https://votoabierto.pe/candidatos' },
+}
 
 export default async function CandidatosPage() {
   const candidates = await getCandidates()

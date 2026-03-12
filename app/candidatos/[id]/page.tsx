@@ -84,14 +84,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params
   const candidate = await getCandidateById(id)
   if (!candidate) return { title: 'Candidato no encontrado — VotoAbierto' }
-  const description = candidate.bio_short ?? candidate.career_summary?.slice(0, 150) ?? ''
   const slug = candidate.slug ?? candidate.id
+  const description = `Conoce el plan de gobierno, propuestas y hoja de vida de ${candidate.full_name}, candidato/a a la presidencia del Perú en las elecciones del 12 de abril de 2026.`
   return {
-    title: `${candidate.full_name} — VotoAbierto`,
+    title: `${candidate.full_name} — Candidato 2026 | VotoAbierto`,
     description,
+    keywords: [candidate.full_name, candidate.party_name, 'candidato 2026', 'elecciones Peru', 'plan de gobierno'],
     openGraph: {
-      title: `${candidate.full_name} | ${candidate.party_name}`,
-      description,
+      title: `${candidate.full_name} | VotoAbierto`,
+      description: candidate.bio_short ?? `Candidato/a presidencial por ${candidate.party_name}`,
+      url: `https://votoabierto.pe/candidatos/${slug}`,
       images: [`/api/og/candidato/${slug}`],
       type: 'profile',
     },
@@ -101,6 +103,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       images: [`/api/og/candidato/${slug}`],
     },
+    alternates: { canonical: `https://votoabierto.pe/candidatos/${slug}` },
   }
 }
 
@@ -169,8 +172,45 @@ export default async function CandidatePage({ params }: Props) {
   // Merge antecedentes from DB + seed data
   const allAntecedentes = antecedentesDB.length > 0 ? antecedentesDB : []
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: candidate.full_name,
+    jobTitle: 'Candidato/a Presidencial',
+    affiliation: {
+      '@type': 'Organization',
+      name: candidate.party_name,
+    },
+    description: candidate.bio_short ?? candidate.career_summary?.slice(0, 200) ?? '',
+    url: `https://votoabierto.pe/candidatos/${slug}`,
+    sameAs: [
+      candidate.social_media?.twitter ? `https://twitter.com/${candidate.social_media.twitter}` : null,
+      candidate.social_media?.instagram ? `https://instagram.com/${candidate.social_media.instagram}` : null,
+      candidate.jne_profile_url,
+    ].filter(Boolean),
+    knowsAbout: ejes.map((e) => e.eje),
+  }
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://votoabierto.pe' },
+      { '@type': 'ListItem', position: 2, name: 'Candidatos', item: 'https://votoabierto.pe/candidatos' },
+      { '@type': 'ListItem', position: 3, name: candidate.full_name },
+    ],
+  }
+
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <CandidateHero candidate={candidate} />
       <CandidateStats candidate={candidate} />
 

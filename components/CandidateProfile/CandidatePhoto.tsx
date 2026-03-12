@@ -21,8 +21,9 @@ export function CandidatePhoto({ candidate }: Props) {
     return (
       <img
         src={candidate.photo_url}
-        alt={candidate.full_name}
+        alt={`${candidate.full_name} — candidato presidencial Perú 2026`}
         className="w-32 h-32 rounded-full object-cover border-4 border-[#E5E3DE]"
+        fetchPriority="high"
         onError={() => setImgError(true)}
       />
     )

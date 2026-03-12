@@ -4,8 +4,15 @@ import senateCandidates from '@/data/senate-candidates.json'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Senado de la República — VotoAbierto',
-  description: 'Candidatos al Senado de la República del Perú para las elecciones del 12 de abril de 2026. 60 escaños en distrito nacional único.',
+  title: 'Candidatos al Senado 2026 — VotoAbierto',
+  description: 'Conoce a los candidatos al Senado de la República del Perú para las elecciones del 12 de abril de 2026. 60 escaños en distrito nacional único. Datos verificados del JNE.',
+  keywords: ['senado peru 2026', 'candidatos senado', 'elecciones peru', 'senadores 2026', 'bicameral peru'],
+  openGraph: {
+    title: 'Candidatos al Senado 2026 | VotoAbierto',
+    description: '60 senadores se eligen en distrito nacional único. Conoce a los candidatos con datos verificados del JNE.',
+    url: 'https://votoabierto.pe/senado',
+  },
+  alternates: { canonical: 'https://votoabierto.pe/senado' },
 }
 
 interface SenateCandidate {

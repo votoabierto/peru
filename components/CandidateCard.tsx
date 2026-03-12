@@ -72,8 +72,9 @@ export default function CandidateCard({
             {photo_url ? (
               <img
                 src={photo_url}
-                alt={full_name}
+                alt={`${full_name} — candidato presidencial Perú 2026`}
                 className="w-16 h-16 rounded-full object-cover border-2 border-[#E5E3DE]"
+                loading="lazy"
               />
             ) : (
               <div className="w-16 h-16 rounded-full bg-[#F7F6F3] border-2 border-[#E5E3DE] flex items-center justify-center">
