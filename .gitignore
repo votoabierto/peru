@@ -40,5 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# generated at build time
-lib/generated/
+# lib/generated/ is committed as a static fallback for Vercel builds
