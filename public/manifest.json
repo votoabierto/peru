@@ -3,19 +3,8 @@
   "short_name": "VotoAbierto",
   "description": "Plataforma de transparencia electoral para las elecciones generales del Peru 2026",
   "start_url": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#FFFFFF",
   "theme_color": "#1A56A0",
-  "orientation": "portrait-primary",
-  "lang": "es-PE",
-  "icons": [
-    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
-  ],
-  "shortcuts": [
-    { "name": "Quiz de afinidad", "url": "/quiz", "description": "Descubre con quién votas" },
-    { "name": "Candidatos presidenciales", "url": "/candidatos", "description": "Los 36 candidatos" }
-  ],
-  "categories": ["education", "government"],
-  "screenshots": []
+  "lang": "es-PE"
 }
