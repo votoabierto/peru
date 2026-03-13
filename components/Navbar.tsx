@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { SearchModal } from './SearchModal'
 import LanguageSwitcher from './LanguageSwitcher'
-import SimpleLanguageToggle from './SimpleLanguageToggle'
+
 import { useI18n } from '@/lib/i18n/I18nProvider'
 
 export default function Navbar() {
@@ -75,8 +75,6 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               <div className="hidden lg:flex items-center gap-1">
                 <LanguageSwitcher />
-                <span className="text-[#E5E3DE]" aria-hidden="true">|</span>
-                <SimpleLanguageToggle />
               </div>
               <button
                 onClick={() => setSearchOpen(true)}
@@ -115,11 +113,9 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              {/* Language & simple mode in mobile */}
+              {/* Language switcher in mobile */}
               <div className="flex items-center gap-2 px-4 py-3 border-t border-[#E5E3DE] mt-2 pt-4">
                 <LanguageSwitcher />
-                <span className="text-[#E5E3DE]" aria-hidden="true">|</span>
-                <SimpleLanguageToggle />
               </div>
             </div>
           </div>

@@ -137,11 +137,6 @@ export const qu: Record<string, string> = {
 
   // Accessibility
   'a11y.skip_to_content': "Hatun willakuyman pasay",
-  'a11y.simple_language': 'Sallqa simi',
-  'a11y.normal_language': 'Normal simi',
 
   // Simple language alternatives
-  'simple.home.subtitle': 'Qhaway pitaq presidente, senador otaq dipitado kayta munan. Mana qullqiyuqchu, mana llullakuychu.',
-  'simple.home.quiz_cta': '¿Pitaq qam hina yuyayniyuq? →',
-  'simple.quiz.subtitle': 'Tapuykunata kutichiy. Willarusqayku mayqin candidatokunaq qam hina yuyayniyuq kasqankuta.',
 }

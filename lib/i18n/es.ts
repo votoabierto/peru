@@ -55,11 +55,6 @@ export const es: Record<string, string> = {
 
   // Accessibility
   'a11y.skip_to_content': 'Saltar al contenido principal',
-  'a11y.simple_language': 'Lenguaje simple',
-  'a11y.normal_language': 'Lenguaje normal',
 
   // Simple language alternatives
-  'simple.home.subtitle': 'Mira quién quiere ser presidente, senador o diputado. Información gratis y sin mentiras.',
-  'simple.home.quiz_cta': '¿Quién piensa como tú? →',
-  'simple.quiz.subtitle': 'Responde preguntas fáciles. Te decimos qué candidatos piensan parecido a ti.',
 }
