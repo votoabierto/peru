@@ -40,7 +40,7 @@ function parseRssItems(xml: string): NewsItem[] {
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-) {
+): Promise<NextResponse> {
   const { id: slug } = await params
   const candidate = SEED_CANDIDATES.find(c => c.slug === slug || c.id === slug)
 

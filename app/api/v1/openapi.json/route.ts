@@ -242,7 +242,7 @@ const spec = {
   },
 }
 
-export async function GET() {
+export async function GET(): Promise<NextResponse> {
   return NextResponse.json(spec, {
     headers: {
       'Access-Control-Allow-Origin': '*',

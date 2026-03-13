@@ -16,7 +16,7 @@ const CORS = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-) {
+): Promise<NextResponse> {
   const { id } = await params
   const parties = partiesData as PartyJSON[]
   const party = parties.find(p => p.id === id || p.abbr?.toLowerCase() === id.toLowerCase())
@@ -41,7 +41,7 @@ export async function GET(
   }, { headers: CORS })
 }
 
-export async function OPTIONS() {
+export async function OPTIONS(): Promise<Response> {
   return new Response(null, {
     status: 204,
     headers: { ...CORS, 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': '*' },

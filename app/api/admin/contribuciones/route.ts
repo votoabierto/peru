@@ -8,7 +8,7 @@ function isAuthenticated(cookieStore: Awaited<ReturnType<typeof cookies>>): bool
   return cookieStore.get('admin_session')?.value === 'authenticated'
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<NextResponse> {
   const cookieStore = await cookies()
   const body = await request.json() as Record<string, string>
 
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ error: 'Acción no válida' }, { status: 400 })
 }
 
-export async function GET() {
+export async function GET(): Promise<NextResponse> {
   const cookieStore = await cookies()
 
   if (!isAuthenticated(cookieStore)) {

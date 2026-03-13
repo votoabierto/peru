@@ -312,29 +312,29 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
               <div key={c.id} className="px-3 py-3">
                 {hasAny ? (
                   <div className="flex flex-col gap-1">
-                    {sm!.twitter && (
-                      <a href={`https://x.com/${sm!.twitter}`} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
-                        Twitter: @{sm!.twitter}
+                    {sm?.twitter && (
+                      <a href={`https://x.com/${sm.twitter}`} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                        Twitter: @{sm.twitter}
                       </a>
                     )}
-                    {sm!.instagram && (
-                      <a href={`https://instagram.com/${sm!.instagram}`} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
-                        IG: @{sm!.instagram}
+                    {sm?.instagram && (
+                      <a href={`https://instagram.com/${sm.instagram}`} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                        IG: @{sm.instagram}
                       </a>
                     )}
-                    {sm!.facebook && (
-                      <a href={sm!.facebook} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                    {sm?.facebook && (
+                      <a href={sm.facebook} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
                         Facebook
                       </a>
                     )}
-                    {sm!.youtube && (
-                      <a href={sm!.youtube} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                    {sm?.youtube && (
+                      <a href={sm.youtube} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
                         YouTube
                       </a>
                     )}
-                    {sm!.tiktok && (
-                      <a href={`https://tiktok.com/@${sm!.tiktok}`} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
-                        TikTok: @{sm!.tiktok}
+                    {sm?.tiktok && (
+                      <a href={`https://tiktok.com/@${sm.tiktok}`} target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#1A56A0] hover:underline">
+                        TikTok: @{sm.tiktok}
                       </a>
                     )}
                   </div>

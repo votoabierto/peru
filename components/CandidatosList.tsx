@@ -15,7 +15,11 @@ const ROLE_OPTIONS = [
   { value: 'representative', label: 'Diputado' },
 ]
 
-export default function CandidatosList({ initialCandidates }: { initialCandidates: Candidate[] }) {
+interface Props {
+  initialCandidates: Candidate[]
+}
+
+export default function CandidatosList({ initialCandidates }: Props) {
   const [search, setSearch] = useState('')
   const [roleFilter, setRoleFilter] = useState('')
   const [partyFilter, setPartyFilter] = useState('')

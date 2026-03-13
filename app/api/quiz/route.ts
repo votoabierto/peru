@@ -50,7 +50,7 @@ function calculateMatch(
   return { matchPct, verifiedIssueCount, dataQuality }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<NextResponse> {
   const body = await request.json()
   const { answers, weights, department } = body as {
     answers: Record<string, number>

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseClient, isSupabaseConfigured } from '@/lib/supabase'
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     const body = await req.json()
     const { tipo, descripcion, fuente_url, page_url, candidate_slug } = body

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' }
 
-export async function GET() {
+export async function GET(): Promise<NextResponse> {
   return NextResponse.json({
     name: 'VotoAbierto Public API',
     version: '1.0.0',

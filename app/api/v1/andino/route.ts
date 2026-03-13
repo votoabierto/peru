@@ -14,7 +14,7 @@ interface AndinoCandidateJSON {
 
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' }
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(request.url)
   const party = searchParams.get('party')
   const q = searchParams.get('q')
@@ -59,7 +59,7 @@ export async function GET(request: NextRequest) {
   }, { headers: CORS })
 }
 
-export async function OPTIONS() {
+export async function OPTIONS(): Promise<Response> {
   return new Response(null, {
     status: 204,
     headers: { ...CORS, 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': '*' },

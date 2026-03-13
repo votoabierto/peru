@@ -33,7 +33,7 @@ const CORS = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-) {
+): Promise<NextResponse> {
   const { id } = await params
   const candidates = candidatesData as PresidentialCandidateJSON[]
   const candidate = candidates.find(c => c.id === id || c.slug === id)
@@ -75,7 +75,7 @@ export async function GET(
   }, { headers: CORS })
 }
 
-export async function OPTIONS() {
+export async function OPTIONS(): Promise<Response> {
   return new Response(null, {
     status: 204,
     headers: { ...CORS, 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': '*' },

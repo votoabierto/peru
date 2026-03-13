@@ -4,7 +4,7 @@ import type { ElectionType } from '@/lib/types';
 
 const VALID_TIPOS: ElectionType[] = ['presidente', 'senado', 'diputados', 'parlamento-andino'];
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(request.url);
   const q = searchParams.get('q') ?? '';
   const type = searchParams.get('type') ?? 'all';
@@ -64,6 +64,6 @@ function filterByElectionType<T extends { role?: string }>(candidates: T[], tipo
   return candidates.filter(c => c.role === roleMap[tipo])
 }
 
-export async function OPTIONS() {
+export async function OPTIONS(): Promise<NextResponse> {
   return new NextResponse(null, { status: 200 });
 }

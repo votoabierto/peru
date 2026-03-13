@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { CheckCircle } from 'lucide-react'
-import { IDEOLOGY_COLORS, IDEOLOGY_LABELS } from '@/lib/types'
+import { IDEOLOGY_COLORS, IDEOLOGY_LABELS, type IdeologyType } from '@/lib/types'
 
 // CandidateCardProps intentionally exported for re-use
 
@@ -56,8 +56,8 @@ export default function CandidateCard({
   sentencia_penal,
 }: CandidateCardProps) {
   const initials = getInitials(full_name)
-  const ideologyColor = ideology ? (IDEOLOGY_COLORS[ideology] ?? 'bg-gray-600 text-gray-100') : 'bg-gray-600 text-gray-100'
-  const ideologyLabel = ideology ? (IDEOLOGY_LABELS[ideology] ?? ideology) : null
+  const ideologyColor = ideology ? (IDEOLOGY_COLORS[ideology as IdeologyType] ?? 'bg-gray-600 text-gray-100') : 'bg-gray-600 text-gray-100'
+  const ideologyLabel = ideology ? (IDEOLOGY_LABELS[ideology as IdeologyType] ?? ideology) : null
   const displayName = common_name ?? full_name
   const borderColor = party_color ?? '#1A56A0'
 

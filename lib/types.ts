@@ -210,7 +210,7 @@ export const ISSUE_LABELS: Record<IssueArea, { label: string; icon: string }> = 
   foreign_policy: { label: 'Política Exterior', icon: '🌐' },
 }
 
-export const IDEOLOGY_COLORS: Record<string, string> = {
+export const IDEOLOGY_COLORS: Record<IdeologyType, string> = {
   'far-left': 'bg-red-100 text-red-800 border border-red-300',
   left: 'bg-red-50 text-red-700 border border-red-200',
   'center-left': 'bg-orange-50 text-orange-700 border border-orange-200',
@@ -222,7 +222,7 @@ export const IDEOLOGY_COLORS: Record<string, string> = {
   nationalist: 'bg-amber-50 text-amber-700 border border-amber-200',
 }
 
-export const IDEOLOGY_LABELS: Record<string, string> = {
+export const IDEOLOGY_LABELS: Record<IdeologyType, string> = {
   'far-left': 'Extrema izquierda',
   left: 'Izquierda',
   'center-left': 'Centro-izquierda',

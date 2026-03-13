@@ -551,7 +551,7 @@ export default async function CandidatePage({ params }: Props) {
           <section>
             <h2 className="text-xl font-bold text-[#111111] mb-4">Cargos previos</h2>
             <ul className="space-y-2">
-              {candidate.prior_offices!.map((office, i) => (
+              {candidate.prior_offices?.map((office, i) => (
                 <li key={i} className="flex items-center gap-3 text-[#4B5563] text-sm">
                   <span className="w-2 h-2 rounded-full bg-[#1A56A0] flex-shrink-0" />
                   {office}

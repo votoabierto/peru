@@ -10,7 +10,11 @@ interface NewsItem {
   summary: string | null
 }
 
-export default function CandidateNews({ slug }: { slug: string }) {
+interface Props {
+  slug: string
+}
+
+export default function CandidateNews({ slug }: Props) {
   const [news, setNews] = useState<NewsItem[]>([])
   const [loading, setLoading] = useState(true)
 

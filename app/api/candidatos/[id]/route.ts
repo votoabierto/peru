@@ -4,7 +4,7 @@ import { getCandidateById, getPositions, getFactChecks } from '@/lib/data'
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-) {
+): Promise<NextResponse> {
   const { id } = await params
   try {
     const [candidate, positions, factChecks] = await Promise.all([

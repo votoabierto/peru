@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getFactChecks } from '@/lib/data'
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(request.url)
   const candidateId = searchParams.get('candidato') ?? undefined
 

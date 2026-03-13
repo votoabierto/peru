@@ -11,7 +11,7 @@ const VALID_TYPES = [
   'other',
 ] as const
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<NextResponse> {
   let body: Record<string, unknown>
   try {
     body = await request.json()
