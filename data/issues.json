@@ -12,7 +12,8 @@
           "agree_label": "Sí, reducir el IGV",
           "disagree_label": "No, mantener el IGV actual",
           "axis": "economic",
-          "axis_inverted": true
+          "axis_inverted": true,
+          "axis_weight": 3
         },
         {
           "key": "economia_mineria",
@@ -21,16 +22,8 @@
           "agree_label": "Sí, aumentar impuestos a la minería",
           "disagree_label": "No, mantener el régimen fiscal actual",
           "axis": "economic",
-          "axis_inverted": false
-        },
-        {
-          "key": "economia_informal",
-          "question": "¿El Perú debe crear incentivos fiscales para formalizar las microempresas?",
-          "context": "El 70% de trabajadores en Perú opera en la informalidad.",
-          "agree_label": "Sí, crear incentivos fiscales para la formalización",
-          "disagree_label": "No, reducir regulaciones en lugar de crear incentivos",
-          "axis": "economic",
-          "axis_inverted": false
+          "axis_inverted": false,
+          "axis_weight": 3
         },
         {
           "key": "economia_inversion",
@@ -39,13 +32,34 @@
           "agree_label": "Sí, mayor control estatal en sectores estratégicos",
           "disagree_label": "No, mantener condiciones actuales para la inversión extranjera",
           "axis": "economic",
-          "axis_inverted": false
+          "axis_inverted": false,
+          "axis_weight": 3
+        },
+        {
+          "key": "economia_informal",
+          "question": "¿El Perú debe crear incentivos fiscales para formalizar las microempresas?",
+          "context": "El 70% de trabajadores en Perú opera en la informalidad.",
+          "agree_label": "Sí, crear incentivos fiscales para la formalización",
+          "disagree_label": "No, reducir regulaciones en lugar de crear incentivos",
+          "axis": "economic",
+          "axis_inverted": false,
+          "axis_weight": 2
+        },
+        {
+          "key": "medioambiente_industrias",
+          "question": "¿Los proyectos de extracción deben poder suspenderse si causan daño ambiental comprobado, aunque generen empleo?",
+          "context": "Perú tiene conflictos socioambientales activos; la economía depende ~60% de exportaciones extractivas.",
+          "agree_label": "Sí, suspender proyectos con daño ambiental comprobado",
+          "disagree_label": "No, priorizar empleo y desarrollo económico",
+          "axis": "economic",
+          "axis_inverted": false,
+          "axis_weight": 2
         }
       ]
     },
     {
-      "key": "seguridad",
-      "label": "Seguridad",
+      "key": "seguridad_sociedad",
+      "label": "Seguridad y Sociedad",
       "icon": "🛡️",
       "questions": [
         {
@@ -55,7 +69,8 @@
           "agree_label": "Sí, restablecer la pena de muerte para estos casos",
           "disagree_label": "No, mantener la prohibición de la pena de muerte",
           "axis": "social",
-          "axis_inverted": true
+          "axis_inverted": true,
+          "axis_weight": 3
         },
         {
           "key": "seguridad_fuerzas_armadas",
@@ -64,7 +79,8 @@
           "agree_label": "Sí, ampliar el rol de las FF.AA. en seguridad interna",
           "disagree_label": "No, mantener ese rol exclusivo a la policía civil",
           "axis": "social",
-          "axis_inverted": true
+          "axis_inverted": true,
+          "axis_weight": 3
         },
         {
           "key": "seguridad_narcotrafico",
@@ -73,75 +89,18 @@
           "agree_label": "Sí, tratar el consumo como problema de salud pública",
           "disagree_label": "No, mantener la penalización del consumo",
           "axis": "social",
-          "axis_inverted": false
-        }
-      ]
-    },
-    {
-      "key": "educacion",
-      "label": "Educación",
-      "icon": "📚",
-      "questions": [
+          "axis_inverted": false,
+          "axis_weight": 3
+        },
         {
           "key": "educacion_meritocracia",
           "question": "¿Los docentes deben ser evaluados con méritos y pueden ser despedidos por bajo rendimiento?",
           "context": "El MINEDU implementó evaluaciones docentes desde 2007; han generado controversia sindical.",
           "agree_label": "Sí, mantener evaluaciones con posibilidad de despido",
           "disagree_label": "No, proteger la estabilidad laboral docente",
-          "axis": "health_environment",
-          "axis_inverted": false
-        },
-        {
-          "key": "educacion_bilingue",
-          "question": "¿La educación intercultural bilingüe debe expandirse a todas las regiones con comunidades indígenas?",
-          "context": "Hay 48 lenguas originarias reconocidas en Perú; la EIB cubre actualmente el 30% de estudiantes indígenas.",
-          "agree_label": "Sí, expandir la educación intercultural bilingüe",
-          "disagree_label": "No, priorizar la enseñanza en español",
           "axis": "social",
-          "axis_inverted": false
-        },
-        {
-          "key": "educacion_universidad",
-          "question": "¿El Estado debe recuperar control sobre la calidad de las universidades privadas?",
-          "context": "La Ley 30220 (Sunedu) fue cuestionada por universidades privadas; fue materia de litigio.",
-          "agree_label": "Sí, mayor supervisión estatal de universidades privadas",
-          "disagree_label": "No, mayor autonomía para las universidades privadas",
-          "axis": "economic",
-          "axis_inverted": false
-        }
-      ]
-    },
-    {
-      "key": "salud_medioambiente",
-      "label": "Salud y Medioambiente",
-      "icon": "🏥",
-      "questions": [
-        {
-          "key": "salud_universal",
-          "question": "¿El Perú debe unificar el SIS, EsSalud y Sanidades en un solo sistema de salud?",
-          "context": "Perú tiene sistemas de salud segmentados: SIS (pobres), EsSalud (formales), sanidades (FF.AA./PNP), privado.",
-          "agree_label": "Sí, unificar en un solo sistema de cobertura universal",
-          "disagree_label": "No, mejorar los sistemas existentes sin unificarlos",
-          "axis": "economic",
-          "axis_inverted": false
-        },
-        {
-          "key": "salud_medicamentos",
-          "question": "¿El Estado debe producir medicamentos genéricos para reducir el costo del tratamiento?",
-          "context": "Chile y Brasil tienen laboratorios estatales que producen genéricos.",
-          "agree_label": "Sí, producción estatal de medicamentos genéricos",
-          "disagree_label": "No, dejar la producción al sector privado con regulación",
-          "axis": "economic",
-          "axis_inverted": false
-        },
-        {
-          "key": "medioambiente_industrias",
-          "question": "¿Los proyectos de extracción deben poder suspenderse si causan daño ambiental comprobado, aunque generen empleo?",
-          "context": "Perú tiene conflictos socioambientales activos; la economía depende ~60% de exportaciones extractivas.",
-          "agree_label": "Sí, suspender proyectos con daño ambiental comprobado",
-          "disagree_label": "No, priorizar empleo y desarrollo económico",
-          "axis": "health_environment",
-          "axis_inverted": false
+          "axis_inverted": true,
+          "axis_weight": 2
         }
       ]
     },
@@ -157,25 +116,8 @@
           "agree_label": "Sí, convocar una Asamblea Constituyente",
           "disagree_label": "No, reformar la Constitución actual mediante el Congreso",
           "axis": "institutions",
-          "axis_inverted": false
-        },
-        {
-          "key": "inst_fiscal",
-          "question": "¿Los fiscales y jueces deben ser elegidos por voto popular?",
-          "context": "Bolivia adoptó la elección popular de jueces; la mayoría de países usa concursos técnicos.",
-          "agree_label": "Sí, elegir fiscales y jueces por voto popular",
-          "disagree_label": "No, mantener concursos técnicos e independientes",
-          "axis": "institutions",
-          "axis_inverted": false
-        },
-        {
-          "key": "inst_congreso",
-          "question": "¿El Congreso debe tener dos cámaras (bicameral) para mejorar la calidad legislativa?",
-          "context": "Perú eliminó el Senado en 1993; hay proyectos para restaurar el bicameralismo.",
-          "agree_label": "Sí, restaurar el sistema bicameral",
-          "disagree_label": "No, mantener el Congreso unicameral",
-          "axis": "institutions",
-          "axis_inverted": false
+          "axis_inverted": false,
+          "axis_weight": 4
         },
         {
           "key": "inst_anticorrupcion",
@@ -184,41 +126,28 @@
           "agree_label": "Sí, inhabilitación permanente para condenados por corrupción",
           "disagree_label": "No, mantener inhabilitación temporal con posibilidad de reinserción",
           "axis": "institutions",
-          "axis_inverted": false
-        }
-      ]
-    },
-    {
-      "key": "territorio",
-      "label": "Territorio y Desarrollo",
-      "icon": "🗺️",
-      "questions": [
+          "axis_inverted": false,
+          "axis_weight": 2
+        },
+        {
+          "key": "inst_fiscal",
+          "question": "¿Los fiscales y jueces deben ser elegidos por voto popular?",
+          "context": "Bolivia adoptó la elección popular de jueces; la mayoría de países usa concursos técnicos.",
+          "agree_label": "Sí, elegir fiscales y jueces por voto popular",
+          "disagree_label": "No, mantener concursos técnicos e independientes",
+          "axis": "institutions",
+          "axis_inverted": false,
+          "axis_weight": 2
+        },
         {
           "key": "territorio_descentralizacion",
           "question": "¿Los gobiernos regionales deben tener mayor control sobre sus presupuestos sin supervisión del MEF?",
           "context": "El MEF supervisa y puede bloquear el gasto regional; las regiones argumentan que limita su autonomía.",
           "agree_label": "Sí, mayor autonomía presupuestal regional",
           "disagree_label": "No, mantener supervisión del MEF sobre el gasto regional",
-          "axis": "territory",
-          "axis_inverted": false
-        },
-        {
-          "key": "territorio_rondas",
-          "question": "¿Las rondas campesinas y comunidades nativas deben tener jurisdicción legal propia reconocida?",
-          "context": "El Convenio 169 OIT reconoce jurisdicción consuetudinaria; hay debate sobre su alcance en Perú.",
-          "agree_label": "Sí, reconocer jurisdicción propia a rondas y comunidades nativas",
-          "disagree_label": "No, un solo sistema judicial nacional para todos",
-          "axis": "social",
-          "axis_inverted": false
-        },
-        {
-          "key": "territorio_lima",
-          "question": "¿El Estado debe mover algunas entidades del gobierno central fuera de Lima?",
-          "context": "Lima concentra ~30% de la población y ~50% del PBI; hay propuestas de descentralizar instituciones.",
-          "agree_label": "Sí, mover entidades del gobierno central a otras regiones",
-          "disagree_label": "No, mantener las entidades centrales en Lima",
-          "axis": "territory",
-          "axis_inverted": false
+          "axis": "institutions",
+          "axis_inverted": false,
+          "axis_weight": 1
         }
       ]
     }

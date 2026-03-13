@@ -8,9 +8,11 @@ interface PolicyCompassProps {
     partyAbbr: string
     economic: number   // 0–100
     social: number     // 0–100
+    institutions: number // 0–100
   }>
   userEconomic: number   // 0–100
   userSocial: number     // 0–100
+  userInstitutions: number // 0–100
 }
 
 // Map 0-100 score to pixel position within the chart area
@@ -19,12 +21,18 @@ function toPos(value: number, size: number): number {
   return size * (padding + (1 - 2 * padding) * (value / 100))
 }
 
-export default function PolicyCompass({ candidates, userEconomic, userSocial }: PolicyCompassProps) {
+// Map institutions score (0-100) to bubble radius
+function toRadius(institutions: number): number {
+  return 6 + (institutions / 100) * 8
+}
+
+export default function PolicyCompass({ candidates, userEconomic, userSocial, userInstitutions }: PolicyCompassProps) {
   const W = 400
   const H = 400
 
   const userX = toPos(userEconomic, W)
   const userY = H - toPos(userSocial, H) // Y is inverted in SVG
+  const userR = toRadius(userInstitutions)
 
   return (
     <div className="w-full max-w-md mx-auto">
@@ -61,19 +69,20 @@ export default function PolicyCompass({ candidates, userEconomic, userSocial }: 
           Mayor énfasis en libertades individuales
         </text>
         <text x={W / 2} y={H - 14} fontSize="8" fill="#999" textAnchor="middle">
-          Mayor énfasis en orden y normas colectivas
+          Mayor énfasis en orden
         </text>
 
-        {/* Candidate dots */}
+        {/* Candidate dots — bubble size = institutions axis */}
         {candidates.map((c) => {
           const cx = toPos(c.economic, W)
           const cy = H - toPos(c.social, H)
+          const r = toRadius(c.institutions)
           return (
             <g key={c.id}>
               <circle
                 cx={cx}
                 cy={cy}
-                r="10"
+                r={r}
                 fill="#E5E3DE"
                 stroke="#999"
                 strokeWidth="0.5"
@@ -93,27 +102,41 @@ export default function PolicyCompass({ candidates, userEconomic, userSocial }: 
           )
         })}
 
-        {/* User position — prominent */}
-        <circle
-          cx={userX}
-          cy={userY}
-          r="14"
-          fill="#1A56A0"
-          stroke="#fff"
-          strokeWidth="2"
-          opacity="0.9"
-        />
-        <text
-          x={userX}
-          y={userY + 4}
-          fontSize="9"
-          fill="#fff"
-          textAnchor="middle"
-          fontWeight="700"
-        >
-          Tú
-        </text>
+        {/* User position — prominent diamond */}
+        <g>
+          <circle
+            cx={userX}
+            cy={userY}
+            r={userR + 4}
+            fill="#1A56A0"
+            stroke="#fff"
+            strokeWidth="2"
+            opacity="0.9"
+          />
+          <text
+            x={userX}
+            y={userY + 4}
+            fontSize="9"
+            fill="#fff"
+            textAnchor="middle"
+            fontWeight="700"
+          >
+            Tú
+          </text>
+        </g>
       </svg>
+
+      {/* Legend for bubble size */}
+      <div className="flex items-center justify-center gap-4 mt-2">
+        <div className="flex items-center gap-1">
+          <svg width="12" height="12"><circle cx="6" cy="6" r="4" fill="#E5E3DE" stroke="#999" strokeWidth="0.5" /></svg>
+          <span className="text-[10px] text-[#999]">Menor reforma institucional</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <svg width="20" height="20"><circle cx="10" cy="10" r="8" fill="#E5E3DE" stroke="#999" strokeWidth="0.5" /></svg>
+          <span className="text-[10px] text-[#999]">Mayor reforma institucional</span>
+        </div>
+      </div>
     </div>
   )
 }

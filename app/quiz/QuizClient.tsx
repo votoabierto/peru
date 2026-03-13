@@ -16,7 +16,7 @@ type CandidatePosition = {
   party: string
   party_abbreviation: string
   positions: Record<string, { score: number | null; label: string; verified: boolean }>
-  axis_scores?: { economic: number | null; social: number | null }
+  axis_scores?: { economic: number | null; social: number | null; institutions: number | null }
 }
 
 type IssueScore = { issue: string; diff: number; weight: number }
@@ -37,62 +37,57 @@ const themes = issuesData.themes as QuizTheme[]
 const allQuestions = themes.flatMap((t) => t.questions)
 
 // Build issue key → short label map for match breakdown display
-const ISSUE_SHORT_LABELS: Record<string, string> = {}
-for (const theme of themes) {
-  for (const q of theme.questions) {
-    // Use theme label + short descriptor from the key
-    const parts = q.key.split('_')
-    const shortKey = parts.slice(1).join(' ')
-    ISSUE_SHORT_LABELS[q.key] = shortKey.charAt(0).toUpperCase() + shortKey.slice(1)
-  }
-}
-// Override with cleaner labels
-Object.assign(ISSUE_SHORT_LABELS, {
+const ISSUE_SHORT_LABELS: Record<string, string> = {
   economia_igv: 'IGV',
   economia_mineria: 'Minería',
   economia_informal: 'Economía informal',
   economia_inversion: 'Inversión extranjera',
+  medioambiente_industrias: 'Medio ambiente',
   seguridad_pena_muerte: 'Pena de muerte',
   seguridad_fuerzas_armadas: 'Fuerzas Armadas',
   seguridad_narcotrafico: 'Narcotráfico',
   educacion_meritocracia: 'Meritocracia docente',
-  educacion_bilingue: 'Educación bilingüe',
-  educacion_universidad: 'Universidades',
-  salud_universal: 'Salud universal',
-  salud_medicamentos: 'Medicamentos',
-  medioambiente_industrias: 'Medio ambiente',
   inst_constitucion: 'Nueva Constitución',
   inst_fiscal: 'Elección de jueces',
-  inst_congreso: 'Bicameralidad',
   inst_anticorrupcion: 'Anticorrupción',
   territorio_descentralizacion: 'Descentralización',
-  territorio_rondas: 'Rondas campesinas',
-  territorio_lima: 'Descentralización Lima',
-})
+}
+
+// Build axis config from issues data for weighted scoring
+const AXIS_CONFIG: Record<string, { axis: PolicyAxis; inverted: boolean; weight: number }> = {}
+for (const theme of themes) {
+  for (const q of theme.questions) {
+    AXIS_CONFIG[q.key] = { axis: q.axis as PolicyAxis, inverted: q.axis_inverted, weight: q.axis_weight }
+  }
+}
+
+// Build issue key → axis_weight map for match calculation
+const ISSUE_AXIS_WEIGHTS: Record<string, number> = {}
+for (const theme of themes) {
+  for (const q of theme.questions) {
+    ISSUE_AXIS_WEIGHTS[q.key] = q.axis_weight
+  }
+}
 const TOTAL_QUESTIONS = allQuestions.length
 const candidatePositions = candidatePositionsData as CandidatePosition[]
 
-// Build axis question maps for user score computation
-const AXIS_QUESTIONS: Record<PolicyAxis, Array<{ key: string; inverted: boolean }>> = {
-  economic: [], social: [], institutions: [], health_environment: [], territory: []
-}
-for (const theme of themes) {
-  for (const q of theme.questions) {
-    AXIS_QUESTIONS[q.axis as PolicyAxis]?.push({ key: q.key, inverted: q.axis_inverted })
-  }
-}
-
 function computeUserAxisScore(
   answers: Record<string, number>,
-  questions: Array<{ key: string; inverted: boolean }>
+  axis: PolicyAxis
 ): number | null {
-  const values: number[] = []
-  for (const { key, inverted } of questions) {
+  let weightedSum = 0
+  let totalWeight = 0
+  for (const [key, config] of Object.entries(AXIS_CONFIG)) {
+    if (config.axis !== axis) continue
     const score = answers[key]
     if (score === undefined) continue
-    values.push(inverted ? ((5 - score) / 4) * 100 : ((score - 1) / 4) * 100)
+    let normalized = (score - 1) / 4
+    if (config.inverted) normalized = 1 - normalized
+    weightedSum += normalized * config.weight
+    totalWeight += config.weight
   }
-  return values.length > 0 ? Math.round(values.reduce((a, b) => a + b, 0) / values.length) : null
+  if (totalWeight === 0) return null
+  return Math.round((weightedSum / totalWeight) * 100)
 }
 
 const DEPARTMENTS = [
@@ -124,18 +119,22 @@ function calculateMatch(
 ): { matchPct: number | null; verifiedIssueCount: number; dataQuality: 'verified' | 'partial' | 'insufficient'; topAligned: IssueScore[]; topDivergent: IssueScore[] } {
   const answeredIssues = Object.keys(userAnswers)
 
+  // Only consider active questions (those in current issues.json)
+  const activeKeys = new Set(allQuestions.map(q => q.key))
+
   const sharedIssues = answeredIssues.filter((issue) => {
+    if (!activeKeys.has(issue)) return false
     const pos = candidatePositions[issue]
     return pos && pos.score !== null
   })
 
-  const verifiedIssueCount = Object.values(candidatePositions).filter(
-    (p) => p.score !== null
+  const verifiedIssueCount = Object.entries(candidatePositions).filter(
+    ([key, p]) => activeKeys.has(key) && p.score !== null
   ).length
 
   const dataQuality: 'verified' | 'partial' | 'insufficient' =
-    verifiedIssueCount >= 14 ? 'verified' :
-    verifiedIssueCount >= 6 ? 'partial' : 'insufficient'
+    verifiedIssueCount >= 10 ? 'verified' :
+    verifiedIssueCount >= 5 ? 'partial' : 'insufficient'
 
   if (sharedIssues.length < 3) {
     return { matchPct: null, verifiedIssueCount, dataQuality, topAligned: [], topDivergent: [] }
@@ -146,11 +145,13 @@ function calculateMatch(
   const issueScores: IssueScore[] = []
 
   for (const issue of sharedIssues) {
-    const w = weights[issue] ?? 1
+    const userWeight = weights[issue] ?? 1
+    const axisWeight = ISSUE_AXIS_WEIGHTS[issue] ?? 1
+    const combinedWeight = userWeight * axisWeight
     const diff = Math.abs(userAnswers[issue] - candidatePositions[issue].score!)
-    weightedDiff += diff * w
-    totalWeight += w * 4
-    issueScores.push({ issue, diff, weight: w })
+    weightedDiff += diff * combinedWeight
+    totalWeight += combinedWeight * 4
+    issueScores.push({ issue, diff, weight: combinedWeight })
   }
 
   const matchPct = Math.round((1 - weightedDiff / totalWeight) * 100)
@@ -864,8 +865,9 @@ export default function QuizClient() {
 
             {/* Policy Compass */}
             {(() => {
-              const userEcon = computeUserAxisScore(answers, AXIS_QUESTIONS.economic)
-              const userSoc = computeUserAxisScore(answers, AXIS_QUESTIONS.social)
+              const userEcon = computeUserAxisScore(answers, 'economic')
+              const userSoc = computeUserAxisScore(answers, 'social')
+              const userInst = computeUserAxisScore(answers, 'institutions')
               if (userEcon === null || userSoc === null) return null
               const compassCandidates = candidatePositions
                 .filter((cp) => cp.axis_scores?.economic != null && cp.axis_scores?.social != null)
@@ -876,6 +878,7 @@ export default function QuizClient() {
                   partyAbbr: cp.party_abbreviation,
                   economic: cp.axis_scores!.economic!,
                   social: cp.axis_scores!.social!,
+                  institutions: cp.axis_scores?.institutions ?? 50,
                 }))
               return (
                 <div className="mb-8">
@@ -883,13 +886,73 @@ export default function QuizClient() {
                     Tu posición en los ejes de política pública
                   </h3>
                   <p className="text-xs text-[#777777] text-center mb-4 max-w-md mx-auto">
-                    Este diagrama muestra tu posición en dos dimensiones de política pública basada en tus respuestas. No refleja una afiliación política — solo compara tus posiciones con las de los candidatos.
+                    Este diagrama muestra tu posición en tres dimensiones de política pública. Tamaño = posición en reforma institucional.
                   </p>
                   <PolicyCompass
                     candidates={compassCandidates}
                     userEconomic={userEcon}
                     userSocial={userSoc}
+                    userInstitutions={userInst ?? 50}
                   />
+                </div>
+              )
+            })()}
+
+            {/* Axis breakdown for top candidates */}
+            {(() => {
+              const userEcon = computeUserAxisScore(answers, 'economic')
+              const userSoc = computeUserAxisScore(answers, 'social')
+              const userInst = computeUserAxisScore(answers, 'institutions')
+              const topCandidates = [...verifiedResults, ...partialResults].slice(0, 3)
+              if (topCandidates.length === 0 || userEcon === null) return null
+
+              const axisLabels = [
+                { key: 'economic' as const, label: 'Económico', user: userEcon },
+                { key: 'social' as const, label: 'Social', user: userSoc },
+                { key: 'institutions' as const, label: 'Institucional', user: userInst },
+              ]
+
+              return (
+                <div className="mb-8">
+                  <h3 className="text-sm font-bold text-[#111111] mb-3">
+                    Ejes de política pública
+                  </h3>
+                  <div className="space-y-4">
+                    {topCandidates.map((r) => {
+                      const cp = candidatePositions.find(c => c.candidate_id === r.candidateId)
+                      if (!cp?.axis_scores) return null
+                      return (
+                        <div key={r.candidateId} className="p-3 rounded-lg border border-[#E5E3DE] bg-white">
+                          <p className="text-xs font-semibold text-[#111111] mb-2">{r.name} <span className="text-[#777777] font-normal">{r.partyAbbr}</span></p>
+                          <div className="space-y-1.5">
+                            {axisLabels.map(({ key, label, user }) => {
+                              const candidateScore = cp.axis_scores?.[key]
+                              if (candidateScore == null || user == null) return null
+                              return (
+                                <div key={key} className="flex items-center gap-2 text-[10px]">
+                                  <span className="w-20 text-[#777777] text-right shrink-0">{label}</span>
+                                  <div className="flex-1 flex items-center gap-1">
+                                    <div className="flex-1 h-1.5 bg-[#EEEDE9] rounded-full overflow-hidden relative">
+                                      <div className="h-full bg-[#999] rounded-full" style={{ width: `${candidateScore}%` }} />
+                                    </div>
+                                    <span className="w-7 text-[#777777]">{candidateScore}%</span>
+                                  </div>
+                                  <span className="text-[#999] mx-0.5">vs</span>
+                                  <div className="flex-1 flex items-center gap-1">
+                                    <div className="flex-1 h-1.5 bg-[#EEEDE9] rounded-full overflow-hidden">
+                                      <div className="h-full bg-[#1A56A0] rounded-full" style={{ width: `${user}%` }} />
+                                    </div>
+                                    <span className="w-7 text-[#1A56A0]">{user}%</span>
+                                  </div>
+                                </div>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                  <p className="text-[10px] text-[#999] mt-1">Gris = candidato | Azul = tú</p>
                 </div>
               )
             })()}

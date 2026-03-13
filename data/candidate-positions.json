@@ -107,8 +107,9 @@
       }
     },
     "axis_scores": {
-      "economic": 25,
-      "social": 0
+      "economic": 15,
+      "social": 5,
+      "institutions": 19
     }
   },
   {
@@ -219,8 +220,9 @@
       }
     },
     "axis_scores": {
-      "economic": 83,
-      "social": 75
+      "economic": 81,
+      "social": 80,
+      "institutions": 75
     }
   },
   {
@@ -331,8 +333,9 @@
       }
     },
     "axis_scores": {
-      "economic": 25,
-      "social": 0
+      "economic": 15,
+      "social": 0,
+      "institutions": 31
     }
   },
   {
@@ -443,8 +446,9 @@
       }
     },
     "axis_scores": {
-      "economic": 42,
-      "social": 25
+      "economic": 33,
+      "social": 25,
+      "institutions": 31
     }
   },
   {
@@ -555,8 +559,9 @@
       }
     },
     "axis_scores": {
-      "economic": 25,
-      "social": 0
+      "economic": 15,
+      "social": 5,
+      "institutions": 25
     }
   },
   {
@@ -667,8 +672,9 @@
       }
     },
     "axis_scores": {
-      "economic": 42,
-      "social": 0
+      "economic": 40,
+      "social": 14,
+      "institutions": 38
     }
   },
   {
@@ -780,7 +786,8 @@
     },
     "axis_scores": {
       "economic": 67,
-      "social": 75
+      "social": 75,
+      "institutions": 58
     }
   },
   {
@@ -891,8 +898,9 @@
       }
     },
     "axis_scores": {
-      "economic": 58,
-      "social": 50
+      "economic": 50,
+      "social": 55,
+      "institutions": 42
     }
   },
   {
@@ -1003,8 +1011,9 @@
       }
     },
     "axis_scores": {
-      "economic": 58,
-      "social": 50
+      "economic": 50,
+      "social": 55,
+      "institutions": 47
     }
   },
   {
@@ -1115,8 +1124,9 @@
       }
     },
     "axis_scores": {
-      "economic": 58,
-      "social": 50
+      "economic": 50,
+      "social": 55,
+      "institutions": 39
     }
   },
   {
@@ -1228,7 +1238,8 @@
     },
     "axis_scores": {
       "economic": null,
-      "social": null
+      "social": null,
+      "institutions": null
     }
   },
   {
@@ -1340,7 +1351,8 @@
     },
     "axis_scores": {
       "economic": 67,
-      "social": 50
+      "social": 55,
+      "institutions": 69
     }
   },
   {
@@ -1451,8 +1463,9 @@
       }
     },
     "axis_scores": {
-      "economic": 50,
-      "social": 0
+      "economic": 54,
+      "social": 14,
+      "institutions": 50
     }
   },
   {
@@ -1564,7 +1577,8 @@
     },
     "axis_scores": {
       "economic": 67,
-      "social": 0
+      "social": 14,
+      "institutions": 57
     }
   },
   {
@@ -1675,8 +1689,9 @@
       }
     },
     "axis_scores": {
-      "economic": 58,
-      "social": 50
+      "economic": 54,
+      "social": 55,
+      "institutions": 42
     }
   },
   {
@@ -1787,8 +1802,9 @@
       }
     },
     "axis_scores": {
-      "economic": 50,
-      "social": 50
+      "economic": 40,
+      "social": 55,
+      "institutions": 25
     }
   },
   {
@@ -1899,8 +1915,9 @@
       }
     },
     "axis_scores": {
-      "economic": 58,
-      "social": 50
+      "economic": 67,
+      "social": 55,
+      "institutions": 50
     }
   },
   {
@@ -2011,8 +2028,9 @@
       }
     },
     "axis_scores": {
-      "economic": 50,
-      "social": 50
+      "economic": 75,
+      "social": 55,
+      "institutions": null
     }
   },
   {
@@ -2124,7 +2142,8 @@
     },
     "axis_scores": {
       "economic": 67,
-      "social": 50
+      "social": 55,
+      "institutions": 38
     }
   },
   {
@@ -2235,8 +2254,9 @@
       }
     },
     "axis_scores": {
-      "economic": 50,
-      "social": 0
+      "economic": 40,
+      "social": 14,
+      "institutions": 75
     }
   },
   {
@@ -2347,8 +2367,9 @@
       }
     },
     "axis_scores": {
-      "economic": null,
-      "social": 50
+      "economic": 75,
+      "social": 55,
+      "institutions": 25
     }
   },
   {
@@ -2460,7 +2481,8 @@
     },
     "axis_scores": {
       "economic": 67,
-      "social": 50
+      "social": 50,
+      "institutions": 33
     }
   },
   {
@@ -2571,8 +2593,9 @@
       }
     },
     "axis_scores": {
-      "economic": 50,
-      "social": 50
+      "economic": 40,
+      "social": 55,
+      "institutions": 25
     }
   },
   {
@@ -2683,8 +2706,9 @@
       }
     },
     "axis_scores": {
-      "economic": 50,
-      "social": 50
+      "economic": 54,
+      "social": 55,
+      "institutions": 33
     }
   },
   {
@@ -2795,8 +2819,9 @@
       }
     },
     "axis_scores": {
-      "economic": 42,
-      "social": 50
+      "economic": 40,
+      "social": 55,
+      "institutions": 40
     }
   },
   {
@@ -2907,8 +2932,9 @@
       }
     },
     "axis_scores": {
-      "economic": 50,
-      "social": 50
+      "economic": 54,
+      "social": 55,
+      "institutions": 38
     }
   },
   {
@@ -3020,7 +3046,8 @@
     },
     "axis_scores": {
       "economic": 75,
-      "social": 50
+      "social": 55,
+      "institutions": 38
     }
   },
   {
@@ -3132,7 +3159,8 @@
     },
     "axis_scores": {
       "economic": 75,
-      "social": 50
+      "social": 55,
+      "institutions": 50
     }
   },
   {
@@ -3244,7 +3272,8 @@
     },
     "axis_scores": {
       "economic": 67,
-      "social": 50
+      "social": 55,
+      "institutions": 40
     }
   },
   {
@@ -3356,7 +3385,8 @@
     },
     "axis_scores": {
       "economic": 67,
-      "social": null
+      "social": 50,
+      "institutions": 50
     }
   },
   {
@@ -3468,7 +3498,8 @@
     },
     "axis_scores": {
       "economic": null,
-      "social": null
+      "social": null,
+      "institutions": null
     }
   },
   {
@@ -3579,8 +3610,9 @@
       }
     },
     "axis_scores": {
-      "economic": 58,
-      "social": 50
+      "economic": 54,
+      "social": 55,
+      "institutions": 60
     }
   },
   {
@@ -3692,7 +3724,8 @@
     },
     "axis_scores": {
       "economic": 75,
-      "social": null
+      "social": 75,
+      "institutions": 25
     }
   },
   {
@@ -3804,7 +3837,8 @@
     },
     "axis_scores": {
       "economic": 67,
-      "social": null
+      "social": 75,
+      "institutions": 83
     }
   },
   {
@@ -3916,7 +3950,8 @@
     },
     "axis_scores": {
       "economic": 75,
-      "social": null
+      "social": null,
+      "institutions": 83
     }
   },
   {
@@ -4027,8 +4062,9 @@
       }
     },
     "axis_scores": {
-      "economic": 42,
-      "social": 50
+      "economic": 40,
+      "social": 55,
+      "institutions": 50
     }
   }
 ]

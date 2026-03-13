@@ -1,6 +1,6 @@
 // ─── Quiz Types ─────────────────────────────────────────────────────────────
 
-export type PolicyAxis = 'economic' | 'social' | 'institutions' | 'health_environment' | 'territory'
+export type PolicyAxis = 'economic' | 'social' | 'institutions'
 
 export interface QuizQuestion {
   key: string
@@ -10,6 +10,7 @@ export interface QuizQuestion {
   disagree_label: string
   axis: PolicyAxis
   axis_inverted: boolean
+  axis_weight: number
 }
 
 export interface QuizTheme {
