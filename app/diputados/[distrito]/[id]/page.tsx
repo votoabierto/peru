@@ -39,12 +39,9 @@ interface Props {
   params: Promise<{ distrito: string; id: string }>
 }
 
-export async function generateStaticParams() {
-  return candidates.map((c) => ({
-    distrito: toDistritoSlug(c.district),
-    id: c.id,
-  }))
-}
+export const dynamic = 'force-static'
+export const revalidate = 3600
+export const dynamicParams = true
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params

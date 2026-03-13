@@ -31,9 +31,11 @@ interface Props {
   params: Promise<{ id: string }>
 }
 
-export async function generateStaticParams() {
-  return candidates.map((c) => ({ id: c.id }))
-}
+// ISR: generate on first request, cache for 1 hour
+// Full SSG pre-rendering 1,131+ pages blows Vercel's 500MB build output limit
+export const dynamic = 'force-static'
+export const revalidate = 3600
+export const dynamicParams = true
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params
