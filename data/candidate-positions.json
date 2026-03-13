@@ -110,7 +110,9 @@
       "economic": 15,
       "social": 5,
       "institutions": 19
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "vladimir-cerron",
@@ -223,7 +225,9 @@
       "economic": 81,
       "social": 80,
       "institutions": 75
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "rafael-lopez-aliaga",
@@ -336,7 +340,9 @@
       "economic": 15,
       "social": 0,
       "institutions": 31
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "cesar-acuna",
@@ -449,7 +455,9 @@
       "economic": 33,
       "social": 25,
       "institutions": 31
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "jose-williams-zapata",
@@ -562,7 +570,9 @@
       "economic": 15,
       "social": 5,
       "institutions": 25
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "george-forsyth",
@@ -675,7 +685,9 @@
       "economic": 40,
       "social": 14,
       "institutions": 38
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "roberto-sanchez",
@@ -788,7 +800,9 @@
       "economic": 67,
       "social": 75,
       "institutions": 58
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "yonhy-lescano",
@@ -901,7 +915,9 @@
       "economic": 50,
       "social": 55,
       "institutions": 42
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "mesias-guevara",
@@ -1014,7 +1030,9 @@
       "economic": 50,
       "social": 55,
       "institutions": 47
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "marisol-perez-tello",
@@ -1127,7 +1145,9 @@
       "economic": 50,
       "social": 55,
       "institutions": 39
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "jose-luna-galvez",
@@ -1240,7 +1260,9 @@
       "economic": null,
       "social": null,
       "institutions": null
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "enrique-valderrama",
@@ -1353,7 +1375,9 @@
       "economic": 67,
       "social": 55,
       "institutions": 69
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "roberto-chiabra",
@@ -1466,7 +1490,9 @@
       "economic": 54,
       "social": 14,
       "institutions": 50
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "fernando-olivera",
@@ -1579,7 +1605,9 @@
       "economic": 67,
       "social": 14,
       "institutions": 57
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "jorge-nieto-montesinos",
@@ -1692,7 +1720,9 @@
       "economic": 54,
       "social": 55,
       "institutions": 42
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "alvaro-paz-de-la-barra",
@@ -1805,7 +1835,9 @@
       "economic": 40,
       "social": 55,
       "institutions": 25
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "carlos-jaico",
@@ -1918,7 +1950,9 @@
       "economic": 67,
       "social": 55,
       "institutions": 50
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "fiorella-molinelli",
@@ -2031,7 +2065,9 @@
       "economic": 75,
       "social": 55,
       "institutions": null
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "walter-chirinos",
@@ -2144,7 +2180,9 @@
       "economic": 67,
       "social": 55,
       "institutions": 38
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "francisco-diez-canseco",
@@ -2257,7 +2295,9 @@
       "economic": 40,
       "social": 14,
       "institutions": 75
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "paul-jaimes",
@@ -2370,7 +2410,9 @@
       "economic": 75,
       "social": 55,
       "institutions": 25
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "rafael-belaunde",
@@ -2483,7 +2525,9 @@
       "economic": 67,
       "social": 50,
       "institutions": 33
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "carlos-espa",
@@ -2596,7 +2640,9 @@
       "economic": 40,
       "social": 55,
       "institutions": 25
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "rosario-del-pilar-fernandez",
@@ -2709,7 +2755,9 @@
       "economic": 54,
       "social": 55,
       "institutions": 33
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "carlos-alvarez",
@@ -2822,7 +2870,9 @@
       "economic": 40,
       "social": 55,
       "institutions": 40
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "antonio-ortiz-villano",
@@ -2935,7 +2985,9 @@
       "economic": 54,
       "social": 55,
       "institutions": 38
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "alfonso-lopez-chau",
@@ -3048,7 +3100,9 @@
       "economic": 75,
       "social": 55,
       "institutions": 38
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "herbert-caller",
@@ -3161,7 +3215,9 @@
       "economic": 75,
       "social": 55,
       "institutions": 50
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "alex-gonzales-castillo",
@@ -3274,7 +3330,9 @@
       "economic": 67,
       "social": 55,
       "institutions": 40
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "ricardo-belmont",
@@ -3387,7 +3445,9 @@
       "economic": 67,
       "social": 50,
       "institutions": 50
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "joaquin-masse-fernandez",
@@ -3500,7 +3560,9 @@
       "economic": null,
       "social": null,
       "institutions": null
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "charlie-carrasco",
@@ -3613,7 +3675,9 @@
       "economic": 54,
       "social": 55,
       "institutions": 60
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "mario-vizcarra",
@@ -3726,7 +3790,9 @@
       "economic": 75,
       "social": 75,
       "institutions": 25
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "napoleon-becerra",
@@ -3839,7 +3905,9 @@
       "economic": 67,
       "social": 75,
       "institutions": 83
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "ronald-atencio",
@@ -3952,7 +4020,9 @@
       "economic": 75,
       "social": null,
       "institutions": 83
-    }
+    },
+    "role": "presidential",
+    "department": null
   },
   {
     "candidate_id": "wolfgang-grozo",
@@ -4065,6 +4135,8 @@
       "economic": 40,
       "social": 55,
       "institutions": 50
-    }
+    },
+    "role": "presidential",
+    "department": null
   }
 ]

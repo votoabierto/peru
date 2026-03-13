@@ -25,7 +25,7 @@ votoclaro/
 │   ├── parlamento-andino/     # Parlamento Andino
 │   ├── regiones/              # Desglose por región
 │   ├── comparar/              # Comparador lado a lado
-│   ├── quiz/                  # Quiz de afinidad (20 preguntas)
+│   ├── quiz/                  # Quiz de afinidad (13 preguntas, 3 ejes)
 │   ├── compromisos/           # Compromisos ciudadanos
 │   ├── verificar/             # Feed de fact-checks
 │   ├── buscar/                # Búsqueda
@@ -43,7 +43,7 @@ votoclaro/
 │   ├── Footer.tsx             # Pie de página
 │   ├── DataConfidenceBadge.tsx # Badges de confianza de datos
 │   ├── CountdownTimer.tsx     # Cuenta regresiva al 12 de abril
-│   ├── PoliticalCompass.tsx   # Brújula política del quiz
+│   ├── PolicyCompass.tsx      # Brújula de política pública (3 ejes)
 │   ├── ShareButtons.tsx       # Botones para compartir en redes
 │   ├── LanguageSwitcher.tsx   # Selector de idioma (es/qu)
 │   └── ...
@@ -134,11 +134,18 @@ El componente `DataConfidenceBadge` muestra el nivel de confianza de cada dato:
 
 ## Quiz de afinidad
 
-1. 20 preguntas sobre temas clave (economía, seguridad, educación, etc.)
-2. Ponderación de importancia por pregunta
-3. Match % por candidato basado en posiciones extraídas de planes de gobierno
-4. Explicación detallada: temas más alineados y más divergentes con el top match
-5. Resultados compartibles (URL + OG image)
+1. 13 preguntas en 3 ejes temáticos (Económico, Social, Institucional)
+2. Cada pregunta tiene `axis`, `axis_inverted`, y `axis_weight` (calculado por desviación estándar de respuestas de candidatos)
+3. Ponderación de importancia por eje temático
+4. Match % por candidato basado en posiciones extraídas de planes de gobierno
+5. PolicyCompass: visualización en 3 dimensiones (economic × social × institutions)
+6. Filtro por departamento: candidatos presidenciales siempre visibles, candidatos al congreso filtrados por departamento del votante
+7. Resultados compartibles (URL + OG image)
+
+### Datos del quiz
+
+- `data/issues.json` — 13 preguntas con `axis`, `axis_inverted`, `axis_weight` por pregunta
+- `data/candidate-positions.json` — posiciones de candidatos con `axis_scores` (economic, social, institutions) + `role` + `department`
 
 ## API Routes (internas)
 
@@ -176,3 +183,5 @@ El componente `DataConfidenceBadge` muestra el nivel de confianza de cada dato:
 | O | Data audit — party refs, bios, null-safety |
 | P | Quiz match explanation, registros de cargo público, Quechua content, quiz prominence |
 | Q | PWA killed + dead code cleanup + full docs update |
+| R-T | Quiz redesign: 3-axis model, PolicyCompass, axis_weight by std dev, keyboard navigation |
+| U | Department filter + OSS launch docs |

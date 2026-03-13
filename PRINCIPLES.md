@@ -23,6 +23,15 @@
 - Quiz results are anonymous by default
 - No login required for any civic information
 
+## 5. Quiz Design Principles
+- Questions map to observable policy positions, not ideological labels
+- Candidate positions sourced from: JNE hojas de vida, government plans, public statements with citation
+- Null position data > assumed position: if we don't have a candidate's stance, we don't show a score
+- Questions only included when ≥15 candidates have documented positions (otherwise excluded)
+- `axis_weight` derived from actual candidate score variance (std dev) — questions that better discriminate candidates get higher weight
+- No "left/right/center" labels — axes describe policy dimensions only
+- Users see policy positions, not ideological tribe assignments
+
 ---
 
 ## Implementation Rules (for agents and developers)

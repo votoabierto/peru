@@ -15,6 +15,8 @@ type CandidatePosition = {
   candidate_name: string
   party: string
   party_abbreviation: string
+  role: 'presidential' | 'senate' | 'diputados' | 'andino'
+  department: string | null
   positions: Record<string, { score: number | null; label: string; verified: boolean }>
   axis_scores?: { economic: number | null; social: number | null; institutions: number | null }
 }
@@ -348,6 +350,12 @@ export default function QuizClient() {
   const results = useMemo(() => {
     if (!isResultsStep) return [] as MatchResult[]
     return candidatePositions
+      .filter((cp) => {
+        // Presidential candidates: always show (department is null)
+        if (!cp.department) return true
+        // Congress candidates: only show if matches user's department
+        return cp.department === department
+      })
       .map((cp): MatchResult => {
         const { matchPct, verifiedIssueCount, dataQuality, topAligned, topDivergent } = calculateMatch(answers, weights, cp.positions)
         return {
@@ -362,7 +370,7 @@ export default function QuizClient() {
           topDivergent,
         }
       })
-  }, [isResultsStep, answers, weights])
+  }, [isResultsStep, answers, weights, department])
 
   const verifiedResults = results
     .filter((r) => r.dataQuality === 'verified' && r.matchPct !== null)
@@ -770,6 +778,11 @@ export default function QuizClient() {
               <p className="text-[#777777]">
                 Basado en tus respuestas, estos candidatos tienen posiciones más cercanas a las tuyas.
               </p>
+              {department && (
+                <p className="text-sm text-[#666666] mt-1">
+                  Candidatos presidenciales · Votante en {department}
+                </p>
+              )}
               <p className="text-xs text-[#777777] mt-1">
                 Esto no es una recomendación de voto. Investiga más antes de decidir.
               </p>

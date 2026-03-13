@@ -27,15 +27,29 @@ Objetividad absoluta y fuente siempre visible. No fabricamos datos, no editoriza
 | Senadores | 1,131 candidatos con perfiles individuales |
 | Diputados | 4,106 candidatos con perfiles individuales |
 | Parlamento Andino | 528 candidatos con perfiles individuales |
-| Quiz de afinidad | 20 preguntas con ponderación de importancia, % de match por candidato, explicación de temas alineados y divergentes |
+| Quiz de afinidad | 13 preguntas en 3 ejes temáticos, ponderación de importancia, % de match por candidato, brújula de política pública (PolicyCompass) |
 | Comparar | Comparación lado a lado de candidatos |
 | Compromisos ciudadanos | Compromisos cívicos propuestos por la ciudadanía, seguimiento de respuestas de candidatos |
-| Registros de cargo público | Historial dialectal de cargos públicos para candidatos que ejercieron funciones |
+| Registros de cargo público | Historial de cargos públicos para candidatos que ejercieron funciones |
 | API pública | REST API libre en `/api/v1/` — sin autenticación, CORS abierto, rate limit 60/min |
 | Data confidence | Badges de confianza por dato: oficial / scraped / community / pending |
 | Auto-refresh | GitHub Actions actualiza datos de JNE cada lunes 06:00 UTC |
 | Multilingüe | Español (es) + Quechua (qu) |
 | Accesibilidad | WCAG 2.1 AA — skip links, contraste, navegación por teclado |
+
+## Ejes del quiz
+
+El quiz evalúa 13 preguntas distribuidas en 3 ejes de política pública:
+
+| Eje | Qué mide | Ejemplo de preguntas |
+|-----|----------|---------------------|
+| **Económico** | Posición sobre el rol del Estado en la economía | IGV, minería, economía informal, inversión extranjera |
+| **Social** | Posición sobre seguridad, educación y medio ambiente | Pena de muerte, fuerzas armadas, narcotráfico, meritocracia docente, medio ambiente |
+| **Institucional** | Posición sobre reforma del Estado y anticorrupción | Nueva Constitución, elección de jueces, anticorrupción, descentralización |
+
+Cada pregunta tiene un peso (`axis_weight`) calculado a partir de la desviación estándar real de las respuestas de los candidatos — las preguntas que mejor discriminan entre candidatos pesan más.
+
+Los ejes describen dimensiones de política pública, no posiciones ideológicas. No hay etiquetas de "izquierda" o "derecha".
 
 ## Datos
 
@@ -70,8 +84,8 @@ JSON es la fuente primaria — los datos viven en git, versionados. Más detalle
 ## Desarrollo local
 
 ```bash
-git clone https://github.com/ApoEsp/votoclaro.git
-cd votoclaro
+git clone https://github.com/votoabierto/peru.git
+cd peru
 npm install
 npm run dev
 ```
@@ -146,18 +160,25 @@ Ver documentación completa: https://votoabierto.org/datos
 
 VotoAbierto permite a la ciudadanía proponer compromisos específicos que los candidatos pueden adoptar públicamente. Las respuestas (o silencios) se documentan objetivamente.
 
-Para proponer un nuevo compromiso, [abre un issue](https://github.com/ApoEsp/votoclaro/issues/new?template=pledge.md).
+Para proponer un nuevo compromiso, [abre un issue](https://github.com/votoabierto/peru/issues/new?template=pledge.md).
 
-## Contribuir
+## Cómo contribuir datos
 
-Por favor lee nuestro [Código de Conducta](CODE_OF_CONDUCT.md) antes de contribuir.
+La contribución más valiosa es completar datos de posiciones de candidatos en temas donde aún no tenemos información. Ver [CONTRIBUTING.md](CONTRIBUTING.md) para la guía completa.
+
+### Good first issues
+
+- **Agregar posiciones de candidatos** para las preguntas del quiz que tienen datos nulos — ver `data/candidate-positions.json`
+- **Agregar perfiles de candidatos al Congreso** — datos biográficos, fotos, hojas de vida de JNE
+- **Traducir al Quechua** — nuevo contenido del quiz y ejes temáticos en `lib/i18n/qu.ts`
+- **Reportar errores** — abre un issue en GitHub
 
 Ver [CONTRIBUTING.md](CONTRIBUTING.md) para la guía completa. Formas de ayudar:
 
 1. **Agregar datos** (sin código) — edita archivos YAML en `data/`, ejecuta `node scripts/export-yaml.mjs`, envía un PR
 2. **Proponer un compromiso ciudadano** — abre un issue con la plantilla pledge
 3. **Traducir al Quechua** — edita `lib/i18n/qu.ts` y envía un PR
-4. **Reportar errores** — usa las [plantillas de Issues](https://github.com/ApoEsp/votoclaro/issues)
+4. **Reportar errores** — usa las [plantillas de Issues](https://github.com/votoabierto/peru/issues)
 5. **Código** — fork, branch, PR. `npm run build` debe pasar sin errores
 6. **Usar la API** — construye herramientas cívicas sobre nuestros datos
 
@@ -170,3 +191,7 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md) para la guía completa. Formas de ayudar:
 ## Contacto
 
 embed@votoabierto.org
+
+---
+
+`#elecciones-peru` `#transparencia` `#civic-tech` `#open-source`

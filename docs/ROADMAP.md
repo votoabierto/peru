@@ -21,10 +21,14 @@
 | O | Data audit — party refs, bios, null-safety |
 | P | Product improvements: quiz match explanation, public office records, Quechua content, quiz prominence |
 | Q | PWA killed + dead code cleanup + full docs update |
+| R-T | Quiz redesign: 3-axis model (Económico/Social/Institucional), PolicyCompass visualization, axis_weight by std dev, keyboard navigation, weighted matching |
+| U | Department filter for quiz results + OSS launch docs |
 
 ## Next priorities (backlog)
 
-- Congressional candidate biographical enrichment (JNE hojas de vida for senate/diputados)
+- Congressional candidate positions data enrichment (fill null position data to reactivate removed questions)
 - Real-time pledge response tracking (candidate team submissions)
 - Bienes declarados visualization
 - Regional candidate maps (diputados by district)
+- Mobile-optimized PolicyCompass
+- Congressional candidate biographical enrichment (JNE hojas de vida for senate/diputados)
