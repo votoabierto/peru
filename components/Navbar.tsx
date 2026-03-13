@@ -8,12 +8,14 @@ import LanguageSwitcher from './LanguageSwitcher'
 
 import { useI18n } from '@/lib/i18n/I18nProvider'
 
+type NavLink = { href: string; label: string; highlight?: boolean }
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const { t } = useI18n()
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { href: '/candidatos', label: t('nav.candidates') },
     { href: '/senado', label: t('nav.senate') },
     { href: '/diputados', label: t('nav.deputies') },
@@ -24,7 +26,7 @@ export default function Navbar() {
     { href: '/compromisos', label: t('nav.pledges') },
     { href: '/contribuir', label: t('nav.contribute') },
     { href: '/quiz', label: t('nav.quiz'), highlight: true },
-  ] satisfies { href: string; label: string; highlight?: boolean }[]
+  ]
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
