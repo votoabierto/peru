@@ -4,16 +4,18 @@ Gracias por tu interés en contribuir a VotoAbierto. Cada contribución ayuda a 
 
 ---
 
-## Cómo contribuir datos
+## Formas de contribuir
 
-La forma más valiosa de contribuir es agregar o corregir datos de candidatos. **No necesitas saber programar.**
+### 1. Corregir datos de candidatos
 
-1. Abre el archivo correspondiente en `data/` (por ejemplo, `data/candidates.json`)
-2. Agrega o corrige la información
-3. **Incluye la fuente oficial** — campo `source_url` obligatorio
-4. Envía un Pull Request con una descripción de qué cambió y por qué
+La forma más valiosa de contribuir. **No necesitas saber programar.**
 
-### Ejemplo de corrección de datos
+1. Edita el archivo YAML correspondiente en `data/` (por ejemplo, `data/candidates.yaml`)
+2. Ejecuta `node scripts/export-yaml.mjs` para sincronizar los cambios con JSON
+3. Abre un Pull Request — los diffs de YAML son mucho más fáciles de revisar que JSON
+4. **Incluye la fuente oficial** — sin URL de fuente = rechazo automático
+
+#### Ejemplo de corrección
 
 ```
 Candidato: Juan Pérez
@@ -22,9 +24,42 @@ Fuente: https://infogob.jne.gob.pe/Candidato/...
 Cambio: Corregir cargo anterior de "congresista" a "alcalde provincial"
 ```
 
----
+### 2. Proponer un compromiso ciudadano
 
-## Cómo contribuir código
+Los compromisos son propuestas cívicas que los candidatos pueden adoptar públicamente.
+
+1. [Abre un issue](https://github.com/ApoEsp/votoclaro/issues/new?template=pledge.md) con la plantilla de compromiso
+2. Incluye: título, descripción, por qué es importante, cómo se mediría el cumplimiento
+3. El equipo editorial revisa y, si cumple los criterios, lo agrega a `data/pledges.json`
+4. Se notifica a los equipos de campaña para obtener respuestas
+
+### 3. Traducir al Quechua
+
+VotoAbierto soporta Quechua (qu) además de Español (es).
+
+1. Edita `lib/i18n/qu.ts` — contiene todas las cadenas de UI traducibles
+2. Agrega traducciones faltantes o corrige existentes
+3. Envía un PR — idealmente con revisión de un hablante nativo
+
+### 4. Usar la API para construir herramientas cívicas
+
+La API pública está diseñada para que desarrolladores construyan sobre nuestros datos:
+
+```bash
+curl https://votoabierto.org/api/v1/candidates
+curl https://votoabierto.org/api/v1/parties
+curl https://votoabierto.org/api/v1/senate
+curl https://votoabierto.org/api/v1/diputados
+curl https://votoabierto.org/api/v1/andino
+```
+
+Sin autenticación. CORS abierto. Rate limit: 60 req/min. OpenAPI spec: `/api/v1/openapi.json`
+
+### 5. Reportar errores
+
+Usa las [plantillas de Issues](https://github.com/ApoEsp/votoclaro/issues) para reportar bugs o datos incorrectos.
+
+### 6. Contribuir código
 
 1. Haz fork del repositorio
 2. Crea una rama: `git checkout -b feat/tu-mejora`
@@ -32,7 +67,9 @@ Cambio: Corregir cargo anterior de "congresista" a "alcalde provincial"
 4. Verifica: `npm run build` — debe pasar sin errores
 5. Envía un Pull Request
 
-### Convención de commits
+---
+
+## Convención de commits
 
 - `feat: descripción` — nueva funcionalidad
 - `fix: descripción` — corrección de bug
@@ -41,19 +78,15 @@ Cambio: Corregir cargo anterior de "congresista" a "alcalde provincial"
 
 ---
 
-## Corregir datos de candidatos (YAML)
+## Fuentes de datos que aceptamos
 
-Exportamos los datos clave en formato YAML para facilitar la revisión en Pull Requests:
-
-1. Edita el archivo YAML correspondiente en `data/` (por ejemplo, `data/candidates.yaml`)
-2. Ejecuta `node scripts/export-yaml.mjs` para sincronizar los cambios con JSON
-3. Abre un Pull Request — los diffs de YAML son mucho más fáciles de revisar que JSON
-
-### Fuentes de datos que aceptamos
-- JNE datos oficiales (máxima confianza)
-- Declaraciones de Infogob
-- Redes sociales oficiales de candidatos
-- Medios de comunicación verificados (incluir enlace)
+| Prioridad | Fuente | Ejemplo |
+|---|---|---|
+| 1 (máxima) | JNE | Portal de candidatos, resoluciones |
+| 2 | ONPE | Calendario electoral, financiamiento |
+| 3 | INFOGOB | Hojas de vida, historial |
+| 4 | Medio verificado | El Comercio, Ojo Público, RPP |
+| 5 | Contribución ciudadana | Revisión manual requerida antes de publicar |
 
 ---
 
@@ -68,21 +101,9 @@ Estos estándares son **obligatorios** para cualquier contribución de datos:
 5. **Dos fuentes independientes** para claims que no provienen de una autoridad electoral
 6. **Fecha de acceso.** Incluir cuándo se accedió a la fuente
 
-### Jerarquía de fuentes
-
-| Prioridad | Fuente | Ejemplo |
-|---|---|---|
-| 1 (máxima) | JNE | Portal de candidatos, resoluciones |
-| 2 | ONPE | Calendario electoral, financiamiento |
-| 3 | INFOGOB | Hojas de vida, historial |
-| 4 | Medio verificado | El Comercio, Ojo Público, RPP |
-| 5 | Contribución ciudadana | Revisión manual requerida antes de publicar |
-
 ---
 
 ## Cómo verificar una afirmación
-
-Paso a paso para verificar un dato antes de contribuirlo:
 
 1. Busca el candidato en [JNE Voto Informado](https://votoinformadoia.jne.gob.pe)
 2. Revisa su hoja de vida en [INFOGOB](https://infogob.jne.gob.pe)
@@ -121,14 +142,9 @@ npm run lint      # Verificación de estilo
 
 ## Código de conducta
 
-VotoAbierto es un espacio cívico. Todas las interacciones deben ser:
+Todas las interacciones se rigen por nuestro [Código de Conducta](CODE_OF_CONDUCT.md).
 
-- **Respetuosas** — sin ataques personales ni lenguaje ofensivo
-- **No partidarias** — sin proselitismo ni promoción de candidatos
-- **Constructivas** — orientadas a mejorar la plataforma y la información
-- **Honestas** — sin manipulación de datos ni desinformación intencional
-
-Violaciones graves (desinformación intencional, manipulación de datos) resultan en bloqueo permanente.
+VotoAbierto es un espacio cívico. Todas las interacciones deben ser respetuosas, no partidarias, constructivas y honestas. Violaciones graves (desinformación intencional, manipulación de datos) resultan en bloqueo permanente.
 
 ---
 

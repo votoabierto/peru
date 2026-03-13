@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Noto_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -69,9 +68,6 @@ export default function RootLayout({
           <Footer />
 
         </I18nProvider>
-        <Script id="sw-unregister" strategy="afterInteractive">
-          {`if ('serviceWorker' in navigator) { navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())) }`}
-        </Script>
       </body>
     </html>
   );

@@ -68,11 +68,6 @@ input, select, textarea {
   font-size: 16px;
 }
 
-/* Safe area for PWA install banner and notched devices */
-.safe-bottom {
-  padding-bottom: max(1rem, env(safe-area-inset-bottom));
-}
-
 @layer components {
   .btn-primary {
     @apply bg-va-blue text-white font-semibold px-5 py-2.5 min-h-[44px] rounded-lg hover:bg-va-blue-hover transition-colors;

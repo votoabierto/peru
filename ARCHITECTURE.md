@@ -7,112 +7,172 @@
 | Framework | Next.js 16 (App Router) |
 | Lenguaje | TypeScript (strict mode) |
 | Estilos | Tailwind CSS v4 |
-| Base de datos | Supabase (PostgreSQL) |
 | Deploy | Vercel |
 | Tipografía | Noto Sans + IBM Plex Mono |
 | OG Images | @vercel/og |
 | Iconos | lucide-react |
+| i18n | Custom I18nProvider (es + qu) |
 
 ## Estructura de archivos
 
 ```
 votoclaro/
 ├── app/                       # Páginas de Next.js (App Router)
-│   ├── page.tsx               # Homepage con countdown y stats
+│   ├── page.tsx               # Homepage con countdown, stats y quiz CTA
 │   ├── candidatos/            # Lista y perfiles presidenciales
 │   ├── senado/                # Candidatos al senado
 │   ├── diputados/             # Candidatos a diputados
 │   ├── parlamento-andino/     # Parlamento Andino
 │   ├── regiones/              # Desglose por región
 │   ├── comparar/              # Comparador lado a lado
-│   ├── quiz/                  # Quiz "¿Con quién votas?"
+│   ├── quiz/                  # Quiz de afinidad (20 preguntas)
+│   ├── compromisos/           # Compromisos ciudadanos
 │   ├── verificar/             # Feed de fact-checks
 │   ├── buscar/                # Búsqueda
 │   ├── contribuir/            # Guía de contribución
 │   ├── metodologia/           # Metodología
 │   ├── embed/                 # Widget embebible
 │   ├── widget/                # Widgets para embed externo
-│   ├── admin/                 # Panel de administración
-│   └── api/                   # Rutas API (13 endpoints)
+│   ├── datos/                 # Documentación de la API pública
+│   ├── api/                   # Rutas API internas
+│   └── api/v1/                # API REST pública
 ├── components/                # Componentes React
-│   ├── CandidateProfile/      # 8 componentes de perfil de candidato
-│   ├── Comparator/            # 6 componentes del comparador
+│   ├── CandidateProfile/      # Componentes de perfil de candidato
+│   ├── Comparator/            # Componentes del comparador
 │   ├── Navbar.tsx             # Navegación con búsqueda
 │   ├── Footer.tsx             # Pie de página
+│   ├── DataConfidenceBadge.tsx # Badges de confianza de datos
 │   ├── CountdownTimer.tsx     # Cuenta regresiva al 12 de abril
 │   ├── PoliticalCompass.tsx   # Brújula política del quiz
 │   ├── ShareButtons.tsx       # Botones para compartir en redes
-│   └── ...                    # ~35 componentes en total
+│   ├── LanguageSwitcher.tsx   # Selector de idioma (es/qu)
+│   └── ...
 ├── lib/                       # Tipos, helpers, datos
 │   ├── data.ts                # Carga de datos (getCandidates, getFactChecks, etc.)
 │   ├── types.ts               # Tipos TypeScript
-│   ├── supabase.ts            # Cliente Supabase
-│   ├── seed-data.ts           # Datos semilla como fallback
+│   ├── i18n/                  # Internacionalización
+│   │   ├── I18nProvider.tsx   # Context provider para traducciones
+│   │   ├── es.ts              # Traducciones español
+│   │   └── qu.ts              # Traducciones quechua
 │   ├── congress-data.ts       # Datos del congreso
 │   └── regions-data.ts        # Datos regionales
 ├── data/                      # Archivos JSON (fuente primaria, versionada en git)
 ├── scripts/                   # Scripts de fetch y seed de datos JNE
-├── supabase/                  # Migraciones SQL
 ├── public/                    # Assets estáticos
+├── .github/workflows/         # GitHub Actions (auto-refresh semanal)
 └── docs/                      # Documentación del proyecto
 ```
 
-## Datos: JSON vs Supabase
+## Datos: JSON como fuente de verdad
 
-- **`data/*.json`** — fuente primaria, versionada en git, siempre disponible offline
-- **Supabase** — datos adicionales: resultados del quiz, contribuciones de la comunidad
-- **Si Supabase no responde, el sitio funciona 100% desde JSON**
-
-El flujo de datos:
+- **`data/*.json`** — fuente primaria, versionada en git
+- **`data/*.yaml`** — mirrors de JSON para facilitar revisión de PRs
+- **El sitio funciona 100% desde archivos JSON** — no requiere base de datos
 
 ```
-JNE API ──[scripts/]──▶ data/*.json ──[lib/data.ts]──▶ Componentes React
-                                                            │
-Supabase ──[lib/supabase.ts]──────────────────────────────▶─┘
+JNE API ──[scripts/]──> data/*.json ──[lib/data.ts]──> Componentes React
+                             │
+GitHub Actions ──[semanal]───┘  (auto-refresh cada lunes 06:00 UTC)
 ```
 
-## Cómo actualizar datos de candidatos
+## API pública `/api/v1/`
 
-```bash
-# 1. Descargar datos frescos de JNE
-node scripts/jne-scraper.js
+REST API libre para desarrolladores y herramientas cívicas.
 
-# 2. Enriquecer con hojas de vida
-node scripts/fetch-hojas-de-vida.js
+| Endpoint | Método | Descripción |
+|---|---|---|
+| `/api/v1/candidates` | GET | Lista candidatos presidenciales |
+| `/api/v1/candidates/[slug]` | GET | Detalle de candidato |
+| `/api/v1/parties` | GET | Lista partidos políticos |
+| `/api/v1/parties/[id]` | GET | Detalle de partido |
+| `/api/v1/senate` | GET | Candidatos al senado (filtrable por partido) |
+| `/api/v1/diputados` | GET | Candidatos a diputados (filtrable por distrito) |
+| `/api/v1/andino` | GET | Candidatos al Parlamento Andino |
+| `/api/v1/openapi.json` | GET | Especificación OpenAPI |
 
-# 3. Commit y deploy
-git add data/
-git commit -m "data: actualización desde JNE [fecha]"
-git push  # Vercel redeploy automático
-```
+### Rate limiting
 
-## Quiz: cómo funcionan los scores
+- 60 requests/minuto por IP
+- Respuestas 429 incluyen headers CORS
+- Sin autenticación requerida
 
-1. El usuario responde 10 preguntas en escala 1-5 por tema
-2. Los candidatos tienen scores por tema extraídos de sus planes de gobierno
-3. `score = null` si el candidato no abordó el tema
-4. Match % = promedio ponderado de `|user_score - candidate_score|` para temas compartidos verificados
-5. Se requiere mínimo 3 temas compartidos verificados para mostrar un porcentaje de match
-6. El quiz es 100% anónimo — no se guarda ningún dato identificable
+### CORS
 
-## API Routes
+Abierto a cualquier origen — diseñado para consumo desde cualquier sitio web.
+
+## Data Confidence System
+
+El componente `DataConfidenceBadge` muestra el nivel de confianza de cada dato:
+
+| Nivel | Significado |
+|---|---|
+| `official` | Dato directo de JNE/ONPE/fuente oficial |
+| `scraped` | Extraído de portal oficial pero no de API estructurada |
+| `community` | Contribuido por la comunidad, verificado editorialmente |
+| `pending` | Pendiente de verificación |
+
+## Internacionalización (i18n)
+
+- `I18nProvider` wraps the app, provides `useTranslation()` hook
+- Traducciones en `lib/i18n/es.ts` (español) y `lib/i18n/qu.ts` (quechua)
+- `LanguageSwitcher` component en el Navbar
+- Quechua translations cover navigation, quiz, and key UI labels
+
+## Compromisos Ciudadanos
+
+- Datos en `data/pledges.json`
+- Rutas: `/compromisos` (lista) y `/compromisos/[id]` (detalle)
+- Ciudadanos proponen compromisos via GitHub Issues (plantilla pledge)
+- Candidatos pueden responder — respuestas se documentan objetivamente
+- Silencio también se documenta
+
+## Registros de cargo público
+
+- Datos en `data/public-office-records.json`
+- Integrados en las páginas de perfil presidencial
+- Muestran historial de cargos para candidatos que ejercieron funciones públicas
+
+## Quiz de afinidad
+
+1. 20 preguntas sobre temas clave (economía, seguridad, educación, etc.)
+2. Ponderación de importancia por pregunta
+3. Match % por candidato basado en posiciones extraídas de planes de gobierno
+4. Explicación detallada: temas más alineados y más divergentes con el top match
+5. Resultados compartibles (URL + OG image)
+
+## API Routes (internas)
 
 | Ruta | Método | Descripción |
 |---|---|---|
 | `/api/candidatos` | GET | Lista/busca candidatos |
 | `/api/candidatos/[id]` | GET | Detalle de candidato |
-| `/api/candidatos/[id]/noticias` | GET | Noticias del candidato |
 | `/api/buscar` | GET | Búsqueda full-text |
 | `/api/quiz` | POST | Procesa respuestas del quiz |
 | `/api/verificar` | GET | Feed de fact-checks |
-| `/api/contribuciones` | POST | Envía contribución ciudadana |
 | `/api/feedback` | POST | Envía feedback del usuario |
 | `/api/og/candidato` | GET | Genera imagen OG de candidato |
 | `/api/og/comparar` | GET | Genera imagen OG de comparación |
 | `/api/og/quiz-result` | GET | Genera imagen OG de resultado del quiz |
 | `/api/embed` | GET | Datos para widget embebible |
-| `/api/admin/contribuciones` | GET | Admin: revisa contribuciones |
 
-## PWA y Offline
+## Wave History
 
-El sitio funciona como Progressive Web App con Service Worker. La página `/offline` se muestra cuando no hay conexión. Los datos JSON se cachean localmente para acceso offline.
+| Wave | Qué se construyó |
+|------|---|
+| A | SEO — Schema.org, sitemap, FAQ |
+| B | PWA (removido en Wave Q) |
+| C | Political compass + mejora del quiz |
+| D | Share buttons (WhatsApp/X icon-only) |
+| E | Quechua + WCAG 2.1 AA |
+| F | Antecedentes penales + bienes + hoja de vida |
+| G | Quiz topic expansion + political compass |
+| H | OSS docs — README, ARCHITECTURE, CONTRIBUTING |
+| I | Perfiles individuales de congreso (Senado, Diputados, Andino) |
+| J | Dead code cleanup |
+| K | Data confidence markers + YAML export + CoC |
+| L | Auto-refresh pipeline (GitHub Actions) |
+| M | API pública /api/v1/ + OpenAPI |
+| N | Compromisos ciudadanos |
+| O | Data audit — party refs, bios, null-safety |
+| P | Quiz match explanation, registros de cargo público, Quechua content, quiz prominence |
+| Q | PWA killed + dead code cleanup + full docs update |
