@@ -13,9 +13,18 @@
           "Cuestionado por contratos de obra con empresas vinculadas al partido Alianza Para el Progreso, según informes de la Contraloría"
         ],
         "sources": [
-          {"label": "INEI — Indicadores regionales La Libertad", "url": "https://www.inei.gob.pe"},
-          {"label": "JNE — Resolución sobre dádivas 2016", "url": "https://www.jne.gob.pe"},
-          {"label": "Contraloría General de la República", "url": "https://www.contraloria.gob.pe"}
+          {
+            "label": "INEI — Indicadores regionales La Libertad",
+            "url": "https://www.inei.gob.pe"
+          },
+          {
+            "label": "JNE — Resolución sobre dádivas 2016",
+            "url": "https://www.jne.gob.pe"
+          },
+          {
+            "label": "Contraloría General de la República",
+            "url": "https://www.contraloria.gob.pe"
+          }
         ]
       }
     ]
@@ -33,9 +42,18 @@
           "Cumplió prisión preventiva de 16 meses entre 2018 y 2020 por riesgo de obstrucción a la justicia"
         ],
         "sources": [
-          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
-          {"label": "Poder Judicial — Caso Cocteles", "url": "https://www.pj.gob.pe"},
-          {"label": "JNE — Historial electoral", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Congreso de la República — Archivo legislativo",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "Poder Judicial — Caso Cocteles",
+            "url": "https://www.pj.gob.pe"
+          },
+          {
+            "label": "JNE — Historial electoral",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -53,9 +71,18 @@
           "Prófugo de la justicia desde octubre de 2023 por una segunda sentencia de 3 años y 6 meses efectiva por colusión en obra del Hospital de Junín"
         ],
         "sources": [
-          {"label": "Poder Judicial — Sentencia negociación incompatible", "url": "https://www.pj.gob.pe"},
-          {"label": "JNE — Hoja de vida Vladimir Cerrón", "url": "https://www.jne.gob.pe"},
-          {"label": "Contraloría — Informes Junín", "url": "https://www.contraloria.gob.pe"}
+          {
+            "label": "Poder Judicial — Sentencia negociación incompatible",
+            "url": "https://www.pj.gob.pe"
+          },
+          {
+            "label": "JNE — Hoja de vida Vladimir Cerrón",
+            "url": "https://www.jne.gob.pe"
+          },
+          {
+            "label": "Contraloría — Informes Junín",
+            "url": "https://www.contraloria.gob.pe"
+          }
         ]
       }
     ]
@@ -73,9 +100,18 @@
           "Renunció al cargo antes de finalizar su mandato para postular a la presidencia en 2021"
         ],
         "sources": [
-          {"label": "Municipalidad de La Victoria — Gestión 2019-2022", "url": "https://www.munilavictoria.gob.pe"},
-          {"label": "JNE — Hoja de vida George Forsyth", "url": "https://www.jne.gob.pe"},
-          {"label": "Contraloría — Informes La Victoria", "url": "https://www.contraloria.gob.pe"}
+          {
+            "label": "Municipalidad de La Victoria — Gestión 2019-2022",
+            "url": "https://www.munilavictoria.gob.pe"
+          },
+          {
+            "label": "JNE — Hoja de vida George Forsyth",
+            "url": "https://www.jne.gob.pe"
+          },
+          {
+            "label": "Contraloría — Informes La Victoria",
+            "url": "https://www.contraloria.gob.pe"
+          }
         ]
       }
     ]
@@ -93,8 +129,14 @@
           "Candidato presidencial por Acción Popular en 2021, obtuvo el cuarto lugar en primera vuelta"
         ],
         "sources": [
-          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
-          {"label": "JNE — Hoja de vida Yonhy Lescano", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Congreso de la República — Archivo legislativo",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "JNE — Hoja de vida Yonhy Lescano",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -112,9 +154,18 @@
           "Cuestionado por la ejecución presupuestal durante la pandemia COVID-19 en la región"
         ],
         "sources": [
-          {"label": "Gobierno Regional de Cajamarca", "url": "https://www.regioncajamarca.gob.pe"},
-          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
-          {"label": "JNE — Hoja de vida Mesías Guevara", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Gobierno Regional de Cajamarca",
+            "url": "https://www.regioncajamarca.gob.pe"
+          },
+          {
+            "label": "Congreso de la República — Archivo legislativo",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "JNE — Hoja de vida Mesías Guevara",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -131,9 +182,18 @@
           "Promotora del Registro Nacional de Detenidos y del Mecanismo Nacional de Prevención de la Tortura"
         ],
         "sources": [
-          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
-          {"label": "Ministerio de Justicia — Gestión 2015-2016", "url": "https://www.gob.pe/minjus"},
-          {"label": "JNE — Hoja de vida Marisol Pérez Tello", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Congreso de la República — Archivo legislativo",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "Ministerio de Justicia — Gestión 2015-2016",
+            "url": "https://www.gob.pe/minjus"
+          },
+          {
+            "label": "JNE — Hoja de vida Marisol Pérez Tello",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -150,9 +210,18 @@
           "Promotor de leyes sobre educación técnica y emprendimiento desde el Congreso"
         ],
         "sources": [
-          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
-          {"label": "SUNEDU — Resolución sobre Universidad Telesup", "url": "https://www.sunedu.gob.pe"},
-          {"label": "JNE — Hoja de vida José Luna Gálvez", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Congreso de la República — Archivo legislativo",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "SUNEDU — Resolución sobre Universidad Telesup",
+            "url": "https://www.sunedu.gob.pe"
+          },
+          {
+            "label": "JNE — Hoja de vida José Luna Gálvez",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -169,9 +238,18 @@
           "Promotor de políticas de turismo comunitario y formalización de emprendimientos rurales"
         ],
         "sources": [
-          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
-          {"label": "MINCETUR — Gestión ministerial", "url": "https://www.gob.pe/mincetur"},
-          {"label": "JNE — Hoja de vida Roberto Sánchez", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Congreso de la República — Archivo legislativo",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "MINCETUR — Gestión ministerial",
+            "url": "https://www.gob.pe/mincetur"
+          },
+          {
+            "label": "JNE — Hoja de vida Roberto Sánchez",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -188,8 +266,14 @@
           "Promovió la modernización de la gestión municipal con plataformas digitales de trámites"
         ],
         "sources": [
-          {"label": "Municipalidad de La Molina", "url": "https://www.munimolina.gob.pe"},
-          {"label": "JNE — Hoja de vida Álvaro Paz de la Barra", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Municipalidad de La Molina",
+            "url": "https://www.munimolina.gob.pe"
+          },
+          {
+            "label": "JNE — Hoja de vida Álvaro Paz de la Barra",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -207,8 +291,14 @@
           "Cuestionado por grupos de sociedad civil por posiciones conservadoras en temas de género y derechos"
         ],
         "sources": [
-          {"label": "Municipalidad de Lima", "url": "https://www.munlima.gob.pe"},
-          {"label": "JNE — Hoja de vida Rafael López Aliaga", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Municipalidad de Lima",
+            "url": "https://www.munlima.gob.pe"
+          },
+          {
+            "label": "JNE — Hoja de vida Rafael López Aliaga",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -226,8 +316,14 @@
           "Investigado por la fiscalía en relación a presuntas ejecuciones extrajudiciales durante operaciones militares — proceso en curso"
         ],
         "sources": [
-          {"label": "Congreso de la República", "url": "https://www.congreso.gob.pe"},
-          {"label": "JNE — Hoja de vida José Williams Zapata", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Congreso de la República",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "JNE — Hoja de vida José Williams Zapata",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -245,9 +341,18 @@
           "Conocido por sus denuncias de corrupción en el Congreso durante la era Fujimori"
         ],
         "sources": [
-          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
-          {"label": "Ministerio de Relaciones Exteriores", "url": "https://www.gob.pe/rree"},
-          {"label": "JNE — Hoja de vida Fernando Olivera", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Congreso de la República — Archivo legislativo",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "Ministerio de Relaciones Exteriores",
+            "url": "https://www.gob.pe/rree"
+          },
+          {
+            "label": "JNE — Hoja de vida Fernando Olivera",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -265,9 +370,18 @@
           "Promotor de legislación sobre seguridad nacional y defensa desde el Congreso"
         ],
         "sources": [
-          {"label": "Congreso de la República", "url": "https://www.congreso.gob.pe"},
-          {"label": "Ministerio de Defensa", "url": "https://www.gob.pe/mindef"},
-          {"label": "JNE — Hoja de vida Roberto Chiabra", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Congreso de la República",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "Ministerio de Defensa",
+            "url": "https://www.gob.pe/mindef"
+          },
+          {
+            "label": "JNE — Hoja de vida Roberto Chiabra",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -284,8 +398,14 @@
           "Presidente del directorio del Instituto de Defensa Legal (IDL) previo a su carrera ministerial"
         ],
         "sources": [
-          {"label": "Presidencia del Consejo de Ministros", "url": "https://www.gob.pe/pcm"},
-          {"label": "JNE — Hoja de vida Jorge Nieto Montesinos", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "Presidencia del Consejo de Ministros",
+            "url": "https://www.gob.pe/pcm"
+          },
+          {
+            "label": "JNE — Hoja de vida Jorge Nieto Montesinos",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]
@@ -302,9 +422,96 @@
           "Académica y docente universitaria antes de su carrera en gestión pública"
         ],
         "sources": [
-          {"label": "EsSalud — Gestión institucional", "url": "https://www.essalud.gob.pe"},
-          {"label": "Ministerio de Desarrollo e Inclusión Social", "url": "https://www.gob.pe/midis"},
-          {"label": "JNE — Hoja de vida Fiorella Molinelli", "url": "https://www.jne.gob.pe"}
+          {
+            "label": "EsSalud — Gestión institucional",
+            "url": "https://www.essalud.gob.pe"
+          },
+          {
+            "label": "Ministerio de Desarrollo e Inclusión Social",
+            "url": "https://www.gob.pe/midis"
+          },
+          {
+            "label": "JNE — Hoja de vida Fiorella Molinelli",
+            "url": "https://www.jne.gob.pe"
+          }
+        ]
+      }
+    ]
+  },
+  "mario-vizcarra": {
+    "offices": [
+      {
+        "title": "Gobernador Regional de Moquegua",
+        "period": "2011-2014",
+        "key_facts": [
+          "Gestionó la construcción del Hospital Regional de Moquegua, primera obra de salud de ese nivel en la región",
+          "Ejecutó el 94% del presupuesto regional en 2013, una de las tasas más altas del país ese año según el MEF",
+          "Impulsó el proyecto de irrigación Lomas de Ilo para ampliar la frontera agrícola regional",
+          "Investigado por el Ministerio Público por presuntas irregularidades en contratos de obra vial — caso archivado sin condena"
+        ],
+        "sources": [
+          {
+            "label": "MEF — Ejecución presupuestal regional 2013",
+            "url": "https://www.mef.gob.pe"
+          },
+          {
+            "label": "Gobierno Regional de Moquegua — informes de gestión",
+            "url": "https://www.regionmoquegua.gob.pe"
+          }
+        ]
+      },
+      {
+        "title": "Presidente de la República del Perú",
+        "period": "2018-2020 (asumió por vacancia de PPK)",
+        "key_facts": [
+          "Asumió la presidencia el 23 de marzo de 2018 tras la renuncia de Pedro Pablo Kuczynski",
+          "Disolvió el Congreso en septiembre de 2019 al no otorgarse la cuestión de confianza — medida refrendada por el Tribunal Constitucional",
+          "Vacado por el Congreso en noviembre de 2020 por causal de incapacidad moral — constitucionalidad del proceso fue debatida",
+          "Investigado por el caso Odebrecht — presuntos aportes a campaña 2011; proceso en curso al momento de redacción",
+          "Implementó la Política Nacional de Integridad y Lucha contra la Corrupción (DS 092-2017-PCM)"
+        ],
+        "sources": [
+          {
+            "label": "Tribunal Constitucional — sentencia sobre disolución del Congreso",
+            "url": "https://www.tc.gob.pe"
+          },
+          {
+            "label": "Congreso de la República — acta de vacancia noviembre 2020",
+            "url": "https://www.congreso.gob.pe"
+          },
+          {
+            "label": "Fiscalía de la Nación — caso Odebrecht",
+            "url": "https://www.mpfn.gob.pe"
+          }
+        ]
+      }
+    ]
+  },
+  "walter-chirinos": {
+    "offices": [
+      {
+        "title": "Alcalde de Trujillo",
+        "period": "2019-2022",
+        "key_facts": [
+          "Elegido alcalde de Trujillo en 2018 por Renovación Popular con 28% de los votos",
+          "Implementó el Plan de Seguridad Ciudadana con instalación de 400+ cámaras de videovigilancia en coordinación con la PNP",
+          "Trujillo mantuvo altos índices de inseguridad durante su gestión — catalogada entre las más violentas del país por el INEI (2020-2021)",
+          "Ejecutó obras de rehabilitación vial en avenidas principales del centro histórico",
+          "Sin investigaciones penales registradas según hoja de vida declarada ante el JNE al cierre de mandato"
+        ],
+        "sources": [
+          {
+            "label": "INEI — Estadísticas de seguridad ciudadana 2021",
+            "url": "https://www.inei.gob.pe"
+          },
+          {
+            "label": "Municipalidad Provincial de Trujillo — informes de gestión",
+            "url": "https://www.munitrujillo.gob.pe"
+          },
+          {
+            "label": "JNE — Hoja de vida declarada",
+            "url": "https://www.jne.gob.pe"
+          }
         ]
       }
     ]

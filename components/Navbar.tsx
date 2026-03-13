@@ -24,7 +24,7 @@ export default function Navbar() {
     { href: '/compromisos', label: t('nav.pledges') },
     { href: '/contribuir', label: t('nav.contribute') },
     { href: '/quiz', label: t('nav.quiz'), highlight: true },
-  ] as const
+  ] satisfies { href: string; label: string; highlight?: boolean }[]
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -107,7 +107,11 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="flex items-center px-4 py-3 min-h-[44px] text-sm font-medium text-[#444444] hover:text-[#111111] hover:bg-[#F7F6F3] rounded-lg transition-colors focus:outline-2 focus:outline-[#1A56A0] focus:outline-offset-2"
+                  className={`flex items-center px-4 py-3 min-h-[44px] text-sm font-medium rounded-lg transition-colors focus:outline-2 focus:outline-[#1A56A0] focus:outline-offset-2 ${
+                    link.highlight
+                      ? 'bg-[#C8102E] text-white hover:bg-[#a50d25]'
+                      : 'text-[#444444] hover:text-[#111111] hover:bg-[#F7F6F3]'
+                  }`}
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

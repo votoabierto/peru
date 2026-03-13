@@ -35,20 +35,6 @@ export const qu: Record<string, string> = {
   'quiz.department_hint': "Mana obligaciónchu — suyuykimanta willakunata qusqayku.",
   'quiz.anonymous': "Mana sutiyuq. Mana qillqakuychu. Willakuyllam.",
   'quiz.keyboard_hint': '(1-5) akllanapaq | → hamuq',
-  'quiz.results_title': 'Ruwasqaykikuna',
-  'quiz.top_matches': 'Aswan tupaq candidatokuna',
-  'quiz.share_result': 'Ruwasqaykita willakuy',
-  'quiz.restart': 'Hukmanta qallariy',
-  'quiz.view_all': 'Llapan candidatokunata qhaway',
-  'quiz.weight_title': 'Mayqin kamachiykuna aswan allinchu qampaq?',
-  'quiz.weight_hint': 'Sapa kamachiy mayhinatas chanin kananta niy.',
-  'quiz.very_important': 'Anchata allin',
-  'quiz.important': 'Allin',
-  'quiz.not_much': 'Mana anchatachu',
-  'quiz.why_no_match': '¿Imaraykutaq candidatoymana rikhurinchu?',
-  'quiz.why_no_match_explain': "Kay quiz tapuykunaykiruwasqaykiwan candidatokunaq chiqaqchasqa yuyayninkunawan tupachin. Candidato pisilla chiqaqchasqa willakuyniyuq kaqtin (6-manta pisiq), mana hatun ruwasqakunapichu rikhurin.",
-  'quiz.aligned': 'Tupanku:',
-  'quiz.divergent': 'Mana tupankuchu:',
 
   // Data quality
   'data.verified': 'JNE-manta chiqaqchasqa',
@@ -57,7 +43,6 @@ export const qu: Record<string, string> = {
   'data.updated': "Musuqchasqa willakuy",
   'data.view_jne': 'JNE-pi qhaway',
   'data.stale_warning': "Willakuy mawk'a kanman",
-  'data.no_data': 'Mana yachaychu',
 
   // Countdown
   'countdown.days': "P'UNCHAY",
@@ -69,71 +54,16 @@ export const qu: Record<string, string> = {
   'countdown.remaining': "Qhipan {days} p'unchay, {hours} hora, {minutes} minuto",
 
   // Candidate profile
-  'profile.party': 'Llaqtamasi kama',
-  'profile.role': 'Kargon',
-  'profile.biography': 'Kawsay willakuy',
-  'profile.cv': 'Kawsay ruwasqa',
-  'profile.education': 'Yachay wasipi yachaqay',
-  'profile.occupation': 'Llankay',
-  'profile.work_history': 'Llankay riqsisqa',
-  'profile.criminal_record': 'Huchayuq kasqanmanta willakuy',
-  'profile.no_criminal_record': 'Mana huchayuq JNE-pi qillqasqa',
-  'profile.assets': 'Qullqinkuna willasqa',
-  'profile.prior_offices': 'Ñawpaq kargokuna',
-  'profile.government_plan': 'Kamachiy yuyay',
-  'profile.positions_by_topic': 'Kamachiykuna sapa kamachiypi',
-  'profile.verifications': 'Chiqaqchasqakuna',
-  'profile.pledges': 'Rimanakuykuna llaqtapaq',
-  'profile.news': 'Musuq willakuykuna',
-  'profile.similar_candidates': 'Tupaq candidatokuna',
-  'profile.same_party': 'Kikin llaqtamasi kamaq candidatokuna',
-  'profile.public_office': 'Llaqta kamachiy — Chiqaq willakuy',
-  'profile.public_office_disclaimer': 'Chiqaq paqarimuymanta willakuykuna. Mana pitapas yanapaspachu.',
-  'profile.download_plan': 'Tukuy kamachiy yuyayta uraykachiy (PDF — JNE)',
 
   // Common UI
-  'ui.no_info': 'Mana willakuychu',
-  'ui.no_data': 'Mana yachaychu',
-  'ui.source': 'Paqarimun:',
-  'ui.verified': 'Chiqaqchaskam',
-  'ui.not_verified': 'Mana chiqaqchasqachu',
-  'ui.view_more': 'Aswanta qhaway',
-  'ui.view_full_profile': 'Tukuy kayninta qhaway',
-  'ui.view_all': 'Llapanta qhaway',
-  'ui.loading': 'Churaykuchkan...',
-  'ui.share': 'Willakuy',
-  'ui.copy_link': 'Enlace-ta copiay',
-  'ui.copied': 'Copiasqañam',
-  'ui.clear_filters': 'Chuyanchay',
-  'ui.show_more': 'Aswanta rikuchiy',
-  'ui.no_results': 'Mana tarisqachu',
-  'ui.contribute': 'Willakuywan yanapay',
 
   // Candidate list
-  'candidates.title': 'Presidente candidatokuna',
-  'candidates.search': 'Candidatota otaq llaqtamasi kamata maskay...',
-  'candidates.all_roles': 'Llapan kargokuna',
-  'candidates.all_parties': 'Llapan llaqtamasi kamakuna',
-  'candidates.showing': 'Rikuchisqa',
-  'candidates.of': '-manta',
 
   // Compare
-  'compare.title': 'Candidatokunata tupachiy',
-  'compare.select': 'Candidatota akllay',
-  'compare.add': 'Candidatota yapay',
-  'compare.vs': 'vs',
 
   // Pledges
-  'pledges.title': 'Llaqtapaq rimanakuykuna',
-  'pledges.committed': 'Rimanakusqam',
-  'pledges.declined': 'Mana munasqachu',
-  'pledges.no_response': 'Mana kutichisqachu',
-  'pledges.category': 'Laya',
 
   // Senate / Deputies / Andean
-  'senate.title': 'Senado candidatokuna',
-  'deputies.title': 'Dipitado candidatokuna',
-  'andean.title': 'Parlamento Andino candidatokuna',
 
   // Accessibility
   'a11y.skip_to_content': "Hatun willakuyman pasay",
