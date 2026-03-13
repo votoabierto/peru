@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { getHojaDeVida, getAntecedentes, getBienes } from '@/lib/data'
 import FeedbackWidget from '@/components/FeedbackWidget'
 import DataConfidenceBadge from '@/components/DataConfidenceBadge'
@@ -34,7 +35,7 @@ interface Props {
 // ISR: generate on first request, cache for 1 hour
 // Full SSG pre-rendering 1,131+ pages blows Vercel's 500MB build output limit
 export const dynamic = 'force-static'
-export const revalidate = 3600
+export const revalidate = 86400
 export const dynamicParams = true
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -79,7 +80,7 @@ export default async function SenadoCandidatePage({ params }: Props) {
       <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="flex items-center gap-5">
           {c.imageUrl ? (
-            <img src={c.imageUrl} alt={c.name} className="w-20 h-20 rounded-full object-cover border-2 border-[#E5E3DE]" />
+            <Image src={c.imageUrl} alt={c.name} width={80} height={80} className="w-20 h-20 rounded-full object-cover border-2 border-[#E5E3DE]" sizes="80px" />
           ) : (
             <div className="w-20 h-20 rounded-full bg-[#F7F6F3] border-2 border-[#E5E3DE] flex items-center justify-center">
               <span className="text-2xl font-bold text-[#777777]">{initials}</span>

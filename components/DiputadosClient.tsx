@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function toDistritoSlug(district: string): string {
   return district.toLowerCase()
@@ -162,11 +163,14 @@ export default function DiputadosClient({
                         <div className="flex items-center gap-2 p-2 border border-[#E5E3DE] rounded-lg bg-white">
                           <div className="flex-shrink-0">
                             {c.imageUrl ? (
-                              <img
+                              <Image
                                 src={c.imageUrl}
                                 alt={c.name}
+                                width={32}
+                                height={32}
                                 className="w-8 h-8 rounded-full object-cover border border-[#E5E3DE]"
                                 loading="lazy"
+                                sizes="32px"
                               />
                             ) : (
                               <div className="w-8 h-8 rounded-full bg-[#F7F6F3] border border-[#E5E3DE] flex items-center justify-center">

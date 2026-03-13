@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface DiputadoCandidate {
   id: string
@@ -102,7 +103,7 @@ export function DiputadosComparator({ candidates }: { candidates: DiputadoCandid
                     </button>
                     <div className="flex items-center gap-3 mb-3">
                       {c.imageUrl ? (
-                        <img src={c.imageUrl} alt={c.name} className="w-12 h-12 rounded-full object-cover border border-[#E5E3DE]" />
+                        <Image src={c.imageUrl} alt={c.name} width={48} height={48} className="w-12 h-12 rounded-full object-cover border border-[#E5E3DE]" sizes="48px" />
                       ) : (
                         <div className="w-12 h-12 rounded-full bg-[#F7F6F3] border border-[#E5E3DE] flex items-center justify-center">
                           <span className="text-sm font-bold text-[#777777]">
@@ -141,7 +142,7 @@ export function DiputadosComparator({ candidates }: { candidates: DiputadoCandid
                         className="w-full flex items-center gap-3 px-3 py-2 hover:bg-[#F7F6F3] text-left border-b border-[#E5E3DE] last:border-b-0 transition-colors"
                       >
                         {c.imageUrl ? (
-                          <img src={c.imageUrl} alt={c.name} className="w-8 h-8 rounded-full object-cover border border-[#E5E3DE]" loading="lazy" />
+                          <Image src={c.imageUrl} alt={c.name} width={32} height={32} className="w-8 h-8 rounded-full object-cover border border-[#E5E3DE]" loading="lazy" sizes="32px" />
                         ) : (
                           <div className="w-8 h-8 rounded-full bg-[#F7F6F3] border border-[#E5E3DE] flex items-center justify-center">
                             <span className="text-[10px] font-bold text-[#777777]">

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { CheckCircle } from 'lucide-react'
 
 // CandidateCardProps intentionally exported for re-use
@@ -67,11 +68,14 @@ export default function CandidateCard({
           {/* Photo or initials */}
           <div className="flex-shrink-0">
             {photo_url ? (
-              <img
+              <Image
                 src={photo_url}
                 alt={`${full_name}, candidato/a presidencial por ${party_name}`}
+                width={64}
+                height={64}
                 className="w-16 h-16 rounded-full object-cover border-2 border-[#E5E3DE]"
                 loading="lazy"
+                sizes="64px"
               />
             ) : (
               <div className="w-16 h-16 rounded-full bg-[#F7F6F3] border-2 border-[#E5E3DE] flex items-center justify-center">

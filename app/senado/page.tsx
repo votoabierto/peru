@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import ContributionNotice from '@/components/ContributionNotice'
 import FeedbackWidget from '@/components/FeedbackWidget'
 import senateCandidates from '@/data/senate-candidates.json'
@@ -74,11 +75,14 @@ export default function SenadoPage() {
                   <div className="card flex items-center gap-3 p-3">
                     <div className="flex-shrink-0">
                       {c.imageUrl ? (
-                        <img
+                        <Image
                           src={c.imageUrl}
                           alt={c.name}
+                          width={40}
+                          height={40}
                           className="w-10 h-10 rounded-full object-cover border border-[#E5E3DE]"
                           loading="lazy"
+                          sizes="40px"
                         />
                       ) : (
                         <div className="w-10 h-10 rounded-full bg-[#F7F6F3] border border-[#E5E3DE] flex items-center justify-center">

@@ -53,6 +53,8 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#1A56A0" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <link rel="preconnect" href="https://votoinformadoia.jne.gob.pe" />
+        <link rel="dns-prefetch" href="https://votoinformadoia.jne.gob.pe" />
       </head>
       <body className="font-sans antialiased bg-white text-[#444444] min-h-screen flex flex-col">
         <I18nProvider>
