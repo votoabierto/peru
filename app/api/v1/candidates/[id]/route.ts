@@ -1,5 +1,32 @@
 import { NextRequest, NextResponse } from 'next/server'
 import candidatesData from '@/data/candidates.json'
+import type { DataConfidence } from '@/lib/types'
+
+interface PresidentialCandidateJSON {
+  id: string
+  slug: string
+  full_name: string
+  party_id: string
+  party_abbreviation: string
+  party_name: string
+  photo_url: string | null
+  bio_short: string | null
+  career_summary: string | null
+  jne_ocupacion: string[] | null
+  jne_url_plan: string | null
+  jne_profile_url: string | null
+  jne_titulos_academicos: string[] | null
+  jne_bienes: Record<string, unknown> | null
+  has_criminal_record: boolean
+  sentencia_penal: string | null
+  sentencia_penal_detalle: Record<string, unknown>[] | null
+  planGobiernoResumen: string | null
+  planGobiernoEjes: Array<{ eje: string; descripcion: string }> | null
+  proposals: string[] | null
+  social_media: Record<string, string | null> | null
+  data_confidence: DataConfidence
+  updated_at: string
+}
 
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' }
 
@@ -8,7 +35,7 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params
-  const candidates = candidatesData as Record<string, unknown>[]
+  const candidates = candidatesData as PresidentialCandidateJSON[]
   const candidate = candidates.find(c => c.id === id || c.slug === id)
 
   if (!candidate) {

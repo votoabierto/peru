@@ -163,7 +163,7 @@
   name: Un Camino Diferente
   abbr: UCD
   color: '#228B22'
-  presidentCandidate: rosario-fernandez
+  presidentCandidate: null
   ideological_family: centro
   spectrum: center
 - id: pais-para-todos

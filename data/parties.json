@@ -327,7 +327,7 @@
     "id": "frente-popular-agricola-fia-del-peru",
     "name": "Frente Popular Agricola Fia Del Peru",
     "abbr": "FREPAP",
-    "color": "#8B4513",
+    "color": "#1B5E20",
     "presidentCandidate": null,
     "ideological_family": "agrario",
     "spectrum": "center"
@@ -336,9 +336,9 @@
     "id": "partido-ciudadanos-por-el-peru",
     "name": "Partido Ciudadanos Por El Peru",
     "abbr": "CPP",
-    "color": "#4682B4",
+    "color": "#1565C0",
     "presidentCandidate": null,
-    "ideological_family": null,
+    "ideological_family": "centro",
     "spectrum": "center"
   }
 ]

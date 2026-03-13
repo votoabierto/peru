@@ -1,23 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server'
 import partiesData from '@/data/parties.json'
 
+interface PartyJSON {
+  id: string
+  name: string
+  abbr: string
+  color: string
+  presidentCandidate: string | null
+  ideological_family: string | null
+  spectrum: string | null
+}
+
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' }
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const q = searchParams.get('q')
 
-  let parties = partiesData as Record<string, unknown>[]
+  let parties = partiesData as PartyJSON[]
 
   if (q) {
     const query = q.toLowerCase()
     parties = parties.filter(p =>
-      (p.name as string)?.toLowerCase().includes(query) ||
-      (p.abbr as string)?.toLowerCase().includes(query)
+      p.name?.toLowerCase().includes(query) ||
+      p.abbr?.toLowerCase().includes(query)
     )
   }
 
-  const clean = parties.map(p => ({
+  const clean = parties.map((p: PartyJSON) => ({
     id: p.id,
     name: p.name,
     abbr: p.abbr,

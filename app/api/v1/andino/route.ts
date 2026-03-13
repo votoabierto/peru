@@ -1,6 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import andinoData from '@/data/andino-candidates.json'
 
+interface AndinoCandidateJSON {
+  id: string
+  name: string
+  party: string
+  partyId: string
+  electionType: string
+  listPosition: number
+  imageUrl: string | null
+  sourceUrl: string
+}
+
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' }
 
 export async function GET(request: NextRequest) {
@@ -10,26 +21,26 @@ export async function GET(request: NextRequest) {
   const limit = Math.min(Math.max(parseInt(searchParams.get('limit') || '100', 10) || 100, 1), 500)
   const offset = Math.max(parseInt(searchParams.get('offset') || '0', 10) || 0, 0)
 
-  let candidates = andinoData as Record<string, unknown>[]
+  let candidates = andinoData as AndinoCandidateJSON[]
 
   if (party) {
     candidates = candidates.filter(c =>
-      (c.partyId as string)?.toLowerCase() === party.toLowerCase() ||
-      (c.party as string)?.toLowerCase() === party.toLowerCase()
+      c.partyId?.toLowerCase() === party.toLowerCase() ||
+      c.party?.toLowerCase() === party.toLowerCase()
     )
   }
 
   if (q) {
     const query = q.toLowerCase()
     candidates = candidates.filter(c =>
-      (c.name as string)?.toLowerCase().includes(query)
+      c.name?.toLowerCase().includes(query)
     )
   }
 
   const total = candidates.length
   const paginated = candidates.slice(offset, offset + limit)
 
-  const clean = paginated.map(c => ({
+  const clean = paginated.map((c: AndinoCandidateJSON) => ({
     id: c.id,
     name: c.name,
     party: c.party,

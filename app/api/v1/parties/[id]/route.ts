@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
 import partiesData from '@/data/parties.json'
 
+interface PartyJSON {
+  id: string
+  name: string
+  abbr: string
+  color: string
+  presidentCandidate: string | null
+  ideological_family: string | null
+  spectrum: string | null
+}
+
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' }
 
 export async function GET(
@@ -8,8 +18,8 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params
-  const parties = partiesData as Record<string, unknown>[]
-  const party = parties.find(p => p.id === id || (p.abbr as string)?.toLowerCase() === id.toLowerCase())
+  const parties = partiesData as PartyJSON[]
+  const party = parties.find(p => p.id === id || p.abbr?.toLowerCase() === id.toLowerCase())
 
   if (!party) {
     return NextResponse.json(
