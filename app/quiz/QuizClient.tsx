@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
 import FeedbackWidget from '@/components/FeedbackWidget'
 import ShareButtons from '@/components/ShareButtons'
+import PolicyCompass from '@/components/PolicyCompass'
 import issuesData from '@/data/issues.json'
 import candidatePositionsData from '@/data/candidate-positions.json'
-import type { QuizTheme } from '@/lib/types'
+import type { QuizTheme, PolicyAxis } from '@/lib/types'
 
 type CandidatePosition = {
   candidate_id: string
@@ -15,6 +16,7 @@ type CandidatePosition = {
   party: string
   party_abbreviation: string
   positions: Record<string, { score: number | null; label: string; verified: boolean }>
+  axis_scores?: { economic: number | null; social: number | null }
 }
 
 type IssueScore = { issue: string; diff: number; weight: number }
@@ -69,6 +71,29 @@ Object.assign(ISSUE_SHORT_LABELS, {
 })
 const TOTAL_QUESTIONS = allQuestions.length
 const candidatePositions = candidatePositionsData as CandidatePosition[]
+
+// Build axis question maps for user score computation
+const AXIS_QUESTIONS: Record<PolicyAxis, Array<{ key: string; inverted: boolean }>> = {
+  economic: [], social: [], institutions: [], health_environment: [], territory: []
+}
+for (const theme of themes) {
+  for (const q of theme.questions) {
+    AXIS_QUESTIONS[q.axis as PolicyAxis]?.push({ key: q.key, inverted: q.axis_inverted })
+  }
+}
+
+function computeUserAxisScore(
+  answers: Record<string, number>,
+  questions: Array<{ key: string; inverted: boolean }>
+): number | null {
+  const values: number[] = []
+  for (const { key, inverted } of questions) {
+    const score = answers[key]
+    if (score === undefined) continue
+    values.push(inverted ? ((5 - score) / 4) * 100 : ((score - 1) / 4) * 100)
+  }
+  return values.length > 0 ? Math.round(values.reduce((a, b) => a + b, 0) / values.length) : null
+}
 
 const DEPARTMENTS = [
   'Amazonas', 'Áncash', 'Apurímac', 'Arequipa', 'Ayacucho', 'Cajamarca',
@@ -836,6 +861,38 @@ export default function QuizClient() {
                 </button>
               </div>
             )}
+
+            {/* Policy Compass */}
+            {(() => {
+              const userEcon = computeUserAxisScore(answers, AXIS_QUESTIONS.economic)
+              const userSoc = computeUserAxisScore(answers, AXIS_QUESTIONS.social)
+              if (userEcon === null || userSoc === null) return null
+              const compassCandidates = candidatePositions
+                .filter((cp) => cp.axis_scores?.economic != null && cp.axis_scores?.social != null)
+                .map((cp) => ({
+                  id: cp.candidate_id,
+                  name: cp.candidate_name,
+                  party: cp.party,
+                  partyAbbr: cp.party_abbreviation,
+                  economic: cp.axis_scores!.economic!,
+                  social: cp.axis_scores!.social!,
+                }))
+              return (
+                <div className="mb-8">
+                  <h3 className="text-lg font-bold text-[#111111] mb-1 text-center">
+                    Tu posición en los ejes de política pública
+                  </h3>
+                  <p className="text-xs text-[#777777] text-center mb-4 max-w-md mx-auto">
+                    Este diagrama muestra tu posición en dos dimensiones de política pública basada en tus respuestas. No refleja una afiliación política — solo compara tus posiciones con las de los candidatos.
+                  </p>
+                  <PolicyCompass
+                    candidates={compassCandidates}
+                    userEconomic={userEcon}
+                    userSocial={userSoc}
+                  />
+                </div>
+              )
+            })()}
 
             {/* Share section */}
             <div className="bg-[#F7F6F3] rounded-xl p-6 mb-8">
