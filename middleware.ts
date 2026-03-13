@@ -26,6 +26,7 @@ export function middleware(request: NextRequest) {
       {
         status: 429,
         headers: {
+          'Access-Control-Allow-Origin': '*',
           'Retry-After': String(Math.ceil((entry.resetAt - now) / 1000)),
           'X-RateLimit-Limit': String(MAX_REQUESTS),
           'X-RateLimit-Remaining': '0',
