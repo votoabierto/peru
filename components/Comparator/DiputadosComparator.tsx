@@ -14,7 +14,11 @@ interface DiputadoCandidate {
   imageUrl: string | null
 }
 
-export function DiputadosComparator({ candidates }: { candidates: DiputadoCandidate[] }) {
+interface DiputadosComparatorProps {
+  candidates: DiputadoCandidate[]
+}
+
+export function DiputadosComparator({ candidates }: DiputadosComparatorProps) {
   const [selectedDistrict, setSelectedDistrict] = useState('')
   const [selected, setSelected] = useState<DiputadoCandidate[]>([])
 

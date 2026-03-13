@@ -150,7 +150,7 @@ function calculateMatch(
     const userWeight = weights[issue] ?? 1
     const axisWeight = ISSUE_AXIS_WEIGHTS[issue] ?? 1
     const combinedWeight = userWeight * axisWeight
-    const diff = Math.abs(userAnswers[issue] - candidatePositions[issue].score!)
+    const diff = Math.abs(userAnswers[issue] - (candidatePositions[issue].score ?? 0))
     weightedDiff += diff * combinedWeight
     totalWeight += combinedWeight * 4
     issueScores.push({ issue, diff, weight: combinedWeight })
@@ -443,7 +443,8 @@ export default function QuizClient() {
     if (currentQuestion && e.key >= '1' && e.key <= '5') {
       e.preventDefault()
       const score = 6 - parseInt(e.key) // 1 maps to score 5 (Muy de acuerdo), 5 maps to score 1
-      handleAnswer(score)
+      setAnswers((prev) => ({ ...prev, [currentQuestion.key]: score }))
+      setStep((s) => s + 1)
       return
     }
 
@@ -467,7 +468,6 @@ export default function QuizClient() {
       setStep((s) => Math.max(0, s - 1))
       return
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentQuestion, isResultsStep, isWeightingStep, answers])
 
   useEffect(() => {
@@ -889,8 +889,8 @@ export default function QuizClient() {
                   name: cp.candidate_name,
                   party: cp.party,
                   partyAbbr: cp.party_abbreviation,
-                  economic: cp.axis_scores!.economic!,
-                  social: cp.axis_scores!.social!,
+                  economic: cp.axis_scores?.economic ?? 0,
+                  social: cp.axis_scores?.social ?? 0,
                   institutions: cp.axis_scores?.institutions ?? 50,
                 }))
               return (

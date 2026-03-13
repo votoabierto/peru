@@ -231,10 +231,11 @@ export async function searchCandidates(query: string, limit = 10): Promise<Candi
 
   if (isSupabaseConfigured()) {
     const client = getSupabaseClient()!
+    const sanitized = query.replace(/[,()%.\\]/g, '\\$&')
     const { data } = await client
       .from('candidates')
       .select('*')
-      .or(`full_name.ilike.%${query}%,bio.ilike.%${query}%,party_name.ilike.%${query}%`)
+      .or(`full_name.ilike.%${sanitized}%,bio.ilike.%${sanitized}%,party_name.ilike.%${sanitized}%`)
       .order('polling_percentage', { ascending: false, nullsFirst: false })
       .limit(limit);
     if (data && data.length > 0) return data as Candidate[];
@@ -256,10 +257,11 @@ export async function searchFactChecks(query: string, limit = 6): Promise<FactCh
 
   if (isSupabaseConfigured()) {
     const client = getSupabaseClient()!
+    const sanitized = query.replace(/[,()%.\\]/g, '\\$&')
     const { data } = await client
       .from('fact_checks')
       .select('*')
-      .or(`claim.ilike.%${query}%,explanation.ilike.%${query}%,candidate_name.ilike.%${query}%`)
+      .or(`claim.ilike.%${sanitized}%,explanation.ilike.%${sanitized}%,candidate_name.ilike.%${sanitized}%`)
       .order('date_checked', { ascending: false })
       .limit(limit);
     if (data && data.length > 0) return data as FactCheck[];

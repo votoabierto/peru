@@ -33,13 +33,15 @@ function normalize(s: string): string {
   return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
+interface DiputadosClientProps {
+  candidates: DiputadoCandidate[]
+  districtList: ElectoralDistrict[]
+}
+
 export default function DiputadosClient({
   candidates,
   districtList,
-}: {
-  candidates: DiputadoCandidate[]
-  districtList: ElectoralDistrict[]
-}) {
+}: DiputadosClientProps) {
   const [selectedDistrict, setSelectedDistrict] = useState<string>('')
 
   // Group candidates by district
