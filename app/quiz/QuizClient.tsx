@@ -18,6 +18,8 @@ type CandidatePosition = {
   positions: Record<string, { score: number | null; label: string; verified: boolean }>
 }
 
+type IssueScore = { issue: string; diff: number; weight: number }
+
 type MatchResult = {
   candidateId: string
   name: string
@@ -26,10 +28,46 @@ type MatchResult = {
   matchPct: number | null
   dataQuality: 'verified' | 'partial' | 'insufficient'
   verifiedIssueCount: number
+  topAligned: IssueScore[]
+  topDivergent: IssueScore[]
 }
 
 const themes = issuesData.themes as QuizTheme[]
 const allQuestions = themes.flatMap((t) => t.questions)
+
+// Build issue key → short label map for match breakdown display
+const ISSUE_SHORT_LABELS: Record<string, string> = {}
+for (const theme of themes) {
+  for (const q of theme.questions) {
+    // Use theme label + short descriptor from the key
+    const parts = q.key.split('_')
+    const shortKey = parts.slice(1).join(' ')
+    ISSUE_SHORT_LABELS[q.key] = shortKey.charAt(0).toUpperCase() + shortKey.slice(1)
+  }
+}
+// Override with cleaner labels
+Object.assign(ISSUE_SHORT_LABELS, {
+  economia_igv: 'IGV',
+  economia_mineria: 'Minería',
+  economia_informal: 'Economía informal',
+  economia_inversion: 'Inversión extranjera',
+  seguridad_pena_muerte: 'Pena de muerte',
+  seguridad_fuerzas_armadas: 'Fuerzas Armadas',
+  seguridad_narcotrafico: 'Narcotráfico',
+  educacion_meritocracia: 'Meritocracia docente',
+  educacion_bilingue: 'Educación bilingüe',
+  educacion_universidad: 'Universidades',
+  salud_universal: 'Salud universal',
+  salud_medicamentos: 'Medicamentos',
+  medioambiente_industrias: 'Medio ambiente',
+  inst_constitucion: 'Nueva Constitución',
+  inst_fiscal: 'Elección de jueces',
+  inst_congreso: 'Bicameralidad',
+  inst_anticorrupcion: 'Anticorrupción',
+  territorio_descentralizacion: 'Descentralización',
+  territorio_rondas: 'Rondas campesinas',
+  territorio_lima: 'Descentralización Lima',
+})
 const TOTAL_QUESTIONS = allQuestions.length
 const candidatePositions = candidatePositionsData as CandidatePosition[]
 
@@ -59,7 +97,7 @@ function calculateMatch(
   userAnswers: Record<string, number>,
   weights: Record<string, number>,
   candidatePositions: Record<string, { score: number | null; label: string; verified: boolean }>,
-): { matchPct: number | null; verifiedIssueCount: number; dataQuality: 'verified' | 'partial' | 'insufficient' } {
+): { matchPct: number | null; verifiedIssueCount: number; dataQuality: 'verified' | 'partial' | 'insufficient'; topAligned: IssueScore[]; topDivergent: IssueScore[] } {
   const answeredIssues = Object.keys(userAnswers)
 
   const sharedIssues = answeredIssues.filter((issue) => {
@@ -76,22 +114,28 @@ function calculateMatch(
     verifiedIssueCount >= 6 ? 'partial' : 'insufficient'
 
   if (sharedIssues.length < 3) {
-    return { matchPct: null, verifiedIssueCount, dataQuality }
+    return { matchPct: null, verifiedIssueCount, dataQuality, topAligned: [], topDivergent: [] }
   }
 
   let weightedDiff = 0
   let totalWeight = 0
+  const issueScores: IssueScore[] = []
 
   for (const issue of sharedIssues) {
     const w = weights[issue] ?? 1
     const diff = Math.abs(userAnswers[issue] - candidatePositions[issue].score!)
     weightedDiff += diff * w
     totalWeight += w * 4
+    issueScores.push({ issue, diff, weight: w })
   }
 
   const matchPct = Math.round((1 - weightedDiff / totalWeight) * 100)
 
-  return { matchPct, verifiedIssueCount, dataQuality }
+  const sorted = [...issueScores].sort((a, b) => a.diff - b.diff)
+  const topAligned = sorted.slice(0, 3)
+  const topDivergent = sorted.slice(-3).reverse()
+
+  return { matchPct, verifiedIssueCount, dataQuality, topAligned, topDivergent }
 }
 
 function matchColor(pct: number): string {
@@ -112,41 +156,68 @@ function ResultCard({ r, rank, muted }: { r: MatchResult; rank: number; muted?: 
       href={`/candidatos/${r.candidateId}`}
       className="block"
     >
-      <div className={`flex items-center gap-4 p-4 rounded-xl border border-[#E5E3DE] hover:shadow-md transition-all bg-white ${muted ? 'opacity-75' : ''}`}>
-        <span className="text-lg font-bold text-[#777777] w-8 text-center flex-shrink-0">
-          {rank}
-        </span>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-sm font-semibold text-[#111111] truncate">
-              {r.name}
-            </span>
-            <span className="text-xs text-[#777777]">
-              {r.partyAbbr}
-            </span>
-          </div>
-          <p className="text-xs text-[#777777] truncate">{r.party}</p>
-          {r.matchPct !== null && (
-            <div className="mt-2 w-full h-1.5 bg-[#EEEDE9] rounded-full overflow-hidden">
-              <div
-                className={`h-full rounded-full transition-all duration-500 ${matchBarColor(r.matchPct)}`}
-                style={{ width: `${r.matchPct}%` }}
-              />
+      <div className={`p-4 rounded-xl border border-[#E5E3DE] hover:shadow-md transition-all bg-white ${muted ? 'opacity-75' : ''}`}>
+        <div className="flex items-center gap-4">
+          <span className="text-lg font-bold text-[#777777] w-8 text-center flex-shrink-0">
+            {rank}
+          </span>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-sm font-semibold text-[#111111] truncate">
+                {r.name}
+              </span>
+              <span className="text-xs text-[#777777]">
+                {r.partyAbbr}
+              </span>
             </div>
-          )}
+            <p className="text-xs text-[#777777] truncate">{r.party}</p>
+            {r.matchPct !== null && (
+              <div className="mt-2 w-full h-1.5 bg-[#EEEDE9] rounded-full overflow-hidden">
+                <div
+                  className={`h-full rounded-full transition-all duration-500 ${matchBarColor(r.matchPct)}`}
+                  style={{ width: `${r.matchPct}%` }}
+                />
+              </div>
+            )}
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {r.matchPct !== null ? (
+              <span
+                className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-bold border ${matchColor(r.matchPct)}`}
+              >
+                {r.matchPct}%
+              </span>
+            ) : (
+              <span className="text-xs text-[#999999]">Sin datos</span>
+            )}
+            <ExternalLink size={14} className="text-[#777777]" />
+          </div>
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0">
-          {r.matchPct !== null ? (
-            <span
-              className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-bold border ${matchColor(r.matchPct)}`}
-            >
-              {r.matchPct}%
-            </span>
-          ) : (
-            <span className="text-xs text-[#999999]">Sin datos</span>
-          )}
-          <ExternalLink size={14} className="text-[#777777]" />
-        </div>
+        {/* Match breakdown */}
+        {r.matchPct !== null && (r.topAligned.length > 0 || r.topDivergent.length > 0) && (
+          <div className="mt-3 ml-12 flex flex-wrap gap-x-4 gap-y-1">
+            {r.topAligned.length > 0 && (
+              <div className="flex items-center gap-1 flex-wrap">
+                <span className="text-[10px] text-green-700">✓ Coinciden:</span>
+                {r.topAligned.map((a) => (
+                  <span key={a.issue} className="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200">
+                    {ISSUE_SHORT_LABELS[a.issue] ?? a.issue}
+                  </span>
+                ))}
+              </div>
+            )}
+            {r.topDivergent.filter(d => d.diff > 1).length > 0 && (
+              <div className="flex items-center gap-1 flex-wrap">
+                <span className="text-[10px] text-red-600">✗ Difieren:</span>
+                {r.topDivergent.filter(d => d.diff > 1).map((d) => (
+                  <span key={d.issue} className="text-[10px] px-1.5 py-0.5 rounded bg-red-50 text-red-600 border border-red-200">
+                    {ISSUE_SHORT_LABELS[d.issue] ?? d.issue}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </Link>
   )
@@ -197,6 +268,7 @@ const flatQuestions = buildFlatQuestions()
 // Steps: 0=department, 1..N=questions, N+1=weighting, N+2=results
 const STEP_WEIGHTING = TOTAL_QUESTIONS + 1
 const STEP_RESULTS = TOTAL_QUESTIONS + 2
+const STEP_WEIGHTS = STEP_WEIGHTING
 
 export default function QuizClient() {
   const [step, setStep] = useState(0)
@@ -227,6 +299,24 @@ export default function QuizClient() {
   const isWeightingStep = step === STEP_WEIGHTING
   const isResultsStep = step >= STEP_RESULTS
 
+  // Pre-compute suggested weights based on answer strength
+  const suggestedWeights = useMemo(() => {
+    const suggested: Record<string, number> = {}
+    for (const [issue, score] of Object.entries(answers)) {
+      if (score === 5 || score === 1) suggested[issue] = 2       // strong feeling → muy importante
+      else if (score === 3) suggested[issue] = 0.5               // neutral → no tanto
+      else suggested[issue] = 1                                   // moderate → importante
+    }
+    return suggested
+  }, [answers])
+
+  // Initialize weights with suggested values when entering weighting step
+  useEffect(() => {
+    if (step === STEP_WEIGHTS && Object.keys(weights).length === 0) {
+      setWeights(suggestedWeights)
+    }
+  }, [step, suggestedWeights, weights])
+
   // Which theme is current question in
   const currentThemeKey = currentQuestion?.themeKey ?? null
 
@@ -234,7 +324,7 @@ export default function QuizClient() {
     if (!isResultsStep) return [] as MatchResult[]
     return candidatePositions
       .map((cp): MatchResult => {
-        const { matchPct, verifiedIssueCount, dataQuality } = calculateMatch(answers, weights, cp.positions)
+        const { matchPct, verifiedIssueCount, dataQuality, topAligned, topDivergent } = calculateMatch(answers, weights, cp.positions)
         return {
           candidateId: cp.candidate_id,
           name: cp.candidate_name,
@@ -243,6 +333,8 @@ export default function QuizClient() {
           matchPct,
           dataQuality,
           verifiedIssueCount,
+          topAligned,
+          topDivergent,
         }
       })
   }, [isResultsStep, answers, weights])
@@ -749,10 +841,12 @@ export default function QuizClient() {
             {insufficientResults.length > 0 && (
               <div className="mb-8">
                 <h3 className="text-sm font-semibold text-[#999999] mb-1">
-                  Sin datos suficientes
+                  ¿Por qué no aparece mi candidato?
                 </h3>
                 <p className="text-xs text-[#999999] mb-3">
-                  No tenemos datos suficientes de sus posiciones. Revisa su plan de gobierno en JNE.
+                  El quiz compara tus respuestas con las posiciones verificadas de cada candidato.
+                  Si un candidato tiene pocos datos verificados (menos de 6 temas), no aparece en los resultados principales.
+                  Puedes ver todos los candidatos en la lista completa.
                 </p>
                 <div className="space-y-2">
                   {insufficientResults.map((r) => (

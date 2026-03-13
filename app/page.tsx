@@ -115,10 +115,16 @@ export default async function HomePage() {
           </p>
 
           {/* Quiz CTA — primary action */}
-          <Link href="/quiz" className="inline-flex items-center gap-2 bg-[#D91023] text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-[#B00D1C] transition-colors shadow-lg shadow-red-100">
-            ¿Con quién votas? →
+          <Link href="/quiz" className="inline-flex items-center gap-2 bg-[#C8102E] text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-[#A00D24] transition-colors shadow-lg shadow-red-200">
+            ¿A quién votar? →
           </Link>
-          <p className="text-[#888888] text-sm mt-3">Anónimo · 5 minutos · Sin registro</p>
+          <p className="text-[#555555] text-sm mt-3 font-medium">Responde 20 preguntas y descubre tu candidato en 5 minutos</p>
+          <p className="text-[#888888] text-xs mt-1">Anónimo · Sin registro</p>
+          <div className="mt-4">
+            <Link href="/candidatos" className="text-sm text-[#1A56A0] hover:underline font-medium">
+              Ver candidatos →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -309,13 +315,16 @@ export default async function HomePage() {
       {/* Quiz CTA Card */}
       <section className="py-16 bg-[#F7F6F3]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#EEF4FF] border border-[#1A56A0] rounded-xl p-6 text-center">
-            <h2 className="text-xl font-bold text-[#111111]">¿Con quién votas?</h2>
-            <p className="text-[#444444] mt-2">Responde 20 preguntas y descubre qué candidatos comparten tus ideas.</p>
-            <Link href="/quiz" className="mt-4 inline-block bg-[#1A56A0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0D3E7A] transition-colors">
-              Comenzar el quiz
+          <div className="bg-white border-2 border-[#C8102E] rounded-xl p-8 text-center shadow-sm">
+            <span className="text-3xl mb-3 block">🗳️</span>
+            <h2 className="text-2xl font-bold text-[#111111]">¿Sabes a quién votar?</h2>
+            <p className="text-[#444444] mt-2 max-w-md mx-auto">
+              Responde 20 preguntas sobre los temas que te importan. Descubre qué candidato comparte tu visión.
+            </p>
+            <Link href="/quiz" className="mt-5 inline-flex items-center gap-2 bg-[#C8102E] text-white px-8 py-3.5 rounded-xl font-bold text-lg hover:bg-[#A00D24] transition-colors shadow-md shadow-red-100">
+              Empezar quiz →
             </Link>
-            <p className="text-xs text-[#777777] mt-2">Anónimo. Sin registro. Solo información.</p>
+            <p className="text-xs text-[#777777] mt-3">Anónimo · 5 minutos · Sin registro</p>
           </div>
         </div>
       </section>

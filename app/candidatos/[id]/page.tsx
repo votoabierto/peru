@@ -24,6 +24,7 @@ import DataFreshness from '@/components/DataFreshness'
 import DataConfidenceBadge from '@/components/DataConfidenceBadge'
 import { Metadata } from 'next'
 import candidatePositionsData from '@/data/candidate-positions.json'
+import publicOfficeRecords from '@/data/public-office-records.json'
 import pledgesData from '@/data/pledges.json'
 import { Pledge, PLEDGE_CATEGORY_LABELS, PLEDGE_STATUS_LABELS } from '@/lib/types'
 
@@ -495,6 +496,56 @@ export default async function CandidatePage({ params }: Props) {
           </div>
         )}
         </section>
+
+        {/* Gestión Pública — Registro Factual */}
+        {(() => {
+          const officeRecord = (publicOfficeRecords as Record<string, { offices: Array<{ title: string; period: string; key_facts: string[]; sources: Array<{ label: string; url: string }> }> }>)[slug]
+          if (!officeRecord) return null
+          return (
+            <section>
+              <h2 className="text-xl font-bold text-[#111111] mb-1">Gestión Pública — Registro Factual</h2>
+              <p className="text-[10px] text-[#CBCAC5] mb-4">Datos basados en fuentes oficiales. Inclusión no implica endorsement.</p>
+              <div className="space-y-6">
+                {officeRecord.offices.map((office, oi) => (
+                  <div key={oi} className="border border-[#E5E3DE] rounded-xl p-5 bg-[#FAFAF8]">
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <div>
+                        <h3 className="text-base font-semibold text-[#111111]">{office.title}</h3>
+                        <p className="text-xs text-[#777777] mt-0.5">{office.period}</p>
+                      </div>
+                    </div>
+                    <ul className="space-y-2 mb-4">
+                      {office.key_facts.map((fact, fi) => (
+                        <li key={fi} className="flex gap-2 items-start text-sm text-[#333333]">
+                          <span className="text-[#1A56A0] mt-0.5 flex-shrink-0">&#8226;</span>
+                          <span>{fact}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {office.sources.length > 0 && (
+                      <div className="border-t border-[#E5E3DE] pt-3">
+                        <p className="text-[10px] text-[#999999] mb-1">Fuentes:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {office.sources.map((src, si) => (
+                            <a
+                              key={si}
+                              href={src.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[10px] text-[#1A56A0] hover:underline"
+                            >
+                              {src.label} ↗
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )
+        })()}
 
         {(candidate.prior_offices?.length ?? 0) > 0 && (
           <section>

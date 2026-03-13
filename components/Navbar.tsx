@@ -62,7 +62,7 @@ export default function Navbar() {
                   href={link.href}
                   className={
                     'highlight' in link && link.highlight
-                      ? 'px-4 py-2 text-sm font-semibold text-[#1A56A0] hover:bg-[#EEF4FF] rounded-lg transition-colors focus:outline-2 focus:outline-[#1A56A0] focus:outline-offset-2'
+                      ? 'px-4 py-2 text-sm font-bold text-white bg-[#C8102E] hover:bg-[#A00D24] rounded-lg transition-colors focus:outline-2 focus:outline-[#C8102E] focus:outline-offset-2'
                       : 'px-4 py-2 text-sm font-medium text-[#444444] hover:text-[#111111] hover:bg-[#F7F6F3] rounded-lg transition-colors focus:outline-2 focus:outline-[#1A56A0] focus:outline-offset-2'
                   }
                 >

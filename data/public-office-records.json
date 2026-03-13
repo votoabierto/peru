@@ -1,0 +1,312 @@
+{
+  "cesar-acuna": {
+    "offices": [
+      {
+        "title": "Gobernador Regional de La Libertad",
+        "period": "2011–2022 (3 períodos)",
+        "key_facts": [
+          "Incrementó el presupuesto de infraestructura regional, priorizando obras viales y hospitalarias",
+          "Inauguró el Hospital de Alta Complejidad Virgen de la Puerta (2019), primer hospital nivel III-1 en La Libertad",
+          "Tasa de desnutrición crónica infantil en La Libertad se redujo durante su gestión, según datos del INEI",
+          "Pavimentación de la carretera Huamachuco–Cajabamba y ampliación de la Av. España en Trujillo",
+          "Sancionado por el JNE por entrega de dádivas durante campaña electoral 2016 — resolución apelada ante el Tribunal Constitucional",
+          "Cuestionado por contratos de obra con empresas vinculadas al partido Alianza Para el Progreso, según informes de la Contraloría"
+        ],
+        "sources": [
+          {"label": "INEI — Indicadores regionales La Libertad", "url": "https://www.inei.gob.pe"},
+          {"label": "JNE — Resolución sobre dádivas 2016", "url": "https://www.jne.gob.pe"},
+          {"label": "Contraloría General de la República", "url": "https://www.contraloria.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "keiko-fujimori": {
+    "offices": [
+      {
+        "title": "Congresista de la República",
+        "period": "2006–2011",
+        "key_facts": [
+          "Electa congresista con la primera votación preferencial más alta del país en 2006",
+          "Presidió la Comisión de Educación del Congreso",
+          "Candidata presidencial en 2011, 2016 y 2021 — llegó a segunda vuelta en las tres ocasiones",
+          "Investigada por la fiscalía por presunto lavado de activos vinculado a aportes de campaña (caso Cocteles) — proceso en curso",
+          "Cumplió prisión preventiva de 16 meses entre 2018 y 2020 por riesgo de obstrucción a la justicia"
+        ],
+        "sources": [
+          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
+          {"label": "Poder Judicial — Caso Cocteles", "url": "https://www.pj.gob.pe"},
+          {"label": "JNE — Historial electoral", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "vladimir-cerron": {
+    "offices": [
+      {
+        "title": "Gobernador Regional de Junín",
+        "period": "2011–2014, 2019–2022",
+        "key_facts": [
+          "Electo Presidente Regional de Junín en 2010, reelecto como Gobernador en 2018",
+          "Sentenciado a 4 años de prisión suspendida por el delito de negociación incompatible en 2019 — sentencia confirmada por la Corte Suprema",
+          "Inhabilitado para ejercer función pública por 36 meses como consecuencia de la sentencia",
+          "Fundador y secretario general del partido Perú Libre, con el cual Pedro Castillo ganó la presidencia en 2021",
+          "Prófugo de la justicia desde octubre de 2023 por una segunda sentencia de 3 años y 6 meses efectiva por colusión en obra del Hospital de Junín"
+        ],
+        "sources": [
+          {"label": "Poder Judicial — Sentencia negociación incompatible", "url": "https://www.pj.gob.pe"},
+          {"label": "JNE — Hoja de vida Vladimir Cerrón", "url": "https://www.jne.gob.pe"},
+          {"label": "Contraloría — Informes Junín", "url": "https://www.contraloria.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "george-forsyth": {
+    "offices": [
+      {
+        "title": "Alcalde de La Victoria (Lima)",
+        "period": "2019–2022",
+        "key_facts": [
+          "Electo alcalde de La Victoria con alta votación, transición de carrera deportiva (fútbol profesional) a gestión pública",
+          "Implementó el plan 'La Victoria Segura' con cámaras de vigilancia y serenazgo reforzado en Gamarra y zonas comerciales",
+          "Inició la recuperación del emporio comercial de Gamarra con ordenanzas de formalización",
+          "Cuestionado por el Ministerio Público por presuntas irregularidades en contratación directa durante la pandemia COVID-19",
+          "Renunció al cargo antes de finalizar su mandato para postular a la presidencia en 2021"
+        ],
+        "sources": [
+          {"label": "Municipalidad de La Victoria — Gestión 2019-2022", "url": "https://www.munilavictoria.gob.pe"},
+          {"label": "JNE — Hoja de vida George Forsyth", "url": "https://www.jne.gob.pe"},
+          {"label": "Contraloría — Informes La Victoria", "url": "https://www.contraloria.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "yonhy-lescano": {
+    "offices": [
+      {
+        "title": "Congresista de la República",
+        "period": "2001–2021 (múltiples períodos)",
+        "key_facts": [
+          "Congresista por Puno en múltiples períodos legislativos (2001–2006, 2006–2011, 2011–2016, 2016–2021)",
+          "Conocido por su labor de fiscalización y defensa del consumidor desde el Congreso",
+          "Autor de proyectos de ley sobre control de precios de medicamentos y defensa del usuario",
+          "Investigado internamente por el Congreso en 2021 por presunto acoso a una periodista — negó las acusaciones",
+          "Candidato presidencial por Acción Popular en 2021, obtuvo el cuarto lugar en primera vuelta"
+        ],
+        "sources": [
+          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
+          {"label": "JNE — Hoja de vida Yonhy Lescano", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "mesias-guevara": {
+    "offices": [
+      {
+        "title": "Gobernador Regional de Cajamarca",
+        "period": "2019–2022",
+        "key_facts": [
+          "Electo Gobernador Regional de Cajamarca en 2018",
+          "Congresista de la República por Cajamarca en períodos anteriores (2006–2011, 2011–2016)",
+          "Posición crítica frente al proyecto minero Conga — defensor de los recursos hídricos de Cajamarca",
+          "Promovió inversión en infraestructura educativa y de salud en zonas rurales de Cajamarca",
+          "Cuestionado por la ejecución presupuestal durante la pandemia COVID-19 en la región"
+        ],
+        "sources": [
+          {"label": "Gobierno Regional de Cajamarca", "url": "https://www.regioncajamarca.gob.pe"},
+          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
+          {"label": "JNE — Hoja de vida Mesías Guevara", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "marisol-perez-tello": {
+    "offices": [
+      {
+        "title": "Ministra de Justicia y Derechos Humanos",
+        "period": "2015–2016",
+        "key_facts": [
+          "Ministra de Justicia y Derechos Humanos durante el gobierno de Ollanta Humala",
+          "Congresista de la República por Lima (2011–2016) por el Partido Popular Cristiano",
+          "Impulsó reformas en el sistema penitenciario y la lucha contra la violencia de género",
+          "Promotora del Registro Nacional de Detenidos y del Mecanismo Nacional de Prevención de la Tortura"
+        ],
+        "sources": [
+          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
+          {"label": "Ministerio de Justicia — Gestión 2015-2016", "url": "https://www.gob.pe/minjus"},
+          {"label": "JNE — Hoja de vida Marisol Pérez Tello", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "jose-luna-galvez": {
+    "offices": [
+      {
+        "title": "Congresista de la República",
+        "period": "2020–2021",
+        "key_facts": [
+          "Congresista electo en las elecciones complementarias de 2020 por Podemos Perú",
+          "Fundador y promotor de la Universidad Telesup — cuestionada por SUNEDU por problemas de calidad educativa",
+          "Investigado por la fiscalía por presunta compra de votos y financiamiento irregular de campaña",
+          "Promotor de leyes sobre educación técnica y emprendimiento desde el Congreso"
+        ],
+        "sources": [
+          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
+          {"label": "SUNEDU — Resolución sobre Universidad Telesup", "url": "https://www.sunedu.gob.pe"},
+          {"label": "JNE — Hoja de vida José Luna Gálvez", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "roberto-sanchez": {
+    "offices": [
+      {
+        "title": "Ministro de Comercio Exterior y Turismo",
+        "period": "2021–2022",
+        "key_facts": [
+          "Ministro de Comercio Exterior y Turismo durante el gobierno de Pedro Castillo",
+          "Congresista de la República por Junín (2020–2021)",
+          "Investigado por la fiscalía por presunta concusión durante su gestión ministerial",
+          "Promotor de políticas de turismo comunitario y formalización de emprendimientos rurales"
+        ],
+        "sources": [
+          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
+          {"label": "MINCETUR — Gestión ministerial", "url": "https://www.gob.pe/mincetur"},
+          {"label": "JNE — Hoja de vida Roberto Sánchez", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "alvaro-paz-de-la-barra": {
+    "offices": [
+      {
+        "title": "Alcalde de La Molina (Lima)",
+        "period": "2019–2022",
+        "key_facts": [
+          "Electo alcalde del distrito de La Molina en 2018",
+          "Implementó programas de seguridad ciudadana con tecnología de videovigilancia",
+          "Enfrentó controversias mediáticas por conflictos personales que generaron cobertura policial",
+          "Promovió la modernización de la gestión municipal con plataformas digitales de trámites"
+        ],
+        "sources": [
+          {"label": "Municipalidad de La Molina", "url": "https://www.munimolina.gob.pe"},
+          {"label": "JNE — Hoja de vida Álvaro Paz de la Barra", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "rafael-lopez-aliaga": {
+    "offices": [
+      {
+        "title": "Alcalde de Lima Metropolitana",
+        "period": "2023–presente",
+        "key_facts": [
+          "Electo alcalde de Lima Metropolitana en 2022 por Renovación Popular",
+          "Empresario del sector ferroviario (Inca Rail) antes de su ingreso a la política",
+          "Candidato presidencial en 2021 — obtuvo el quinto lugar en primera vuelta",
+          "Gestión municipal enfocada en seguridad ciudadana, transporte y obras viales en Lima",
+          "Cuestionado por grupos de sociedad civil por posiciones conservadoras en temas de género y derechos"
+        ],
+        "sources": [
+          {"label": "Municipalidad de Lima", "url": "https://www.munlima.gob.pe"},
+          {"label": "JNE — Hoja de vida Rafael López Aliaga", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "jose-williams-zapata": {
+    "offices": [
+      {
+        "title": "Congresista de la República / Presidente del Congreso",
+        "period": "2021–2026",
+        "key_facts": [
+          "Congresista electo en 2021 por Avanza País",
+          "Presidente del Congreso de la República de octubre a diciembre de 2022",
+          "General del Ejército en retiro — comandó la operación Chavín de Huántar (1997) que liberó rehenes de la residencia del embajador de Japón",
+          "Condecorado por el Estado peruano por la operación Chavín de Huántar",
+          "Investigado por la fiscalía en relación a presuntas ejecuciones extrajudiciales durante operaciones militares — proceso en curso"
+        ],
+        "sources": [
+          {"label": "Congreso de la República", "url": "https://www.congreso.gob.pe"},
+          {"label": "JNE — Hoja de vida José Williams Zapata", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "fernando-olivera": {
+    "offices": [
+      {
+        "title": "Ministro de Relaciones Exteriores / Congresista",
+        "period": "Múltiples períodos",
+        "key_facts": [
+          "Congresista de la República en múltiples períodos desde los años 1990",
+          "Ministro de Relaciones Exteriores durante el gobierno de Alejandro Toledo (2001–2002)",
+          "Embajador del Perú en Italia y España en diferentes períodos",
+          "Fundador y líder histórico del Frente Independiente Moralizador (FIM)",
+          "Conocido por sus denuncias de corrupción en el Congreso durante la era Fujimori"
+        ],
+        "sources": [
+          {"label": "Congreso de la República — Archivo legislativo", "url": "https://www.congreso.gob.pe"},
+          {"label": "Ministerio de Relaciones Exteriores", "url": "https://www.gob.pe/rree"},
+          {"label": "JNE — Hoja de vida Fernando Olivera", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "roberto-chiabra": {
+    "offices": [
+      {
+        "title": "Congresista de la República / Ministro de Defensa",
+        "period": "Múltiples períodos",
+        "key_facts": [
+          "Congresista de la República en el período 2021–2026 por Alianza Para el Progreso",
+          "Ministro de Defensa durante el gobierno de Alejandro Toledo (2003–2004)",
+          "General de División del Ejército Peruano en retiro",
+          "Participó en operaciones militares durante el conflicto armado interno",
+          "Promotor de legislación sobre seguridad nacional y defensa desde el Congreso"
+        ],
+        "sources": [
+          {"label": "Congreso de la República", "url": "https://www.congreso.gob.pe"},
+          {"label": "Ministerio de Defensa", "url": "https://www.gob.pe/mindef"},
+          {"label": "JNE — Hoja de vida Roberto Chiabra", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "jorge-nieto-montesinos": {
+    "offices": [
+      {
+        "title": "Ministro de Defensa / Ministro de Cultura",
+        "period": "2017–2018",
+        "key_facts": [
+          "Ministro de Defensa durante el gobierno de Pedro Pablo Kuczynski (2017–2018)",
+          "Ministro de Cultura durante el gobierno de PPK (2017)",
+          "Politólogo y analista político con trayectoria académica",
+          "Presidente del directorio del Instituto de Defensa Legal (IDL) previo a su carrera ministerial"
+        ],
+        "sources": [
+          {"label": "Presidencia del Consejo de Ministros", "url": "https://www.gob.pe/pcm"},
+          {"label": "JNE — Hoja de vida Jorge Nieto Montesinos", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  },
+  "fiorella-molinelli": {
+    "offices": [
+      {
+        "title": "Presidenta Ejecutiva de EsSalud / Ministra de Desarrollo e Inclusión Social",
+        "period": "2017–2020",
+        "key_facts": [
+          "Ministra de Desarrollo e Inclusión Social durante el gobierno de Martín Vizcarra",
+          "Presidenta Ejecutiva de EsSalud (2017–2020) — gestionó la red de salud pública más grande del país",
+          "Investigada por la fiscalía por presuntas irregularidades en compras durante su gestión en EsSalud",
+          "Académica y docente universitaria antes de su carrera en gestión pública"
+        ],
+        "sources": [
+          {"label": "EsSalud — Gestión institucional", "url": "https://www.essalud.gob.pe"},
+          {"label": "Ministerio de Desarrollo e Inclusión Social", "url": "https://www.gob.pe/midis"},
+          {"label": "JNE — Hoja de vida Fiorella Molinelli", "url": "https://www.jne.gob.pe"}
+        ]
+      }
+    ]
+  }
+}

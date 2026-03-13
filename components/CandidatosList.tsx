@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Search } from 'lucide-react'
 import CandidateCard from '@/components/CandidateCard'
-import { IDEOLOGY_LABELS } from '@/lib/types'
 import type { Candidate } from '@/lib/types'
 
 const PAGE_SIZE = 12
@@ -20,7 +19,6 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
   const [search, setSearch] = useState('')
   const [roleFilter, setRoleFilter] = useState('')
   const [partyFilter, setPartyFilter] = useState('')
-  const [ideologyFilter, setIdeologyFilter] = useState('')
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
 
   const partyOptions = useMemo(() => {
@@ -39,24 +37,10 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
     ]
   }, [initialCandidates])
 
-  const ideologyOptions = useMemo(() => {
-    const seen = new Set<string>()
-    initialCandidates.forEach((c) => {
-      if (c.ideology) seen.add(c.ideology)
-    })
-    return [
-      { value: '', label: 'Toda ideología' },
-      ...Array.from(seen).map((id) => ({
-        value: id,
-        label: IDEOLOGY_LABELS[id] ?? id,
-      })),
-    ]
-  }, [initialCandidates])
-
   // Reset pagination whenever filters change
   useEffect(() => {
     setVisibleCount(PAGE_SIZE)
-  }, [search, roleFilter, partyFilter, ideologyFilter])
+  }, [search, roleFilter, partyFilter])
 
   const filtered = useMemo(() => {
     return initialCandidates.filter((c) => {
@@ -70,16 +54,15 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
 
       const matchesRole = !roleFilter || c.role === roleFilter
       const matchesParty = !partyFilter || c.party_abbreviation === partyFilter
-      const matchesIdeology = !ideologyFilter || c.ideology === ideologyFilter
 
-      return matchesSearch && matchesRole && matchesParty && matchesIdeology
+      return matchesSearch && matchesRole && matchesParty
     }).sort((a, b) => {
       // Sort alphabetically by last name (apellido) for equal treatment
       const aLastName = a.full_name.split(' ').pop() ?? a.full_name
       const bLastName = b.full_name.split(' ').pop() ?? b.full_name
       return aLastName.localeCompare(bLastName, 'es')
     })
-  }, [initialCandidates, search, roleFilter, partyFilter, ideologyFilter])
+  }, [initialCandidates, search, roleFilter, partyFilter])
 
   const visible = filtered.slice(0, visibleCount)
   const hasMore = visibleCount < filtered.length
@@ -131,18 +114,6 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
               ))}
             </select>
 
-            {/* Ideology filter */}
-            <select
-              value={ideologyFilter}
-              onChange={(e) => setIdeologyFilter(e.target.value)}
-              className="px-3 py-2.5 bg-white border border-[#E5E3DE] rounded-lg text-sm text-[#111111] focus:outline-none focus:border-[#1A56A0] transition-colors"
-            >
-              {ideologyOptions.map((opt) => (
-                <option key={opt.value} value={opt.value} className="bg-white">
-                  {opt.label}
-                </option>
-              ))}
-            </select>
           </div>
         </div>
       </section>
@@ -160,7 +131,6 @@ export default function CandidatosList({ initialCandidates }: { initialCandidate
                   setSearch('')
                   setRoleFilter('')
                   setPartyFilter('')
-                  setIdeologyFilter('')
                 }}
                 className="mt-4 text-sm text-[#1A56A0] hover:underline"
               >
