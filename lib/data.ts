@@ -11,7 +11,6 @@ import type { Candidate, Position, FactCheck, CongressCandidate } from './types'
 export interface CandidateFilters {
   role?: 'president' | 'vice_president' | 'senator' | 'representative'
   party?: string
-  ideology?: string
   searchQuery?: string
 }
 
@@ -43,9 +42,6 @@ export async function getCandidates(filters?: CandidateFilters): Promise<Candida
   }
 
   // Apply client-side filters (work for both seed and Supabase data)
-  if (filters?.ideology) {
-    candidates = candidates.filter((c) => c.ideology === filters.ideology)
-  }
   if (filters?.searchQuery) {
     const q = filters.searchQuery.toLowerCase()
     candidates = candidates.filter(
@@ -249,8 +245,7 @@ export async function searchCandidates(query: string, limit = 10): Promise<Candi
     .filter(c =>
       c.full_name.toLowerCase().includes(q) ||
       c.party_name.toLowerCase().includes(q) ||
-      (c.bio ?? '').toLowerCase().includes(q) ||
-      (c.ideology ?? '').toLowerCase().includes(q)
+      (c.bio ?? '').toLowerCase().includes(q)
     )
     .sort((a, b) => (b.polling_percentage ?? 0) - (a.polling_percentage ?? 0))
     .slice(0, limit);

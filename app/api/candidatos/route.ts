@@ -7,7 +7,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
   const filters: CandidateFilters = {}
   const role = searchParams.get('role')
   const party = searchParams.get('party')
-  const ideology = searchParams.get('ideology')
   const q = searchParams.get('q')
 
   if (
@@ -19,7 +18,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     filters.role = role
   }
   if (party) filters.party = party
-  if (ideology) filters.ideology = ideology
   if (q) filters.searchQuery = q
 
   try {

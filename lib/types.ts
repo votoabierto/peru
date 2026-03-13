@@ -50,17 +50,6 @@ export type Verdict =
   | 'unverifiable'
   | 'context_needed'
 
-export type IdeologyType =
-  | 'far-left'
-  | 'left'
-  | 'center-left'
-  | 'center'
-  | 'center-right'
-  | 'right'
-  | 'far-right'
-  | 'populist'
-  | 'nationalist'
-
 // ─── Database Entity Types ────────────────────────────────────────────────────
 
 export interface Region {
@@ -77,7 +66,6 @@ export interface Party {
   id: string
   abbreviation: string
   name: string
-  ideology?: IdeologyType
   color?: string
   founded_year?: number
   logo_url?: string
@@ -105,7 +93,6 @@ export interface Candidate {
   role: 'president' | 'vice_president' | 'senator' | 'representative'
   region_id?: string
   region_name?: string
-  ideology?: IdeologyType
   age?: number
   photo_url?: string | null
   career_summary?: string
@@ -210,30 +197,6 @@ export const ISSUE_LABELS: Record<IssueArea, { label: string; icon: string }> = 
   foreign_policy: { label: 'Política Exterior', icon: '🌐' },
 }
 
-export const IDEOLOGY_COLORS: Record<IdeologyType, string> = {
-  'far-left': 'bg-red-100 text-red-800 border border-red-300',
-  left: 'bg-red-50 text-red-700 border border-red-200',
-  'center-left': 'bg-orange-50 text-orange-700 border border-orange-200',
-  center: 'bg-gray-100 text-gray-700 border border-gray-300',
-  'center-right': 'bg-blue-50 text-blue-700 border border-blue-200',
-  right: 'bg-blue-100 text-blue-800 border border-blue-300',
-  'far-right': 'bg-blue-200 text-blue-900 border border-blue-400',
-  populist: 'bg-purple-50 text-purple-700 border border-purple-200',
-  nationalist: 'bg-amber-50 text-amber-700 border border-amber-200',
-}
-
-export const IDEOLOGY_LABELS: Record<IdeologyType, string> = {
-  'far-left': 'Extrema izquierda',
-  left: 'Izquierda',
-  'center-left': 'Centro-izquierda',
-  center: 'Centro',
-  'center-right': 'Centro-derecha',
-  right: 'Derecha',
-  'far-right': 'Extrema derecha',
-  populist: 'Populista',
-  nationalist: 'Nacionalista',
-}
-
 export const VERDICT_LABELS: Record<Verdict, string> = {
   true: 'Verdadero',
   false: 'Falso',
@@ -250,7 +213,6 @@ export interface CongressCandidate {
   region: string
   list_position: number
   role: 'congresista'
-  ideology: IdeologyType
   bio: string
   photo_url: string | null
   prior_roles: string[]
@@ -316,8 +278,6 @@ export interface PartyV2 {
   name: string
   abbreviation: string | null
   logo_url: string | null
-  spectrum: string | null
-  ideology_family: string | null
   plan_gobierno_resumen: string | null
   plan_gobierno_ejes: Array<{ eje: string; descripcion: string }> | null
   plan_gobierno_pdf_url: string | null

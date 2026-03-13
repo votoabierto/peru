@@ -7,8 +7,6 @@ interface PartyJSON {
   abbr: string
   color: string
   presidentCandidate: string | null
-  ideological_family: string | null
-  spectrum: string | null
 }
 
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' }
@@ -32,8 +30,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     name: p.name,
     abbr: p.abbr,
     color: p.color,
-    ideological_family: p.ideological_family,
-    spectrum: p.spectrum,
     presidentCandidate: p.presidentCandidate,
   }))
 

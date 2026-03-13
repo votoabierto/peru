@@ -47,7 +47,7 @@ const spec = {
     '/api/v1/parties': {
       get: {
         summary: 'Lista de partidos políticos',
-        description: 'Retorna todos los partidos inscritos con su color, espectro ideológico y candidato presidencial.',
+        description: 'Retorna todos los partidos inscritos con su color y candidato presidencial.',
         parameters: [
           { name: 'q', in: 'query', schema: { type: 'string' }, description: 'Búsqueda por nombre o abreviatura', example: 'fuerza' },
         ],
@@ -208,8 +208,6 @@ const spec = {
           name: { type: 'string', example: 'Fuerza Popular' },
           abbr: { type: 'string', example: 'FP' },
           color: { type: 'string', example: '#FF6B00' },
-          ideological_family: { type: 'string', nullable: true },
-          spectrum: { type: 'string', nullable: true },
           presidentCandidate: { type: 'string', nullable: true },
         },
       },

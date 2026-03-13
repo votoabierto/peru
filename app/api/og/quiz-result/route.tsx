@@ -50,17 +50,6 @@ function calculateMatch(
   return Math.round((1 - weightedDiff / totalWeight) * 100)
 }
 
-function scoreToAxis(score: number): number {
-  return (score - 3) / 2
-}
-
-function computeAxis(keys: string[], answers: Record<string, number>): number {
-  const scores = keys.map((k) => answers[k]).filter((s) => s != null)
-  if (scores.length === 0) return 0
-  const avg = scores.reduce((a, b) => a + b, 0) / scores.length
-  return scoreToAxis(avg)
-}
-
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const encoded = searchParams.get('r')
@@ -103,32 +92,6 @@ export async function GET(req: NextRequest) {
     .sort((a, b) => (b.matchPct ?? 0) - (a.matchPct ?? 0))
 
   const top = results[0]
-
-  // User compass position
-  const userX = computeAxis(['economia', 'recursos_naturales', 'politica_social'], answers)
-  const userY = computeAxis(['constitucion', 'reforma_judicial', 'seguridad'], answers)
-
-  // Compass candidates (simplified)
-  const compassDots = candidatePositions
-    .filter((cp) => {
-      const count = Object.values(cp.positions).filter((p) => p.score !== null).length
-      return count >= 6
-    })
-    .map((cp) => {
-      const econ = ['economia', 'recursos_naturales', 'politica_social']
-        .map((k) => cp.positions[k]?.score)
-        .filter((s): s is number => s != null)
-      const social = ['constitucion', 'reforma_judicial', 'seguridad']
-        .map((k) => cp.positions[k]?.score)
-        .filter((s): s is number => s != null)
-      const x = econ.length > 0 ? scoreToAxis(econ.reduce((a, b) => a + b, 0) / econ.length) : 0
-      const y = social.length > 0 ? scoreToAxis(social.reduce((a, b) => a + b, 0) / social.length) : 0
-      return { abbr: cp.party_abbreviation, x, y }
-    })
-
-  const compassSize = 280
-  const compassX = 820
-  const compassY = 160
 
   return new ImageResponse(
     (
@@ -202,7 +165,7 @@ export async function GET(req: NextRequest) {
           )}
         </div>
 
-        {/* Right half — mini compass */}
+        {/* Right half — branding */}
         <div
           style={{
             width: '520px',
@@ -210,44 +173,12 @@ export async function GET(req: NextRequest) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            position: 'relative',
+            background: '#F7F6F3',
           }}
         >
-          {/* Compass background */}
-          <svg
-            width={compassSize + 40}
-            height={compassSize + 40}
-            viewBox={`0 0 ${compassSize + 40} ${compassSize + 40}`}
-          >
-            {/* Grid */}
-            <rect x="20" y="20" width={compassSize} height={compassSize} fill="#F7F6F3" stroke="#E5E3DE" strokeWidth="1" />
-            <line x1={20 + compassSize / 2} y1="20" x2={20 + compassSize / 2} y2={20 + compassSize} stroke="#E5E3DE" strokeWidth="1" />
-            <line x1="20" y1={20 + compassSize / 2} x2={20 + compassSize} y2={20 + compassSize / 2} stroke="#E5E3DE" strokeWidth="1" />
-
-            {/* Candidate dots */}
-            {compassDots.map((dot, i) => {
-              const cx = 20 + ((dot.x + 1) / 2) * compassSize
-              const cy = 20 + ((dot.y + 1) / 2) * compassSize
-              return <circle key={i} cx={cx} cy={cy} r="4" fill="#CBCAC5" opacity="0.6" />
-            })}
-
-            {/* User dot */}
-            <circle
-              cx={20 + ((userX + 1) / 2) * compassSize}
-              cy={20 + ((userY + 1) / 2) * compassSize}
-              r="10"
-              fill="#1A56A0"
-              stroke="white"
-              strokeWidth="3"
-            />
-          </svg>
-
-          {/* Labels */}
-          <div style={{ position: 'absolute', top: compassY - 30, left: compassX - 100, right: compassX - 100, display: 'flex', justifyContent: 'center' }}>
-            <span style={{ fontSize: '11px', color: '#999999' }}>Progresista</span>
-          </div>
-          <div style={{ position: 'absolute', bottom: '50px', left: compassX - 100, right: compassX - 100, display: 'flex', justifyContent: 'center' }}>
-            <span style={{ fontSize: '11px', color: '#999999' }}>Conservador</span>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+            <span style={{ fontSize: '72px', fontWeight: 'bold', color: '#1A56A0' }}>🗳️</span>
+            <span style={{ fontSize: '20px', color: '#777777' }}>votoabierto.pe</span>
           </div>
         </div>
 

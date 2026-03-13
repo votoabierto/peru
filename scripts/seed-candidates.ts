@@ -258,7 +258,6 @@ async function seedCongressCandidates(): Promise<void> {
     region: c.region,
     list_position: c.list_position,
     role: c.role,
-    ideology: c.ideology,
     bio: c.bio ?? null,
     photo_url: c.photo_url ?? null,
     prior_roles: c.prior_roles,    // Supabase JSONB accepts arrays directly

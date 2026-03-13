@@ -1,4 +1,4 @@
-import { Candidate, Position, IDEOLOGY_LABELS, type IssueArea } from '@/lib/types';
+import { Candidate, Position, type IssueArea } from '@/lib/types';
 import candidatePositionsData from '@/data/candidate-positions.json';
 
 // Shape of candidate-positions.json entries
@@ -100,11 +100,6 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
     return 'Sin datos registrados';
   }
 
-  function getIdeology(c: Candidate): string {
-    if (c.ideology) return IDEOLOGY_LABELS[c.ideology] ?? c.ideology;
-    return 'Sin datos registrados';
-  }
-
   // Table header candidates
   const candidateCols = candidates.map(c => {
     const initials = c.full_name.split(' ').slice(0, 2).map(n => n[0]).join('');
@@ -130,7 +125,6 @@ export function ComparisonTable({ candidates, allPositions }: Props) {
 
         {/* Stats rows */}
         {[
-          { label: 'Ideología', render: (c: Candidate) => getIdeology(c) },
           { label: 'Encuestas', render: (c: Candidate) => c.polling_percentage ? `${c.polling_percentage}%` : (c.current_polling ? `${c.current_polling.toFixed(1)}%` : 'Sin datos registrados') },
           { label: 'Bienes declarados', render: (c: Candidate) => formatPEN(c.declared_assets_pen) },
           { label: 'Antecedentes', render: (c: Candidate) => c.criminal_records?.length ? `${c.criminal_records.length}` : (c.has_criminal_record ? 'Sí' : '0') },

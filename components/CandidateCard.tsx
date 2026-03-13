@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { CheckCircle } from 'lucide-react'
-import { IDEOLOGY_COLORS, IDEOLOGY_LABELS, type IdeologyType } from '@/lib/types'
 
 // CandidateCardProps intentionally exported for re-use
 
@@ -16,7 +15,6 @@ export interface CandidateCardProps {
   region_name?: string
   current_polling?: number
   photo_url?: string | null
-  ideology?: string
   is_verified?: boolean
   has_criminal_record?: boolean
   sentencia_penal?: string
@@ -50,14 +48,11 @@ export default function CandidateCard({
   region_name,
   current_polling,
   photo_url,
-  ideology,
   is_verified,
   has_criminal_record,
   sentencia_penal,
 }: CandidateCardProps) {
   const initials = getInitials(full_name)
-  const ideologyColor = ideology ? (IDEOLOGY_COLORS[ideology as IdeologyType] ?? 'bg-gray-600 text-gray-100') : 'bg-gray-600 text-gray-100'
-  const ideologyLabel = ideology ? (IDEOLOGY_LABELS[ideology as IdeologyType] ?? ideology) : null
   const displayName = common_name ?? full_name
   const borderColor = party_color ?? '#1A56A0'
 
@@ -110,7 +105,7 @@ export default function CandidateCard({
           </div>
         </div>
 
-        {/* Party + ideology */}
+        {/* Party */}
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <span className="inline-flex items-center gap-1.5 badge bg-[#EEEDE9] border border-[#E5E3DE] text-[#111111] font-semibold text-xs">
             <span
@@ -120,11 +115,6 @@ export default function CandidateCard({
             {party_abbreviation}
           </span>
           <span className="text-xs text-[#777777] truncate">{party_name}</span>
-          {ideologyLabel && (
-            <span className={`badge text-xs font-medium ${ideologyColor}`}>
-              {ideologyLabel}
-            </span>
-          )}
         </div>
 
         {/* Polling bar */}

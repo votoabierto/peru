@@ -4,341 +4,265 @@
     "name": "Fuerza Popular",
     "abbr": "FP",
     "color": "#FF6B00",
-    "presidentCandidate": "keiko-fujimori",
-    "ideological_family": "derecha",
-    "spectrum": "right"
+    "presidentCandidate": "keiko-fujimori"
   },
   {
     "id": "alianza-para-el-progreso",
     "name": "Alianza para el Progreso",
     "abbr": "APP",
     "color": "#1B5AA6",
-    "presidentCandidate": "cesar-acuna",
-    "ideological_family": "centroderecha",
-    "spectrum": "center-right"
+    "presidentCandidate": "cesar-acuna"
   },
   {
     "id": "renovacion-popular",
     "name": "Renovación Popular",
     "abbr": "RP",
     "color": "#004A97",
-    "presidentCandidate": "rafael-lopez-aliaga",
-    "ideological_family": "derecha",
-    "spectrum": "right"
+    "presidentCandidate": "rafael-lopez-aliaga"
   },
   {
     "id": "avanza-pais",
     "name": "Avanza País",
     "abbr": "AP",
     "color": "#E31837",
-    "presidentCandidate": "jose-williams-zapata",
-    "ideological_family": "derecha",
-    "spectrum": "right"
+    "presidentCandidate": "jose-williams-zapata"
   },
   {
     "id": "podemos-peru",
     "name": "Podemos Perú",
     "abbr": "PP",
     "color": "#0066CC",
-    "presidentCandidate": "jose-luna-galvez",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "jose-luna-galvez"
   },
   {
     "id": "juntos-por-el-peru",
     "name": "Juntos por el Perú",
     "abbr": "JP",
     "color": "#D40000",
-    "presidentCandidate": "roberto-sanchez",
-    "ideological_family": "izquierda",
-    "spectrum": "left"
+    "presidentCandidate": "roberto-sanchez"
   },
   {
     "id": "peru-libre",
     "name": "Perú Libre",
     "abbr": "PL",
     "color": "#CC0000",
-    "presidentCandidate": "vladimir-cerron",
-    "ideological_family": "izquierda",
-    "spectrum": "far-left"
+    "presidentCandidate": "vladimir-cerron"
   },
   {
     "id": "somos-peru",
     "name": "Partido Democrático Somos Perú",
     "abbr": "SP",
     "color": "#009639",
-    "presidentCandidate": "george-forsyth",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "george-forsyth"
   },
   {
     "id": "partido-morado",
     "name": "Partido Morado",
     "abbr": "PM",
     "color": "#6B2D8B",
-    "presidentCandidate": "mesias-guevara",
-    "ideological_family": "centroizquierda",
-    "spectrum": "center-left"
+    "presidentCandidate": "mesias-guevara"
   },
   {
     "id": "partido-aprista-peruano",
     "name": "Partido Aprista Peruano",
     "abbr": "PAP",
     "color": "#FFDD00",
-    "presidentCandidate": "enrique-valderrama",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "enrique-valderrama"
   },
   {
     "id": "cooperacion-popular",
     "name": "Cooperación Popular",
     "abbr": "CP",
     "color": "#006400",
-    "presidentCandidate": "yonhy-lescano",
-    "ideological_family": "centroizquierda",
-    "spectrum": "center-left"
+    "presidentCandidate": "yonhy-lescano"
   },
   {
     "id": "unidad-nacional",
     "name": "Unidad Nacional",
     "abbr": "UN",
     "color": "#003087",
-    "presidentCandidate": "roberto-chiabra",
-    "ideological_family": "centroderecha",
-    "spectrum": "center-right"
+    "presidentCandidate": "roberto-chiabra"
   },
   {
     "id": "frente-esperanza-2021",
     "name": "Partido Frente de la Esperanza 2021",
     "abbr": "FE2021",
     "color": "#FF8C00",
-    "presidentCandidate": "fernando-olivera",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "fernando-olivera"
   },
   {
     "id": "primero-la-gente",
     "name": "Primero la Gente",
     "abbr": "PLG",
     "color": "#0080FF",
-    "presidentCandidate": "marisol-perez-tello",
-    "ideological_family": "centroizquierda",
-    "spectrum": "center-left"
+    "presidentCandidate": "marisol-perez-tello"
   },
   {
     "id": "partido-buen-gobierno",
     "name": "Partido del Buen Gobierno",
     "abbr": "PBG",
     "color": "#008B45",
-    "presidentCandidate": "jorge-nieto-montesinos",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "jorge-nieto-montesinos"
   },
   {
     "id": "fe-en-el-peru",
     "name": "Fe en el Perú",
     "abbr": "FEP",
     "color": "#4169E1",
-    "presidentCandidate": "alvaro-paz-de-la-barra",
-    "ideological_family": "centroderecha",
-    "spectrum": "center-right"
+    "presidentCandidate": "alvaro-paz-de-la-barra"
   },
   {
     "id": "peru-moderno",
     "name": "Perú Moderno",
     "abbr": "PM2",
     "color": "#00BFFF",
-    "presidentCandidate": "carlos-jaico",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "carlos-jaico"
   },
   {
     "id": "fuerza-y-libertad",
     "name": "Fuerza y Libertad",
     "abbr": "FYL",
     "color": "#DC143C",
-    "presidentCandidate": "fiorella-molinelli",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "fiorella-molinelli"
   },
   {
     "id": "partido-principe",
     "name": "Partido Político PRIN",
     "abbr": "PRIN",
     "color": "#556B2F",
-    "presidentCandidate": "walter-chirinos",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "walter-chirinos"
   },
   {
     "id": "peru-accion",
     "name": "Perú Acción",
     "abbr": "PA",
     "color": "#FF4500",
-    "presidentCandidate": "francisco-diez-canseco",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "francisco-diez-canseco"
   },
   {
     "id": "progresemos",
     "name": "Progresemos",
     "abbr": "PRO",
     "color": "#20B2AA",
-    "presidentCandidate": "paul-jaimes",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "paul-jaimes"
   },
   {
     "id": "libertad-popular",
     "name": "Libertad Popular",
     "abbr": "LP",
     "color": "#1E90FF",
-    "presidentCandidate": "rafael-belaunde",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "rafael-belaunde"
   },
   {
     "id": "partido-sicreo",
     "name": "Partido SíCreo",
     "abbr": "SC",
     "color": "#9932CC",
-    "presidentCandidate": "carlos-espa",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "carlos-espa"
   },
   {
     "id": "un-camino-diferente",
     "name": "Un Camino Diferente",
     "abbr": "UCD",
     "color": "#228B22",
-    "presidentCandidate": null,
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": null
   },
   {
     "id": "pais-para-todos",
     "name": "País Para Todos",
     "abbr": "PPT",
     "color": "#FF6347",
-    "presidentCandidate": "carlos-alvarez",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "carlos-alvarez"
   },
   {
     "id": "salvemos-al-peru",
     "name": "Salvemos al Perú",
     "abbr": "SAP",
     "color": "#B8860B",
-    "presidentCandidate": "antonio-ortiz-villano",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "antonio-ortiz-villano"
   },
   {
     "id": "ahora-nacion",
     "name": "Ahora Nación",
     "abbr": "AN",
     "color": "#008080",
-    "presidentCandidate": "alfonso-lopez-chau",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "alfonso-lopez-chau"
   },
   {
     "id": "partido-patriotico",
     "name": "Partido Patriótico del Perú",
     "abbr": "PPP",
     "color": "#8B0000",
-    "presidentCandidate": "herbert-caller",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "herbert-caller"
   },
   {
     "id": "partido-democrata-verde",
     "name": "Partido Demócrata Verde",
     "abbr": "PDV",
     "color": "#228B22",
-    "presidentCandidate": "alex-gonzales-castillo",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "alex-gonzales-castillo"
   },
   {
     "id": "partido-civico-obras",
     "name": "Partido Cívico Obras",
     "abbr": "PCO",
     "color": "#FF8C00",
-    "presidentCandidate": "ricardo-belmont",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "ricardo-belmont"
   },
   {
     "id": "partido-democratico-federal",
     "name": "Partido Democrático Federal",
     "abbr": "PDF",
     "color": "#4682B4",
-    "presidentCandidate": "joaquin-masse-fernandez",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "joaquin-masse-fernandez"
   },
   {
     "id": "partido-democrata-unido",
     "name": "Partido Demócrata Unido Perú",
     "abbr": "PDUP",
     "color": "#2E8B57",
-    "presidentCandidate": "charlie-carrasco",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "charlie-carrasco"
   },
   {
     "id": "peru-primero",
     "name": "Partido Político Perú Primero",
     "abbr": "PP1",
     "color": "#DAA520",
-    "presidentCandidate": "mario-vizcarra",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "mario-vizcarra"
   },
   {
     "id": "trabajadores-emprendedores",
     "name": "Partido de los Trabajadores y Emprendedores PTE-Perú",
     "abbr": "PTE",
     "color": "#CD853F",
-    "presidentCandidate": "napoleon-becerra",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "napoleon-becerra"
   },
   {
     "id": "alianza-venceremos",
     "name": "Alianza Electoral Venceremos",
     "abbr": "AEV",
     "color": "#DC143C",
-    "presidentCandidate": "ronald-atencio",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "ronald-atencio"
   },
   {
     "id": "integridad-democratica",
     "name": "Integridad Democrática",
     "abbr": "ID",
     "color": "#191970",
-    "presidentCandidate": "wolfgang-grozo",
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": "wolfgang-grozo"
   },
   {
     "id": "frente-popular-agricola-fia-del-peru",
     "name": "Frente Popular Agricola Fia Del Peru",
     "abbr": "FREPAP",
     "color": "#1B5E20",
-    "presidentCandidate": null,
-    "ideological_family": "agrario",
-    "spectrum": "center"
+    "presidentCandidate": null
   },
   {
     "id": "partido-ciudadanos-por-el-peru",
     "name": "Partido Ciudadanos Por El Peru",
     "abbr": "CPP",
     "color": "#1565C0",
-    "presidentCandidate": null,
-    "ideological_family": "centro",
-    "spectrum": "center"
+    "presidentCandidate": null
   }
 ]

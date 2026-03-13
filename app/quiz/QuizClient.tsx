@@ -4,7 +4,6 @@ import { useState, useMemo, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
 import FeedbackWidget from '@/components/FeedbackWidget'
-import PoliticalCompass, { computeEconomicAxis, computeSocialAxis } from '@/components/PoliticalCompass'
 import ShareButtons from '@/components/ShareButtons'
 import issuesData from '@/data/issues.json'
 import candidatePositionsData from '@/data/candidate-positions.json'
@@ -350,32 +349,6 @@ export default function QuizClient() {
   const insufficientResults = results
     .filter((r) => r.dataQuality === 'insufficient' || r.matchPct === null)
     .sort((a, b) => a.name.localeCompare(b.name))
-
-  // Compass data
-  const compassCandidates = useMemo(() => {
-    if (!isResultsStep) return []
-    return candidatePositions
-      .filter((cp) => {
-        const count = Object.values(cp.positions).filter((p) => p.score !== null).length
-        return count >= 6
-      })
-      .map((cp) => {
-        const x = computeEconomicAxis(cp.positions) ?? 0
-        const y = computeSocialAxis(cp.positions) ?? 0
-        const match = results.find((r) => r.candidateId === cp.candidate_id)
-        return {
-          id: cp.candidate_id,
-          name: cp.candidate_name,
-          partyAbbr: cp.party_abbreviation,
-          x,
-          y,
-          matchPct: match?.matchPct ?? null,
-        }
-      })
-  }, [isResultsStep, results])
-
-  const userX = computeEconomicAxis({}, answers) ?? 0
-  const userY = computeSocialAxis({}, answers) ?? 0
 
   function handleAnswer(score: number) {
     if (!currentQuestion) return
@@ -760,23 +733,6 @@ export default function QuizClient() {
                     Hacer tu propio quiz
                   </button>
                 </p>
-              </div>
-            )}
-
-            {/* Political compass */}
-            {compassCandidates.length > 0 && (
-              <div className="mb-10">
-                <h3 className="text-lg font-bold text-[#111111] mb-1 text-center">
-                  Tu posición en el mapa político
-                </h3>
-                <p className="text-xs text-[#777777] mb-4 text-center">
-                  Basado en tus respuestas sobre economía, seguridad y reformas institucionales
-                </p>
-                <PoliticalCompass
-                  candidates={compassCandidates}
-                  userX={userX}
-                  userY={userY}
-                />
               </div>
             )}
 
