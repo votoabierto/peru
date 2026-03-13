@@ -24,6 +24,10 @@ import DataFreshness from '@/components/DataFreshness'
 import DataConfidenceBadge from '@/components/DataConfidenceBadge'
 import { Metadata } from 'next'
 import candidatePositionsData from '@/data/candidate-positions.json'
+import pledgesData from '@/data/pledges.json'
+import { Pledge, PLEDGE_CATEGORY_LABELS, PLEDGE_STATUS_LABELS } from '@/lib/types'
+
+const allPledges = pledgesData as unknown as Pledge[]
 
 type CandidatePositionEntry = {
   candidate_id: string
@@ -627,6 +631,57 @@ export default async function CandidatePage({ params }: Props) {
           <h2 className="text-xl font-bold text-[#111111] mb-4">Verificaciones</h2>
           <CandidateFactChecks factChecks={factChecks} candidateSlug={slug} />
         </section>
+
+        {/* Compromisos Ciudadanos */}
+        {(() => {
+          const candidatePledges = allPledges.filter((p) => {
+            const r = p.responses[candidate.id]
+            return r && (r.status === 'committed' || r.status === 'declined')
+          })
+          if (candidatePledges.length > 0) {
+            return (
+              <section>
+                <h2 className="text-xl font-bold text-[#111111] mb-4">Compromisos Ciudadanos</h2>
+                <div className="space-y-3">
+                  {candidatePledges.map((pledge) => {
+                    const response = pledge.responses[candidate.id]
+                    const statusMeta = PLEDGE_STATUS_LABELS[response.status]
+                    const catMeta = PLEDGE_CATEGORY_LABELS[pledge.category]
+                    return (
+                      <Link
+                        key={pledge.id}
+                        href={`/compromisos/${pledge.id}`}
+                        className="block border border-[#E5E3DE] rounded-lg p-4 hover:shadow-sm transition-shadow bg-white"
+                      >
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                          <span className="text-sm font-semibold text-[#111111]">{pledge.title}</span>
+                          <span className={`text-xs px-2 py-0.5 rounded-full border font-medium whitespace-nowrap ${statusMeta.color}`}>
+                            {statusMeta.label}
+                          </span>
+                        </div>
+                        <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${catMeta.color}`}>
+                          {catMeta.label}
+                        </span>
+                        {response.statement && (
+                          <p className="text-xs text-[#555555] mt-2 italic">&ldquo;{response.statement}&rdquo;</p>
+                        )}
+                      </Link>
+                    )
+                  })}
+                </div>
+              </section>
+            )
+          }
+          return (
+            <section>
+              <h2 className="text-xl font-bold text-[#111111] mb-4">Compromisos Ciudadanos</h2>
+              <div className="text-[#777777] text-sm py-4 text-center border border-dashed border-[#E5E3DE] rounded-lg">
+                Ningún compromiso registrado —{' '}
+                <Link href="/compromisos" className="text-[#1A56A0] hover:underline">ver todos los compromisos</Link>
+              </div>
+            </section>
+          )
+        })()}
 
         <section>
           <h2 className="text-xl font-bold text-[#111111] mb-4">Noticias recientes</h2>

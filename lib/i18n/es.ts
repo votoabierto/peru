@@ -9,6 +9,7 @@ export const es: Record<string, string> = {
   'nav.verify': 'Verificar',
   'nav.congress': 'Congreso',
   'nav.contribute': 'Contribuir',
+  'nav.pledges': 'Compromisos',
   'nav.search': 'Buscar',
 
   // Homepage

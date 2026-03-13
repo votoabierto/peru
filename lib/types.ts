@@ -268,6 +268,44 @@ export interface ElectoralDistrict {
   seats: number
 }
 
+// ─── Pledge Types ────────────────────────────────────────────────────────────
+
+export type PledgeStatus = 'committed' | 'declined' | 'no_response'
+export type PledgeCategory = 'anticorrupcion' | 'educacion' | 'medioambiente' | 'economia' | 'salud' | 'democracia' | 'seguridad'
+
+export interface PledgeResponse {
+  status: PledgeStatus
+  statement: string | null
+  responded_at: string | null
+}
+
+export interface Pledge {
+  id: string
+  title: string
+  description: string
+  category: PledgeCategory
+  proposed_by: string
+  proposed_at: string
+  source_org: string | null
+  responses: Record<string, PledgeResponse>
+}
+
+export const PLEDGE_CATEGORY_LABELS: Record<PledgeCategory, { label: string; color: string }> = {
+  anticorrupcion: { label: 'Anticorrupción', color: 'bg-purple-100 text-purple-800 border-purple-200' },
+  educacion: { label: 'Educación', color: 'bg-blue-100 text-blue-800 border-blue-200' },
+  medioambiente: { label: 'Medioambiente', color: 'bg-green-100 text-green-800 border-green-200' },
+  economia: { label: 'Economía', color: 'bg-amber-100 text-amber-800 border-amber-200' },
+  salud: { label: 'Salud', color: 'bg-red-100 text-red-800 border-red-200' },
+  democracia: { label: 'Democracia', color: 'bg-indigo-100 text-indigo-800 border-indigo-200' },
+  seguridad: { label: 'Seguridad', color: 'bg-orange-100 text-orange-800 border-orange-200' },
+}
+
+export const PLEDGE_STATUS_LABELS: Record<PledgeStatus, { label: string; color: string }> = {
+  committed: { label: 'Comprometido', color: 'bg-green-100 text-green-800 border-green-300' },
+  declined: { label: 'Rechazado', color: 'bg-red-100 text-red-800 border-red-300' },
+  no_response: { label: 'Sin respuesta', color: 'bg-gray-100 text-gray-600 border-gray-200' },
+}
+
 // ─── Relational Schema Types (v2) ──────────────────────────────────────────
 
 export type CandidateType = 'presidente' | 'senado' | 'diputado' | 'andino'

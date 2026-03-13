@@ -21,6 +21,7 @@ export default function Navbar() {
     { href: '/comparar', label: t('nav.compare') },
     { href: '/verificar', label: t('nav.verify') },
     { href: '/congreso', label: t('nav.congress') },
+    { href: '/compromisos', label: t('nav.pledges') },
     { href: '/contribuir', label: t('nav.contribute') },
     { href: '/quiz', label: t('nav.quiz'), highlight: true },
   ] as const

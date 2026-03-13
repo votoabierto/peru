@@ -9,6 +9,7 @@ export const qu: Record<string, string> = {
   'nav.verify': 'Chiqaqchay',
   'nav.congress': 'Congreso',
   'nav.contribute': 'Yanapay',
+  'nav.pledges': 'Rimanakuykuna',
   'nav.search': 'Maskay',
 
   // Homepage

@@ -125,6 +125,13 @@ Endpoints: `/api/v1/candidates`, `/api/v1/parties`, `/api/v1/senate`, `/api/v1/d
 
 Ver documentación completa: https://votoabierto.org/datos | OpenAPI spec: https://votoabierto.org/api/v1/openapi.json
 
+## Compromisos Ciudadanos
+
+VotoAbierto permite a la ciudadanía proponer compromisos específicos que los candidatos
+pueden adoptar públicamente. Las respuestas (o silencios) se documentan objetivamente.
+
+Para proponer un nuevo compromiso, [abre un issue](https://github.com/ApoEsp/votoclaro/issues/new?template=pledge.md).
+
 ## Contribuir
 
 Por favor lee nuestro [Código de Conducta](CODE_OF_CONDUCT.md) antes de contribuir.
