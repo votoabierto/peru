@@ -166,18 +166,19 @@ function calculateMatch(
 }
 
 function matchColor(pct: number): string {
-  if (pct >= 80) return 'bg-green-100 text-green-800 border-green-300'
-  if (pct >= 60) return 'bg-yellow-100 text-yellow-800 border-yellow-300'
+  if (pct >= 70) return 'bg-green-100 text-green-800 border-green-300'
+  if (pct >= 50) return 'bg-yellow-100 text-yellow-800 border-yellow-300'
   return 'bg-gray-100 text-gray-600 border-gray-300'
 }
 
 function matchBarColor(pct: number): string {
-  if (pct >= 80) return 'bg-green-500'
-  if (pct >= 60) return 'bg-yellow-500'
+  if (pct >= 70) return 'bg-green-500'
+  if (pct >= 50) return 'bg-yellow-500'
   return 'bg-gray-400'
 }
 
-function ResultCard({ r, rank, muted }: { r: MatchResult; rank: number; muted?: boolean }) {
+function ResultCard({ r, rank, muted, barWidth }: { r: MatchResult; rank: number; muted?: boolean; barWidth?: number }) {
+  const displayBarWidth = barWidth ?? r.matchPct ?? 0
   return (
     <Link
       href={`/candidatos/${r.candidateId}`}
@@ -202,7 +203,7 @@ function ResultCard({ r, rank, muted }: { r: MatchResult; rank: number; muted?: 
               <div className="mt-2 w-full h-1.5 bg-[#EEEDE9] rounded-full overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all duration-500 ${matchBarColor(r.matchPct)}`}
-                  style={{ width: `${r.matchPct}%` }}
+                  style={{ width: `${displayBarWidth}%` }}
                 />
               </div>
             )}
@@ -427,6 +428,23 @@ export default function QuizClient() {
   const insufficientResults = results
     .filter((r) => r.dataQuality === 'insufficient' || r.matchPct === null)
     .sort((a, b) => a.name.localeCompare(b.name))
+
+  // Relative bar scaling: anchored to field range so visual gaps are meaningful
+  // Top candidate fills ~100%, others fill proportionally — absolute % numbers stay honest
+  const allMatchedPcts = [...verifiedResults, ...partialResults]
+    .map((r) => r.matchPct)
+    .filter((p): p is number => p !== null)
+  const fieldMin = allMatchedPcts.length > 0 ? Math.min(...allMatchedPcts) : 0
+  const fieldMax = allMatchedPcts.length > 0 ? Math.max(...allMatchedPcts) : 100
+  const barAnchor = Math.max(0, fieldMin - 8)   // floor 8 points below worst match
+  const barCeil   = Math.min(100, fieldMax + 2) // ceiling 2 points above best match
+  const barRange  = barCeil - barAnchor
+
+  function relativeBarWidth(matchPct: number): number {
+    if (barRange <= 0) return matchPct
+    const raw = ((matchPct - barAnchor) / barRange) * 100
+    return Math.max(8, Math.min(100, Math.round(raw)))
+  }
 
   function handleAnswer(score: number) {
     if (!currentQuestion) return
@@ -848,7 +866,7 @@ export default function QuizClient() {
                 <div className="space-y-3">
                   {(showAll ? verifiedResults : verifiedResults.slice(0, 5)).map((r, i) => (
                     <div key={r.candidateId}>
-                      <ResultCard r={r} rank={i + 1} />
+                      <ResultCard r={r} rank={i + 1} barWidth={r.matchPct !== null ? relativeBarWidth(r.matchPct) : undefined} />
                       <p className="text-[10px] text-[#999999] mt-0.5 ml-12">
                         Basado en {r.verifiedIssueCount} de {TOTAL_QUESTIONS} temas verificados
                       </p>
@@ -870,7 +888,7 @@ export default function QuizClient() {
                 <div className="space-y-3">
                   {(showAll ? partialResults : partialResults.slice(0, 5)).map((r, i) => (
                     <div key={r.candidateId}>
-                      <ResultCard r={r} rank={i + 1} muted />
+                      <ResultCard r={r} rank={i + 1} muted barWidth={r.matchPct !== null ? relativeBarWidth(r.matchPct) : undefined} />
                       <p className="text-[10px] text-[#999999] mt-0.5 ml-12">
                         {r.verifiedIssueCount} de {TOTAL_QUESTIONS} temas con datos
                       </p>
