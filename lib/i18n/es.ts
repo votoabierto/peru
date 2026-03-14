@@ -53,6 +53,24 @@ export const es: Record<string, string> = {
   'countdown.past': 'Las elecciones ya pasaron — Revisa los resultados en ONPE',
   'countdown.remaining': 'Faltan {days} días, {hours} horas y {minutes} minutos',
 
+  // How to vote
+  'vote.title': '¿Cómo votar?',
+  'vote.step1_title': 'Verifica tu DNI',
+  'vote.step1_desc': 'Consulta tu estado en el padrón electoral en padron.onpe.gob.pe',
+  'vote.step2_title': 'Consulta tu local de votación',
+  'vote.step2_desc': 'Ingresa tu DNI en onpe.gob.pe/donde_voto',
+  'vote.step3_title': 'Lleva tu DNI',
+  'vote.step3_desc': 'El día de las elecciones, lleva tu DNI original vigente. Es obligatorio.',
+  'vote.step4_title': 'Vota el 12 de abril',
+  'vote.step4_desc': 'Mesas abiertas de 8:00 AM a 4:00 PM. Si estás en la fila a las 4 PM, puedes votar.',
+  'vote.first_round': 'Primera Vuelta',
+  'vote.second_round': 'Segunda Vuelta (si aplica)',
+  'vote.disclaimer': 'Este sitio es informativo y no está afiliado a ningún partido o candidato.',
+
+  // Privacy
+  'privacy.notice': 'Tus respuestas se guardaron de forma anónima.',
+  'privacy.link': 'Ver política de privacidad',
+
   // Accessibility
   'a11y.skip_to_content': 'Saltar al contenido principal',
 

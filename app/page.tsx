@@ -3,6 +3,7 @@ import CountdownTimer from '@/components/CountdownTimer'
 import FactCheckBadge from '@/components/FactCheckBadge'
 import { ISSUE_LABELS, type IssueArea } from '@/lib/types'
 import { getCandidates, getFactChecks } from '@/lib/data'
+import { QUIZ_QUESTION_COUNT } from '@/lib/quiz-config'
 
 const ELECTION_TYPES = [
   {
@@ -118,12 +119,83 @@ export default async function HomePage() {
           <Link href="/quiz" className="inline-flex items-center gap-2 bg-[#C8102E] text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-[#A00D24] transition-colors shadow-lg shadow-red-200">
             ¿A quién votar? →
           </Link>
-          <p className="text-[#555555] text-sm mt-3 font-medium">Responde 20 preguntas y descubre tu candidato en 5 minutos</p>
+          <p className="text-[#555555] text-sm mt-3 font-medium">Responde {QUIZ_QUESTION_COUNT} preguntas y descubre tu candidato en 5 minutos</p>
           <p className="text-[#888888] text-xs mt-1">Anónimo · Sin registro</p>
           <div className="mt-4">
             <Link href="/candidatos" className="text-sm text-[#1A56A0] hover:underline font-medium">
               Ver candidatos →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Cómo Votar */}
+      <section className="py-12 bg-[#F7F6F3] border-y border-[#E5E3DE]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-[#111111] mb-6 text-center">
+            🗳️ ¿Cómo votar?
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="bg-white rounded-xl border border-[#E5E3DE] p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-7 h-7 rounded-full bg-[#1A56A0] text-white text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+                <h3 className="text-sm font-semibold text-[#111111]">Verifica tu DNI</h3>
+              </div>
+              <p className="text-xs text-[#555555] leading-relaxed">
+                Consulta tu estado en el padrón electoral en{' '}
+                <a href="https://padron.onpe.gob.pe" target="_blank" rel="noopener noreferrer" className="text-[#1A56A0] hover:underline">padron.onpe.gob.pe</a>
+              </p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#E5E3DE] p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-7 h-7 rounded-full bg-[#1A56A0] text-white text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+                <h3 className="text-sm font-semibold text-[#111111]">Consulta tu local</h3>
+              </div>
+              <p className="text-xs text-[#555555] leading-relaxed">
+                Ingresa tu DNI en{' '}
+                <a href="https://www.onpe.gob.pe/donde_voto" target="_blank" rel="noopener noreferrer" className="text-[#1A56A0] hover:underline">onpe.gob.pe/donde_voto</a>
+              </p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#E5E3DE] p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-7 h-7 rounded-full bg-[#1A56A0] text-white text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+                <h3 className="text-sm font-semibold text-[#111111]">Lleva tu DNI</h3>
+              </div>
+              <p className="text-xs text-[#555555] leading-relaxed">
+                El día de las elecciones, lleva tu DNI original vigente. Es obligatorio.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#E5E3DE] p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-7 h-7 rounded-full bg-[#1A56A0] text-white text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+                <h3 className="text-sm font-semibold text-[#111111]">Vota el 12 de abril</h3>
+              </div>
+              <p className="text-xs text-[#555555] leading-relaxed">
+                Mesas abiertas de 8:00 AM a 4:00 PM. Si estás en la fila a las 4 PM, puedes votar.
+              </p>
+            </div>
+          </div>
+
+          {/* Key dates */}
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white border border-[#E5E3DE] rounded-lg px-4 py-2">
+              <span className="text-sm font-bold text-[#1A56A0] font-mono">12 abr 2026</span>
+              <span className="text-xs text-[#555555]">Primera Vuelta</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-[#E5E3DE] rounded-lg px-4 py-2">
+              <span className="text-sm font-bold text-[#1A56A0] font-mono">24 may 2026</span>
+              <span className="text-xs text-[#555555]">Segunda Vuelta (si aplica)</span>
+            </div>
+          </div>
+
+          {/* Disclaimer + links */}
+          <p className="text-xs text-[#777777] text-center mb-3">
+            Este sitio es informativo y no está afiliado a ningún partido o candidato.
+          </p>
+          <div className="flex justify-center gap-3">
+            <a href="https://www.onpe.gob.pe" target="_blank" rel="noopener noreferrer" className="text-xs text-[#1A56A0] hover:underline">onpe.gob.pe ↗</a>
+            <a href="https://www.reniec.gob.pe" target="_blank" rel="noopener noreferrer" className="text-xs text-[#1A56A0] hover:underline">reniec.gob.pe ↗</a>
           </div>
         </div>
       </section>
@@ -319,7 +391,7 @@ export default async function HomePage() {
             <span className="text-3xl mb-3 block">🗳️</span>
             <h2 className="text-2xl font-bold text-[#111111]">¿Sabes a quién votar?</h2>
             <p className="text-[#444444] mt-2 max-w-md mx-auto">
-              Responde 20 preguntas sobre los temas que te importan. Descubre qué candidato comparte tu visión.
+              Responde {QUIZ_QUESTION_COUNT} preguntas sobre los temas que te importan. Descubre qué candidato comparte tu visión.
             </p>
             <Link href="/quiz" className="mt-5 inline-flex items-center gap-2 bg-[#C8102E] text-white px-8 py-3.5 rounded-xl font-bold text-lg hover:bg-[#A00D24] transition-colors shadow-md shadow-red-100">
               Empezar quiz →

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import QuizClient from './QuizClient'
+import { QUIZ_QUESTION_COUNT, QUIZ_TIME_MINUTES } from '@/lib/quiz-config'
 
 interface Props {
   searchParams: Promise<{ r?: string }>
@@ -11,7 +12,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
   const baseOg = {
     title: 'Quiz Electoral — VotoAbierto',
-    description: 'Descubre qué candidatos presidenciales comparten tu visión. 20 preguntas, 5 minutos, 100% anónimo.',
+    description: `Descubre qué candidatos presidenciales comparten tu visión. ${QUIZ_QUESTION_COUNT} preguntas, ${QUIZ_TIME_MINUTES} minutos, 100% anónimo.`,
   }
 
   if (!encoded) {

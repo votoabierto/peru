@@ -19,6 +19,9 @@ export interface CandidateCardProps {
   is_verified?: boolean
   has_criminal_record?: boolean
   sentencia_penal?: string
+  summary?: string | null
+  keyProposals?: string[]
+  compact?: boolean
 }
 
 function getInitials(name: string): string {
@@ -52,6 +55,9 @@ export default function CandidateCard({
   is_verified,
   has_criminal_record,
   sentencia_penal,
+  summary,
+  keyProposals,
+  compact = false,
 }: CandidateCardProps) {
   const initials = getInitials(full_name)
   const displayName = common_name ?? full_name
@@ -120,6 +126,31 @@ export default function CandidateCard({
           </span>
           <span className="text-xs text-[#777777] truncate">{party_name}</span>
         </div>
+
+        {/* Summary + key proposals (expanded mode) */}
+        {!compact && (summary || (keyProposals && keyProposals.length > 0)) && (
+          <div className="mb-3">
+            {summary && (
+              <p className="text-xs text-[#555555] leading-relaxed mb-2 line-clamp-2">
+                {summary}
+              </p>
+            )}
+            {keyProposals && keyProposals.length > 0 && (
+              <ul className="space-y-1">
+                {keyProposals.slice(0, 3).map((proposal, i) => (
+                  <li key={i} className="text-xs text-[#555555] flex items-start gap-1.5">
+                    <span className="text-[#1A56A0] mt-0.5 flex-shrink-0">•</span>
+                    <span className="line-clamp-1">{proposal}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+
+        {!compact && !summary && !(keyProposals && keyProposals.length > 0) && (
+          <p className="text-xs text-[#999999] italic mb-3">Información pendiente</p>
+        )}
 
         {/* Polling bar */}
         {current_polling !== undefined && current_polling !== null && (

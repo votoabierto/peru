@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect, useCallback } from 'react'
+import { useState, useMemo, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
 import FeedbackWidget from '@/components/FeedbackWidget'
@@ -305,6 +305,8 @@ export default function QuizClient() {
   const [showAll, setShowAll] = useState(false)
   const [copied, setCopied] = useState(false)
   const [loadedFromUrl, setLoadedFromUrl] = useState(false)
+  const quizStartTime = useRef<number>(Date.now())
+  const hasSubmitted = useRef(false)
 
   // Load results from URL on mount
   useEffect(() => {
@@ -343,6 +345,48 @@ export default function QuizClient() {
       setWeights(suggestedWeights)
     }
   }, [step, suggestedWeights, weights])
+
+  // Reset quiz start time when first question shown
+  useEffect(() => {
+    if (step === 1 && !loadedFromUrl) {
+      quizStartTime.current = Date.now()
+    }
+  }, [step, loadedFromUrl])
+
+  // Auto-submit quiz results anonymously
+  useEffect(() => {
+    if (!isResultsStep || hasSubmitted.current || loadedFromUrl) return
+    hasSubmitted.current = true
+
+    const userEcon = computeUserAxisScore(answers, 'economic')
+    const userSoc = computeUserAxisScore(answers, 'social')
+    const userInst = computeUserAxisScore(answers, 'institutions')
+
+    const sorted = candidatePositions
+      .map((cp) => {
+        const { matchPct } = calculateMatch(answers, weights, cp.positions)
+        return { id: cp.candidate_id, matchPct }
+      })
+      .filter((r) => r.matchPct !== null)
+      .sort((a, b) => (b.matchPct ?? 0) - (a.matchPct ?? 0))
+
+    const topMatch = sorted[0]
+
+    fetch('/api/v1/quiz/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        answers,
+        economic_score: userEcon,
+        social_score: userSoc,
+        institutions_score: userInst,
+        top_match_candidate_id: topMatch?.id ?? null,
+        top_match_score: topMatch?.matchPct ?? null,
+        completed_seconds: Math.round((Date.now() - quizStartTime.current) / 1000),
+        department: department || null,
+      }),
+    }).catch(() => {}) // never block UX
+  }, [isResultsStep, answers, weights, loadedFromUrl, department])
 
   // Which theme is current question in
   const currentThemeKey = currentQuestion?.themeKey ?? null
@@ -785,6 +829,10 @@ export default function QuizClient() {
               )}
               <p className="text-xs text-[#777777] mt-1">
                 Esto no es una recomendación de voto. Investiga más antes de decidir.
+              </p>
+              <p className="text-xs text-[#777777] mt-3 text-center">
+                🔒 Tus respuestas se guardaron de forma anónima.{' '}
+                <a href="/privacy" className="underline hover:text-[#1A56A0]">Ver política de privacidad</a>
               </p>
             </div>
 

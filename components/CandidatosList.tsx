@@ -149,7 +149,7 @@ export default function CandidatosList({ initialCandidates }: Props) {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {visible.map((candidate) => (
-                  <CandidateCard key={candidate.id} {...candidate} />
+                  <CandidateCard key={candidate.id} {...candidate} summary={candidate.bio_short ?? null} />
                 ))}
               </div>
               {hasMore && (

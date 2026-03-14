@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 // Simple in-memory rate limiter (resets on redeploy — fine for Vercel)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>()
+const quizRateLimitMap = new Map<string, { count: number; resetAt: number }>()
 const WINDOW_MS = 60_000   // 1 minute window
 const MAX_REQUESTS = 60    // 60 req/min per IP
 
@@ -12,6 +13,25 @@ export function middleware(request: NextRequest) {
 
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
   const now = Date.now()
+
+  // Stricter rate limit for quiz submit: 3 per hour
+  if (request.nextUrl.pathname === '/api/v1/quiz/submit') {
+    const QUIZ_WINDOW = 3_600_000 // 1 hour
+    const QUIZ_MAX = 3
+    const quizEntry = quizRateLimitMap.get(ip)
+    if (!quizEntry || now > quizEntry.resetAt) {
+      quizRateLimitMap.set(ip, { count: 1, resetAt: now + QUIZ_WINDOW })
+    } else {
+      quizEntry.count++
+      if (quizEntry.count > QUIZ_MAX) {
+        return NextResponse.json(
+          { ok: true, stored: false },
+          { status: 200, headers: { 'Access-Control-Allow-Origin': '*' } }
+        )
+      }
+    }
+  }
+
   const entry = rateLimitMap.get(ip)
 
   if (!entry || now > entry.resetAt) {
