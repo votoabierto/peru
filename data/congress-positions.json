@@ -1,0 +1,1802 @@
+[
+  {
+    "candidate_id": "vladimir-roy-cerron-rojas-senado",
+    "candidate_name": "Vladimir Roy Cerron Rojas",
+    "party": "Partido Politico Nacional Peru Libre",
+    "party_abbreviation": "PL",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 1,
+        "label": "Estado regulador fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 5,
+        "label": "Estado regulador fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 5,
+        "label": "Estado regulador fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 1,
+        "label": "Estado regulador fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad comunidades",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 2,
+        "label": "Prevención social",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 2,
+        "label": "Prevención social",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 4,
+        "label": "Prevención social",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 1,
+        "label": "Educación pública universal",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 5,
+        "label": "Nueva constitución",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 5,
+        "label": "Reforma estructural profunda",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 2,
+        "label": "Mayor autonomía regional",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 13
+  },
+  {
+    "candidate_id": "rafael-bernardo-lopez-aliaga-cazorla-senado",
+    "candidate_name": "Rafael Bernardo Lopez Aliaga Cazorla",
+    "party": "Renovacion Popular",
+    "party_abbreviation": "RP",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 5,
+        "label": "Libre mercado total",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 1,
+        "label": "Libre mercado total",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 1,
+        "label": "Libre mercado total",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 5,
+        "label": "Libre mercado total",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 1,
+        "label": "Maximizar extracción",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 5,
+        "label": "Mano dura / pena de muerte",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura / pena de muerte",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura / pena de muerte",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 5,
+        "label": "Vouchers educativos",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 1,
+        "label": "Mantener Constitución 1993",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 4,
+        "label": "Penas duras anticorrupción",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 2,
+        "label": "Reformas puntuales fuertes",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 4,
+        "label": "Gobierno central fuerte",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 13
+  },
+  {
+    "candidate_id": "cesar-acuna-peralta-senado",
+    "candidate_name": "Cesar Acuña Peralta",
+    "party": "Alianza Para El Progreso",
+    "party_abbreviation": "APP",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 4,
+        "label": "Mercado con inversión pública",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 2,
+        "label": "Mercado con inversión pública",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Mercado con inversión pública",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Mercado con inversión pública",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 2,
+        "label": "Pro-inversión minera",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 4,
+        "label": "Más policías y penas",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 4,
+        "label": "Más policías y penas",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 2,
+        "label": "Más policías y penas",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 4,
+        "label": "Inversión público-privada",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 2,
+        "label": "Reformas puntuales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 3,
+        "label": "Modernización judicial",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 2,
+        "label": "Mayor descentralización",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 13
+  },
+  {
+    "candidate_id": "yonhy-lescano-ancieta-senado",
+    "candidate_name": "Yonhy Lescano Ancieta",
+    "party": "Partido Politico Cooperacion Popular",
+    "party_abbreviation": "CP",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 3,
+        "label": "Equilibrio",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Equilibrio prevención-castigo",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Equilibrio prevención-castigo",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Equilibrio prevención-castigo",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Más inversión pública",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 3,
+        "label": "Reformas puntuales amplias",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 3,
+        "label": "Reforma moderada",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 2,
+        "label": "Mayor descentralización",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 13
+  },
+  {
+    "candidate_id": "maria-soledad-perez-tello-de-rodriguez-senado",
+    "candidate_name": "Maria Soledad Perez Tello De Rodriguez",
+    "party": "Primero La Gente - Comunidad, Ecologia, Libertad Y Progreso",
+    "party_abbreviation": "PLG",
+    "role": "senado",
+    "department": null,
+    "list_position": 2,
+    "positions": {
+      "economia_igv": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 3,
+        "label": "Equilibrio sostenible",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión pública",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 2,
+        "label": "Reformas puntuales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales fuertes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 4,
+        "label": "Reforma profunda",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 13
+  },
+  {
+    "candidate_id": "carlos-ernesto-jaico-carranza-senado",
+    "candidate_name": "Carlos Ernesto Jaico Carranza",
+    "party": "Peru Moderno",
+    "party_abbreviation": "PM",
+    "role": "senado",
+    "department": null,
+    "list_position": 3,
+    "positions": {
+      "economia_igv": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 3,
+        "label": "Reformas constitucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 4,
+        "label": "Reforma profunda",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 12
+  },
+  {
+    "candidate_id": "alex-gonzales-castillo-senado",
+    "candidate_name": "Alex Gonzales Castillo",
+    "party": "Partido Democrata Verde",
+    "party_abbreviation": "PDV",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 3,
+        "label": "Modernización judicial",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 12
+  },
+  {
+    "candidate_id": "charlie-carrasco-salazar-senado",
+    "candidate_name": "Charlie Carrasco Salazar",
+    "party": "Partido Democrata Unido Peru",
+    "party_abbreviation": "PDUP",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Enfoque integral",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 3,
+        "label": "Reformas y castigo",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 4,
+        "label": "Reforma profunda",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 12
+  },
+  {
+    "candidate_id": "wolfgang-mario-grozo-costa-senado",
+    "candidate_name": "Wolfgang Mario Grozo Costa",
+    "party": "Partido Politico Integridad Democratica",
+    "party_abbreviation": "ID",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 3,
+        "label": "Lucha anticorrupción",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 3,
+        "label": "Modernización judicial",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 12
+  },
+  {
+    "candidate_id": "jose-daniel-williams-zapata-senado",
+    "candidate_name": "Jose Daniel Williams Zapata",
+    "party": "Avanza Pais - Partido De Integracion Social",
+    "party_abbreviation": "AVP",
+    "role": "senado",
+    "department": null,
+    "list_position": 3,
+    "positions": {
+      "economia_igv": {
+        "score": 5,
+        "label": "Libre mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 1,
+        "label": "Libre mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 1,
+        "label": "Libre mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 5,
+        "label": "Libre mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 1,
+        "label": "Pro-extracción",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 5,
+        "label": "Mano dura militar",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura militar",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura militar",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 4,
+        "label": "Inversión público-privada",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 1,
+        "label": "Mantener Constitución 1993",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 4,
+        "label": "Penas severas",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 11
+  },
+  {
+    "candidate_id": "roberto-enrique-chiabra-leon-senado",
+    "candidate_name": "Roberto Enrique Chiabra Leon",
+    "party": "Unidad Nacional",
+    "party_abbreviation": "UN",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 3,
+        "label": "Economía social de mercado",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 4,
+        "label": "Reforma profunda",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 11
+  },
+  {
+    "candidate_id": "francisco-ernesto-diez-canseco-tavara-senado",
+    "candidate_name": "Francisco Ernesto Diez-Canseco Távara",
+    "party": "Partido Politico Peru Accion",
+    "party_abbreviation": "PA",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 5,
+        "label": "Mano dura",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 1,
+        "label": "Mano dura",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 4,
+        "label": "Penas duras anticorrupción",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 4,
+        "label": "Reforma profunda",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 11
+  },
+  {
+    "candidate_id": "alfonso-carlos-espa-y-garces-alvear-senado",
+    "candidate_name": "Alfonso Carlos Espa Y Garces-Alvear",
+    "party": "Partido Sicreo",
+    "party_abbreviation": "SC",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 2,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 4,
+        "label": "Pro inversión privada",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 10
+  },
+  {
+    "candidate_id": "napoleon-becerra-garcia-senado",
+    "candidate_name": "Napoleon Becerra Garcia",
+    "party": "Partido De Los Trabajadores Y Emprendedores Pte - Peru",
+    "party_abbreviation": "PTE",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": 2,
+        "label": "Economía mixta con Estado fuerte",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 5,
+        "label": "Nueva constitución",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 3,
+        "label": "Reforma judicial",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 8
+  },
+  {
+    "candidate_id": "pablo-alfonso-lopez-chau-nava-senado",
+    "candidate_name": "Pablo Alfonso Lopez Chau Nava",
+    "party": "Ahora Nacion - An",
+    "party_abbreviation": "AN",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 3,
+        "label": "Reforma judicial",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 7
+  },
+  {
+    "candidate_id": "herbert-caller-gutierrez-senado",
+    "candidate_name": "Herbert Caller Gutierrez",
+    "party": "Partido Patriotico Del Peru",
+    "party_abbreviation": "PPP",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 3,
+        "label": "Reformas y castigo",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 3,
+        "label": "Descentralización moderada",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 7
+  },
+  {
+    "candidate_id": "fiorella-giannina-molinelli-aristondo-senado",
+    "candidate_name": "Fiorella Giannina Molinelli Aristondo",
+    "party": "Fuerza Y Libertad",
+    "party_abbreviation": "FYL",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": 3,
+        "label": "Seguridad ciudadana",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 5
+  },
+  {
+    "candidate_id": "flavio-cruz-mamani-senado",
+    "candidate_name": "Flavio Cruz Mamani",
+    "party": "Partido Politico Nacional Peru Libre",
+    "party_abbreviation": "PL",
+    "role": "senado",
+    "department": null,
+    "list_position": 3,
+    "positions": {
+      "economia_igv": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": 4,
+        "label": "Revertir concesiones mineras ociosas",
+        "verified": true,
+        "source_url": "https://elcomercio.pe/elecciones/flavio-cruz-de-peru-libre-justifica-su-candidatura-a-la-reeleccion-en-el-2026-casi-estamos-postulando-sin-querer-queriendo-ultimas-noticia/"
+      },
+      "economia_inversion": {
+        "score": 5,
+        "label": "Soberanía sobre recursos estratégicos",
+        "verified": true,
+        "source_url": "https://elcomercio.pe/elecciones/flavio-cruz-de-peru-libre-justifica-su-candidatura-a-la-reeleccion-en-el-2026-casi-estamos-postulando-sin-querer-queriendo-ultimas-noticia/"
+      },
+      "economia_informal": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 5,
+        "label": "Nueva constitución vía Asamblea Constituyente",
+        "verified": true,
+        "source_url": "https://elcomercio.pe/elecciones/flavio-cruz-de-peru-libre-justifica-su-candidatura-a-la-reeleccion-en-el-2026-casi-estamos-postulando-sin-querer-queriendo-ultimas-noticia/"
+      },
+      "inst_anticorrupcion": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": 5,
+        "label": "Mayor autonomía regional",
+        "verified": true,
+        "source_url": "https://elcomercio.pe/elecciones/flavio-cruz-de-peru-libre-justifica-su-candidatura-a-la-reeleccion-en-el-2026-casi-estamos-postulando-sin-querer-queriendo-ultimas-noticia/"
+      }
+    },
+    "data_completeness": 4
+  },
+  {
+    "candidate_id": "duberli-apolinar-rodriguez-tineo-senado",
+    "candidate_name": "Duberli Apolinar Rodriguez Tineo",
+    "party": "Alianza Electoral Venceremos",
+    "party_abbreviation": "AEV",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": 4,
+        "label": "Economía tripartita con Estado en sectores estratégicos",
+        "verified": true,
+        "source_url": "https://elbuho.pe/2026/03/duberli-rodriguez-propone-una-reforma-total-del-sistema-judicial-y-el-retorno-de-la-policia-de-investigaciones/"
+      },
+      "economia_informal": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": 2,
+        "label": "Policía de investigaciones civil, no militarización",
+        "verified": true,
+        "source_url": "https://elbuho.pe/2026/03/duberli-rodriguez-propone-una-reforma-total-del-sistema-judicial-y-el-retorno-de-la-policia-de-investigaciones/"
+      },
+      "seguridad_narcotrafico": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": 5,
+        "label": "Nueva constitución plurinacional",
+        "verified": true,
+        "source_url": "https://elcomercio.pe/politica/elecciones/elecciones-2026-candidatos-ivan-sequeiros-y-duberli-rodriguez-debaten-sobre-futuro-de-la-constitucion-en-versus-de-el-comercio-ultimas-noticia/"
+      },
+      "inst_anticorrupcion": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": 2,
+        "label": "Escuela judicial técnica, no elección popular",
+        "verified": true,
+        "source_url": "https://elbuho.pe/2026/03/duberli-rodriguez-propone-una-reforma-total-del-sistema-judicial-y-el-retorno-de-la-policia-de-investigaciones/"
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": null,
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 4
+  },
+  {
+    "candidate_id": "mario-enrique-vizcarra-cornejo-senado",
+    "candidate_name": "Mario Enrique Vizcarra Cornejo",
+    "party": "Partido Politico Peru Primero",
+    "party_abbreviation": "PPR",
+    "role": "senado",
+    "department": null,
+    "list_position": 1,
+    "positions": {
+      "economia_igv": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_mineria": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_inversion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "economia_informal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "medioambiente_industrias": {
+        "score": 4,
+        "label": "Prioridad ambiental",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_pena_muerte": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_fuerzas_armadas": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "seguridad_narcotrafico": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "educacion_meritocracia": {
+        "score": 2,
+        "label": "Inversión en educación",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_constitucion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_anticorrupcion": {
+        "score": 2,
+        "label": "Reformas institucionales",
+        "verified": false,
+        "source_url": null
+      },
+      "inst_fiscal": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      },
+      "territorio_descentralizacion": {
+        "score": null,
+        "label": "Sin datos suficientes",
+        "verified": false,
+        "source_url": null
+      }
+    },
+    "data_completeness": 3
+  }
+]
