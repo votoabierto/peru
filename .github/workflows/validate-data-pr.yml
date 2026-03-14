@@ -1,0 +1,17 @@
+name: Validate candidate position data
+on:
+  pull_request:
+    paths:
+      - 'data/candidate-positions.json'
+      - 'data/congress-positions.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Validate data format and rules
+        run: python3 scripts/validate-positions-data.py
