@@ -8,6 +8,7 @@ import ShareButtons from '@/components/ShareButtons'
 import PolicyCompass from '@/components/PolicyCompass'
 import issuesData from '@/data/issues.json'
 import candidatePositionsData from '@/data/candidate-positions.json'
+import congressPositionsData from '@/data/congress-positions.json'
 import type { QuizTheme, PolicyAxis } from '@/lib/types'
 
 type CandidatePosition = {
@@ -15,10 +16,15 @@ type CandidatePosition = {
   candidate_name: string
   party: string
   party_abbreviation: string
-  role: 'presidential' | 'senate' | 'diputados' | 'andino'
+  role: 'presidential' | 'senate' | 'senado' | 'diputados' | 'andino'
   department: string | null
   positions: Record<string, { score: number | null; label: string; verified: boolean }>
   axis_scores?: { economic: number | null; social: number | null; institutions: number | null }
+}
+
+type CongressPosition = CandidatePosition & {
+  list_position: number
+  data_completeness: number
 }
 
 type IssueScore = { issue: string; diff: number; weight: number }
@@ -33,6 +39,7 @@ type MatchResult = {
   verifiedIssueCount: number
   topAligned: IssueScore[]
   topDivergent: IssueScore[]
+  list_position?: number
 }
 
 const themes = issuesData.themes as QuizTheme[]
@@ -428,6 +435,62 @@ export default function QuizClient() {
   const insufficientResults = results
     .filter((r) => r.dataQuality === 'insufficient' || r.matchPct === null)
     .sort((a, b) => a.name.localeCompare(b.name))
+
+  // Senate results — deduplicate against presidential candidates
+  const senateResults = useMemo(() => {
+    if (!isResultsStep) return [] as MatchResult[]
+
+    // Build set of presidential candidate ID slug parts for dedup
+    const presidentialIdParts = candidatePositions.map(cp =>
+      new Set(cp.candidate_id.toLowerCase().split('-'))
+    )
+
+    function isPresidentialDuplicate(congressId: string): boolean {
+      const congressParts = congressId.replace(/-senado$/, '').toLowerCase().split('-')
+      return presidentialIdParts.some(presParts =>
+        [...presParts].every(part => congressParts.includes(part))
+      )
+    }
+
+    return (congressPositionsData as CongressPosition[])
+      .filter(cp =>
+        cp.role === 'senado' &&
+        (cp.data_completeness ?? 0) >= 3 &&
+        !isPresidentialDuplicate(cp.candidate_id)
+      )
+      .map(cp => {
+        const { matchPct, verifiedIssueCount, dataQuality, topAligned, topDivergent } = calculateMatch(answers, weights, cp.positions)
+        return {
+          candidateId: cp.candidate_id,
+          name: cp.candidate_name,
+          party: cp.party,
+          partyAbbr: cp.party_abbreviation,
+          matchPct,
+          dataQuality,
+          verifiedIssueCount,
+          topAligned,
+          topDivergent,
+          list_position: cp.list_position,
+        }
+      })
+      .filter(r => r.matchPct !== null && r.matchPct >= 40)
+      .sort((a, b) => (b.matchPct ?? 0) - (a.matchPct ?? 0))
+      .slice(0, 8)
+  }, [isResultsStep, answers, weights])
+
+  // Senate bar scaling
+  const senateBarAnchor = senateResults.length > 0
+    ? Math.max(0, Math.min(...senateResults.map(r => r.matchPct ?? 0)) - 8)
+    : 0
+  const senateBarCeil = senateResults.length > 0
+    ? Math.min(100, Math.max(...senateResults.map(r => r.matchPct ?? 0)) + 2)
+    : 100
+
+  function senateBarWidth(matchPct: number): number {
+    const range = senateBarCeil - senateBarAnchor
+    if (range <= 0) return matchPct
+    return Math.max(8, Math.min(100, Math.round(((matchPct - senateBarAnchor) / range) * 100)))
+  }
 
   // Relative bar scaling: anchored to field range so visual gaps are meaningful
   // Top candidate fills ~100%, others fill proportionally — absolute % numbers stay honest
@@ -939,6 +1002,43 @@ export default function QuizClient() {
                 >
                   Ver todos los candidatos
                 </button>
+              </div>
+            )}
+
+            {/* Senate section */}
+            {senateResults.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold text-[#111111] mb-1">
+                  Senado Nacional
+                </h3>
+                <p className="text-xs text-[#777777] mb-3">
+                  Candidatos al Senado con posiciones documentadas — solo afinidad con datos verificados
+                </p>
+                <div className="space-y-3">
+                  {senateResults.map((r, i) => (
+                    <div key={r.candidateId}>
+                      <ResultCard
+                        r={r}
+                        rank={i + 1}
+                        barWidth={r.matchPct !== null ? senateBarWidth(r.matchPct) : undefined}
+                      />
+                      <p className="text-[10px] text-[#999999] mt-0.5 ml-12">
+                        {r.verifiedIssueCount} de {TOTAL_QUESTIONS} temas con datos verificados · Lista #{r.list_position}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-[10px] text-[#999999] mt-3">
+                  ¿Conoces la posición de un candidato no listado?{' '}
+                  <a
+                    href="https://github.com/votoabierto/peru/issues/new?template=data_correction.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-[#1A56A0]"
+                  >
+                    Contribuye los datos →
+                  </a>
+                </p>
               </div>
             )}
 
